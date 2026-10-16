@@ -1,0 +1,28 @@
+[INFO] [1792128966.537334582] [simple_pure_pursuit_controller]: Simple Pure Pursuit ready: path=/test/path cmd=/test/command frames=map<-base_link frequency=10.0 Hz
+[INFO] [1792128966.637483068] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128968.038415250] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128968.137482405] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128968.137574603] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=0.000 cmd=(0.050,0.000) goal_dist=3.000
+[INFO] [1792128969.237406975] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=0.000 cmd=(0.599,0.000) goal_dist=3.000
+[INFO] [1792128970.058597799] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128970.259340626] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128970.337385163] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=0.000 cmd=(0.700,0.000) goal_dist=3.000
+[INFO] [1792128970.449360344] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128970.638058826] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128970.829604135] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128971.019442067] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128971.437361929] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=-2.410 cmd=(0.550,-0.300) goal_dist=3.000
+[INFO] [1792128972.537369463] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=-2.410 cmd=(0.317,-0.765) goal_dist=3.000
+[INFO] [1792128972.837319165] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128973.537303970] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128973.637308548] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=-2.798 cmd=(0.000,-0.265) goal_dist=3.000
+[INFO] [1792128974.637324587] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=-2.798 cmd=(0.000,-0.500) goal_dist=3.000
+[INFO] [1792128974.837264821] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128975.737249194] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=-1.338 cmd=(0.419,-0.561) goal_dist=3.000
+[INFO] [1792128976.228987794] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[WARN] [1792128976.229030453] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792128976.237186932] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128976.689413803] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792128976.737260778] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128976.737323527] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(0.650,0.000) cte=0.000 curvature=0.000 cmd=(0.024,0.000) goal_dist=3.000
+[INFO] [1792128977.098979808] [rclcpp]: signal_handler(signum=2)

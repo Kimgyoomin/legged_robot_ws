@@ -1,0 +1,71 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7344d08..59114be 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,3 +1,5 @@
++set(ROS_EDITION "ROS2" CACHE STRING "ROS edition")
++set(DISTRO_ROS "humble" CACHE STRING "ROS distro")
+ # judge which cmake codes to use 
+ if(ROS_EDITION STREQUAL "ROS1")
+ 
+@@ -246,7 +248,13 @@ else(ROS_EDITION STREQUAL "ROS2")
+   )
+ 
+   ## make sure the livox_lidar_sdk_shared library is installed
+-  find_library(LIVOX_LIDAR_SDK_LIBRARY liblivox_lidar_sdk_shared.so /usr/local/lib REQUIRED)
++  get_filename_component(LEGGED_WS "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
++  set(LIVOX_LIDAR_SDK_LIBRARY "${LEGGED_WS}/.sdk/lib/liblivox_lidar_sdk_shared.so")
++  set(LIVOX_LIDAR_SDK_INCLUDE_DIR "${LEGGED_WS}/.sdk/include")
++  if(NOT EXISTS "${LIVOX_LIDAR_SDK_LIBRARY}")
++    message(FATAL_ERROR "Build the bundled Livox SDK first; see workspace README.md")
++  endif()
++  set(CMAKE_INSTALL_RPATH "${LEGGED_WS}/.sdk/lib")
+ 
+   ##
+   find_path(LIVOX_LIDAR_SDK_INCLUDE_DIR
+diff --git a/src/comm/pub_handler.cpp b/src/comm/pub_handler.cpp
+index e33d588..44d7091 100644
+--- a/src/comm/pub_handler.cpp
++++ b/src/comm/pub_handler.cpp
+@@ -28,6 +28,7 @@
+ #include <chrono>
+ #include <iostream>
+ #include <limits>
++#include "imu_rotation.hpp"
+ 
+ namespace livox_ros {
+ 
+@@ -122,6 +123,20 @@ void PubHandler::OnLivoxLidarPointCloudCallback(uint32_t handle, const uint8_t d
+       imu_data.acc_x = imu->acc_x;
+       imu_data.acc_y = imu->acc_y;
+       imu_data.acc_z = imu->acc_z;
++      // Use this sensor's configured rotation even if its first cloud has not
++      // arrived. Translation never applies to IMU vectors. Do not hold the
++      // packet lock while invoking a publisher callback.
++      ExtParameter rotation;
++      {
++        std::lock_guard<std::mutex> lock(self->packet_mutex_);
++        uint32_t id = 0;
++        GetLidarId(LidarProtoType::kLivoxLidarType, handle, id);
++        const auto it = self->lidar_extrinsics_.find(id);
++        if (it == self->lidar_extrinsics_.end()) {return;}
++        rotation = it->second.param;
++      }
++      rotate_imu(rotation.roll, rotation.pitch, rotation.yaw, imu_data);
++
+       self->imu_callback_(&imu_data, self->imu_client_data_);
+     }
+     return;
+diff --git a/src/comm/pub_handler.h b/src/comm/pub_handler.h
+index 3314d8f..f0f58ce 100644
+--- a/src/comm/pub_handler.h
++++ b/src/comm/pub_handler.h
+@@ -64,7 +64,7 @@ class LidarPubHandler {
+     {0, 0, 0},
+     {
+       {1, 0, 0},
+-      {0, 1, 1},
++      {0, 1, 0},
+       {0, 0, 1}
+     }
+   };

@@ -1,0 +1,83 @@
+[INFO] [1792129701.062840203] [rubi_hybrid_planner_comparison]: Hybrid planner ready; mode=grid_only goal_topic='/replay/goal' planner_cmd_vel_publishers=0
+[INFO] [1792129701.062933833] [rubi_hybrid_planner_comparison]: 
+[STEP EVALUATION CONFIG]
+planner_run_mode=grid_only
+adjacent_threshold_m=0.100
+distance_weight=1.000
+height_cost_weight=1.000
+grid_cot_height_cost_enabled=true
+grid_cot_calibration_points=7
+sampling_sobel_hard_reject_enabled=true
+grid_sobel_hard_reject_enabled=false
+grid_sobel_kernel_size=5
+sobel_threshold_m=0.100
+legacy_sampling_sobel_cost_weight=0.000
+grid_sobel_gradient_cost_weight=0.000
+sobel_cost_exponent=2.000
+grid_terrain_clearance_enabled=true
+grid_terrain_clearance_distance_m=0.200
+local_relief_enabled=true
+local_relief_threshold_m=0.100
+local_relief_first_window_radius_m=0.100
+local_relief_second_window_radius_m=0.100
+local_relief_quantiles=[0.100, 0.900]
+local_relief_min_observed_ratio=0.700
+local_relief_critical_cell_count=3
+[INFO] [1792129703.230926848] [rubi_hybrid_planner_comparison]: 
+[TRACKING PATH REFINER]
+mode=grid raw_points=585 smoothing_attempts=583 smoothing_accepts=583 smoothing_rejects=0 tracking_points=585 raw_cost=40.289504 tracking_cost=40.990825 raw_max_heading_change_rad=0.785398 tracking_max_heading_change_rad=0.424155 fallback=false
+[INFO] [1792129703.231171517] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=1 heightmap_generation=1 start=(0.575,0.075) goal=(7.225,-9.325) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129703.231179347] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=9286 evidence_invalid_count=125668 rejects=328 evidence_rejects=0 minimum_clearance_m=0.200000 minimum_clearance_kind=lower_bound preprocess_ms=30.896709 cache_hit=false cache_builds=1 cache_hits=0 search_cost=40.289504467 validation_cost=40.990824973 path_validation_ms=16.548181 total_request_ms=164.266086
+[WARN] [1792129703.231188647] [rubi_hybrid_planner_comparison]: planner=grid hard_rejection=(1.275,-1.125) raw_cost=253 height_evidence=true known_height=-0.350
+[INFO] [1792129703.231194557] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=36.262 total_cost=40.290 inflation_cost=3.672 height_cost=0.355 sobel_cost=0.000 sobel_gradient_exposure_m=0.595 expanded=15206 nodes=15206 edges=15205 time_ms=113.903 costmap_hard_blocked_samples=1845 costmap_max_raw_cost_on_selected_path=182 height_evidence_missing_samples=0 height_max_jump_m=0.028 max_sobel_equivalent_step_m=0.052 max_sobel_gradient=0.521 max_grid_sobel_gradient=0.387 max_local_relief_m=0.057 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=133376
+[WARN] [1792129703.231202017] [rubi_hybrid_planner_comparison]: comparison input is confounded by Costmap obstacle marking planner=grid hard_samples=1845
+[INFO] [1792129703.231205867] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : true
+termination            : post_goal_complete
+map_generation         : costmap=1 heightmap=1
+path_length_m          : 36.262342
+total_cost             : 40.289504
+distance_cost          : 36.262342
+inflation_cost         : 3.671842
+height_cost            : 0.355320
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.595496
+max_grid_sobel_gradient: 0.387487
+max_height_jump_m      : 0.028341
+max_sobel_equivalent_step_m: 0.052146
+max_sobel_gradient    : 0.521464
+max_local_relief_m     : 0.056592
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 11
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 15206
+neighbor_candidates    : 121640
+astar_open_pushes      : 20436
+node_eval_calls        : 16964
+edge_eval_calls        : 117587
+grid_transition_evaluations: 133376
+grid_sobel_queries     : 16102
+grid_sobel_cache_hits  : 250650
+grid_sobel_5x5_valid   : 16102
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 16102
+costmap_queries        : 16964
+local_relief_queries  : 209326
+local_relief_cache_hits: 190378
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 266752
+search_time_ms         : 113.373016
+path_finalize_time_ms  : 0.509478
+total_planning_time_ms : 113.903144
+============================================================
+[INFO] [1792129703.231243347] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129706.095946138] [rclcpp]: signal_handler(signum=2)

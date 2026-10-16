@@ -1,0 +1,24 @@
+[INFO] [launch]: All log files can be found below /home/kim/.ros/log/2026-10-14-23-18-49-234068-Kim9975-2839480
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [static_transform_publisher-1]: process started with pid [2839560]
+[INFO] [odometry_node-2]: process started with pid [2839562]
+[INFO] [localization_node-3]: process started with pid [2839564]
+[static_transform_publisher-1] [INFO] [1791987529.320054606] [base_link_to_livox_frame]: Spinning until stopped - publishing transform
+[static_transform_publisher-1] translation: ('0.101000', '0.000000', '-0.116900')
+[static_transform_publisher-1] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-1] from 'base_link' to 'livox_frame'
+[odometry_node-2] [INFO] [1791987529.320443447] [genz_odometry]: GenZ-ICP ROS 2 odometry node initialized
+[localization_node-3] [INFO] [1791987529.337999587] [genz_localization]: Loaded prebuilt PCD map: /home/kim/legged_robot_ws/maps/demo/localization.pcd, finite_points=14400
+[localization_node-3] [INFO] [1791987529.340175802] [genz_localization]: GenZ-ICP ROS 2 localization node initialized
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[localization_node-3] [INFO] [1791987535.110868412] [rclcpp]: signal_handler(signum=2)
+[odometry_node-2] [INFO] [1791987535.110873602] [rclcpp]: signal_handler(signum=2)
+[INFO] [localization_node-3]: sending signal 'SIGINT' to process[localization_node-3]
+[INFO] [odometry_node-2]: sending signal 'SIGINT' to process[odometry_node-2]
+[INFO] [static_transform_publisher-1]: sending signal 'SIGINT' to process[static_transform_publisher-1]
+[static_transform_publisher-1] [INFO] [1791987535.110879322] [rclcpp]: signal_handler(signum=2)
+[localization_node-3] [INFO] [1791987535.112692667] [rclcpp]: signal_handler(signum=2)
+[odometry_node-2] [INFO] [1791987535.112906387] [rclcpp]: signal_handler(signum=2)
+[ERROR] [static_transform_publisher-1]: process has died [pid 2839560, exit code -2, cmd '/opt/ros/humble/lib/tf2_ros/static_transform_publisher --x 0.101 --y 0.0 --z -0.1169 --frame-id base_link --child-frame-id livox_frame --ros-args -r __node:=base_link_to_livox_frame --params-file /tmp/launch_params_st1f2ukb'].
+[INFO] [odometry_node-2]: process has finished cleanly [pid 2839562]
+[INFO] [localization_node-3]: process has finished cleanly [pid 2839564]

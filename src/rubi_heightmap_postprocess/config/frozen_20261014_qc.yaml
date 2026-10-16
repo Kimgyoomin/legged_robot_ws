@@ -1,0 +1,8 @@
+# Manual map-frame evaluation regions for THIS snapshot only. Never used by filters.
+regions:
+  - {name: A, kind: step, center_xy_m: [7.7, 4.3], yaw_deg: 30.0, core_half_extent_m: [0.30, 0.15], ring_inner_half_extent_m: [0.65, 0.45], ring_outer_half_extent_m: [0.95, 0.75]}
+  - {name: B, kind: step, center_xy_m: [11.4, -6.6], yaw_deg: 30.0, core_half_extent_m: [0.30, 0.15], ring_inner_half_extent_m: [0.65, 0.45], ring_outer_half_extent_m: [0.95, 0.75]}
+  - {name: C, kind: step, center_xy_m: [15.65, -1.1], yaw_deg: 30.0, core_half_extent_m: [0.30, 0.15], ring_inner_half_extent_m: [0.65, 0.45], ring_outer_half_extent_m: [0.95, 0.75]}
+  - {name: F1, kind: floor, center_xy_m: [4.5, 1.6], core_half_extent_m: [0.40, 0.40]}
+  - {name: F2, kind: floor, center_xy_m: [10.0, -7.5], core_half_extent_m: [0.40, 0.40]}
+  - {name: F3, kind: floor, center_xy_m: [17.3, -2.0], core_half_extent_m: [0.40, 0.40]}

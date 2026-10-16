@@ -1,0 +1,36 @@
+{
+  "all": [
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    },
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    },
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    }
+  ],
+  "voxel": [
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    },
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    },
+    {
+      "max_height_m": 0.0,
+      "all_state_max": 0.0,
+      "mask_equal": true
+    }
+  ]
+}

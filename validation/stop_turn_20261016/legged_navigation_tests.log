@@ -1,0 +1,63 @@
+Start testing: Oct 16 14:36 KST
+----------------------------------------------------------
+1/1 Testing: test_pure_pursuit_core
+1/1 Test: test_pure_pursuit_core
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/legged_navigation/test_results/legged_navigation/test_pure_pursuit_core.gtest.xml" "--package-name" "legged_navigation" "--output-file" "/home/kim/legged_robot_ws/build/legged_navigation/ament_cmake_gtest/test_pure_pursuit_core.txt" "--command" "/home/kim/legged_robot_ws/build/legged_navigation/test_pure_pursuit_core" "--gtest_output=xml:/home/kim/legged_robot_ws/build/legged_navigation/test_results/legged_navigation/test_pure_pursuit_core.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/legged_navigation
+"test_pure_pursuit_core" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/legged_navigation':
+ - /home/kim/legged_robot_ws/build/legged_navigation/test_pure_pursuit_core --gtest_output=xml:/home/kim/legged_robot_ws/build/legged_navigation/test_results/legged_navigation/test_pure_pursuit_core.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 14 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 14 tests from PurePursuitCore
+[ RUN      ] PurePursuitCore.StraightPathProducesZeroAngularVelocity
+[       OK ] PurePursuitCore.StraightPathProducesZeroAngularVelocity (0 ms)
+[ RUN      ] PurePursuitCore.CurveDirectionControlsAngularSign
+[       OK ] PurePursuitCore.CurveDirectionControlsAngularSign (0 ms)
+[ RUN      ] PurePursuitCore.CommandsRespectHardSaturation
+[       OK ] PurePursuitCore.CommandsRespectHardSaturation (0 ms)
+[ RUN      ] PurePursuitCore.LookaheadInterpolatesAlongArcLength
+[       OK ] PurePursuitCore.LookaheadInterpolatesAlongArcLength (0 ms)
+[ RUN      ] PurePursuitCore.NearestProgressIsMonotonic
+[       OK ] PurePursuitCore.NearestProgressIsMonotonic (0 ms)
+[ RUN      ] PurePursuitCore.RejectsTargetsBehindRobot
+[       OK ] PurePursuitCore.RejectsTargetsBehindRobot (0 ms)
+[ RUN      ] PurePursuitCore.DetectsGoalTolerance
+[       OK ] PurePursuitCore.DetectsGoalTolerance (0 ms)
+[ RUN      ] PurePursuitCore.EmptyAndNonfinitePathsAreInvalid
+[       OK ] PurePursuitCore.EmptyAndNonfinitePathsAreInvalid (0 ms)
+[ RUN      ] PurePursuitCore.CrossTrackDistanceSupportsSafetyThreshold
+[       OK ] PurePursuitCore.CrossTrackDistanceSupportsSafetyThreshold (0 ms)
+[ RUN      ] PurePursuitCore.RateLimiterBoundsChanges
+[       OK ] PurePursuitCore.RateLimiterBoundsChanges (0 ms)
+[ RUN      ] PurePursuitCore.BehindTargetRequestsOnlyRotation
+[       OK ] PurePursuitCore.BehindTargetRequestsOnlyRotation (0 ms)
+[ RUN      ] PurePursuitCore.HeadingHysteresisAvoidsModeChatter
+[       OK ] PurePursuitCore.HeadingHysteresisAvoidsModeChatter (0 ms)
+[ RUN      ] PurePursuitCore.AlignmentBrakesBeforeTurningAndBoundsYawAcceleration
+[       OK ] PurePursuitCore.AlignmentBrakesBeforeTurningAndBoundsYawAcceleration (0 ms)
+[ RUN      ] PurePursuitCore.NonfiniteAlignmentTargetDoesNotRequestMotion
+[       OK ] PurePursuitCore.NonfiniteAlignmentTargetDoesNotRequestMotion (0 ms)
+[----------] 14 tests from PurePursuitCore (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 14 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/legged_navigation/test_results/legged_navigation/test_pure_pursuit_core.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/legged_navigation/test_results/legged_navigation/test_pure_pursuit_core.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_pure_pursuit_core" end time: Oct 16 14:36 KST
+"test_pure_pursuit_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 16 14:36 KST
+
+gtest =   0.03 sec*proc
+

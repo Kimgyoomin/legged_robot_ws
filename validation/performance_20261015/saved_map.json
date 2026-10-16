@@ -1,0 +1,12 @@
+{
+  "file": "/home/kim/legged_robot_ws/maps/sim/run_1792036679647865902/map.rghm",
+  "frame": "map",
+  "resolution": 0.05,
+  "dimensions": [
+    1000,
+    1000
+  ],
+  "usable_cells": 52706,
+  "snapshot_stamp_ns": 287101999999,
+  "sha256": "7d2ce906defb4c14aec02f92211af1d01efb851efffae11ca4f0eab06fd59aef"
+}

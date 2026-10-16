@@ -1,0 +1,62 @@
+[
+  {
+    "source": "/home/kim/rubi_mapping_ws/src/rubi_terrain_mapping/rubi_height_mapping",
+    "destination": "src/rubi_height_mapping",
+    "repository_head": "58d1e98e22bacdefdcbf4534b2ad35513a0543ac",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/rubi_mapping_ws/src/rubi_terrain_mapping/rubi_global_heightmap_wrapper",
+    "destination": "src/rubi_global_heightmap_wrapper",
+    "repository_head": "58d1e98e22bacdefdcbf4534b2ad35513a0543ac",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/rubi_mapping_ws/src/rubi_terrain_mapping/rubi_heightmap_postprocess",
+    "destination": "src/rubi_heightmap_postprocess",
+    "repository_head": "58d1e98e22bacdefdcbf4534b2ad35513a0543ac",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/ros2_ws_nav/src/navigation_real/FAST_LIO_LOCALIZATION2",
+    "destination": "src/FAST_LIO_LOCALIZATION2",
+    "repository_head": "34894e17e6adf467e5f8f2deffd2ed089eb2d126",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/ros2_ws_nav/src/navigation_real/FAST_LIO_ROS2",
+    "destination": "src/FAST_LIO_ROS2",
+    "repository_head": "34894e17e6adf467e5f8f2deffd2ed089eb2d126",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/ros2_ws_nav/src/navigation_real/genz-icp",
+    "destination": "src/genz-icp",
+    "repository_head": "34894e17e6adf467e5f8f2deffd2ed089eb2d126",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "/home/kim/ros2_ws_nav/src/navigation_real/rubi_heightmap_step_wavefront_planner",
+    "destination": "src/rubi_heightmap_step_wavefront_planner",
+    "repository_head": "34894e17e6adf467e5f8f2deffd2ed089eb2d126",
+    "note": "working-tree copy, includes existing local changes"
+  },
+  {
+    "source": "https://github.com/Livox-SDK/livox_ros_driver2",
+    "repository_head": "21445540f0d100dc86a7e6df312dd70bbdb4afdf",
+    "destination": "src/livox_ros_driver2",
+    "note": "official 1.2.8 + per-device IMU rotation + workspace SDK link"
+  },
+  {
+    "source": "https://github.com/Livox-SDK/Livox-SDK2",
+    "repository_head": "c0796f04c143143899c87a773d9f6b7136453c0b",
+    "destination": "third_party/Livox-SDK2",
+    "note": "samples disabled, isolated .sdk install"
+  },
+  {
+    "source": "/home/kim/ros2_ws_nav/src/navigation_real/pongbot_navigation",
+    "repository_head": "34894e17e6adf467e5f8f2deffd2ed089eb2d126",
+    "destination": "src/legged_navigation",
+    "note": "Pure Pursuit core/controller copied, TF age guard added, Nav2 adapter new"
+  }
+]

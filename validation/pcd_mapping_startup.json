@@ -1,0 +1,7 @@
+{
+  "startup": true,
+  "real_points_received": false,
+  "domain": 177,
+  "termination": "intentional SIGINT; upstream exit code -2",
+  "optional_debug_directory_missing": true
+}

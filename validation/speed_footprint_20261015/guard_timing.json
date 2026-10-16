@@ -1,0 +1,13 @@
+{
+  "input_grid_cells": 1000000,
+  "velocity": [
+    0.6,
+    0.0,
+    0.8
+  ],
+  "horizon_s": 1,
+  "half_side_m": 0.31,
+  "median_ms": 0.1963584218174219,
+  "p95_ms": 0.19952808506786823,
+  "scope": "Current desktop CPU, cached map geometry only; not Jetson or ROS end-to-end latency."
+}

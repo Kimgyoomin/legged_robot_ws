@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+from rubi_heightmap_postprocess.cli import main
+main()

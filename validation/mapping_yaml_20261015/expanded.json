@@ -1,0 +1,95 @@
+{
+  "default": [
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/height.yaml",
+      {
+        "use_sim_time": true,
+        "input_topic": "/cloud_registered_body",
+        "ray_mode": "all",
+        "ray_voxel_size": 0.0,
+        "odom_topic": "/localization",
+        "map_frame": "map",
+        "base_frame": "base_link",
+        "odom_max_gap": 0.2,
+        "min_range": 0.6,
+        "max_range": 3.0,
+        "tf_wait_timeout": 1.5
+      }
+    ],
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/global.yaml",
+      {
+        "use_sim_time": true,
+        "map_frame": "map",
+        "output_directory": "/home/kim/legged_robot_ws/maps/sim_lio_snapshot"
+      }
+    ],
+    [
+      {
+        "use_sim_time": true
+      }
+    ]
+  ],
+  "hardware": [
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/height.yaml",
+      {
+        "use_sim_time": false,
+        "input_topic": "/cloud_registered_body",
+        "ray_mode": "all",
+        "ray_voxel_size": 0.0,
+        "odom_topic": "/localization",
+        "map_frame": "map",
+        "base_frame": "base_link",
+        "odom_max_gap": 0.2,
+        "min_range": 0.6,
+        "max_range": 3.0,
+        "tf_wait_timeout": 1.5
+      }
+    ],
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/global.yaml",
+      {
+        "use_sim_time": false,
+        "map_frame": "map",
+        "output_directory": "/home/kim/legged_robot_ws/maps/sim_lio_snapshot"
+      }
+    ],
+    [
+      {
+        "use_sim_time": false
+      }
+    ]
+  ],
+  "legacy_raw": [
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/height.yaml",
+      {
+        "use_sim_time": true,
+        "input_topic": "/livox/lidar_PointCloud2",
+        "ray_mode": "all",
+        "ray_voxel_size": 0.0,
+        "odom_topic": "/ground_truth/odom",
+        "map_frame": "world",
+        "base_frame": "BODY",
+        "odom_max_gap": 0.2,
+        "min_range": 0.6,
+        "max_range": 3.0,
+        "tf_wait_timeout": 1.5
+      }
+    ],
+    [
+      "/home/kim/legged_robot_ws/src/legged_bringup/config/global.yaml",
+      {
+        "use_sim_time": true,
+        "map_frame": "world",
+        "output_directory": "/home/kim/legged_robot_ws/maps/sim_lio_snapshot"
+      }
+    ],
+    [
+      {
+        "use_sim_time": true
+      }
+    ]
+  ]
+}

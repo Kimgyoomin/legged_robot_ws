@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rubi_height_mapping</name>
+  <version>0.3.1</version>
+  <description>RUBI LiDAR-only CuPy height estimator and integrated global mapping launch.</description>
+  <maintainer email="127925120+Kimgyoomin@users.noreply.github.com">Kimgyoomin</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>tf2_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>grid_map_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rubi_global_heightmap_wrapper</exec_depend>
+  <!-- CuPy is deliberately installed to match the host JetPack/CUDA, not a generic rosdep wheel. -->
+  <!-- RViz is an optional deployment dependency; install ros-humble-rviz2 for rviz:=true. -->
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>rosgraph_msgs</test_depend>
+  <test_depend>std_srvs</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

@@ -1,0 +1,55 @@
+{
+  "wall_seconds": 30.024966762401164,
+  "host": "PC RTX5090, not Jetson",
+  "rtf": null,
+  "processes": {
+    "mapper": {
+      "cpu_one_core_percent": 1.798503239897725,
+      "rss_mib": 258.89453125
+    },
+    "wrapper": {
+      "cpu_one_core_percent": 0.09991684666098473,
+      "rss_mib": 50.92578125
+    },
+    "height_rviz": {
+      "cpu_one_core_percent": 10.324740821635087,
+      "rss_mib": 210.953125
+    },
+    "fastlio": {
+      "cpu_one_core_percent": 0.9325572355025241,
+      "rss_mib": 183.09375
+    },
+    "global_localizer": {
+      "cpu_one_core_percent": 0.23313930887563103,
+      "rss_mib": 326.671875
+    },
+    "fusion": {
+      "cpu_one_core_percent": 0.7327235421805547,
+      "rss_mib": 64.21875
+    },
+    "gazebo": {
+      "cpu_one_core_percent": 2.897588553168557,
+      "rss_mib": 4034.4765625
+    }
+  },
+  "topics": {
+    "/rubi/global_elevation/cloud": {
+      "messages": 11,
+      "wall_hz": 0.38463144056351556,
+      "stamp_progress_hz": null,
+      "age_sim_seconds": null,
+      "points": {
+        "p50": 52709,
+        "p95": 52709,
+        "max": 52709
+      },
+      "data_size": {
+        "p50": 632508,
+        "p95": 632508,
+        "max": 632508
+      },
+      "unique_stamps": 1
+    }
+  },
+  "mapper_logs": []
+}

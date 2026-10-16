@@ -1,0 +1,136 @@
+{
+  "scope": "Repeatability and completed-callback timing; no ROS traffic or robot motion.\n\nAn XYZ capture is replayed at a SYNTHETIC fixed pose, not its original trajectory.\nThis isolates the estimator and is not a world-accuracy or localization test.\n",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "cupy": "13.6.0",
+  "platform": "Linux-6.8.0-64-generic-x86_64-with-glibc2.35",
+  "map_m": 8,
+  "resolution_m": 0.05,
+  "capture": {
+    "path": "/home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/live_analysis/gpu_live_after_fix_20261014/capture/input.npz",
+    "sha256": "b056ca083be4f9806bd44ff91d872a23cb22660304f89989b0169f1e86e8801e",
+    "roi_points": 32307,
+    "pose": "synthetic R=I, t=(0,0,0.8)"
+  },
+  "baseline": "backups/snapshot_fusion_20261015_152106/src/rubi_height_mapping",
+  "repeat_runs": 4,
+  "scans_per_run": 215,
+  "repeatability": {
+    "before_all": [
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.006562292575836182,
+        "max_all_layer_difference": 0.29996225237846375,
+        "all_layers_bit_equal": false
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.006562232971191406,
+        "max_all_layer_difference": 0.30033940076828003,
+        "all_layers_bit_equal": false
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.007861137390136719,
+        "max_all_layer_difference": 0.2332863211631775,
+        "all_layers_bit_equal": false
+      }
+    ],
+    "snapshot_all": [
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      }
+    ],
+    "snapshot_voxel": [
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      },
+      {
+        "valid_mask_equal": true,
+        "max_common_height_difference_m": 0.0,
+        "max_all_layer_difference": 0.0,
+        "all_layers_bit_equal": true
+      }
+    ]
+  },
+  "all_ray_reversed_input": {
+    "valid_mask_equal": true,
+    "max_common_height_difference_m": 0.0,
+    "max_all_layer_difference": 0.0,
+    "all_layers_bit_equal": true
+  },
+  "timing_scope": "Completed core call including H2D, excludes decode, pose wait, moving grid, ROS/DDS, publication, wrapper, RViz",
+  "warmups": 15,
+  "timed_iterations": 200,
+  "timing": {
+    "recorded_roi": {
+      "points": 32307,
+      "milliseconds": {
+        "before_all": {
+          "median": 0.2701908815652132,
+          "p95": 0.4364223452284931,
+          "process_cpu_median": 0.2704160000002176
+        },
+        "snapshot_all": {
+          "median": 0.2846750430762768,
+          "p95": 0.486017926596105,
+          "process_cpu_median": 0.28512649999989925
+        },
+        "snapshot_voxel": {
+          "median": 0.2876201178878546,
+          "p95": 0.4773015854880213,
+          "process_cpu_median": 0.2878564999999611
+        }
+      }
+    },
+    "dense_102400": {
+      "points": 102400,
+      "milliseconds": {
+        "before_all": {
+          "median": 0.6413324736058712,
+          "p95": 0.8642434608191238,
+          "process_cpu_median": 0.6418630000000203
+        },
+        "snapshot_all": {
+          "median": 0.6396428216248751,
+          "p95": 0.9394492721185086,
+          "process_cpu_median": 0.6399179999998506
+        },
+        "snapshot_voxel": {
+          "median": 0.4679488483816385,
+          "p95": 0.7072210777550934,
+          "process_cpu_median": 0.4682269999998212
+        }
+      }
+    }
+  },
+  "additional_persistent_buffer_bytes": 2099528,
+  "acceptance": {
+    "snapshot_repeatability": true,
+    "all_ray_ordering": true
+  },
+  "limits": "No Jetson benchmark; no physical-world/GT error claim; finite test coverage, not universal bitwise determinism. Voxel remains experimental."
+}

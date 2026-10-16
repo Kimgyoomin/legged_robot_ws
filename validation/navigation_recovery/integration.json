@@ -1,0 +1,10 @@
+{
+  "static_mount_required": true,
+  "inverted_mount_transform": true,
+  "range_filter_preserved": true,
+  "stale_sensor_stop": true,
+  "behind_target_rotation": true,
+  "alignment_resume": true,
+  "empty_path_stop": true,
+  "domain": 175
+}

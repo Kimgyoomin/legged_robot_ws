@@ -1,0 +1,23 @@
+{
+  "received": [
+    "raw",
+    "map",
+    "cloud"
+  ],
+  "ros_time": 176.002,
+  "pose": [
+    11.647650841871592,
+    -7.144750278290429,
+    0.6391602138996543
+  ],
+  "raw": [
+    0.5098779377778787,
+    0.0,
+    0.3802441244442426
+  ],
+  "guard_result": "pass",
+  "near_cells_base": [],
+  "nearest_blocking_cell_distance": 0.9253684813356978,
+  "map_stamp": 175.402,
+  "error": "TypeError(\"Cannot cast array data from dtype([('x', '<f4'), ('y', '<f4'), ('z', '<f4')]) to dtype('float64').\")"
+}

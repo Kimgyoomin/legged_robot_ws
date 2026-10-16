@@ -1,0 +1,163 @@
+{
+  "scope": "Compare all/voxel cleanup on identical inputs; no ROS publishers or actuation.\n\nIncludes host-to-device copy and completed fusion, excludes pose wait, map moves,\nDDS, publication and RViz. A supplied XYZ capture uses a synthetic fixed pose for\ncost comparison only, not a reconstruction/accuracy claim about that capture.\n",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "platform": "Linux-6.8.0-64-generic-x86_64-with-glibc2.35",
+  "cupy": "13.6.0",
+  "map_m": 8,
+  "resolution_m": 0.05,
+  "warmup": 15,
+  "samples": 200,
+  "capture": {
+    "path": "/home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/live_analysis/gpu_live_after_fix_20261014/capture/input.npz",
+    "sha256": "b056ca083be4f9806bd44ff91d872a23cb22660304f89989b0169f1e86e8801e",
+    "note": "Recorded XYZ distribution, synthetic R=I / t=(0,0,0.8); timing only."
+  },
+  "cases": {
+    "sparse": {
+      "points": 6400,
+      "timing_ms": {
+        "all": {
+          "median": 0.20781811326742172,
+          "p95": 0.3963445080444216,
+          "process_cpu_median": 0.20800100000006871
+        },
+        "voxel": {
+          "median": 0.21201837807893753,
+          "p95": 0.3672810737043618,
+          "process_cpu_median": 0.2121760000002304
+        },
+        "original": {
+          "median": 0.20857318304479122,
+          "p95": 0.36895705852657545,
+          "process_cpu_median": 0.20868599999990245
+        }
+      },
+      "ray_selection": {
+        "input_points": 6400,
+        "selected_rays": 6400,
+        "fallback_rays": 0,
+        "allocated_bytes": 229376
+      },
+      "height_comparison": {
+        "valid_mask_equal": true,
+        "max_difference_m": 0.0,
+        "height_observations_all": 6400.0,
+        "height_observations_voxel": 6400.0
+      },
+      "all_vs_original_close": true
+    },
+    "dense": {
+      "points": 25600,
+      "timing_ms": {
+        "all": {
+          "median": 0.2821229863911867,
+          "p95": 0.476541626267135,
+          "process_cpu_median": 0.28228199999991155
+        },
+        "voxel": {
+          "median": 0.28778286650776863,
+          "p95": 0.4740248201414943,
+          "process_cpu_median": 0.2880609999997841
+        },
+        "original": {
+          "median": 0.2826924901455641,
+          "p95": 0.4696680232882499,
+          "process_cpu_median": 0.28292200000001877
+        }
+      },
+      "ray_selection": {
+        "input_points": 25600,
+        "selected_rays": 6400,
+        "fallback_rays": 0,
+        "allocated_bytes": 917504
+      },
+      "height_comparison": {
+        "valid_mask_equal": true,
+        "max_difference_m": 4.172325134277344e-07,
+        "height_observations_all": 25600.0,
+        "height_observations_voxel": 25600.0
+      },
+      "all_vs_original_close": true
+    },
+    "duplicates": {
+      "points": 102400,
+      "timing_ms": {
+        "all": {
+          "median": 0.5884654819965363,
+          "p95": 0.848831096664071,
+          "process_cpu_median": 0.5887229999999022
+        },
+        "voxel": {
+          "median": 0.40725176222622395,
+          "p95": 0.6511009298264977,
+          "process_cpu_median": 0.4074269999998492
+        },
+        "original": {
+          "median": 0.5902398843318224,
+          "p95": 0.8138349978253239,
+          "process_cpu_median": 0.590483000000086
+        }
+      },
+      "ray_selection": {
+        "input_points": 102400,
+        "selected_rays": 6400,
+        "fallback_rays": 0,
+        "allocated_bytes": 3670016
+      },
+      "height_comparison": {
+        "valid_mask_equal": true,
+        "max_difference_m": 2.5331974029541016e-07,
+        "height_observations_all": 102400.0,
+        "height_observations_voxel": 102400.0
+      },
+      "all_vs_original_close": true
+    },
+    "recorded_roi": {
+      "points": 32307,
+      "timing_ms": {
+        "all": {
+          "median": 0.26675290428102016,
+          "p95": 0.45317139010876417,
+          "process_cpu_median": 0.2669764999998492
+        },
+        "voxel": {
+          "median": 0.26625278405845165,
+          "p95": 0.43855519033968443,
+          "process_cpu_median": 0.2664114999999523
+        },
+        "original": {
+          "median": 0.2668031957000494,
+          "p95": 0.4391893977299332,
+          "process_cpu_median": 0.2670064999998889
+        }
+      },
+      "ray_selection": {
+        "input_points": 32307,
+        "selected_rays": 6538,
+        "fallback_rays": 0,
+        "allocated_bytes": 917504
+      },
+      "height_comparison": {
+        "valid_mask_equal": true,
+        "max_difference_m": 0.07302084565162659,
+        "height_observations_all": 27112.0,
+        "height_observations_voxel": 27259.0
+      },
+      "all_vs_original_close": false
+    }
+  },
+  "cleanup_fixture": {
+    "all": {
+      "clear_after_scans": 1,
+      "occluded_cell_retained": true,
+      "unknown_cell_still_unknown": true,
+      "fixture": "Known horizontal normals; old 0.7m ghost, 40 identical rays per scan. Isolated cleanup behavior."
+    },
+    "voxel": {
+      "clear_after_scans": 9,
+      "occluded_cell_retained": true,
+      "unknown_cell_still_unknown": true,
+      "fixture": "Known horizontal normals; old 0.7m ghost, 40 identical rays per scan. Isolated cleanup behavior."
+    }
+  }
+}

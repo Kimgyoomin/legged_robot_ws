@@ -1,0 +1,19 @@
+{
+  "original": {
+    "same_version_repeat_max_height_difference_m": [
+      0.0009369850158691406,
+      0.001201629638671875
+    ]
+  },
+  "all": {
+    "same_version_repeat_max_height_difference_m": [
+      0.08028841018676758,
+      0.06729006767272949
+    ]
+  },
+  "between_versions_max_height_difference_m": 0.006562232971191406,
+  "all_cuda_sources_unchanged": {
+    "add_points_kernel": true,
+    "error_counting_kernel": true
+  }
+}

@@ -1,0 +1,92 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+- Class: nav2_rviz_plugins/Navigation 2
+  Name: Navigation 2
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: map
+  Displays:
+  - Class: rviz_default_plugins/Map
+    Name: Occupancy
+    Enabled: true
+    Topic:
+      Value: /map
+      Durability Policy: Transient Local
+    Alpha: 0.8
+    Draw Behind: true
+  - Class: rviz_default_plugins/PointCloud2
+    Name: Frozen height
+    Enabled: true
+    Topic:
+      Value: /legged/height
+    Size (m): 0.025
+    Color Transformer: AxisColor
+    Style: Squares
+    Alpha: 0.55
+  - Class: rviz_default_plugins/Path
+    Name: Nav2 route
+    Enabled: true
+    Topic:
+      Value: /plan
+  - Class: rviz_default_plugins/Path
+    Name: Raw planned route
+    Enabled: false
+    Color: 255; 170; 0
+    Topic:
+      Value: /rubi/planner_comparison/grid/path
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Path
+    Name: Pure Pursuit route
+    Enabled: true
+    Color: 50; 255; 100
+    Topic:
+      Value: /rubi/planner_comparison/grid/tracking_path
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Map
+    Name: Global costmap
+    Enabled: false
+    Topic:
+      Value: /global_costmap/costmap
+      Durability Policy: Transient Local
+    Color Scheme: costmap
+    Alpha: 0.5
+  - Class: rviz_default_plugins/Map
+    Name: Local costmap
+    Enabled: false
+    Topic:
+      Value: /local_costmap/costmap
+      Durability Policy: Transient Local
+    Color Scheme: costmap
+    Alpha: 0.5
+  - Class: rviz_default_plugins/TF
+    Name: Robot frames
+    Enabled: true
+    Show Names: false
+    Show Axes: true
+    Show Arrows: false
+  - Class: rviz_default_plugins/Polygon
+    Name: Stop zone
+    Enabled: true
+    Topic:
+      Value: /legged/stop_zone
+    Color: 255; 80; 80
+    Alpha: 0.8
+  - Class: rviz_default_plugins/PointCloud2
+    Name: Collision input (body frame)
+    Enabled: false
+    Topic:
+      Value: /legged/collision_points
+      Reliability Policy: Best Effort
+    Size (m): 0.025
+    Style: Points
+    Color Transformer: FlatColor
+    Color: 255; 100; 80
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/SetInitialPose
+  - Class: nav2_rviz_plugins/GoalTool
+  - Class: rviz_default_plugins/SetGoal
+    Topic: /goal_pose

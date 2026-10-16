@@ -1,0 +1,14 @@
+{
+  "source_log": "/home/kim/.ros/log/pure_pursuit_1293134_1792068176154.log",
+  "sample_count": 124,
+  "wall_duration_s": 143.09952521324158,
+  "zero_linear_fraction": 0.14516129032258066,
+  "moving_command_vx_median": 0.2765,
+  "moving_command_vx_p10": 0.145,
+  "moving_command_vx_p90": 0.395,
+  "cte_median": 0.051,
+  "cte_p95": 0.137,
+  "near_straight_vx_median": 0.421,
+  "higher_curvature_vx_median": 0.176,
+  "note": "Sparse controller log samples; commanded speed, not measured velocity."
+}

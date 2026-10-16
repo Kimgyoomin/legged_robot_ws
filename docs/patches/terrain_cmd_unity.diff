@@ -1,0 +1,93 @@
+--- a/rubi_gazebo_plugins/include/rubi_gazebo_plugins/velocity_input_arbitration.hpp
++++ b/rubi_gazebo_plugins/include/rubi_gazebo_plugins/velocity_input_arbitration.hpp
+@@ -29,19 +29,16 @@
+ 
+ inline VelocityCommand terrain_navigation_command(
+     const VelocityCommand& command) noexcept {
+-  constexpr double kLinearXLimit = 0.5;
++  // /cmd_vel is already a velocity command in m/s and rad/s, not joystick
++  // axes. Preserve it at unity gain; only enforce the existing input limits.
++  // Observation normalization belongs to GazeboTerrainPolicyAdapter.
++  constexpr double kLinearXLimit = 0.7;
+   constexpr double kLinearYLimit = 0.5;
+   constexpr double kAngularZLimit = 1.0;
+-  constexpr double kTerrainLinearXScale = 1.0;
+-  constexpr double kTerrainLinearYScale = 0.75;
+-  constexpr double kTerrainAngularZScale = 1.5;
+   return {
+-      std::clamp(command.linear_x / kLinearXLimit, -1.0, 1.0) *
+-          kTerrainLinearXScale,
+-      std::clamp(command.linear_y / kLinearYLimit, -1.0, 1.0) *
+-          kTerrainLinearYScale,
+-      std::clamp(command.angular_z / kAngularZLimit, -1.0, 1.0) *
+-          kTerrainAngularZScale,
++      std::clamp(command.linear_x, -kLinearXLimit, kLinearXLimit),
++      std::clamp(command.linear_y, -kLinearYLimit, kLinearYLimit),
++      std::clamp(command.angular_z, -kAngularZLimit, kAngularZLimit),
+   };
+ }
+ 
+--- a/rubi_gazebo_plugins/test/velocity_input_arbitration_test.cpp
++++ b/rubi_gazebo_plugins/test/velocity_input_arbitration_test.cpp
+@@ -108,18 +108,30 @@
+   EXPECT_DOUBLE_EQ(decision.command.angular_z, 0.0);
+ }
+ 
+-TEST(VelocityInputArbitrator, TerrainNavigationCommandMatchesTrainingAdapter) {
+-  const auto middle =
+-      rgp::terrain_navigation_command({0.25, -0.25, 0.5});
+-  EXPECT_DOUBLE_EQ(middle.linear_x, 0.5);
+-  EXPECT_DOUBLE_EQ(middle.linear_y, -0.375);
+-  EXPECT_DOUBLE_EQ(middle.angular_z, 0.75);
++TEST(VelocityInputArbitrator, TerrainNavigationPreservesVelocityUnits) {
++  for (const auto& input : {
++           rgp::VelocityCommand{0.0, 0.0, 0.0},
++           rgp::VelocityCommand{0.25, -0.25, 0.5},
++           rgp::VelocityCommand{-0.4, 0.3, -0.8},
++           rgp::VelocityCommand{0.7, -0.5, 1.0},
++           rgp::VelocityCommand{-0.7, 0.5, -1.0}}) {
++    const auto output = rgp::terrain_navigation_command(input);
++    EXPECT_DOUBLE_EQ(output.linear_x, input.linear_x);
++    EXPECT_DOUBLE_EQ(output.linear_y, input.linear_y);
++    EXPECT_DOUBLE_EQ(output.angular_z, input.angular_z);
++  }
++}
+ 
++TEST(VelocityInputArbitrator, TerrainNavigationRetainsInputLimitsWithoutAmplifying) {
+   const auto saturated =
+       rgp::terrain_navigation_command({2.0, -2.0, 3.0});
+-  EXPECT_DOUBLE_EQ(saturated.linear_x, 1.0);
+-  EXPECT_DOUBLE_EQ(saturated.linear_y, -0.75);
+-  EXPECT_DOUBLE_EQ(saturated.angular_z, 1.5);
++  EXPECT_DOUBLE_EQ(saturated.linear_x, 0.7);
++  EXPECT_DOUBLE_EQ(saturated.linear_y, -0.5);
++  EXPECT_DOUBLE_EQ(saturated.angular_z, 1.0);
++  const auto reverse = rgp::terrain_navigation_command({-2.0, 2.0, -3.0});
++  EXPECT_DOUBLE_EQ(reverse.linear_x, -0.7);
++  EXPECT_DOUBLE_EQ(reverse.linear_y, 0.5);
++  EXPECT_DOUBLE_EQ(reverse.angular_z, -1.0);
+ }
+ 
+ TEST(VelocityInputArbitrator, TerrainJoystickKeepsLegacyAxesAtBoundary) {
+--- a/rubi_gazebo_sim/README.md
++++ b/rubi_gazebo_sim/README.md
+@@ -22,6 +22,19 @@
+ MID360/IMU mounting, corrected Livox topics, joystick buttons, command-source
+ toggle, namespace, and safe-start guard are shared with the legacy entry point.
+ 
++Terrain navigation consumes `/cmd_vel` at **unity gain** for linear X/Y and
++angular Z. Commands are already in m/s and rad/s: `(0.4, 0.2, 0.3)` is passed to
++the terrain policy as `(0.4, 0.2, 0.3)`. The input limits are ±0.7 m/s for X,
++±0.5 m/s for Y and ±1.0 rad/s for yaw. Both Nav2 and custom Pure Pursuit use this path. The
++previous adapter amplified X by 2 and Y/yaw by 1.5 within those input limits.
++Joystick axis conversion and the trained actor's observation normalization
++are separate and unchanged. Policy response still needs closed-loop validation;
++unity command gain does not guarantee exact physical velocity tracking.
++
++After rebuilding `rubi_gazebo_plugins`, restart Gazebo to load the new library.
++When simulation time resets, restart localization and navigation as well, then
++relocalize and send a new goal. Saved map files are not affected.
++
+ The physical roll-180 sensor output is available on `/livox/lidar_raw` and
+ `/livox/imu_raw` in `livox_frame_raw`. `mid360_frame_adapter_node` publishes the
+ canonical FLU data on `/livox/lidar`, `/livox/lidar_PointCloud2`, and

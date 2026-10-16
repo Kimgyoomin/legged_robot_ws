@@ -1,0 +1,19 @@
+{
+  "fastlio": {
+    "startup": true,
+    "nodes": [
+      "global_localization",
+      "laser_mapping",
+      "transform_fusion"
+    ],
+    "accuracy_tested": false
+  },
+  "genz": {
+    "startup": true,
+    "nodes": [
+      "genz_localization",
+      "genz_odometry"
+    ],
+    "accuracy_tested": false
+  }
+}

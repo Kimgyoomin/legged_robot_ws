@@ -1,0 +1,10 @@
+{
+  "/legged/tracking_state": "idle",
+  "/legged/collision_input_state": "ready",
+  "/legged/motion_status": "{\"gate\": \"stopped\", \"reason\": \"safe_command_timeout\", \"tracking\": \"idle\", \"collision_input\": \"ready\", \"vx\": 0.0, \"wz\": 0.0}",
+  "cloud_samples": 69,
+  "frame": "base_link",
+  "points": 34056,
+  "stop_polygon_points": 0,
+  "hit_xyz_bounds": null
+}

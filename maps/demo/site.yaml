@@ -1,0 +1,21 @@
+format: 1
+id: synthetic-demo-v1
+frame: map
+height_resolution: 0.05
+alignment:
+  verified: true
+  method: All synthetic assets generated from the same coordinates. Not for localization
+    evaluation.
+assets:
+  occupancy:
+    path: occupancy.yaml
+    sha256: 797b73e56b5c112ab0a6bc01cfe4e77af0b27eea7b7531d4e3c7dcedf6268442
+  image:
+    path: floor.pgm
+    sha256: 8ec55f3b04909a1985542c612314f853f08b6356e4c862aeab0a31e5bdd0eac1
+  pcd:
+    path: localization.pcd
+    sha256: 1fa64efb16c6c471e05e6f99d315644fa29750c0f0d8bcaa9bd44946f59b32da
+  height:
+    path: height.rghm
+    sha256: cead4ce6e961d092f48510d6e9e39e9b3b209a79205e6bb500ad6bcf3f5ce894

@@ -1,0 +1,21 @@
+{
+  "identity_regrid": true,
+  "site_load": true,
+  "launch_arguments": {
+    "sensor": {
+      "exit_code": 0
+    },
+    "localize": {
+      "exit_code": 0
+    },
+    "mapping": {
+      "exit_code": 0
+    },
+    "mapping_pcd": {
+      "exit_code": 0
+    },
+    "navigate": {
+      "exit_code": 0
+    }
+  }
+}

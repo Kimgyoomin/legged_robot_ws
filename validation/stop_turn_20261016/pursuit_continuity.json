@@ -1,0 +1,8 @@
+{
+  "domain": 178,
+  "soft_replan_min_velocity_mps": 0.7,
+  "moderate_heading_keeps_translation": true,
+  "rear_target_still_stops_and_turns": true,
+  "alignment_exits_at_26_degrees": true,
+  "hard_replan_resets_speed": true
+}

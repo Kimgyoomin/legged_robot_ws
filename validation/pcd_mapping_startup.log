@@ -1,0 +1,11 @@
+[INFO] [launch]: All log files can be found below /home/kim/.ros/log/2026-10-14-23-26-40-773504-Kim9975-2854471
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [fastlio_mapping-1]: process started with pid [2854472]
+[fastlio_mapping-1] [INFO] [1791988000.840319012] [laser_mapping]: p_pre->lidar_type 4
+[fastlio_mapping-1] Multi thread started 
+[fastlio_mapping-1] ~~~~/home/kim/legged_robot_ws/src/FAST_LIO_ROS2/ doesn't exist
+[fastlio_mapping-1] [INFO] [1791988000.842277609] [laser_mapping]: Node init finished.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [fastlio_mapping-1]: sending signal 'SIGINT' to process[fastlio_mapping-1]
+[fastlio_mapping-1] catch sig %d2
+[ERROR] [fastlio_mapping-1]: process has died [pid 2854472, exit code -2, cmd '/home/kim/legged_robot_ws/install/fast_lio/lib/fast_lio/fastlio_mapping --ros-args --params-file /home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/fastlio.yaml --params-file /tmp/launch_params_jv3q3qx0'].

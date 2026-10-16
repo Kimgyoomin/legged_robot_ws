@@ -1,0 +1,413 @@
+[INFO] [1792128383.163957301] [simple_pure_pursuit_controller]: Simple Pure Pursuit ready: path=/rubi/planner_comparison/grid/tracking_path cmd=/legged/cmd_raw frames=map<-base_link frequency=10.0 Hz
+[INFO] [1792128383.264049157] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128401.110383451] [simple_pure_pursuit_controller]: Accepted replacement Path: size=604; progress reset
+[INFO] [1792128401.164125446] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128401.164204346] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=0 lookahead_idx=9 lookahead=(1.125,-0.625) cte=0.038 curvature=-3.817 cmd=(0.000,-0.054) goal_dist=10.553
+[INFO] [1792128402.364122227] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=0 lookahead_idx=9 lookahead=(1.125,-0.625) cte=0.019 curvature=-4.194 cmd=(0.000,-0.500) goal_dist=10.575
+[INFO] [1792128403.464111003] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=0 lookahead_idx=9 lookahead=(1.125,-0.625) cte=0.096 curvature=-3.988 cmd=(0.000,-0.500) goal_dist=10.685
+[INFO] [1792128404.664107186] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=0 lookahead_idx=9 lookahead=(1.125,-0.625) cte=0.042 curvature=-3.206 cmd=(0.000,-0.500) goal_dist=10.618
+[INFO] [1792128405.864155130] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=0 lookahead_idx=9 lookahead=(1.125,-0.625) cte=0.061 curvature=-1.412 cmd=(0.000,-0.336) goal_dist=10.648
+[INFO] [1792128406.064096182] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128406.964111318] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=1 lookahead_idx=10 lookahead=(1.175,-0.625) cte=0.060 curvature=-0.065 cmd=(0.500,-0.044) goal_dist=10.623
+[INFO] [1792128408.164126783] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=9 lookahead_idx=18 lookahead=(1.572,-0.609) cte=0.009 curvature=0.948 cmd=(0.475,0.450) goal_dist=10.362
+[INFO] [1792128409.364104758] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=19 lookahead_idx=26 lookahead=(1.946,-0.254) cte=0.029 curvature=1.664 cmd=(0.382,0.636) goal_dist=10.156
+[INFO] [1792128410.464123478] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=26 lookahead_idx=33 lookahead=(2.293,0.093) cte=0.078 curvature=0.050 cmd=(0.683,0.034) goal_dist=10.266
+[INFO] [1792128411.664150955] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=35 lookahead_idx=42 lookahead=(2.743,0.543) cte=0.150 curvature=-1.735 cmd=(0.375,-0.650) goal_dist=10.723
+[INFO] [1792128412.864109812] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=40 lookahead_idx=47 lookahead=(2.993,0.793) cte=0.092 curvature=1.214 cmd=(0.493,0.218) goal_dist=10.828
+[INFO] [1792128414.064138030] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=45 lookahead_idx=52 lookahead=(3.243,1.043) cte=0.146 curvature=2.040 cmd=(0.347,0.707) goal_dist=10.772
+[INFO] [1792128415.164130472] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=52 lookahead_idx=59 lookahead=(3.619,1.359) cte=0.027 curvature=-1.967 cmd=(0.430,-0.221) goal_dist=11.119
+[INFO] [1792128415.464103462] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128416.164138078] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128416.364112982] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=57 lookahead_idx=65 lookahead=(3.918,1.520) cte=0.232 curvature=-3.189 cmd=(0.000,-0.300) goal_dist=11.514
+[INFO] [1792128417.564112341] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=57 lookahead_idx=65 lookahead=(3.918,1.520) cte=0.238 curvature=-2.796 cmd=(0.000,-0.500) goal_dist=11.533
+[INFO] [1792128418.664116975] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128418.664162925] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=57 lookahead_idx=65 lookahead=(3.918,1.520) cte=0.233 curvature=-0.808 cmd=(0.050,-0.360) goal_dist=11.515
+[INFO] [1792128419.864120116] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=57 lookahead_idx=65 lookahead=(3.918,1.520) cte=0.227 curvature=0.447 cmd=(0.572,0.256) goal_dist=11.512
+[INFO] [1792128421.064124448] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=65 lookahead_idx=74 lookahead=(4.359,1.619) cte=0.029 curvature=0.373 cmd=(0.590,0.220) goal_dist=11.400
+[INFO] [1792128422.264121291] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=77 lookahead_idx=86 lookahead=(4.975,1.625) cte=0.123 curvature=-2.250 cmd=(0.329,-0.741) goal_dist=11.539
+[INFO] [1792128423.364151347] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=86 lookahead_idx=95 lookahead=(5.404,1.712) cte=0.182 curvature=1.010 cmd=(0.532,-0.136) goal_dist=11.546
+[INFO] [1792128423.864153062] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128424.564136451] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128424.564194761] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=90 lookahead_idx=99 lookahead=(5.576,1.813) cte=0.048 curvature=3.879 cmd=(0.000,0.100) goal_dist=11.389
+[INFO] [1792128425.764126225] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=92 lookahead_idx=100 lookahead=(5.667,1.859) cte=0.072 curvature=2.664 cmd=(0.000,0.500) goal_dist=11.410
+[INFO] [1792128426.564113281] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128426.864142903] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=92 lookahead_idx=100 lookahead=(5.667,1.859) cte=0.135 curvature=0.201 cmd=(0.200,0.128) goal_dist=11.481
+[INFO] [1792128428.064152208] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=95 lookahead_idx=103 lookahead=(5.808,1.960) cte=0.133 curvature=0.214 cmd=(0.632,0.073) goal_dist=11.558
+[INFO] [1792128429.264129244] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=103 lookahead_idx=111 lookahead=(6.213,2.202) cte=0.094 curvature=0.071 cmd=(0.664,-0.073) goal_dist=11.707
+[INFO] [1792128430.364141184] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=116 lookahead_idx=124 lookahead=(6.873,2.528) cte=0.010 curvature=0.479 cmd=(0.565,0.270) goal_dist=11.993
+[INFO] [1792128431.564143471] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=128 lookahead_idx=136 lookahead=(7.434,2.944) cte=0.026 curvature=0.071 cmd=(0.666,0.069) goal_dist=12.408
+[INFO] [1792128432.764152739] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=140 lookahead_idx=147 lookahead=(8.017,3.417) cte=0.136 curvature=-0.575 cmd=(0.500,-0.400) goal_dist=12.966
+[INFO] [1792128433.964135287] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=149 lookahead_idx=156 lookahead=(8.443,3.843) cte=0.022 curvature=2.069 cmd=(0.344,0.712) goal_dist=13.321
+[INFO] [1792128435.064140549] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=156 lookahead_idx=163 lookahead=(8.793,4.193) cte=0.091 curvature=0.394 cmd=(0.559,0.282) goal_dist=13.685
+[INFO] [1792128436.264141629] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=164 lookahead_idx=171 lookahead=(9.193,4.593) cte=0.192 curvature=-2.469 cmd=(0.313,-0.774) goal_dist=14.304
+[INFO] [1792128436.364132516] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128437.064140819] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128437.464148809] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=168 lookahead_idx=175 lookahead=(9.393,4.793) cte=0.298 curvature=-1.127 cmd=(0.000,-0.332) goal_dist=14.570
+[INFO] [1792128438.264142930] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128438.664142090] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=168 lookahead_idx=175 lookahead=(9.393,4.793) cte=0.279 curvature=-0.243 cmd=(0.250,-0.152) goal_dist=14.595
+[INFO] [1792128439.764160274] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=170 lookahead_idx=177 lookahead=(9.493,4.893) cte=0.194 curvature=0.728 cmd=(0.525,0.349) goal_dist=14.681
+[INFO] [1792128440.964137756] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=178 lookahead_idx=185 lookahead=(9.893,5.293) cte=0.046 curvature=1.417 cmd=(0.410,0.581) goal_dist=15.034
+[INFO] [1792128442.164138779] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=184 lookahead_idx=191 lookahead=(10.193,5.593) cte=0.096 curvature=-1.897 cmd=(0.359,-0.619) goal_dist=15.456
+[INFO] [1792128443.264160195] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=191 lookahead_idx=199 lookahead=(10.614,5.820) cte=0.173 curvature=-1.455 cmd=(0.405,-0.589) goal_dist=15.936
+[INFO] [1792128444.464593001] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=198 lookahead_idx=207 lookahead=(11.004,5.898) cte=0.085 curvature=0.402 cmd=(0.583,-0.142) goal_dist=16.186
+[INFO] [1792128445.664150213] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=208 lookahead_idx=217 lookahead=(11.525,5.925) cte=0.006 curvature=0.386 cmd=(0.587,0.227) goal_dist=16.348
+[INFO] [1792128446.764156191] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=223 lookahead_idx=232 lookahead=(12.245,5.728) cte=0.189 curvature=-2.303 cmd=(0.325,-0.749) goal_dist=16.719
+[INFO] [1792128446.964155767] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128447.664144562] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128447.964153216] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=228 lookahead_idx=236 lookahead=(12.462,5.586) cte=0.210 curvature=-1.564 cmd=(0.000,-0.406) goal_dist=16.779
+[INFO] [1792128449.164134893] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128449.164178903] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=230 lookahead_idx=238 lookahead=(12.541,5.509) cte=0.255 curvature=-0.878 cmd=(0.050,-0.356) goal_dist=16.813
+[INFO] [1792128450.264159312] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=232 lookahead_idx=239 lookahead=(12.620,5.430) cte=0.178 curvature=0.395 cmd=(0.585,0.149) goal_dist=16.730
+[INFO] [1792128451.464175199] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=240 lookahead_idx=249 lookahead=(12.842,4.974) cte=0.018 curvature=-0.817 cmd=(0.571,0.042) goal_dist=16.370
+[INFO] [1792128452.264190035] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128452.664148207] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=250 lookahead_idx=259 lookahead=(12.925,4.433) cte=0.191 curvature=-2.869 cmd=(0.031,-0.158) goal_dist=16.135
+[INFO] [1792128452.864161124] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128453.764194028] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=254 lookahead_idx=263 lookahead=(12.925,4.226) cte=0.298 curvature=-1.592 cmd=(0.000,-0.500) goal_dist=16.101
+[INFO] [1792128454.364155717] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128454.964154927] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=254 lookahead_idx=263 lookahead=(12.925,4.226) cte=0.298 curvature=-0.020 cmd=(0.350,-0.014) goal_dist=16.126
+[INFO] [1792128456.164166977] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=257 lookahead_idx=266 lookahead=(12.925,4.075) cte=0.083 curvature=0.847 cmd=(0.513,0.375) goal_dist=15.778
+[INFO] [1792128457.264169989] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=266 lookahead_idx=274 lookahead=(13.130,3.686) cte=0.020 curvature=1.964 cmd=(0.353,0.694) goal_dist=15.329
+[INFO] [1792128458.464160470] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=274 lookahead_idx=282 lookahead=(13.375,3.296) cte=0.008 curvature=-0.143 cmd=(0.613,0.174) goal_dist=15.049
+[INFO] [1792128459.664125021] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=283 lookahead_idx=291 lookahead=(13.657,2.851) cte=0.101 curvature=-1.206 cmd=(0.437,-0.527) goal_dist=14.881
+[INFO] [1792128460.764174645] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=292 lookahead_idx=300 lookahead=(13.924,2.381) cte=0.010 curvature=1.184 cmd=(0.440,0.463) goal_dist=14.547
+[INFO] [1792128461.964169468] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=301 lookahead_idx=309 lookahead=(14.223,1.950) cte=0.053 curvature=-0.332 cmd=(0.600,0.091) goal_dist=14.361
+[INFO] [1792128463.164159581] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=309 lookahead_idx=317 lookahead=(14.466,1.540) cte=0.148 curvature=-1.431 cmd=(0.408,-0.584) goal_dist=14.260
+[INFO] [1792128464.264184567] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=317 lookahead_idx=325 lookahead=(14.706,1.139) cte=0.010 curvature=1.688 cmd=(0.380,0.487) goal_dist=13.952
+[INFO] [1792128465.464197531] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=325 lookahead_idx=333 lookahead=(14.983,0.769) cte=0.032 curvature=0.650 cmd=(0.504,0.392) goal_dist=13.735
+[INFO] [1792128466.664207556] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=334 lookahead_idx=341 lookahead=(15.320,0.330) cte=0.124 curvature=-1.655 cmd=(0.383,-0.634) goal_dist=13.746
+[INFO] [1792128467.764170843] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=341 lookahead_idx=348 lookahead=(15.643,0.007) cte=0.089 curvature=1.539 cmd=(0.465,0.130) goal_dist=13.644
+[INFO] [1792128468.264164047] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128468.964177379] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128468.964220009] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=348 lookahead_idx=355 lookahead=(15.993,-0.343) cte=0.227 curvature=2.638 cmd=(0.000,0.100) goal_dist=13.317
+[INFO] [1792128470.164178016] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.268 curvature=1.857 cmd=(0.000,0.500) goal_dist=13.284
+[INFO] [1792128471.264188584] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.294 curvature=1.580 cmd=(0.000,0.489) goal_dist=13.256
+[INFO] [1792128472.464192302] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.247 curvature=1.471 cmd=(0.000,0.402) goal_dist=13.295
+[INFO] [1792128473.664188480] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.246 curvature=1.197 cmd=(0.000,0.340) goal_dist=13.301
+[INFO] [1792128474.864174589] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.300 curvature=1.355 cmd=(0.000,0.413) goal_dist=13.248
+[INFO] [1792128475.964231520] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.278 curvature=1.548 cmd=(0.000,0.420) goal_dist=13.263
+[INFO] [1792128477.164180940] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.263 curvature=1.512 cmd=(0.000,0.382) goal_dist=13.280
+[INFO] [1792128478.364183130] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=349 lookahead_idx=356 lookahead=(16.043,-0.393) cte=0.324 curvature=1.657 cmd=(0.000,0.463) goal_dist=13.218
+[INFO] [1792128479.464209173] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=350 lookahead_idx=357 lookahead=(16.089,-0.446) cte=0.353 curvature=1.472 cmd=(0.000,0.435) goal_dist=13.188
+[INFO] [1792128480.664205504] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128480.664257285] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=350 lookahead_idx=357 lookahead=(16.089,-0.446) cte=0.307 curvature=0.859 cmd=(0.050,0.366) goal_dist=13.236
+[INFO] [1792128481.864185096] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=350 lookahead_idx=357 lookahead=(16.089,-0.446) cte=0.325 curvature=1.067 cmd=(0.457,0.487) goal_dist=13.217
+[INFO] [1792128482.964206850] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=350 lookahead_idx=357 lookahead=(16.089,-0.446) cte=0.324 curvature=1.288 cmd=(0.426,0.549) goal_dist=13.219
+[INFO] [1792128484.164192603] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=351 lookahead_idx=358 lookahead=(16.126,-0.507) cte=0.337 curvature=0.801 cmd=(0.500,0.400) goal_dist=13.205
+[INFO] [1792128485.364206207] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=351 lookahead_idx=358 lookahead=(16.126,-0.507) cte=0.374 curvature=0.858 cmd=(0.490,0.420) goal_dist=13.168
+[INFO] [1792128486.464215893] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=351 lookahead_idx=358 lookahead=(16.126,-0.507) cte=0.352 curvature=0.692 cmd=(0.520,0.360) goal_dist=13.189
+[INFO] [1792128487.664198077] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=351 lookahead_idx=358 lookahead=(16.126,-0.507) cte=0.328 curvature=0.345 cmd=(0.597,0.206) goal_dist=13.214
+[INFO] [1792128488.764222403] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=351 lookahead_idx=358 lookahead=(16.126,-0.507) cte=0.335 curvature=0.487 cmd=(0.563,0.274) goal_dist=13.208
+[INFO] [1792128489.964214710] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=352 lookahead_idx=359 lookahead=(16.168,-0.563) cte=0.303 curvature=-0.028 cmd=(0.690,-0.020) goal_dist=13.239
+[INFO] [1792128491.164190966] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=352 lookahead_idx=359 lookahead=(16.168,-0.563) cte=0.316 curvature=0.043 cmd=(0.685,0.027) goal_dist=13.226
+[INFO] [1792128492.364248624] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=353 lookahead_idx=360 lookahead=(16.208,-0.622) cte=0.275 curvature=-0.419 cmd=(0.603,-0.193) goal_dist=13.268
+[INFO] [1792128493.464245002] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=354 lookahead_idx=362 lookahead=(16.241,-0.684) cte=0.235 curvature=-0.416 cmd=(0.579,-0.241) goal_dist=13.310
+[INFO] [1792128494.664205330] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=361 lookahead_idx=370 lookahead=(16.375,-1.088) cte=0.028 curvature=-2.226 cmd=(0.331,-0.737) goal_dist=13.474
+[INFO] [1792128495.764225579] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=367 lookahead_idx=376 lookahead=(16.375,-1.425) cte=0.017 curvature=-0.803 cmd=(0.483,-0.434) goal_dist=13.422
+[INFO] [1792128496.964230518] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=375 lookahead_idx=384 lookahead=(16.469,-1.809) cte=0.018 curvature=1.577 cmd=(0.391,0.617) goal_dist=13.146
+[INFO] [1792128498.064193378] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128498.164208868] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=387 lookahead_idx=396 lookahead=(16.259,-2.380) cte=0.081 curvature=-3.346 cmd=(0.261,0.000) goal_dist=12.872
+[INFO] [1792128498.864191158] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128499.364241699] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=391 lookahead_idx=399 lookahead=(16.118,-2.532) cte=0.313 curvature=-3.474 cmd=(0.000,-0.500) goal_dist=12.797
+[INFO] [1792128500.464241910] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=392 lookahead_idx=399 lookahead=(16.079,-2.571) cte=0.293 curvature=-2.997 cmd=(0.000,-0.500) goal_dist=12.763
+[INFO] [1792128501.664217731] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=392 lookahead_idx=399 lookahead=(16.079,-2.571) cte=0.304 curvature=-1.930 cmd=(0.000,-0.500) goal_dist=12.784
+[INFO] [1792128502.464239753] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128502.864202183] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=392 lookahead_idx=399 lookahead=(16.079,-2.571) cte=0.347 curvature=-0.430 cmd=(0.250,-0.248) goal_dist=12.843
+[INFO] [1792128503.964221845] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=392 lookahead_idx=399 lookahead=(16.079,-2.571) cte=0.269 curvature=0.227 cmd=(0.639,0.077) goal_dist=12.690
+[INFO] [1792128505.164218378] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=400 lookahead_idx=407 lookahead=(15.707,-2.943) cte=0.103 curvature=1.911 cmd=(0.358,0.684) goal_dist=12.108
+[INFO] [1792128506.364213132] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=405 lookahead_idx=412 lookahead=(15.457,-3.193) cte=0.081 curvature=0.174 cmd=(0.634,0.133) goal_dist=11.744
+[INFO] [1792128507.464235566] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=414 lookahead_idx=421 lookahead=(15.007,-3.643) cte=0.131 curvature=-1.983 cmd=(0.352,-0.697) goal_dist=11.150
+[INFO] [1792128508.664274011] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=420 lookahead_idx=427 lookahead=(14.707,-3.943) cte=0.139 curvature=0.685 cmd=(0.551,-0.098) goal_dist=10.733
+[INFO] [1792128509.864219846] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=427 lookahead_idx=434 lookahead=(14.337,-4.268) cte=0.109 curvature=2.388 cmd=(0.319,0.762) goal_dist=10.214
+[INFO] [1792128511.064231422] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=433 lookahead_idx=441 lookahead=(14.022,-4.511) cte=0.087 curvature=-0.948 cmd=(0.505,-0.010) goal_dist=9.856
+[INFO] [1792128512.164237498] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=436 lookahead_idx=444 lookahead=(13.840,-4.605) cte=0.052 curvature=-1.415 cmd=(0.410,-0.580) goal_dist=9.612
+[INFO] [1792128513.364263245] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=445 lookahead_idx=452 lookahead=(13.451,-4.949) cte=0.032 curvature=1.371 cmd=(0.415,0.412) goal_dist=9.137
+[INFO] [1792128514.564239642] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=452 lookahead_idx=459 lookahead=(13.107,-5.293) cte=0.102 curvature=0.469 cmd=(0.567,0.266) goal_dist=8.595
+[INFO] [1792128515.764236280] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=460 lookahead_idx=467 lookahead=(12.707,-5.693) cte=0.138 curvature=-2.025 cmd=(0.348,-0.704) goal_dist=8.138
+[INFO] [1792128516.964230038] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=466 lookahead_idx=473 lookahead=(12.407,-5.993) cte=0.182 curvature=0.256 cmd=(0.620,-0.084) goal_dist=7.704
+[INFO] [1792128517.864232425] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128518.064236376] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=473 lookahead_idx=481 lookahead=(12.127,-6.381) cte=0.103 curvature=3.296 cmd=(0.148,0.416) goal_dist=7.157
+[INFO] [1792128518.464224119] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128519.264251226] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=476 lookahead_idx=485 lookahead=(12.075,-6.584) cte=0.182 curvature=2.442 cmd=(0.000,0.500) goal_dist=6.954
+[INFO] [1792128520.464227395] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=477 lookahead_idx=486 lookahead=(12.043,-6.646) cte=0.194 curvature=1.207 cmd=(0.000,0.330) goal_dist=6.845
+[INFO] [1792128520.764225698] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128521.664226966] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=477 lookahead_idx=486 lookahead=(12.043,-6.646) cte=0.183 curvature=0.194 cmd=(0.500,0.151) goal_dist=6.817
+[INFO] [1792128522.464251983] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128522.764237336] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=484 lookahead_idx=491 lookahead=(11.787,-6.913) cte=0.098 curvature=-3.474 cmd=(0.089,-0.149) goal_dist=6.718
+[INFO] [1792128523.064242239] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128523.964248038] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=485 lookahead_idx=492 lookahead=(11.749,-6.951) cte=0.267 curvature=-3.280 cmd=(0.000,-0.500) goal_dist=6.736
+[INFO] [1792128525.164253750] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=486 lookahead_idx=493 lookahead=(11.704,-6.996) cte=0.270 curvature=-1.898 cmd=(0.000,-0.500) goal_dist=6.709
+[INFO] [1792128526.364228742] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128526.364272222] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=486 lookahead_idx=493 lookahead=(11.704,-6.996) cte=0.320 curvature=-0.718 cmd=(0.050,-0.352) goal_dist=6.698
+[INFO] [1792128527.564242095] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=488 lookahead_idx=495 lookahead=(11.607,-7.093) cte=0.254 curvature=0.598 cmd=(0.550,0.218) goal_dist=6.543
+[INFO] [1792128528.664249827] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=493 lookahead_idx=500 lookahead=(11.357,-7.343) cte=0.029 curvature=2.021 cmd=(0.348,0.704) goal_dist=6.079
+[INFO] [1792128529.864266691] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=500 lookahead_idx=508 lookahead=(10.949,-7.575) cte=0.037 curvature=-2.078 cmd=(0.479,0.015) goal_dist=5.677
+[INFO] [1792128530.164221405] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128530.964229534] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128531.064240846] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=504 lookahead_idx=513 lookahead=(10.676,-7.575) cte=0.287 curvature=-3.505 cmd=(0.000,-0.200) goal_dist=5.331
+[INFO] [1792128532.264236631] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=505 lookahead_idx=514 lookahead=(10.625,-7.575) cte=0.284 curvature=-3.160 cmd=(0.000,-0.500) goal_dist=5.353
+[INFO] [1792128533.364269775] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=505 lookahead_idx=514 lookahead=(10.625,-7.575) cte=0.316 curvature=-3.127 cmd=(0.000,-0.500) goal_dist=5.338
+[INFO] [1792128534.564275041] [simple_pure_pursuit_controller]: PP tracking: path_size=604 nearest_idx=505 lookahead_idx=514 lookahead=(10.625,-7.575) cte=0.398 curvature=-2.835 cmd=(0.000,-0.500) goal_dist=5.345
+[INFO] [1792128534.664254563] [simple_pure_pursuit_controller]: Tracking state: cross_track_limit
+[WARN] [1792128534.664288873] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=cross_track_limit
+[ERROR] [1792128534.664294563] [simple_pure_pursuit_controller]: Pure Pursuit stopped: cross-track error 0.406 m exceeds 0.400 m
+[INFO] [1792128534.678129975] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792128534.686915447] [simple_pure_pursuit_controller]: Accepted replacement Path: size=102; progress reset
+[INFO] [1792128534.764270124] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128535.764260588] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.031 curvature=-4.334 cmd=(0.000,-0.500) goal_dist=5.323
+[INFO] [1792128536.964244055] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.059 curvature=-4.802 cmd=(0.000,-0.500) goal_dist=5.269
+[INFO] [1792128538.064265241] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.065 curvature=-4.989 cmd=(0.000,-0.500) goal_dist=5.256
+[INFO] [1792128539.264264669] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.074 curvature=-4.986 cmd=(0.000,-0.500) goal_dist=5.248
+[INFO] [1792128540.464249067] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.099 curvature=-4.656 cmd=(0.000,-0.500) goal_dist=5.242
+[INFO] [1792128541.664255866] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=1 lookahead_idx=10 lookahead=(10.757,-7.775) cte=0.165 curvature=-4.443 cmd=(0.000,-0.500) goal_dist=5.178
+[INFO] [1792128541.877847600] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[WARN] [1792128541.877872110] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792128541.901858602] [simple_pure_pursuit_controller]: Accepted replacement Path: size=101; progress reset
+[INFO] [1792128541.964268091] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128542.864251666] [simple_pure_pursuit_controller]: PP tracking: path_size=101 nearest_idx=0 lookahead_idx=9 lookahead=(10.744,-7.825) cte=0.027 curvature=-5.053 cmd=(0.000,-0.500) goal_dist=5.212
+[INFO] [1792128544.064264296] [simple_pure_pursuit_controller]: PP tracking: path_size=101 nearest_idx=0 lookahead_idx=9 lookahead=(10.744,-7.825) cte=0.037 curvature=-4.680 cmd=(0.000,-0.500) goal_dist=5.200
+[INFO] [1792128545.164278545] [simple_pure_pursuit_controller]: PP tracking: path_size=101 nearest_idx=0 lookahead_idx=9 lookahead=(10.744,-7.825) cte=0.058 curvature=-4.245 cmd=(0.000,-0.500) goal_dist=5.190
+[INFO] [1792128546.364279546] [simple_pure_pursuit_controller]: PP tracking: path_size=101 nearest_idx=0 lookahead_idx=9 lookahead=(10.744,-7.825) cte=0.047 curvature=-4.623 cmd=(0.000,-0.500) goal_dist=5.187
+[INFO] [1792128547.564268977] [simple_pure_pursuit_controller]: PP tracking: path_size=101 nearest_idx=0 lookahead_idx=9 lookahead=(10.744,-7.825) cte=0.066 curvature=-3.982 cmd=(0.000,-0.500) goal_dist=5.190
+[INFO] [1792128548.204552397] [simple_pure_pursuit_controller]: Accepted replacement Path: size=99; progress reset
+[INFO] [1792128548.764347200] [simple_pure_pursuit_controller]: PP tracking: path_size=99 nearest_idx=0 lookahead_idx=8 lookahead=(10.680,-7.860) cte=0.043 curvature=-3.615 cmd=(0.000,-0.500) goal_dist=5.205
+[INFO] [1792128549.864271680] [simple_pure_pursuit_controller]: PP tracking: path_size=99 nearest_idx=0 lookahead_idx=8 lookahead=(10.680,-7.860) cte=0.038 curvature=-3.603 cmd=(0.000,-0.500) goal_dist=5.200
+[INFO] [1792128549.905719885] [simple_pure_pursuit_controller]: Accepted replacement Path: size=102; progress reset
+[INFO] [1792128551.064330923] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=0 lookahead_idx=9 lookahead=(10.789,-7.825) cte=0.088 curvature=-2.857 cmd=(0.000,-0.500) goal_dist=5.142
+[INFO] [1792128552.264281207] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=0 lookahead_idx=9 lookahead=(10.789,-7.825) cte=0.094 curvature=-2.264 cmd=(0.000,-0.500) goal_dist=5.141
+[INFO] [1792128553.464272521] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=0 lookahead_idx=9 lookahead=(10.789,-7.825) cte=0.105 curvature=-2.150 cmd=(0.000,-0.500) goal_dist=5.121
+[INFO] [1792128554.664294465] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=0 lookahead_idx=9 lookahead=(10.789,-7.825) cte=0.118 curvature=-1.752 cmd=(0.000,-0.500) goal_dist=5.114
+[INFO] [1792128555.764294228] [simple_pure_pursuit_controller]: PP tracking: path_size=102 nearest_idx=0 lookahead_idx=9 lookahead=(10.789,-7.825) cte=0.146 curvature=-0.902 cmd=(0.000,-0.500) goal_dist=5.098
+[INFO] [1792128555.818537189] [simple_pure_pursuit_controller]: Accepted replacement Path: size=118; progress reset
+[INFO] [1792128556.964278183] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.004 curvature=2.936 cmd=(0.000,0.500) goal_dist=7.073
+[INFO] [1792128558.164306229] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.054 curvature=2.728 cmd=(0.000,0.500) goal_dist=7.118
+[INFO] [1792128559.264285293] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.046 curvature=2.938 cmd=(0.000,0.500) goal_dist=7.074
+[INFO] [1792128560.464327431] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.056 curvature=2.941 cmd=(0.000,0.500) goal_dist=7.050
+[INFO] [1792128561.664290218] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.086 curvature=2.822 cmd=(0.000,0.500) goal_dist=7.085
+[INFO] [1792128562.864274815] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.109 curvature=2.887 cmd=(0.000,0.500) goal_dist=7.062
+[INFO] [1792128563.964310331] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.088 curvature=3.106 cmd=(0.000,0.500) goal_dist=7.058
+[INFO] [1792128565.164310770] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.112 curvature=2.996 cmd=(0.000,0.500) goal_dist=7.068
+[INFO] [1792128566.364291799] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.133 curvature=3.122 cmd=(0.000,0.500) goal_dist=7.036
+[INFO] [1792128567.464292926] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.121 curvature=3.247 cmd=(0.000,0.500) goal_dist=7.058
+[INFO] [1792128568.664308946] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.172 curvature=3.017 cmd=(0.000,0.500) goal_dist=7.002
+[INFO] [1792128569.864280847] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.185 curvature=3.213 cmd=(0.000,0.500) goal_dist=6.985
+[INFO] [1792128571.064291038] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.164 curvature=3.299 cmd=(0.000,0.500) goal_dist=7.049
+[INFO] [1792128572.164315737] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.205 curvature=3.145 cmd=(0.000,0.500) goal_dist=7.017
+[INFO] [1792128573.364303139] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.215 curvature=3.290 cmd=(0.000,0.500) goal_dist=7.005
+[INFO] [1792128574.564301111] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.208 curvature=3.275 cmd=(0.000,0.500) goal_dist=7.047
+[INFO] [1792128575.664317792] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.237 curvature=3.181 cmd=(0.000,0.500) goal_dist=7.025
+[INFO] [1792128576.864323845] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.256 curvature=3.302 cmd=(0.000,0.500) goal_dist=6.985
+[INFO] [1792128578.064291669] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.254 curvature=3.317 cmd=(0.000,0.500) goal_dist=6.997
+[INFO] [1792128579.264299893] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.261 curvature=3.354 cmd=(0.000,0.500) goal_dist=6.991
+[INFO] [1792128580.464296298] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.271 curvature=3.463 cmd=(0.000,0.500) goal_dist=6.971
+[INFO] [1792128581.564304730] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.303 curvature=3.264 cmd=(0.000,0.500) goal_dist=6.955
+[INFO] [1792128582.764339086] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.338 curvature=3.196 cmd=(0.000,0.500) goal_dist=6.914
+[INFO] [1792128583.964318062] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=0 lookahead_idx=8 lookahead=(11.069,-7.732) cte=0.328 curvature=3.346 cmd=(0.000,0.500) goal_dist=6.929
+[INFO] [1792128585.164305928] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=8 lookahead_idx=15 lookahead=(11.394,-7.406) cte=0.217 curvature=3.457 cmd=(0.000,0.500) goal_dist=6.754
+[INFO] [1792128586.264326972] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=11 lookahead_idx=18 lookahead=(11.543,-7.257) cte=0.033 curvature=2.624 cmd=(0.000,0.500) goal_dist=6.558
+[INFO] [1792128587.164295470] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128587.464332590] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=11 lookahead_idx=18 lookahead=(11.543,-7.257) cte=0.044 curvature=0.129 cmd=(0.200,0.140) goal_dist=6.584
+[INFO] [1792128588.664318358] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=13 lookahead_idx=20 lookahead=(11.643,-7.157) cte=0.053 curvature=-0.192 cmd=(0.639,-0.123) goal_dist=6.410
+[INFO] [1792128589.864296536] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=22 lookahead_idx=29 lookahead=(12.067,-6.685) cte=0.023 curvature=1.110 cmd=(0.450,0.500) goal_dist=5.780
+[INFO] [1792128590.964346432] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=33 lookahead_idx=41 lookahead=(12.373,-6.078) cte=0.082 curvature=-0.587 cmd=(0.586,0.027) goal_dist=5.134
+[INFO] [1792128591.664314855] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128592.164314941] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=41 lookahead_idx=48 lookahead=(12.694,-5.756) cte=0.240 curvature=-2.802 cmd=(0.002,0.000) goal_dist=4.757
+[INFO] [1792128592.364309148] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128593.364356571] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=43 lookahead_idx=50 lookahead=(12.793,-5.657) cte=0.309 curvature=-2.195 cmd=(0.000,-0.500) goal_dist=4.631
+[INFO] [1792128594.264322261] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128594.464332138] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=43 lookahead_idx=50 lookahead=(12.793,-5.657) cte=0.325 curvature=-0.271 cmd=(0.150,-0.172) goal_dist=4.733
+[INFO] [1792128595.664335048] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=43 lookahead_idx=50 lookahead=(12.793,-5.657) cte=0.256 curvature=0.373 cmd=(0.603,0.126) goal_dist=4.639
+[INFO] [1792128596.864305869] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=50 lookahead_idx=57 lookahead=(13.143,-5.307) cte=0.119 curvature=2.380 cmd=(0.320,0.761) goal_dist=4.062
+[INFO] [1792128598.064312831] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=56 lookahead_idx=63 lookahead=(13.439,-5.004) cte=0.095 curvature=-0.346 cmd=(0.597,0.007) goal_dist=3.620
+[INFO] [1792128599.264315333] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=65 lookahead_idx=72 lookahead=(13.845,-4.555) cte=0.176 curvature=-2.027 cmd=(0.348,-0.705) goal_dist=3.155
+[INFO] [1792128600.364332682] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=70 lookahead_idx=77 lookahead=(14.093,-4.307) cte=0.148 curvature=0.525 cmd=(0.555,0.074) goal_dist=2.753
+[INFO] [1792128601.564316595] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=77 lookahead_idx=84 lookahead=(14.443,-3.957) cte=0.022 curvature=1.228 cmd=(0.434,0.533) goal_dist=2.280
+[INFO] [1792128602.664334324] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=84 lookahead_idx=91 lookahead=(14.793,-3.607) cte=0.023 curvature=-0.795 cmd=(0.501,-0.308) goal_dist=1.814
+[INFO] [1792128603.864337128] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=92 lookahead_idx=100 lookahead=(15.231,-3.277) cte=0.075 curvature=-0.417 cmd=(0.579,-0.242) goal_dist=1.346
+[INFO] [1792128605.064343402] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=103 lookahead_idx=112 lookahead=(15.875,-3.275) cte=0.089 curvature=-1.712 cmd=(0.377,-0.646) goal_dist=0.717
+[INFO] [1792128606.264327147] [simple_pure_pursuit_controller]: PP tracking: path_size=118 nearest_idx=112 lookahead_idx=117 lookahead=(16.125,-3.225) cte=0.006 curvature=3.958 cmd=(0.446,0.261) goal_dist=0.261
+[INFO] [1792128606.364321450] [simple_pure_pursuit_controller]: Tracking state: goal_reached
+[WARN] [1792128606.364351300] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=goal_reached
+[INFO] [1792128606.464313734] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128609.457742619] [simple_pure_pursuit_controller]: Accepted replacement Path: size=428; progress reset
+[INFO] [1792128609.464313938] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128609.464339748] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.019 curvature=4.191 cmd=(0.000,0.007) goal_dist=16.533
+[INFO] [1792128610.564323210] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.103 curvature=3.621 cmd=(0.000,0.500) goal_dist=16.566
+[INFO] [1792128611.764345197] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.136 curvature=3.501 cmd=(0.000,0.500) goal_dist=16.630
+[INFO] [1792128612.964341644] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.132 curvature=3.667 cmd=(0.000,0.500) goal_dist=16.648
+[INFO] [1792128614.064375578] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.210 curvature=3.220 cmd=(0.000,0.500) goal_dist=16.715
+[INFO] [1792128615.264355905] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.234 curvature=3.362 cmd=(0.000,0.500) goal_dist=16.748
+[INFO] [1792128616.464378714] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.227 curvature=3.313 cmd=(0.000,0.500) goal_dist=16.740
+[INFO] [1792128617.664340942] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.290 curvature=3.318 cmd=(0.000,0.500) goal_dist=16.806
+[INFO] [1792128618.864340142] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.313 curvature=3.239 cmd=(0.000,0.500) goal_dist=16.828
+[INFO] [1792128619.964376267] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.300 curvature=3.063 cmd=(0.000,0.500) goal_dist=16.813
+[INFO] [1792128621.164406178] [simple_pure_pursuit_controller]: PP tracking: path_size=428 nearest_idx=0 lookahead_idx=9 lookahead=(16.425,-3.025) cte=0.353 curvature=3.214 cmd=(0.000,0.500) goal_dist=16.868
+[INFO] [1792128622.264330463] [simple_pure_pursuit_controller]: Tracking state: cross_track_limit
+[WARN] [1792128622.264366233] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=cross_track_limit
+[ERROR] [1792128622.264372444] [simple_pure_pursuit_controller]: Pure Pursuit stopped: cross-track error 0.402 m exceeds 0.400 m
+[INFO] [1792128622.280134517] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792128622.364273807] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128622.461224993] [simple_pure_pursuit_controller]: Accepted replacement Path: size=434; progress reset
+[INFO] [1792128622.464323702] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128622.464348352] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.013 curvature=4.989 cmd=(0.000,0.003) goal_dist=16.917
+[INFO] [1792128623.664358673] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.025 curvature=5.223 cmd=(0.000,0.500) goal_dist=16.902
+[INFO] [1792128624.764361350] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.021 curvature=4.886 cmd=(0.000,0.500) goal_dist=16.933
+[INFO] [1792128625.964358572] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.065 curvature=4.687 cmd=(0.000,0.500) goal_dist=16.957
+[INFO] [1792128627.164347304] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.052 curvature=5.144 cmd=(0.000,0.500) goal_dist=16.926
+[INFO] [1792128628.364347006] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.084 curvature=4.784 cmd=(0.000,0.500) goal_dist=16.957
+[INFO] [1792128629.464372875] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.063 curvature=4.555 cmd=(0.000,0.500) goal_dist=16.975
+[INFO] [1792128630.664349608] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.072 curvature=4.905 cmd=(0.000,0.500) goal_dist=16.950
+[INFO] [1792128631.864344922] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.125 curvature=4.716 cmd=(0.000,0.500) goal_dist=16.967
+[INFO] [1792128633.064363727] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.107 curvature=4.709 cmd=(0.000,0.500) goal_dist=16.969
+[INFO] [1792128634.164381737] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.095 curvature=5.099 cmd=(0.000,0.500) goal_dist=16.938
+[INFO] [1792128635.364437022] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.141 curvature=4.596 cmd=(0.000,0.500) goal_dist=16.981
+[INFO] [1792128636.564372447] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.168 curvature=4.593 cmd=(0.000,0.500) goal_dist=16.979
+[INFO] [1792128637.664374049] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.144 curvature=4.859 cmd=(0.000,0.500) goal_dist=16.957
+[INFO] [1792128638.864396065] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.180 curvature=4.504 cmd=(0.000,0.500) goal_dist=16.987
+[INFO] [1792128640.064363891] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.216 curvature=4.183 cmd=(0.000,0.500) goal_dist=17.018
+[INFO] [1792128641.264376869] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.227 curvature=4.263 cmd=(0.000,0.500) goal_dist=17.006
+[INFO] [1792128642.364390751] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.260 curvature=3.921 cmd=(0.000,0.500) goal_dist=17.043
+[INFO] [1792128643.564371159] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.302 curvature=3.564 cmd=(0.000,0.500) goal_dist=17.091
+[INFO] [1792128644.764371888] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.281 curvature=3.620 cmd=(0.000,0.500) goal_dist=17.078
+[INFO] [1792128645.864389651] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.296 curvature=3.987 cmd=(0.000,0.500) goal_dist=17.018
+[INFO] [1792128647.064378041] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.324 curvature=3.912 cmd=(0.000,0.500) goal_dist=17.019
+[INFO] [1792128648.264377880] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.304 curvature=3.970 cmd=(0.000,0.500) goal_dist=17.012
+[INFO] [1792128649.364414545] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.294 curvature=3.865 cmd=(0.000,0.500) goal_dist=17.022
+[INFO] [1792128650.564412445] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.297 curvature=3.955 cmd=(0.000,0.500) goal_dist=17.007
+[INFO] [1792128651.764376846] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.280 curvature=3.911 cmd=(0.000,0.500) goal_dist=17.001
+[INFO] [1792128652.964385027] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.324 curvature=4.020 cmd=(0.000,0.500) goal_dist=16.977
+[INFO] [1792128654.064435464] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.341 curvature=3.977 cmd=(0.000,0.500) goal_dist=16.977
+[INFO] [1792128655.264394356] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.320 curvature=3.843 cmd=(0.000,0.500) goal_dist=16.983
+[INFO] [1792128656.464409048] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.360 curvature=3.880 cmd=(0.000,0.500) goal_dist=16.964
+[INFO] [1792128657.564398885] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.380 curvature=3.793 cmd=(0.000,0.500) goal_dist=16.970
+[INFO] [1792128658.764404198] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.353 curvature=3.737 cmd=(0.000,0.500) goal_dist=16.964
+[INFO] [1792128659.964390052] [simple_pure_pursuit_controller]: PP tracking: path_size=434 nearest_idx=0 lookahead_idx=9 lookahead=(16.479,-3.348) cte=0.367 curvature=3.735 cmd=(0.000,0.500) goal_dist=16.949
+[INFO] [1792128660.064388467] [simple_pure_pursuit_controller]: Tracking state: cross_track_limit
+[WARN] [1792128660.064424547] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=cross_track_limit
+[ERROR] [1792128660.064429017] [simple_pure_pursuit_controller]: Pure Pursuit stopped: cross-track error 0.401 m exceeds 0.400 m
+[INFO] [1792128660.080146631] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792128660.164376172] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128660.255831807] [simple_pure_pursuit_controller]: Accepted replacement Path: size=423; progress reset
+[INFO] [1792128660.264352527] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128661.164390026] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=0 lookahead_idx=8 lookahead=(16.572,-2.871) cte=0.004 curvature=0.164 cmd=(0.454,0.106) goal_dist=16.949
+[INFO] [1792128662.264410195] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=0 lookahead_idx=8 lookahead=(16.572,-2.871) cte=0.054 curvature=-0.611 cmd=(0.536,-0.328) goal_dist=16.945
+[INFO] [1792128663.464392969] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.039 curvature=-0.837 cmd=(0.494,-0.413) goal_dist=16.921
+[INFO] [1792128664.664399194] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.029 curvature=-0.859 cmd=(0.490,-0.421) goal_dist=16.917
+[INFO] [1792128665.764421284] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.049 curvature=-1.256 cmd=(0.430,-0.540) goal_dist=16.916
+[INFO] [1792128666.964421470] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.014 curvature=-1.360 cmd=(0.417,-0.567) goal_dist=16.902
+[INFO] [1792128668.164445806] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.014 curvature=-1.241 cmd=(0.432,-0.536) goal_dist=16.902
+[INFO] [1792128669.364411533] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.004 curvature=-1.631 cmd=(0.386,-0.629) goal_dist=16.905
+[INFO] [1792128670.464422014] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=1 lookahead_idx=8 lookahead=(16.536,-2.836) cte=0.029 curvature=-2.021 cmd=(0.348,-0.704) goal_dist=16.879
+[INFO] [1792128671.664409192] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=2 lookahead_idx=9 lookahead=(16.504,-2.794) cte=0.032 curvature=-1.944 cmd=(0.355,-0.690) goal_dist=16.875
+[INFO] [1792128672.864406449] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=2 lookahead_idx=9 lookahead=(16.504,-2.794) cte=0.044 curvature=-2.286 cmd=(0.327,-0.747) goal_dist=16.889
+[INFO] [1792128673.964454232] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=2 lookahead_idx=9 lookahead=(16.504,-2.794) cte=0.021 curvature=-2.758 cmd=(0.294,-0.812) goal_dist=16.847
+[INFO] [1792128674.164388203] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128674.764470698] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128675.164423191] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=3 lookahead_idx=10 lookahead=(16.483,-2.736) cte=0.029 curvature=-2.847 cmd=(0.000,-0.500) goal_dist=16.818
+[INFO] [1792128676.364455679] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=3 lookahead_idx=10 lookahead=(16.483,-2.736) cte=0.043 curvature=-3.052 cmd=(0.000,-0.500) goal_dist=16.823
+[INFO] [1792128677.464436833] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=3 lookahead_idx=10 lookahead=(16.483,-2.736) cte=0.039 curvature=-3.354 cmd=(0.000,-0.500) goal_dist=16.808
+[INFO] [1792128678.664444553] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=3 lookahead_idx=10 lookahead=(16.483,-2.736) cte=0.003 curvature=-3.635 cmd=(0.000,-0.500) goal_dist=16.792
+[INFO] [1792128679.864413472] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=3 lookahead_idx=10 lookahead=(16.483,-2.736) cte=0.006 curvature=-3.766 cmd=(0.000,-0.500) goal_dist=16.796
+[INFO] [1792128681.064421153] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=4 lookahead_idx=12 lookahead=(16.477,-2.668) cte=0.032 curvature=-3.912 cmd=(0.000,-0.500) goal_dist=16.766
+[INFO] [1792128682.264415414] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=4 lookahead_idx=12 lookahead=(16.477,-2.668) cte=0.012 curvature=-4.234 cmd=(0.000,-0.500) goal_dist=16.747
+[INFO] [1792128683.364428159] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=4 lookahead_idx=12 lookahead=(16.477,-2.668) cte=0.015 curvature=-4.251 cmd=(0.000,-0.500) goal_dist=16.751
+[INFO] [1792128684.564432001] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=4 lookahead_idx=12 lookahead=(16.477,-2.668) cte=0.019 curvature=-4.680 cmd=(0.000,-0.500) goal_dist=16.724
+[INFO] [1792128685.764436652] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=5 lookahead_idx=13 lookahead=(16.475,-2.598) cte=0.032 curvature=-4.342 cmd=(0.000,-0.500) goal_dist=16.708
+[INFO] [1792128686.964420755] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=5 lookahead_idx=13 lookahead=(16.475,-2.598) cte=0.060 curvature=-4.154 cmd=(0.000,-0.500) goal_dist=16.735
+[INFO] [1792128688.064432651] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=5 lookahead_idx=13 lookahead=(16.475,-2.598) cte=0.050 curvature=-4.209 cmd=(0.000,-0.500) goal_dist=16.717
+[INFO] [1792128689.264444444] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=5 lookahead_idx=13 lookahead=(16.475,-2.598) cte=0.012 curvature=-4.678 cmd=(0.000,-0.500) goal_dist=16.671
+[INFO] [1792128690.464436908] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=5 lookahead_idx=13 lookahead=(16.475,-2.598) cte=0.010 curvature=-4.604 cmd=(0.000,-0.500) goal_dist=16.676
+[INFO] [1792128691.664451911] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=6 lookahead_idx=14 lookahead=(16.475,-2.528) cte=0.031 curvature=-4.180 cmd=(0.000,-0.500) goal_dist=16.624
+[INFO] [1792128692.764438039] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=6 lookahead_idx=14 lookahead=(16.475,-2.528) cte=0.053 curvature=-3.974 cmd=(0.000,-0.500) goal_dist=16.615
+[INFO] [1792128693.964449694] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=6 lookahead_idx=14 lookahead=(16.475,-2.528) cte=0.056 curvature=-3.832 cmd=(0.000,-0.500) goal_dist=16.625
+[INFO] [1792128695.164447659] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=6 lookahead_idx=14 lookahead=(16.475,-2.528) cte=0.084 curvature=-3.619 cmd=(0.000,-0.500) goal_dist=16.563
+[INFO] [1792128696.364432394] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=6 lookahead_idx=14 lookahead=(16.475,-2.528) cte=0.081 curvature=-3.584 cmd=(0.000,-0.500) goal_dist=16.565
+[INFO] [1792128697.464452803] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=7 lookahead_idx=16 lookahead=(16.475,-2.457) cte=0.086 curvature=-3.506 cmd=(0.000,-0.500) goal_dist=16.534
+[INFO] [1792128698.664441709] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=7 lookahead_idx=16 lookahead=(16.475,-2.457) cte=0.127 curvature=-3.968 cmd=(0.000,-0.500) goal_dist=16.479
+[INFO] [1792128699.864455305] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=8 lookahead_idx=17 lookahead=(16.475,-2.386) cte=0.105 curvature=-3.681 cmd=(0.000,-0.500) goal_dist=16.459
+[INFO] [1792128701.064446742] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=8 lookahead_idx=17 lookahead=(16.475,-2.386) cte=0.088 curvature=-2.771 cmd=(0.000,-0.500) goal_dist=16.488
+[INFO] [1792128702.164457713] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=8 lookahead_idx=17 lookahead=(16.475,-2.386) cte=0.048 curvature=-1.383 cmd=(0.000,-0.337) goal_dist=16.490
+[INFO] [1792128702.564461639] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792128703.364486241] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=8 lookahead_idx=17 lookahead=(16.475,-2.386) cte=0.026 curvature=0.072 cmd=(0.450,0.049) goal_dist=16.486
+[INFO] [1792128704.564445168] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=15 lookahead_idx=25 lookahead=(16.475,-2.025) cte=0.019 curvature=-0.306 cmd=(0.607,-0.131) goal_dist=16.434
+[INFO] [1792128705.764444026] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=30 lookahead_idx=39 lookahead=(16.375,-1.284) cte=0.068 curvature=0.048 cmd=(0.684,0.033) goal_dist=16.238
+[INFO] [1792128706.864455658] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=45 lookahead_idx=53 lookahead=(16.176,-0.581) cte=0.022 curvature=1.566 cmd=(0.393,0.615) goal_dist=16.212
+[INFO] [1792128708.064467667] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=54 lookahead_idx=61 lookahead=(15.841,-0.191) cte=0.021 curvature=0.681 cmd=(0.522,0.356) goal_dist=15.986
+[INFO] [1792128709.264450956] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=63 lookahead_idx=70 lookahead=(15.407,0.243) cte=0.091 curvature=-1.152 cmd=(0.444,-0.512) goal_dist=15.490
+[INFO] [1792128710.364468419] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=71 lookahead_idx=78 lookahead=(15.041,0.669) cte=0.148 curvature=-0.135 cmd=(0.656,-0.088) goal_dist=15.079
+[INFO] [1792128711.564464059] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=81 lookahead_idx=89 lookahead=(14.681,1.189) cte=0.041 curvature=0.991 cmd=(0.468,0.464) goal_dist=14.844
+[INFO] [1792128712.764497089] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=91 lookahead_idx=99 lookahead=(14.374,1.703) cte=0.093 curvature=-1.882 cmd=(0.361,-0.635) goal_dist=14.474
+[INFO] [1792128713.964455870] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=96 lookahead_idx=104 lookahead=(14.218,1.964) cte=0.198 curvature=-2.091 cmd=(0.342,-0.716) goal_dist=14.241
+[INFO] [1792128715.064469684] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=96 lookahead_idx=104 lookahead=(14.218,1.964) cte=0.248 curvature=-2.213 cmd=(0.332,-0.735) goal_dist=14.203
+[INFO] [1792128716.264462085] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=96 lookahead_idx=104 lookahead=(14.218,1.964) cte=0.225 curvature=-2.652 cmd=(0.301,-0.798) goal_dist=14.203
+[INFO] [1792128717.464503217] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=97 lookahead_idx=105 lookahead=(14.184,2.010) cte=0.213 curvature=-2.289 cmd=(0.326,-0.747) goal_dist=14.208
+[INFO] [1792128718.064475698] [simple_pure_pursuit_controller]: Tracking state: braking_for_alignment
+[INFO] [1792128718.564492052] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=97 lookahead_idx=105 lookahead=(14.184,2.010) cte=0.264 curvature=-2.568 cmd=(0.010,-0.180) goal_dist=14.162
+[INFO] [1792128718.764455626] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128719.764511165] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=98 lookahead_idx=106 lookahead=(14.152,2.056) cte=0.247 curvature=-2.699 cmd=(0.000,-0.500) goal_dist=14.154
+[INFO] [1792128720.964467457] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=98 lookahead_idx=106 lookahead=(14.152,2.056) cte=0.247 curvature=-2.849 cmd=(0.000,-0.500) goal_dist=14.147
+[INFO] [1792128722.164462680] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=98 lookahead_idx=106 lookahead=(14.152,2.056) cte=0.269 curvature=-2.882 cmd=(0.000,-0.500) goal_dist=14.135
+[INFO] [1792128723.264488267] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=100 lookahead_idx=108 lookahead=(14.086,2.157) cte=0.273 curvature=-2.673 cmd=(0.000,-0.500) goal_dist=14.099
+[INFO] [1792128724.464467961] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=100 lookahead_idx=108 lookahead=(14.086,2.157) cte=0.277 curvature=-2.915 cmd=(0.000,-0.500) goal_dist=14.079
+[INFO] [1792128725.664493565] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=100 lookahead_idx=108 lookahead=(14.086,2.157) cte=0.308 curvature=-2.963 cmd=(0.000,-0.500) goal_dist=14.058
+[INFO] [1792128726.864468239] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=100 lookahead_idx=108 lookahead=(14.086,2.157) cte=0.309 curvature=-3.295 cmd=(0.000,-0.500) goal_dist=14.041
+[INFO] [1792128727.964487087] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.283 curvature=-3.085 cmd=(0.000,-0.500) goal_dist=14.057
+[INFO] [1792128729.164471092] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.278 curvature=-2.999 cmd=(0.000,-0.500) goal_dist=14.079
+[INFO] [1792128730.364481048] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.260 curvature=-3.488 cmd=(0.000,-0.500) goal_dist=14.070
+[INFO] [1792128731.464485236] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.282 curvature=-3.570 cmd=(0.000,-0.500) goal_dist=14.047
+[INFO] [1792128732.664491712] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.332 curvature=-3.157 cmd=(0.000,-0.500) goal_dist=14.033
+[INFO] [1792128733.864470789] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.336 curvature=-3.330 cmd=(0.000,-0.500) goal_dist=14.016
+[INFO] [1792128734.964497938] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.340 curvature=-3.451 cmd=(0.000,-0.500) goal_dist=14.001
+[INFO] [1792128736.164494935] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.381 curvature=-3.176 cmd=(0.000,-0.500) goal_dist=13.983
+[INFO] [1792128737.364472321] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=101 lookahead_idx=109 lookahead=(14.053,2.205) cte=0.376 curvature=-3.519 cmd=(0.000,-0.500) goal_dist=13.955
+[INFO] [1792128738.464446708] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=102 lookahead_idx=110 lookahead=(14.025,2.254) cte=0.372 curvature=-3.438 cmd=(0.000,-0.500) goal_dist=13.948
+[INFO] [1792128739.664393533] [simple_pure_pursuit_controller]: PP tracking: path_size=423 nearest_idx=102 lookahead_idx=110 lookahead=(14.025,2.254) cte=0.399 curvature=-3.180 cmd=(0.000,-0.500) goal_dist=13.940
+[INFO] [1792128739.764391194] [simple_pure_pursuit_controller]: Tracking state: cross_track_limit
+[WARN] [1792128739.764422963] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=cross_track_limit
+[ERROR] [1792128739.764427422] [simple_pure_pursuit_controller]: Pure Pursuit stopped: cross-track error 0.407 m exceeds 0.400 m
+[INFO] [1792128739.779575109] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792128739.864350866] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792128739.888386610] [simple_pure_pursuit_controller]: Accepted replacement Path: size=326; progress reset
+[INFO] [1792128739.964395785] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792128740.864352907] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.050 curvature=-3.145 cmd=(0.000,-0.500) goal_dist=13.880
+[INFO] [1792128742.064314514] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.067 curvature=-2.918 cmd=(0.000,-0.500) goal_dist=13.861
+[INFO] [1792128743.164283222] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.046 curvature=-2.832 cmd=(0.000,-0.500) goal_dist=13.872
+[INFO] [1792128744.364213840] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.077 curvature=-2.336 cmd=(0.000,-0.500) goal_dist=13.845
+[INFO] [1792128745.564184794] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.100 curvature=-2.093 cmd=(0.000,-0.500) goal_dist=13.824
+[INFO] [1792128746.764139658] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.077 curvature=-1.937 cmd=(0.000,-0.500) goal_dist=13.850
+[INFO] [1792128747.964100250] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.115 curvature=-1.455 cmd=(0.000,-0.500) goal_dist=13.802
+[INFO] [1792128749.064088774] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.146 curvature=-1.027 cmd=(0.000,-0.500) goal_dist=13.787
+[INFO] [1792128750.264041017] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.151 curvature=-0.582 cmd=(0.000,-0.500) goal_dist=13.791
+[INFO] [1792128751.463982908] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.172 curvature=-0.225 cmd=(0.000,-0.500) goal_dist=13.764
+[INFO] [1792128752.663932165] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.171 curvature=-0.221 cmd=(0.000,-0.500) goal_dist=13.751
+[INFO] [1792128753.763928500] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.161 curvature=0.045 cmd=(0.000,0.400) goal_dist=13.764
+[INFO] [1792128754.963885065] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.197 curvature=0.440 cmd=(0.000,0.500) goal_dist=13.731
+[INFO] [1792128756.163823167] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.211 curvature=0.598 cmd=(0.000,0.500) goal_dist=13.715
+[INFO] [1792128757.363726979] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.166 curvature=0.671 cmd=(0.000,0.500) goal_dist=13.754
+[INFO] [1792128758.463735364] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.185 curvature=0.766 cmd=(0.000,0.500) goal_dist=13.732
+[INFO] [1792128759.763727264] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.232 curvature=1.069 cmd=(0.000,0.500) goal_dist=13.688
+[INFO] [1792128760.863665951] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.221 curvature=1.357 cmd=(0.000,0.500) goal_dist=13.701
+[INFO] [1792128762.063633523] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.256 curvature=1.535 cmd=(0.000,0.500) goal_dist=13.665
+[INFO] [1792128763.263637676] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.252 curvature=1.350 cmd=(0.000,0.500) goal_dist=13.665
+[INFO] [1792128764.463530258] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.225 curvature=1.544 cmd=(0.000,0.500) goal_dist=13.693
+[INFO] [1792128765.563577049] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.269 curvature=1.729 cmd=(0.000,0.500) goal_dist=13.648
+[INFO] [1792128766.763474174] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.299 curvature=1.836 cmd=(0.000,0.500) goal_dist=13.619
+[INFO] [1792128767.963416773] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.255 curvature=1.899 cmd=(0.000,0.500) goal_dist=13.662
+[INFO] [1792128769.163378665] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.274 curvature=1.888 cmd=(0.000,0.500) goal_dist=13.646
+[INFO] [1792128770.363339355] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.286 curvature=1.926 cmd=(0.000,0.500) goal_dist=13.633
+[INFO] [1792128771.463297489] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.288 curvature=2.058 cmd=(0.000,0.500) goal_dist=13.632
+[INFO] [1792128772.663268980] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.302 curvature=2.150 cmd=(0.000,0.500) goal_dist=13.617
+[INFO] [1792128773.863227365] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.334 curvature=2.191 cmd=(0.000,0.500) goal_dist=13.584
+[INFO] [1792128775.063200616] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.280 curvature=2.351 cmd=(0.000,0.500) goal_dist=13.639
+[INFO] [1792128776.263141959] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.287 curvature=2.173 cmd=(0.000,0.500) goal_dist=13.645
+[INFO] [1792128777.363130071] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.321 curvature=1.995 cmd=(0.000,0.500) goal_dist=13.626
+[INFO] [1792128778.563078834] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.270 curvature=2.235 cmd=(0.000,0.500) goal_dist=13.666
+[INFO] [1792128779.763024600] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.155 curvature=2.593 cmd=(0.000,0.500) goal_dist=13.770
+[INFO] [1792128780.962977429] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.143 curvature=2.419 cmd=(0.000,0.500) goal_dist=13.805
+[INFO] [1792128782.062963824] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.158 curvature=2.155 cmd=(0.000,0.500) goal_dist=13.844
+[INFO] [1792128783.262906963] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.146 curvature=2.301 cmd=(0.000,0.500) goal_dist=13.864
+[INFO] [1792128784.462867034] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.166 curvature=2.368 cmd=(0.000,0.500) goal_dist=13.844
+[INFO] [1792128785.662821376] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.178 curvature=2.324 cmd=(0.000,0.500) goal_dist=13.845
+[INFO] [1792128786.762809022] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.185 curvature=2.378 cmd=(0.000,0.500) goal_dist=13.862
+[INFO] [1792128787.962798490] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.221 curvature=2.454 cmd=(0.000,0.500) goal_dist=13.798
+[INFO] [1792128789.162722441] [simple_pure_pursuit_controller]: PP tracking: path_size=326 nearest_idx=0 lookahead_idx=7 lookahead=(14.204,1.961) cte=0.217 curvature=2.529 cmd=(0.000,0.500) goal_dist=13.795
+[INFO] [1792128790.362711322] [simple_pure_pur

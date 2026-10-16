@@ -1,0 +1,334 @@
+[INFO] [launch]: All log files can be found below /home/kim/.ros/log/2026-10-16-14-49-46-116523-Kim9975-3448246
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [3448304]
+[INFO] [frozen_map-2]: process started with pid [3448306]
+[INFO] [obstacle_cloud-3]: process started with pid [3448308]
+[INFO] [collision_monitor-4]: process started with pid [3448310]
+[INFO] [command_watchdog-5]: process started with pid [3448313]
+[INFO] [hybrid_global_costmap_node-6]: process started with pid [3448315]
+[INFO] [hybrid_planner_comparison_node-7]: process started with pid [3448317]
+[INFO] [pure_pursuit-8]: process started with pid [3448320]
+[INFO] [lifecycle_manager-9]: process started with pid [3448322]
+[INFO] [lifecycle_manager-10]: process started with pid [3448331]
+[map_server-1] [INFO] [1792129786.332739451] [map_server]: 
+[map_server-1] 	map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1792129786.332828861] [map_server]: Creating
+[obstacle_cloud-3] [INFO] [1792129786.342682799] [obstacle_cloud]: Collision input: waiting_for_scan_and_mount
+[hybrid_planner_comparison_node-7] [INFO] [1792129786.353293966] [rubi_hybrid_planner_comparison]: Hybrid planner ready; mode=grid_only goal_topic='/goal_pose' planner_cmd_vel_publishers=0
+[hybrid_planner_comparison_node-7] [INFO] [1792129786.353381606] [rubi_hybrid_planner_comparison]: 
+[hybrid_planner_comparison_node-7] [STEP EVALUATION CONFIG]
+[hybrid_planner_comparison_node-7] planner_run_mode=grid_only
+[hybrid_planner_comparison_node-7] adjacent_threshold_m=0.100
+[hybrid_planner_comparison_node-7] distance_weight=1.000
+[hybrid_planner_comparison_node-7] height_cost_weight=1.000
+[hybrid_planner_comparison_node-7] grid_cot_height_cost_enabled=true
+[hybrid_planner_comparison_node-7] grid_cot_calibration_points=7
+[hybrid_planner_comparison_node-7] sampling_sobel_hard_reject_enabled=true
+[hybrid_planner_comparison_node-7] grid_sobel_hard_reject_enabled=false
+[hybrid_planner_comparison_node-7] grid_sobel_kernel_size=5
+[hybrid_planner_comparison_node-7] sobel_threshold_m=0.100
+[hybrid_planner_comparison_node-7] legacy_sampling_sobel_cost_weight=0.000
+[hybrid_planner_comparison_node-7] grid_sobel_gradient_cost_weight=0.000
+[hybrid_planner_comparison_node-7] sobel_cost_exponent=2.000
+[hybrid_planner_comparison_node-7] grid_terrain_clearance_enabled=true
+[hybrid_planner_comparison_node-7] grid_terrain_clearance_distance_m=0.200
+[hybrid_planner_comparison_node-7] local_relief_enabled=true
+[hybrid_planner_comparison_node-7] local_relief_threshold_m=0.100
+[hybrid_planner_comparison_node-7] local_relief_first_window_radius_m=0.100
+[hybrid_planner_comparison_node-7] local_relief_second_window_radius_m=0.100
+[hybrid_planner_comparison_node-7] local_relief_quantiles=[0.100, 0.900]
+[hybrid_planner_comparison_node-7] local_relief_min_observed_ratio=0.700
+[hybrid_planner_comparison_node-7] local_relief_critical_cell_count=3
+[collision_monitor-4] [INFO] [1792129786.354974212] [collision_monitor]: 
+[collision_monitor-4] 	collision_monitor lifecycle node launched. 
+[collision_monitor-4] 	Waiting on external lifecycle transitions to activate
+[collision_monitor-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[obstacle_cloud-3] [INFO] [1792129786.355307141] [obstacle_cloud]: Collision input: missing_static_mount
+[pure_pursuit-8] [INFO] [1792129786.362042676] [simple_pure_pursuit_controller]: Simple Pure Pursuit ready: path=/rubi/planner_comparison/grid/tracking_path cmd=/legged/cmd_raw frames=map<-base_link frequency=10.0 Hz
+[hybrid_global_costmap_node-6] [INFO] [1792129786.367896103] [global_costmap.global_costmap]: 
+[hybrid_global_costmap_node-6] 	global_costmap lifecycle node launched. 
+[hybrid_global_costmap_node-6] 	Waiting on external lifecycle transitions to activate
+[hybrid_global_costmap_node-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[hybrid_global_costmap_node-6] [INFO] [1792129786.368676782] [global_costmap.global_costmap]: Creating Costmap
+[lifecycle_manager-10] [INFO] [1792129786.373298872] [lifecycle_navigation]: Creating
+[lifecycle_manager-9] [INFO] [1792129786.374800078] [lifecycle_costmap]: Creating
+[lifecycle_manager-10] [INFO] [1792129786.375950396] [lifecycle_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-9] [INFO] [1792129786.382558201] [lifecycle_costmap]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-10] [INFO] [1792129786.383105420] [lifecycle_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-10] [INFO] [1792129786.383137500] [lifecycle_navigation]: [34m[1mConfiguring map_server[0m[0m
+[map_server-1] [INFO] [1792129786.383345629] [map_server]: Configuring
+[map_server-1] [INFO] [1792129786.383400499] [map_io]: Loading yaml file: /home/kim/legged_robot_ws/maps/demo/occupancy.yaml
+[map_server-1] [INFO] [1792129786.383597599] [map_io]: resolution: 0.05
+[map_server-1] [INFO] [1792129786.383603979] [map_io]: origin[0]: 0
+[map_server-1] [INFO] [1792129786.383606679] [map_io]: origin[1]: 0
+[map_server-1] [INFO] [1792129786.383609259] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1792129786.383612089] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1792129786.383614939] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1792129786.383618799] [map_io]: mode: trinary
+[map_server-1] [INFO] [1792129786.383622059] [map_io]: negate: 0
+[map_server-1] [INFO] [1792129786.383756258] [map_io]: Loading image_file: /home/kim/legged_robot_ws/maps/demo/floor.pgm
+[map_server-1] [INFO] [1792129786.385647564] [map_io]: Read map /home/kim/legged_robot_ws/maps/demo/floor.pgm: 120 X 120 map @ 0.05 m/cell
+[lifecycle_manager-10] [INFO] [1792129786.391885321] [lifecycle_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[collision_monitor-4] [INFO] [1792129786.392223980] [collision_monitor]: Configuring
+[obstacle_cloud-3] [INFO] [1792129786.400679031] [obstacle_cloud]: Collision input: ready
+[collision_monitor-4] [INFO] [1792129786.406134709] [collision_monitor]: [Stop]: Creating Polygon
+[collision_monitor-4] [INFO] [1792129786.406829128] [collision_monitor]: [lidar]: Creating PointCloud
+[lifecycle_manager-10] [INFO] [1792129786.410792079] [lifecycle_navigation]: [34m[1mActivating map_server[0m[0m
+[map_server-1] [INFO] [1792129786.411159528] [map_server]: Activating
+[map_server-1] [INFO] [1792129786.411268608] [map_server]: Creating bond (map_server) to lifecycle manager.
+[pure_pursuit-8] [INFO] [1792129786.462389965] [simple_pure_pursuit_controller]: Tracking state: idle
+[lifecycle_manager-9] [INFO] [1792129786.511413227] [lifecycle_costmap]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-9] [INFO] [1792129786.511451687] [lifecycle_costmap]: [34m[1mConfiguring global_costmap/global_costmap[0m[0m
+[hybrid_global_costmap_node-6] [INFO] [1792129786.511659036] [global_costmap.global_costmap]: Configuring
+[lifecycle_manager-10] [INFO] [1792129786.516982365] [lifecycle_navigation]: Server map_server connected with bond.
+[lifecycle_manager-10] [INFO] [1792129786.517017725] [lifecycle_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[collision_monitor-4] [INFO] [1792129786.517167054] [collision_monitor]: Activating
+[collision_monitor-4] [INFO] [1792129786.517235054] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[hybrid_global_costmap_node-6] [INFO] [1792129786.521112266] [global_costmap.global_costmap]: Using plugin "static_layer"
+[hybrid_global_costmap_node-6] [INFO] [1792129786.532483291] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[hybrid_global_costmap_node-6] [INFO] [1792129786.533311649] [global_costmap.global_costmap]: Subscribing to updates
+[hybrid_global_costmap_node-6] [INFO] [1792129786.535414264] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[hybrid_global_costmap_node-6] [INFO] [1792129786.535436154] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[hybrid_global_costmap_node-6] [INFO] [1792129786.535546654] [global_costmap.global_costmap]: Subscribed to Topics: livox_cloud
+[hybrid_global_costmap_node-6] [INFO] [1792129786.536518962] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[hybrid_global_costmap_node-6] [INFO] [1792129786.536535842] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[hybrid_global_costmap_node-6] [INFO] [1792129786.536792921] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[lifecycle_manager-9] [INFO] [1792129786.540137204] [lifecycle_costmap]: [34m[1mActivating global_costmap/global_costmap[0m[0m
+[hybrid_global_costmap_node-6] [INFO] [1792129786.540246673] [global_costmap.global_costmap]: Activating
+[hybrid_global_costmap_node-6] [INFO] [1792129786.540270713] [global_costmap.global_costmap]: Checking transform
+[hybrid_global_costmap_node-6] [INFO] [1792129786.540287293] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Invalid frame ID "map" passed to canTransform argument target_frame - frame does not exist
+[lifecycle_manager-10] [INFO] [1792129786.621250965] [lifecycle_navigation]: Server collision_monitor connected with bond.
+[lifecycle_manager-10] [INFO] [1792129786.621299405] [lifecycle_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-10] [INFO] [1792129786.621307935] [lifecycle_navigation]: [34m[1mCreating bond timer...[0m[0m
+[frozen_map-2] [INFO] [1792129786.659300731] [frozen_map]: Frozen height loaded: 14400 cells; cead4ce6e961d092f48510d6e9e39e9b3b209a79205e6bb500ad6bcf3f5ce894
+[command_watchdog-5] [INFO] [1792129786.662420394] [command_watchdog]: Motion status: costmap_timeout
+[hybrid_global_costmap_node-6] [INFO] [1792129787.040413421] [global_costmap.global_costmap]: start
+[hybrid_global_costmap_node-6] [INFO] [1792129787.241078210] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 120 X 120 at 0.050000 m/pix
+[lifecycle_manager-9] [INFO] [1792129787.241255550] [lifecycle_costmap]: [34m[1mManaged nodes are active[0m[0m
+[command_watchdog-5] [INFO] [1792129787.251891787] [command_watchdog]: Motion status: costmap_collision
+[command_watchdog-5] [INFO] [1792129787.401638808] [command_watchdog]: Motion status: safe_command_timeout
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015633343] [rubi_hybrid_planner_comparison]: 
+[hybrid_planner_comparison_node-7] [TRACKING PATH REFINER]
+[hybrid_planner_comparison_node-7] mode=grid raw_points=61 smoothing_attempts=0 smoothing_accepts=0 smoothing_rejects=0 tracking_points=61 raw_cost=3.000000 tracking_cost=3.000000 raw_max_heading_change_rad=0.000000 tracking_max_heading_change_rad=0.000000 fallback=false
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015694513] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=2 heightmap_generation=1 start=(0.975,0.975) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015700773] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=5.992988 cache_hit=false cache_builds=1 cache_hits=0 search_cost=3.000000045 validation_cost=3.000000045 path_validation_ms=0.193409 total_request_ms=7.025455
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015707253] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=3.000 total_cost=3.000 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=61 nodes=61 edges=60 time_ms=0.752 costmap_hard_blocked_samples=0 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=600
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015714333] [rubi_hybrid_planner_comparison]: 
+[hybrid_planner_comparison_node-7] ============================================================
+[hybrid_planner_comparison_node-7] [GRID A* RESULT]
+[hybrid_planner_comparison_node-7] success                : true
+[hybrid_planner_comparison_node-7] termination            : post_goal_complete
+[hybrid_planner_comparison_node-7] map_generation         : costmap=2 heightmap=1
+[hybrid_planner_comparison_node-7] path_length_m          : 3.000000
+[hybrid_planner_comparison_node-7] total_cost             : 3.000000
+[hybrid_planner_comparison_node-7] distance_cost          : 3.000000
+[hybrid_planner_comparison_node-7] inflation_cost         : 0.000000
+[hybrid_planner_comparison_node-7] height_cost            : 0.000000
+[hybrid_planner_comparison_node-7] sobel_cost             : 0.000000
+[hybrid_planner_comparison_node-7] grid_sobel_kernel_size : 5
+[hybrid_planner_comparison_node-7] grid_sobel_gradient_cost_weight: 0.000000
+[hybrid_planner_comparison_node-7] sobel_gradient_exposure_m: 0.000000
+[hybrid_planner_comparison_node-7] max_grid_sobel_gradient: 0.000000
+[hybrid_planner_comparison_node-7] max_height_jump_m      : 0.000000
+[hybrid_planner_comparison_node-7] max_sobel_equivalent_step_m: 0.000000
+[hybrid_planner_comparison_node-7] max_sobel_gradient    : 0.000000
+[hybrid_planner_comparison_node-7] max_local_relief_m     : 0.000000
+[hybrid_planner_comparison_node-7] max_supported_local_relief_m: 0.000000
+[hybrid_planner_comparison_node-7] height_jump_events     : 0
+[hybrid_planner_comparison_node-7] adjacent_step_rejects : 0
+[hybrid_planner_comparison_node-7] sobel_step_rejects     : 0
+[hybrid_planner_comparison_node-7] local_relief_step_rejects: 0
+[hybrid_planner_comparison_node-7] both_step_rejects     : 0
+[hybrid_planner_comparison_node-7] expanded_cells         : 61
+[hybrid_planner_comparison_node-7] neighbor_candidates    : 480
+[hybrid_planner_comparison_node-7] astar_open_pushes      : 186
+[hybrid_planner_comparison_node-7] node_eval_calls        : 186
+[hybrid_planner_comparison_node-7] edge_eval_calls        : 480
+[hybrid_planner_comparison_node-7] grid_transition_evaluations: 600
+[hybrid_planner_comparison_node-7] grid_sobel_queries     : 186
+[hybrid_planner_comparison_node-7] grid_sobel_cache_hits  : 1014
+[hybrid_planner_comparison_node-7] grid_sobel_5x5_valid   : 186
+[hybrid_planner_comparison_node-7] grid_sobel_5x5_fallback_to_3x3: 0
+[hybrid_planner_comparison_node-7] grid_sobel_missing    : 0
+[hybrid_planner_comparison_node-7] edge_samples_total     : 0
+[hybrid_planner_comparison_node-7] height_evidence_queries: 186
+[hybrid_planner_comparison_node-7] costmap_queries        : 186
+[hybrid_planner_comparison_node-7] local_relief_queries  : 2418
+[hybrid_planner_comparison_node-7] local_relief_cache_hits: 1968
+[hybrid_planner_comparison_node-7] local_relief_missing_neighborhoods: 0
+[hybrid_planner_comparison_node-7] supported_relief_queries: 1200
+[hybrid_planner_comparison_node-7] search_time_ms         : 0.745338
+[hybrid_planner_comparison_node-7] path_finalize_time_ms  : 0.005830
+[hybrid_planner_comparison_node-7] total_planning_time_ms : 0.752028
+[hybrid_planner_comparison_node-7] ============================================================
+[hybrid_planner_comparison_node-7] [INFO] [1792129794.015762283] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[pure_pursuit-8] [INFO] [1792129794.015686903] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[pure_pursuit-8] [INFO] [1792129794.062157323] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[pure_pursuit-8] [INFO] [1792129794.062245393] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.023,-0.046) goal_dist=2.975
+[command_watchdog-5] [INFO] [1792129794.101760219] [command_watchdog]: Motion status: pass
+[pure_pursuit-8] [INFO] [1792129795.162129632] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.573,-0.084) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129796.262121469] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.658,-0.084) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129797.262125518] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.658,-0.084) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129798.262165165] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.658,-0.084) goal_dist=2.975
+[hybrid_planner_comparison_node-7] [WARN] [1792129798.653388971] [rubi_hybrid_planner_comparison]: [REPLAN EVENT] trigger=map_content_changed mode=grid_only costmap_generation=3 heightmap_generation=1 remaining_path_valid=false invalid_reason=costmap_collision failing_segment=14 tracking_error_m=0.035 action=stop_then_replan
+[pure_pursuit-8] [INFO] [1792129798.653467941] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[pure_pursuit-8] [WARN] [1792129798.653490670] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[pure_pursuit-8] [INFO] [1792129798.655858966] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655873326] [rubi_hybrid_planner_comparison]: 
+[hybrid_planner_comparison_node-7] [TRACKING PATH REFINER]
+[hybrid_planner_comparison_node-7] mode=grid raw_points=61 smoothing_attempts=0 smoothing_accepts=0 smoothing_rejects=0 tracking_points=61 raw_cost=3.745584 tracking_cost=3.745584 raw_max_heading_change_rad=0.785398 tracking_max_heading_change_rad=0.785398 fallback=false
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655902326] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=3 heightmap_generation=1 start=(0.975,0.975) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655907536] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000030 cache_hit=true cache_builds=1 cache_hits=2 search_cost=3.745584468 validation_cost=3.745584468 path_validation_ms=0.197610 total_request_ms=2.363455
+[hybrid_planner_comparison_node-7] [WARN] [1792129798.655915515] [rubi_hybrid_planner_comparison]: planner=grid hard_rejection=(1.725,0.925) raw_cost=253 height_evidence=true known_height=0.000
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655919035] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=3.746 total_cost=3.746 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=592 nodes=592 edges=591 time_ms=2.120 costmap_hard_blocked_samples=7 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=5358
+[hybrid_planner_comparison_node-7] [WARN] [1792129798.655925835] [rubi_hybrid_planner_comparison]: comparison input is confounded by Costmap obstacle marking planner=grid hard_samples=7
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655929135] [rubi_hybrid_planner_comparison]: 
+[hybrid_planner_comparison_node-7] ============================================================
+[hybrid_planner_comparison_node-7] [GRID A* RESULT]
+[hybrid_planner_comparison_node-7] success                : true
+[hybrid_planner_comparison_node-7] termination            : post_goal_complete
+[hybrid_planner_comparison_node-7] map_generation         : costmap=3 heightmap=1
+[hybrid_planner_comparison_node-7] path_length_m          : 3.745584
+[hybrid_planner_comparison_node-7] total_cost             : 3.745584
+[hybrid_planner_comparison_node-7] distance_cost          : 3.745584
+[hybrid_planner_comparison_node-7] inflation_cost         : 0.000000
+[hybrid_planner_comparison_node-7] height_cost            : 0.000000
+[hybrid_planner_comparison_node-7] sobel_cost             : 0.000000
+[hybrid_planner_comparison_node-7] grid_sobel_kernel_size : 5
+[hybrid_planner_comparison_node-7] grid_sobel_gradient_cost_weight: 0.000000
+[hybrid_planner_comparison_node-7] sobel_gradient_exposure_m: 0.000000
+[hybrid_planner_comparison_node-7] max_grid_sobel_gradient: 0.000000
+[hybrid_planner_comparison_node-7] max_height_jump_m      : 0.000000
+[hybrid_planner_comparison_node-7] max_sobel_equivalent_step_m: 0.000000
+[hybrid_planner_comparison_node-7] max_sobel_gradient    : 0.000000
+[hybrid_planner_comparison_node-7] max_local_relief_m     : 0.000000
+[hybrid_planner_comparison_node-7] max_supported_local_relief_m: 0.000000
+[hybrid_planner_comparison_node-7] height_jump_events     : 0
+[hybrid_planner_comparison_node-7] adjacent_step_rejects : 0
+[hybrid_planner_comparison_node-7] sobel_step_rejects     : 0
+[hybrid_planner_comparison_node-7] local_relief_step_rejects: 0
+[hybrid_planner_comparison_node-7] both_step_rejects     : 0
+[hybrid_planner_comparison_node-7] expanded_cells         : 592
+[hybrid_planner_comparison_node-7] neighbor_candidates    : 4728
+[hybrid_planner_comparison_node-7] astar_open_pushes      : 1339
+[hybrid_planner_comparison_node-7] node_eval_calls        : 807
+[hybrid_planner_comparison_node-7] edge_eval_calls        : 4707
+[hybrid_planner_comparison_node-7] grid_transition_evaluations: 5358
+[hybrid_planner_comparison_node-7] grid_sobel_queries     : 800
+[hybrid_planner_comparison_node-7] grid_sobel_cache_hits  : 9916
+[hybrid_planner_comparison_node-7] grid_sobel_5x5_valid   : 800
+[hybrid_planner_comparison_node-7] grid_sobel_5x5_fallback_to_3x3: 0
+[hybrid_planner_comparison_node-7] grid_sobel_missing    : 0
+[hybrid_planner_comparison_node-7] edge_samples_total     : 0
+[hybrid_planner_comparison_node-7] height_evidence_queries: 800
+[hybrid_planner_comparison_node-7] costmap_queries        : 807
+[hybrid_planner_comparison_node-7] local_relief_queries  : 10400
+[hybrid_planner_comparison_node-7] local_relief_cache_hits: 9268
+[hybrid_planner_comparison_node-7] local_relief_missing_neighborhoods: 0
+[hybrid_planner_comparison_node-7] supported_relief_queries: 10716
+[hybrid_planner_comparison_node-7] search_time_ms         : 2.113075
+[hybrid_planner_comparison_node-7] path_finalize_time_ms  : 0.006130
+[hybrid_planner_comparison_node-7] total_planning_time_ms : 2.119895
+[hybrid_planner_comparison_node-7] ============================================================
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655945535] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[hybrid_planner_comparison_node-7] [INFO] [1792129798.655970505] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=true costmap_generation=3 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=61 sampling_raw_points=0 sampling_tracking_points=0 action=resume_tracking
+[pure_pursuit-8] [INFO] [1792129798.662044002] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[pure_pursuit-8] [INFO] [1792129799.362092740] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.706) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129800.362136744] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129801.462085588] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129802.462090999] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[collision_monitor-4] [INFO] [1792129803.151772508] [collision_monitor]: Robot to stop due to Stop polygon
+[command_watchdog-5] [INFO] [1792129803.201688185] [command_watchdog]: Motion status: collision_or_upstream_stop
+[pure_pursuit-8] [INFO] [1792129803.562072270] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[command_watchdog-5] [INFO] [1792129804.001539222] [command_watchdog]: Motion status: safe_command_timeout
+[pure_pursuit-8] [INFO] [1792129804.562101088] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129805.662051908] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[pure_pursuit-8] [INFO] [1792129806.662065712] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[command_watchdog-5] [INFO] [1792129807.001479609] [command_watchdog]: Motion status: collision_cloud_timeout
+[hybrid_global_costmap_node-6] [WARN] [1792129807.040524809] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.44 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129807.051420617] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.453109 seconds. Ignoring the source.
+[collision_monitor-4] [INFO] [1792129807.051469577] [collision_monitor]: Robot to continue normal operation
+[collision_monitor-4] [WARN] [1792129807.062064555] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.463756 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.151507993] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.553198 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.162091372] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.563783 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129807.240512842] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.64 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129807.251608100] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.653299 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.262100228] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.663792 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.362112125] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.763803 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.398676210] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.800367 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129807.440512865] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.84 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129807.462086011] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.863777 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.498728227] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.900419 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.562072377] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.963763 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.601497588] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.003187 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129807.640517758] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.04 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129807.662115514] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.063806 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.748654768] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.150345 seconds. Ignoring the source.
+[pure_pursuit-8] [INFO] [1792129807.762049211] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.464,1.364) cte=0.035 curvature=2.094 cmd=(0.342,0.716) goal_dist=2.975
+[collision_monitor-4] [WARN] [1792129807.762107521] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.163799 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129807.840539831] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.24 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129807.848691284] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.250382 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.862149417] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.263841 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.948740651] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.350432 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129807.962144984] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.363835 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129808.040514514] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.44 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129808.051395462] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.453087 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129808.062046630] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.463738 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129808.162085598] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.563777 seconds. Ignoring the source.
+[collision_monitor-4] [WARN] [1792129808.198767643] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.600459 seconds. Ignoring the source.
+[hybrid_global_costmap_node-6] [WARN] [1792129808.240514419] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.64 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792129808.262054515] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.663746 seconds. Ignoring the source.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [lifecycle_manager-10]: sending signal 'SIGINT' to process[lifecycle_manager-10]
+[INFO] [lifecycle_manager-9]: sending signal 'SIGINT' to process[lifecycle_manager-9]
+[INFO] [pure_pursuit-8]: sending signal 'SIGINT' to process[pure_pursuit-8]
+[INFO] [hybrid_planner_comparison_node-7]: sending signal 'SIGINT' to process[hybrid_planner_comparison_node-7]
+[INFO] [hybrid_global_costmap_node-6]: sending signal 'SIGINT' to process[hybrid_global_costmap_node-6]
+[INFO] [command_watchdog-5]: sending signal 'SIGINT' to process[command_watchdog-5]
+[INFO] [collision_monitor-4]: sending signal 'SIGINT' to process[collision_monitor-4]
+[INFO] [obstacle_cloud-3]: sending signal 'SIGINT' to process[obstacle_cloud-3]
+[INFO] [frozen_map-2]: sending signal 'SIGINT' to process[frozen_map-2]
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[lifecycle_manager-10] [INFO] [1792129808.304601259] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-10] [INFO] [1792129808.304743048] [lifecycle_navigation]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_navigation)
+[lifecycle_manager-10] [INFO] [1792129808.304784518] [lifecycle_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[lifecycle_manager-9] [INFO] [1792129808.305107958] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-9] [INFO] [1792129808.305210407] [lifecycle_costmap]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_costmap)
+[pure_pursuit-8] [INFO] [1792129808.305669317] [rclcpp]: signal_handler(signum=2)
+[hybrid_planner_comparison_node-7] [INFO] [1792129808.306203685] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-9] [INFO] [1792129808.306270205] [lifecycle_costmap]: Destroying lifecycle_costmap
+[hybrid_global_costmap_node-6] [INFO] [1792129808.306833284] [rclcpp]: signal_handler(signum=2)
+[hybrid_global_costmap_node-6] [INFO] [1792129808.306906274] [global_costmap.global_costmap]: Running Nav2 LifecycleNode rcl preshutdown (global_costmap)
+[hybrid_global_costmap_node-6] [INFO] [1792129808.306958254] [global_costmap.global_costmap]: Deactivating
+[collision_monitor-4] [INFO] [1792129808.307822472] [rclcpp]: signal_handler(signum=2)
+[collision_monitor-4] [INFO] [1792129808.307943522] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[collision_monitor-4] [INFO] [1792129808.307989972] [collision_monitor]: Deactivating
+[collision_monitor-4] [INFO] [1792129808.308001732] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[obstacle_cloud-3] [INFO] [1792129808.308385111] [rclcpp]: signal_handler(signum=2)
+[map_server-1] [INFO] [1792129808.309358849] [rclcpp]: signal_handler(signum=2)
+[map_server-1] [INFO] [1792129808.309426249] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-1] [INFO] [1792129808.309475009] [map_server]: Deactivating
+[map_server-1] [INFO] [1792129808.309485449] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[collision_monitor-4] [INFO] [1792129808.318168071] [collision_monitor]: Cleaning up
+[collision_monitor-4] [INFO] [1792129808.318206651] [collision_monitor]: [Stop]: Destroying Polygon
+[collision_monitor-4] [INFO] [1792129808.318216611] [collision_monitor]: [lidar]: Destroying PointCloud
+[collision_monitor-4] [INFO] [1792129808.318841870] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[collision_monitor-4] [INFO] [1792129808.319300929] [collision_monitor]: Destroying
+[map_server-1] [INFO] [1792129808.319606718] [map_server]: Cleaning up
+[map_server-1] [INFO] [1792129808.319640138] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[map_server-1] [INFO] [1792129808.320401137] [map_server]: Destroying
+[lifecycle_manager-10] [INFO] [1792129808.326863244] [lifecycle_navigation]: Destroying lifecycle_navigation
+[INFO] [lifecycle_manager-9]: process has finished cleanly [pid 3448322]
+[INFO] [pure_pursuit-8]: process has finished cleanly [pid 3448320]
+[INFO] [obstacle_cloud-3]: process has finished cleanly [pid 3448308]
+[INFO] [hybrid_planner_comparison_node-7]: process has finished cleanly [pid 3448317]
+[INFO] [collision_monitor-4]: process has finished cleanly [pid 3448310]
+[INFO] [map_server-1]: process has finished cleanly [pid 3448304]
+[INFO] [lifecycle_manager-10]: process has finished cleanly [pid 3448331]
+[INFO] [frozen_map-2]: process has finished cleanly [pid 3448306]
+[hybrid_global_costmap_node-6] [INFO] [1792129808.440561463] [global_costmap.global_costmap]: Cleaning up
+[INFO] [command_watchdog-5]: process has finished cleanly [pid 3448313]
+[hybrid_global_costmap_node-6] [INFO] [1792129808.441537431] [global_costmap.global_costmap]: Destroying bond (global_costmap) to lifecycle manager.
+[INFO] [hybrid_global_costmap_node-6]: process has finished cleanly [pid 3448315]

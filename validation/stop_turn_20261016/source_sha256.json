@@ -1,0 +1,8 @@
+{
+  "src/legged_bringup/config/pursuit.yaml": "794fad2ba9e5c9a9c6d5ba9e57ee4dd11f7486b6c8b28f83e67b91fc3a13cd7a",
+  "src/legged_bringup/launch/navigate.launch.py": "77e713af7eef955f85a6a0adc409cff62170d72e5cfcca11234961a541dc92a1",
+  "src/legged_navigation/src/simple_pure_pursuit_controller.cpp": "b95891ce3354d9a301256b9ca892c8255fcc7dfe5a24cdeb0965778518d8e013",
+  "src/legged_navigation/src/height_planner.cpp": "6abde6095f636d7c413c4273bdb79dca7ebd7cf114f43c9e7293f840b9a92a90",
+  "src/rubi_heightmap_step_wavefront_planner/src/hybrid_planner_comparison_node.cpp": "6446d10936b94ae5532b1527972263574086ced38819cc527f271fed1e9e4fd8",
+  "src/rubi_heightmap_step_wavefront_planner/src/map/costmap_snapshot.cpp": "d36868236b128b57432b5ed08a149b4c71775df24bdc9e1d57afc7ccfb230d71"
+}

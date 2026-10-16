@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 625" role="img" aria-label="RUBI 배포 구성">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#68859c"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK KR","Noto Sans",sans-serif} .title{font-size:24px;font-weight:700;fill:#102b43}.small{font-size:15px;fill:#536f83}.name{font-size:19px;font-weight:700;fill:#102b43}.desc{font-size:15px;fill:#355368}</style>
+<rect width="1120" height="625" rx="16" fill="#f3f7fa"/>
+<text x="30" y="40" class="title">RUBI 배포 구성</text>
+<text x="30" y="67" class="small">하나의 map 좌표계 · 하나의 localization · 하나의 주행 controller</text>
+<path d="M330 152 H405" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M710 152 H785" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M940 205 V285" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M790 342 H715" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M330 342 H405" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M180 205 V285" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M560 395 V475" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M710 532 H785" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="30" y="100" width="300" height="105" rx="10" fill="#ffffff" stroke="#aec5d6"/>
+<text x="46" y="130" class="name">MID-360S driver</text>
+<text x="46" y="156" class="desc">180° cloud + IMU 보정</text>
+<text x="46" y="178" class="desc">PointCloud2 / Imu</text>
+<rect x="410" y="100" width="300" height="105" rx="10" fill="#eaf4ff" stroke="#aec5d6"/>
+<text x="426" y="130" class="name">Localization</text>
+<text x="426" y="156" class="desc">FAST-LIO 또는 GenZ-ICP</text>
+<text x="426" y="178" class="desc">공통 map pose</text>
+<rect x="790" y="100" width="300" height="105" rx="10" fill="#dff4ec" stroke="#aec5d6"/>
+<text x="806" y="130" class="name">Height mapping</text>
+<text x="806" y="156" class="desc">CuPy GPU 지역 추정</text>
+<text x="806" y="178" class="desc">C++ 전역 누적</text>
+<rect x="790" y="290" width="300" height="105" rx="10" fill="#fff0d6" stroke="#aec5d6"/>
+<text x="806" y="320" class="name">Offline map release</text>
+<text x="806" y="346" class="desc">동결 · 후처리 · 정합 · QC</text>
+<text x="806" y="368" class="desc">PCD + occupancy + height</text>
+<rect x="410" y="290" width="300" height="105" rx="10" fill="#eaf4ff" stroke="#aec5d6"/>
+<text x="426" y="320" class="name">Height global planner</text>
+<text x="426" y="346" class="desc">같은 Grid A* + CoT core</text>
+<text x="426" y="368" class="desc">실시간 costmap으로 재계획</text>
+<rect x="30" y="290" width="300" height="105" rx="10" fill="#ffffff" stroke="#aec5d6"/>
+<text x="46" y="320" class="name">실시간 장애물</text>
+<text x="46" y="346" class="desc">거리 제외 → ObstacleLayer</text>
+<text x="46" y="368" class="desc">Frozen terrain과 별도 갱신</text>
+<rect x="410" y="480" width="300" height="105" rx="10" fill="#eaf4ff" stroke="#aec5d6"/>
+<text x="426" y="510" class="name">선택한 경로 추종</text>
+<text x="426" y="536" class="desc">Nav2 DWB / Custom PP</text>
+<text x="426" y="558" class="desc">/legged/cmd_raw</text>
+<rect x="790" y="480" width="300" height="105" rx="10" fill="#dff4ec" stroke="#aec5d6"/>
+<text x="806" y="510" class="name">정지 단계 → 보행 제어기</text>
+<text x="806" y="536" class="desc">Collision Monitor + watchdog</text>
+<text x="806" y="558" class="desc">/cmd_vel</text>
+</svg>

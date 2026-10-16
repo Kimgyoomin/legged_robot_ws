@@ -1,0 +1,29 @@
+{
+  "states": {
+    "/legged/collision_input_state": "ready",
+    "/cmd_vel": [
+      0.5,
+      -0.016160707206734497
+    ],
+    "/legged/motion_status": "{\"gate\": \"open\", \"reason\": \"pass\", \"tracking\": \"unknown\", \"collision_input\": \"ready\", \"vx\": 0.5, \"wz\": -0.308242637381723}",
+    "/legged/cmd_raw": [
+      0.5,
+      -0.016160707206734497
+    ],
+    "/legged/cmd_safe": [
+      0.5,
+      -0.016160707206734497
+    ]
+  },
+  "frames": 44,
+  "last_frame": {
+    "stamp": 2025.402,
+    "points": 33547,
+    "stop_hits": 0,
+    "hit_min": null,
+    "hit_max": null,
+    "nearest_xy": null
+  },
+  "stop_hits_min": 0,
+  "stop_hits_max": 0
+}

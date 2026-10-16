@@ -1,0 +1,24 @@
+# 기본: RUBI 시뮬레이션 + FAST-LIO localization.
+# 실행: ros2 launch legged_bringup mapping.launch.py
+# 실물에서는 use_sim_time: false. 센서와 localization은 별도로 실행합니다.
+use_sim_time: true
+rviz: true
+
+# FAST-LIO의 scan 종료 시각 기준 body 점군 + map -> body 자세.
+input_scan: /cloud_registered_body
+odom_topic: /localization
+map_frame: map
+base_frame: base_link
+
+# 입력 점군 원점 기준 거리(m). 위 점군에서는 IMU body 원점입니다.
+min_range: 0.6
+max_range: 3.0
+ray_mode: all
+ray_voxel_size: 0.0
+
+# 저장 서비스 호출 시 이 경로 아래 새 run 폴더를 만듭니다.
+save_dir: ~/legged_robot_ws/maps/sim_lio_snapshot
+
+# 상세 알고리즘/전역지도 설정. 상대 경로는 이 YAML의 위치 기준입니다.
+config: height.yaml
+wrapper_config: global.yaml

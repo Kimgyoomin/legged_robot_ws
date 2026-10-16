@@ -1,0 +1,65 @@
+{
+  "/legged/cmd_raw": {
+    "samples": 320,
+    "zero_v_fraction": 1.0,
+    "rotation_only_fraction": 0.996875,
+    "v_p50": 0.0,
+    "max_v": 0.0
+  },
+  "/legged/cmd_safe": {
+    "samples": 308,
+    "zero_v_fraction": 1.0,
+    "rotation_only_fraction": 0.948051948051948,
+    "v_p50": 0.0,
+    "max_v": 0.0
+  },
+  "/cmd_vel": {
+    "samples": 699,
+    "zero_v_fraction": 1.0,
+    "rotation_only_fraction": 0.0,
+    "v_p50": 0.0,
+    "max_v": 0.0
+  },
+  "tracking_counts": {
+    "aligning_heading": 320
+  },
+  "motion_counts": {
+    "costmap_collision": 64,
+    "safe_command_timeout": 2
+  },
+  "paths": [
+    {
+      "wall": 3.03503963816911,
+      "count": 101
+    },
+    {
+      "wall": 5.563749692868441,
+      "count": 99
+    },
+    {
+      "wall": 7.26474830089137,
+      "count": 102
+    },
+    {
+      "wall": 13.177646215073764,
+      "count": 118
+    }
+  ],
+  "ros_span": [
+    138.502,
+    165.802
+  ],
+  "pose_range_xy": [
+    0.25466987252954887,
+    0.2613872817914009
+  ],
+  "historical_controller_durations_wall_s": {
+    "idle": 17.900076389312744,
+    "aligning_heading": 92.4136221408844,
+    "tracking_raw_path": 92.90015721321106,
+    "braking_for_alignment": 7.5999815464019775,
+    "cross_track_limit": 0.013875246047973633,
+    "empty_path": 0.1725606918334961
+  },
+  "historical_alignment_entries": 14
+}

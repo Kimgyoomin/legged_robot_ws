@@ -1,0 +1,137 @@
+{
+  "status": "experimental_preview_not_navigation_approval",
+  "version": "0.1.0",
+  "source": "/home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/live_analysis/edge_review_20261014/input/map.rghm",
+  "source_sha256": "ef2a7e765b6e2559a66bcf33d1dd0ce3f9442a1b317d6c6b70785d2a59aff3e0",
+  "frame": "world",
+  "resolution_m": 0.05,
+  "snapshot_stamp_ns": 5360138000000,
+  "source_origin_xy_m": [
+    -25.0,
+    -25.0
+  ],
+  "source_dimensions_xy": [
+    1000,
+    1000
+  ],
+  "crop_offset_xy_cells": [
+    329,
+    361
+  ],
+  "parameters": {
+    "mean_radius_m": 0.06,
+    "edge_span_m": 0.025,
+    "edge_guard_cells": 1,
+    "min_region_cells": 25,
+    "region_p95_m": 0.004,
+    "local_window": 7,
+    "local_min_points": 12,
+    "local_rms_m": 0.003,
+    "max_change_m": 0.01,
+    "max_slope_degrees": 35.0
+  },
+  "processing_seconds_this_host": 0.015470109414309263,
+  "environment": {
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "numpy": "1.26.4",
+    "scipy": "1.10.1"
+  },
+  "implementation_sha256": {
+    "__init__.py": "8a8758b3d6a1b0c3dca488ce7eaaa5c9715633c60b55c2c5dd9e35a3ee2a6158",
+    "cli.py": "c9cb7e29aed9b2ebe6f20881057711a7faa5a7c0e79a06971639f4b738e7b52b",
+    "filters.py": "66edbd7a9d064f22b31b3fbb5977328aba1049bab88287a461991a9f24630985",
+    "map_io.py": "5276dbbc2ac4453fa5adb59317dd7adcbc621f4a69bfc26530d5801aa1908522",
+    "preview.py": "014a9f1c738c76d0af36cb2393f9240952a4c1d08674aa47398d5cb938c253d8",
+    "qc.py": "3057bb7ee9af3dc54b4139c50d6b7af6bd51d69b25204f153348c63775e10bfa",
+    "report.py": "aec3afb678ea86da5d4dff6204bf9471a812084b28f7eeb8287215fed7d92baa"
+  },
+  "methods": {
+    "raw": {
+      "usable_cells": 51812,
+      "changed_cells_gt_1um": 0,
+      "abs_change_p95_m": 0.0,
+      "abs_change_max_m": 0.0,
+      "protected_cells_changed_gt_1um": 0,
+      "unknown_mask_preserved": true,
+      "raw_selected_interior_cells": 44948,
+      "interior_local_median_abs_residual_p95_m": 0.0006701350212097168,
+      "rois": []
+    },
+    "baseline": {
+      "usable_cells": 51812,
+      "changed_cells_gt_1um": 51330,
+      "abs_change_p95_m": 0.05397721827030181,
+      "abs_change_max_m": 0.25700099766254425,
+      "protected_cells_changed_gt_1um": 6853,
+      "unknown_mask_preserved": true,
+      "raw_selected_interior_cells": 44948,
+      "interior_local_median_abs_residual_p95_m": 0.0002013283967971802,
+      "rois": []
+    },
+    "candidate": {
+      "usable_cells": 51812,
+      "changed_cells_gt_1um": 44865,
+      "abs_change_p95_m": 0.0014134501296638653,
+      "abs_change_max_m": 0.005152992939418154,
+      "protected_cells_changed_gt_1um": 0,
+      "unknown_mask_preserved": true,
+      "raw_selected_interior_cells": 44948,
+      "interior_local_median_abs_residual_p95_m": 0.0,
+      "rois": []
+    }
+  },
+  "regions": [
+    {
+      "region": 1,
+      "cells": 44339,
+      "accepted_as_one_plane": true,
+      "fit_abs_residual_p95_m": 0.0014961219246565638,
+      "fit_abs_residual_max_m": 0.005152992939418154
+    },
+    {
+      "region": 2,
+      "cells": 128,
+      "accepted_as_one_plane": true,
+      "fit_abs_residual_p95_m": 0.0003844693335978216,
+      "fit_abs_residual_max_m": 0.0009102709262686914
+    },
+    {
+      "region": 3,
+      "cells": 95,
+      "accepted_as_one_plane": true,
+      "fit_abs_residual_p95_m": 0.00047327114941243516,
+      "fit_abs_residual_max_m": 0.0006976967118163258
+    },
+    {
+      "region": 4,
+      "cells": 256,
+      "accepted_as_one_plane": true,
+      "fit_abs_residual_p95_m": 0.000870177720941728,
+      "fit_abs_residual_max_m": 0.0016021656143690027
+    },
+    {
+      "region": 5,
+      "cells": 130,
+      "accepted_as_one_plane": true,
+      "fit_abs_residual_p95_m": 0.0011909891345695531,
+      "fit_abs_residual_max_m": 0.002035082711666053
+    }
+  ],
+  "candidate_regional_plane_cells": 44948,
+  "candidate_local_plane_cells": 0,
+  "baseline": "Circular finite mean, observed mask restored. Does not run inpainting.",
+  "variance_semantics": "Original variance retained as provenance, not recomputed posterior uncertainty.",
+  "timestamps": "Original snapshot and cell timestamps preserved, never refreshed by postprocessing.",
+  "world_truth_used": false,
+  "output_sha256": {
+    "qc_regions.json": "dc4b320b16c2dd2d560b4bae62d9d061b0d93c83496c3c0902df1e3233b36e95",
+    "layers.npz": "9d1a4565f05449b8e2d5d2b9c3a97641d6b7514c11b019d2bab1ac8db660ce1d",
+    "changes.png": "0243fa0d9e4509e54deaeb5f624347c0d8476b1d75996e7eebbcbaf7340ea2a2",
+    "report.html": "8934428a8a93a65a81839ae692b801cc08f47b444c343c92f746377a0dc9965b",
+    "comparison.png": "bf9b2d4bf66be16bcf4b93cb82c8396f399724353901e7780e1218eb212f1059",
+    "candidate/map.rghm": "52bf2466c4d060e4ea1fbc578d7685dba2679a7a41c06e7aa4afefc62a695190",
+    "candidate/surface.pcd": "672b67b7b0179e4aa29967b3c84e684241d7aed2430f63e9437c2ce2671ef80a",
+    "baseline/map.rghm": "a5df008d40ae52027cedffcd7fca1f4b81a7417f010579d9a36a5ed2e1d8db13",
+    "baseline/surface.pcd": "7473f64d02076737e2febfe0c324e4de6960c480f7fa6edc12640725a2383d0a"
+  }
+}

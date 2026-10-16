@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>legged_navigation</name><version>0.1.0</version>
+  <description>RUBI height Grid A* Nav2 adapter and custom Pure Pursuit controller.</description>
+  <maintainer email="127925120+Kimgyoomin@users.noreply.github.com">Kimgyoomin</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend><depend>nav2_core</depend><depend>nav2_costmap_2d</depend>
+  <depend>nav2_util</depend><depend>pluginlib</depend><depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend><depend>geometry_msgs</depend><depend>visualization_msgs</depend>
+  <depend>tf2_msgs</depend><depend>std_msgs</depend><depend>tf2_ros</depend><depend>tf2_geometry_msgs</depend>
+  <depend>rubi_heightmap_step_wavefront_planner</depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

@@ -1,0 +1,23 @@
+{
+  "robot": [
+    6.087636473448529,
+    2.0856220837977206,
+    0.13097907638728343
+  ],
+  "quaternion": [
+    -0.020880544945921706,
+    0.010378398311102816,
+    -0.4786099819559356,
+    0.8777179369611837
+  ],
+  "/global_costmap/costmap_raw": {
+    "pose_cost": 170,
+    "nearest_hard_cell": 0.40639054007215153,
+    "frame": "map"
+  },
+  "/local_costmap/costmap_raw": {
+    "pose_cost": 35,
+    "nearest_hard_cell": 0.4063906592446953,
+    "frame": "map"
+  }
+}

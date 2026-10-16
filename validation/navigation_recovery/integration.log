@@ -1,0 +1,20 @@
+[INFO] [1792069617.959452335] [obstacle_cloud]: Collision input: waiting_for_scan_and_mount
+[INFO] [1792069617.994891745] [obstacle_cloud]: Collision input: missing_static_mount
+[INFO] [1792069618.367821595] [command_watchdog]: Motion status: missing_static_mount
+[INFO] [1792069620.388422430] [obstacle_cloud]: Collision input: ready
+[INFO] [1792069620.409445156] [command_watchdog]: Motion status: pass
+[INFO] [1792069622.259380107] [command_watchdog]: Motion status: collision_cloud_timeout
+[INFO] [1792069622.809133432] [command_watchdog]: Motion status: pass
+[INFO] [1792069623.355641961] [simple_pure_pursuit_controller]: Simple Pure Pursuit ready: path=/test/path cmd=/test/pp_cmd frames=map<-base_link frequency=20.0 Hz
+[INFO] [1792069623.405762190] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792069624.779610750] [simple_pure_pursuit_controller]: Accepted replacement Path: size=5; progress reset
+[INFO] [1792069624.805805874] [simple_pure_pursuit_controller]: Tracking state: aligning_heading
+[INFO] [1792069624.805887445] [simple_pure_pursuit_controller]: PP tracking: path_size=5 nearest_idx=0 lookahead_idx=2 lookahead=(-0.350,0.000) cte=0.000 curvature=0.000 cmd=(0.000,0.039) goal_dist=2.000
+[INFO] [1792069625.855801851] [simple_pure_pursuit_controller]: PP tracking: path_size=5 nearest_idx=0 lookahead_idx=2 lookahead=(-0.350,0.000) cte=0.000 curvature=0.000 cmd=(0.000,0.400) goal_dist=2.000
+[INFO] [1792069626.355829988] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792069626.855819339] [simple_pure_pursuit_controller]: PP tracking: path_size=5 nearest_idx=0 lookahead_idx=2 lookahead=(-0.350,0.000) cte=0.000 curvature=0.000 cmd=(0.200,0.000) goal_dist=2.000
+[INFO] [1792069627.489470967] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[WARN] [1792069627.489526548] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792069627.505819069] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792069627.889631766] [rclcpp]: signal_handler(signum=2)
+[INFO] [1792069627.889640226] [rclcpp]: signal_handler(signum=2)

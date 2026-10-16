@@ -1,0 +1,11 @@
+{
+  "current_pose": [
+    0.5524405607070034,
+    0.052029389175963336,
+    -3.0172213176875986
+  ],
+  "current_rectangle": "pass",
+  "cw_turn_0_5": "pass",
+  "ccw_turn_0_5": "pass",
+  "note": "Snapshot checks only, not closed-loop motion validation"
+}

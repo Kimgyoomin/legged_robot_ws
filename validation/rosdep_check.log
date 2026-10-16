@@ -1,0 +1,4 @@
+System dependencies have not been satisfied:
+apt	python3-open3d
+apt	libapr1-dev
+apt	libaprutil1-dev

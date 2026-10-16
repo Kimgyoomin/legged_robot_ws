@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 425" role="img" aria-label="PointCloud → Height Map">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#68859c"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK KR","Noto Sans",sans-serif} .title{font-size:24px;font-weight:700;fill:#102b43}.small{font-size:15px;fill:#536f83}.name{font-size:19px;font-weight:700;fill:#102b43}.desc{font-size:15px;fill:#355368}</style>
+<rect width="1120" height="425" rx="16" fill="#f3f7fa"/>
+<text x="30" y="40" class="title">PointCloud → Height Map</text>
+<text x="30" y="67" class="small">Scan의 원래 시각과 좌표계를 끝까지 유지합니다.</text>
+<path d="M330 152 H405" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M710 152 H785" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M940 205 V275" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M790 332 H715" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<path d="M410 332 H335" fill="none" stroke="#68859c" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="30" y="100" width="300" height="105" rx="10" fill="#ffffff" stroke="#aec5d6"/>
+<text x="46" y="130" class="name">① 입력 + 거리 필터</text>
+<text x="46" y="156" class="desc">XYZ / layout 검사</text>
+<text x="46" y="178" class="desc">유한점 · 0.6–3.0 m</text>
+<rect x="410" y="100" width="300" height="105" rx="10" fill="#eaf4ff" stroke="#aec5d6"/>
+<text x="426" y="130" class="name">② 시각별 pose</text>
+<text x="426" y="156" class="desc">Odometry 보간 또는 stamped TF</text>
+<text x="426" y="178" class="desc">장착 TF 합성 → 변환 행렬</text>
+<rect x="790" y="100" width="300" height="105" rx="10" fill="#dff4ec" stroke="#aec5d6"/>
+<text x="806" y="130" class="name">③ GPU 후보 계산</text>
+<text x="806" y="156" class="desc">좌표 변환 → 5 cm 셀</text>
+<text x="806" y="178" class="desc">고정 지도 읽기 · 높이 / ray 후보</text>
+<rect x="790" y="280" width="300" height="105" rx="10" fill="#dff4ec" stroke="#aec5d6"/>
+<text x="806" y="310" class="name">④ GPU 확정 → 지역 GridMap</text>
+<text x="806" y="336" class="desc">셀별 확정 · 관측 우선</text>
+<text x="806" y="358" class="desc">elevation / variance 발행</text>
+<rect x="410" y="280" width="300" height="105" rx="10" fill="#eaf4ff" stroke="#aec5d6"/>
+<text x="426" y="310" class="name">⑤ C++ 전역 누적</text>
+<text x="426" y="336" class="desc">유효 셀 교체 · 가림은 retain</text>
+<text x="426" y="358" class="desc">미관측은 unknown 유지</text>
+<rect x="30" y="280" width="300" height="105" rx="10" fill="#fff0d6" stroke="#aec5d6"/>
+<text x="46" y="310" class="name">⑥ 동결 + PC 후처리</text>
+<text x="46" y="336" class="desc">RGHM / PCD / QC 보고서</text>
+<text x="46" y="358" class="desc">경계 보호 · 평면 내부 잔노이즈</text>
+</svg>

@@ -1,0 +1,18 @@
+{
+  "height_cells": 52827,
+  "height_bounds": [
+    [
+      -1.7249999999999979,
+      19.625
+    ],
+    [
+      -11.975,
+      8.825000000000003
+    ]
+  ],
+  "height_inside_occupancy_fraction": 1.0,
+  "inside_cells_free_fraction": 0.8182179567266739,
+  "inside_cells_occupied_fraction": 0.18178204327332614,
+  "inside_cells_unknown_fraction": 0.0,
+  "note": "Footprint overlap screening only; not landmark registration or height accuracy certification."
+}

@@ -1,0 +1,57 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'save_dir':
+        no description given
+        (default: '/home/kim/legged_robot_ws/maps/raw')
+
+    'use_sim_time':
+        no description given
+        (default: 'false')
+
+    'rviz':
+        no description given
+        (default: 'true')
+
+    'input_scan':
+        no description given
+        (default: '/cloud_registered_body')
+
+    'odom_topic':
+        no description given
+        (default: '/localization')
+
+    'map_frame':
+        no description given
+        (default: 'map')
+
+    'base_frame':
+        no description given
+        (default: 'base_link')
+
+    'min_range':
+        no description given
+        (default: '0.6')
+
+    'max_range':
+        no description given
+        (default: '3.0')
+
+    'config':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/height.yaml')
+
+    'wrapper_config':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/global.yaml')
+
+    'odom_max_gap':
+        no description given
+        (default: '0.2')
+
+    'tf_wait_timeout':
+        no description given
+        (default: '1.5')
+
+    'rviz_config':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/rubi_height_mapping/share/rubi_height_mapping/config/rubi_mapping.rviz')

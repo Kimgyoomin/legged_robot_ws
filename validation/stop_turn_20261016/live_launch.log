@@ -1,0 +1,121 @@
+1792128382.5774925 [INFO] [launch]: All log files can be found below /home/kim/.ros/log/2026-10-16-14-26-22-576962-Kim9975-3392896
+1792128382.5775743 [INFO] [launch]: Default logging verbosity is set to INFO
+1792128382.7737372 [INFO] [map_server-1]: process started with pid [3392912]
+1792128382.7738633 [INFO] [frozen_map-2]: process started with pid [3392914]
+1792128382.7739072 [INFO] [obstacle_cloud-3]: process started with pid [3392916]
+1792128382.7739384 [INFO] [collision_monitor-4]: process started with pid [3392918]
+1792128382.7739661 [INFO] [command_watchdog-5]: process started with pid [3392920]
+1792128382.7739937 [INFO] [hybrid_global_costmap_node-6]: process started with pid [3392922]
+1792128382.7740204 [INFO] [hybrid_planner_comparison_node-7]: process started with pid [3392924]
+1792128382.7740469 [INFO] [pure_pursuit-8]: process started with pid [3392926]
+1792128382.7740729 [INFO] [lifecycle_manager-9]: process started with pid [3392928]
+1792128382.7740991 [INFO] [lifecycle_manager-10]: process started with pid [3392930]
+1792128382.7741249 [INFO] [rviz2-11]: process started with pid [3392932]
+1792128383.1308756 [obstacle_cloud-3] [INFO] [1792128383.130643826] [obstacle_cloud]: Collision input: waiting_for_scan_and_mount
+1792128383.2507901 [command_watchdog-5] [INFO] [1792128383.250689978] [command_watchdog]: Motion status: waiting_for_scan_and_mount
+1792128383.5925128 [rviz2-11] [INFO] [1792128383.592310127] [rviz2]: Stereo is NOT SUPPORTED
+1792128383.5926166 [rviz2-11] [INFO] [1792128383.592368198] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+1792128383.6697881 [rviz2-11] [INFO] [1792128383.669652640] [rviz2]: Stereo is NOT SUPPORTED
+1792128383.7576811 [rviz2-11] [INFO] [1792128383.757531264] [rviz2]: Trying to create a map of size 464 x 454 using 1 swatches
+1792128384.7965186 [rviz2-11] [INFO] [1792128384.796375003] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128384.8919349 [rviz2-11] [INFO] [1792128384.891809751] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128384.9887357 [rviz2-11] [INFO] [1792128384.988507117] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.0844669 [rviz2-11] [INFO] [1792128385.084240067] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.1809866 [rviz2-11] [INFO] [1792128385.180768642] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.2762613 [rviz2-11] [INFO] [1792128385.276091350] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.3728018 [rviz2-11] [INFO] [1792128385.372585985] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.4687812 [rviz2-11] [INFO] [1792128385.468571686] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.5647354 [rviz2-11] [INFO] [1792128385.564465138] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.6924667 [rviz2-11] [INFO] [1792128385.692301776] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.7881880 [rviz2-11] [INFO] [1792128385.788057316] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.8842206 [rviz2-11] [INFO] [1792128385.884004988] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128385.9802089 [rviz2-11] [INFO] [1792128385.980003939] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.0763245 [rviz2-11] [INFO] [1792128386.076098092] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.1720834 [rviz2-11] [INFO] [1792128386.171888302] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.2688231 [rviz2-11] [INFO] [1792128386.268708719] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.3970177 [rviz2-11] [INFO] [1792128386.396716298] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.4929307 [rviz2-11] [INFO] [1792128386.492677230] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.5885434 [rviz2-11] [INFO] [1792128386.588364270] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128386.6400590 [obstacle_cloud-3] [INFO] [1792128386.639806011] [obstacle_cloud]: Collision input: ready
+1792128386.6426706 [command_watchdog-5] [INFO] [1792128386.642586467] [command_watchdog]: Motion status: costmap_timeout
+1792128386.6839304 [rviz2-11] [INFO] [1792128386.683772738] [rviz]: Message Filter dropping message: frame 'base_link' at time 0.000 for reason 'discarding message because the queue is full'
+1792128387.4426036 [command_watchdog-5] [INFO] [1792128387.442554269] [command_watchdog]: Motion status: safe_command_timeout
+1792128400.9052663 [rviz2-11] [INFO] [1792128400.905028228] [rviz2]: Setting goal pose: Frame:map, Position(6.15568, -9.6842, 0), Orientation(0, 0, -0.947592, 0.319484) = Angle: -2.49122
+1792128401.1929843 [command_watchdog-5] [INFO] [1792128401.192857634] [command_watchdog]: Motion status: pass
+1792128412.6930718 [command_watchdog-5] [INFO] [1792128412.692877878] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128412.7933171 [command_watchdog-5] [INFO] [1792128412.793058415] [command_watchdog]: Motion status: pass
+1792128412.8430245 [command_watchdog-5] [INFO] [1792128412.842829717] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128412.8930416 [command_watchdog-5] [INFO] [1792128412.892859831] [command_watchdog]: Motion status: pass
+1792128416.0929890 [command_watchdog-5] [INFO] [1792128416.092754330] [command_watchdog]: Motion status: braking_for_alignment
+1792128416.1934264 [command_watchdog-5] [INFO] [1792128416.193180179] [command_watchdog]: Motion status: pass
+1792128423.2432709 [command_watchdog-5] [INFO] [1792128423.243073566] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128424.1931512 [command_watchdog-5] [INFO] [1792128424.192955152] [command_watchdog]: Motion status: pass
+1792128424.4931083 [command_watchdog-5] [INFO] [1792128424.492906582] [command_watchdog]: Motion status: braking_for_alignment
+1792128424.5929832 [command_watchdog-5] [INFO] [1792128424.592796469] [command_watchdog]: Motion status: pass
+1792128427.5931542 [command_watchdog-5] [INFO] [1792128427.592955562] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128427.8934836 [command_watchdog-5] [INFO] [1792128427.893272795] [command_watchdog]: Motion status: pass
+1792128427.9432969 [command_watchdog-5] [INFO] [1792128427.943104507] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128428.0931716 [command_watchdog-5] [INFO] [1792128428.093024697] [command_watchdog]: Motion status: pass
+1792128444.4430342 [command_watchdog-5] [INFO] [1792128444.442845484] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128444.4930148 [command_watchdog-5] [INFO] [1792128444.492820037] [command_watchdog]: Motion status: pass
+1792128455.6931455 [command_watchdog-5] [INFO] [1792128455.692952845] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128456.0932887 [command_watchdog-5] [INFO] [1792128456.093075949] [command_watchdog]: Motion status: pass
+1792128460.1934743 [command_watchdog-5] [INFO] [1792128460.193257345] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128460.3935921 [command_watchdog-5] [INFO] [1792128460.393361533] [command_watchdog]: Motion status: pass
+1792128463.6933713 [command_watchdog-5] [INFO] [1792128463.693167465] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128463.8934746 [command_watchdog-5] [INFO] [1792128463.893277833] [command_watchdog]: Motion status: pass
+1792128468.8935881 [command_watchdog-5] [INFO] [1792128468.893393062] [command_watchdog]: Motion status: braking_for_alignment
+1792128468.9930258 [command_watchdog-5] [INFO] [1792128468.992843038] [command_watchdog]: Motion status: pass
+1792128469.9932511 [command_watchdog-5] [INFO] [1792128469.993056348] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128478.1931036 [command_watchdog-5] [INFO] [1792128478.192894281] [command_watchdog]: Motion status: costmap_collision
+1792128492.5434566 [command_watchdog-5] [INFO] [1792128492.543258830] [command_watchdog]: Motion status: pass
+1792128492.7431135 [command_watchdog-5] [INFO] [1792128492.742892897] [command_watchdog]: Motion status: costmap_collision
+1792128492.9933574 [command_watchdog-5] [INFO] [1792128492.993155833] [command_watchdog]: Motion status: pass
+1792128495.8931215 [command_watchdog-5] [INFO] [1792128495.892928188] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128495.9932997 [command_watchdog-5] [INFO] [1792128495.993097759] [command_watchdog]: Motion status: pass
+1792128498.7934844 [command_watchdog-5] [INFO] [1792128498.793248510] [command_watchdog]: Motion status: braking_for_alignment
+1792128498.8929501 [command_watchdog-5] [INFO] [1792128498.892777887] [command_watchdog]: Motion status: pass
+1792128505.0436485 [command_watchdog-5] [INFO] [1792128505.043422625] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128505.3934901 [command_watchdog-5] [INFO] [1792128505.393297291] [command_watchdog]: Motion status: pass
+1792128510.6434340 [command_watchdog-5] [INFO] [1792128510.643250566] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128511.3934567 [command_watchdog-5] [INFO] [1792128511.393251055] [command_watchdog]: Motion status: pass
+1792128522.9936528 [command_watchdog-5] [INFO] [1792128522.993436160] [command_watchdog]: Motion status: braking_for_alignment
+1792128523.0932355 [command_watchdog-5] [INFO] [1792128523.092994599] [command_watchdog]: Motion status: pass
+1792128530.3433084 [command_watchdog-5] [INFO] [1792128530.343115562] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128530.6931825 [command_watchdog-5] [INFO] [1792128530.692988831] [command_watchdog]: Motion status: costmap_collision
+1792128555.8057852 [rviz2-11] [INFO] [1792128555.805608163] [rviz2]: Setting goal pose: Frame:map, Position(16.13, -3.22757, 0), Orientation(0, 0, 0.375593, 0.926785) = Angle: 0.770074
+1792128562.4929781 [command_watchdog-5] [INFO] [1792128562.492783385] [command_watchdog]: Motion status: safe_command_timeout
+1792128563.4932814 [command_watchdog-5] [INFO] [1792128563.493080820] [command_watchdog]: Motion status: costmap_collision
+1792128585.3434672 [command_watchdog-5] [INFO] [1792128585.343233360] [command_watchdog]: Motion status: pass
+1792128592.2932897 [command_watchdog-5] [INFO] [1792128592.293081435] [command_watchdog]: Motion status: braking_for_alignment
+1792128592.3932221 [command_watchdog-5] [INFO] [1792128592.393048578] [command_watchdog]: Motion status: pass
+1792128606.3931935 [command_watchdog-5] [INFO] [1792128606.392944300] [command_watchdog]: Motion status: goal_reached
+1792128606.4931238 [command_watchdog-5] [INFO] [1792128606.492931924] [command_watchdog]: Motion status: idle
+1792128607.2930036 [command_watchdog-5] [INFO] [1792128607.292782223] [command_watchdog]: Motion status: safe_command_timeout
+1792128609.2816019 [rviz2-11] [INFO] [1792128609.281403442] [rviz2]: Setting goal pose: Frame:map, Position(0.173528, -0.524092, 0), Orientation(0, 0, 0.262855, 0.964835) = Angle: 0.53196
+1792128609.4931326 [command_watchdog-5] [INFO] [1792128609.492938228] [command_watchdog]: Motion status: pass
+1792128611.9935336 [command_watchdog-5] [INFO] [1792128611.993344757] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128614.3433676 [command_watchdog-5] [INFO] [1792128614.343142493] [command_watchdog]: Motion status: costmap_collision
+1792128647.2931573 [command_watchdog-5] [INFO] [1792128647.292957480] [command_watchdog]: Motion status: safe_command_timeout
+1792128668.4933395 [command_watchdog-5] [INFO] [1792128668.493155144] [command_watchdog]: Motion status: costmap_collision
+1792128692.4434164 [command_watchdog-5] [INFO] [1792128692.443221884] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128692.6432903 [command_watchdog-5] [INFO] [1792128692.643055676] [command_watchdog]: Motion status: costmap_collision
+1792128693.2433562 [command_watchdog-5] [INFO] [1792128693.243118103] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128693.8433616 [command_watchdog-5] [INFO] [1792128693.843148881] [command_watchdog]: Motion status: costmap_collision
+1792128694.0932827 [command_watchdog-5] [INFO] [1792128694.093094581] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128696.4435337 [command_watchdog-5] [INFO] [1792128696.443324754] [command_watchdog]: Motion status: pass
+1792128712.8438854 [command_watchdog-5] [INFO] [1792128712.843691612] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128713.0934126 [command_watchdog-5] [INFO] [1792128713.093173970] [command_watchdog]: Motion status: costmap_collision
+1792128714.0435131 [command_watchdog-5] [INFO] [1792128714.043296570] [command_watchdog]: Motion status: predicted_costmap_collision
+1792128714.4933589 [command_watchdog-5] [INFO] [1792128714.493163375] [command_watchdog]: Motion status: costmap_collision
+1792128727.3932240 [command_watchdog-5] [INFO] [1792128727.392994205] [command_watchdog]: Motion status: safe_command_timeout
+1792128727.5933897 [command_watchdog-5] [INFO] [1792128727.593164430] [command_watchdog]: Motion status: costmap_collision
+1792128731.0933340 [command_watchdog-5] [INFO] [1792128731.093115218] [command_watchdog]: Motion status: safe_command_timeout
+1792128731.8932850 [command_watchdog-5] [INFO] [1792128731.893115066] [command_watchdog]: Motion status: costmap_collision
+1792128750.2928867 [command_watchdog-5] [INFO] [1792128750.292711720] [command_watchdog]: Motion status: safe_command_timeout
+1792128750.6933811 [command_watchdog-5] [INFO] [1792128750.693179996] [command_watchdog]: Motion status: costmap_collision
+1792128757.1926506 [command_watchdog-5] [INFO] [1792128757.192440846] [command_watchdog]: Motion status: safe_command_timeout
+1792128758.6929672 [command_watchdog-5] [INFO] [1792128758.692754240] [command_watchdog]: Motion status: costmap_collision
+1792128774.1919146 [command_watchdog-5] [INFO] [1792128774.191717235] [command_watchdog]: Motion status: safe_command_timeout
+1792128778.8918667 [command_watchdog-5] [INFO] [1792128778.891665558] [command_watchdog]: Motion status: costmap_collision
+1792128787.8914914 [command_watchdog-5] [INFO] [1792128787.891291519] [command_watchdog]: Motion status: safe_command_timeout

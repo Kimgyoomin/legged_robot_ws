@@ -1,0 +1,19 @@
+-- run_test.py: extra environment variables:
+ - PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/legged_bringup':
+ - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/legged_bringup/test/test_costmap_guard.py -o cache_dir=/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/costmap_guard/.cache --junit-xml=/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml --junit-prefix=legged_bringup
+
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: build/legged_bringup/ament_cmake_pytest/costmap_guard/.cache
+rootdir: /home/kim/legged_robot_ws
+collected 10 items
+
+../../src/legged_bringup/test/test_costmap_guard.py ..........           [100%]
+
+- generated xml file: /home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml -
+============================== 10 passed in 0.11s ==============================
+
+
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml'

@@ -1,0 +1,21 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'site':
+        no description given
+        (default: '')
+
+    'method':
+        no description given
+        (default: 'fastlio')
+
+    'use_sim_time':
+        no description given
+        (default: 'false')
+
+    'publish_mount':
+        no description given
+        (default: 'true')
+
+    'frames':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/frames.yaml')

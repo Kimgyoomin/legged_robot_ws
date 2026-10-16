@@ -1,0 +1,12 @@
+{
+  "mode": "nav2",
+  "controller": "rpp",
+  "first_path_points": 61,
+  "rerouted_points": 61,
+  "detour_max_y_m": 0.8750000279396772,
+  "frozen_acquisition_stamp_preserved": true,
+  "controller_produced_motion": true,
+  "near_obstacle_stop": true,
+  "stale_sensor_stop": true,
+  "domain": 173
+}

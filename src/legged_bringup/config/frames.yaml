@@ -1,0 +1,4 @@
+# Corrected upright LiDAR and IMU axes. Distances in metres, rotation already in driver.
+# Re-measure these translations if the physical bracket changes.
+base_to_lidar: [0.101, 0.0, -0.1169]
+imu_to_base: [-0.112, 0.02329, 0.07278]

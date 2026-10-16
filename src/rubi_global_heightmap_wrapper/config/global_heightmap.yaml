@@ -1,0 +1,19 @@
+/rubi_global_heightmap_wrapper:
+  ros__parameters:
+    input_topic: /elevation_mapping_node/elevation_map_raw
+    input_convention: grid_map
+    output_topic: /rubi/global_elevation/cloud
+    map_frame: map
+    resolution: 0.05
+    origin_x: -25.0
+    origin_y: -25.0
+    length_x: 50.0
+    length_y: 50.0
+    # Initial quality cutoff in m^2; requires calibration on the RUBI input bag.
+    max_variance: 0.04
+    # Global survey accumulation: missing local estimates do not erase history.
+    # Use invalidate for the legacy policy. This does not change the local map.
+    invalid_cell_policy: retain
+    publish_fps: 1.0
+    output_directory: /tmp/rubi_mapping_results
+    load_path: ''

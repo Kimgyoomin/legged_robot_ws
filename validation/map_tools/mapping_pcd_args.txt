@@ -1,0 +1,8 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'output':
+        no description given
+
+    'use_sim_time':
+        no description given
+        (default: 'false')

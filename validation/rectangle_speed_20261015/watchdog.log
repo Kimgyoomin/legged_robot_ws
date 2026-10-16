@@ -1,0 +1,12 @@
+[INFO] [1792070931.714365585] [command_watchdog]: Motion status: waiting_for_scan_and_mount
+[INFO] [1792070931.788968033] [command_watchdog]: Motion status: pass
+[INFO] [1792070935.638668616] [command_watchdog]: Motion status: costmap_collision
+[INFO] [1792070936.488608470] [command_watchdog]: Motion status: predicted_costmap_collision
+[INFO] [1792070937.338730043] [command_watchdog]: Motion status: pass
+[INFO] [1792070938.188677194] [command_watchdog]: Motion status: predicted_costmap_collision
+[INFO] [1792070939.038724134] [command_watchdog]: Motion status: pass
+[INFO] [1792070939.138603728] [command_watchdog]: Motion status: costmap_pose_stale
+[INFO] [1792070939.938687105] [command_watchdog]: Motion status: pass
+[INFO] [1792070941.138434875] [command_watchdog]: Motion status: collision_cloud_timeout
+[INFO] [1792070941.638725887] [command_watchdog]: Motion status: pass
+[INFO] [1792070942.488483290] [command_watchdog]: Motion status: invalid_costmap

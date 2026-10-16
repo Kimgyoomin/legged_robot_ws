@@ -1,0 +1,16 @@
+{
+  "height_file": "/home/kim/legged_robot_ws/maps/sim_lio_snapshot/run_1792052351250393480/map.rghm",
+  "height_sha256": "45a5785bea97b9e71b4c03d79be753d75dbbbb775838886c177a82f21a9b0fdc",
+  "frame": "map",
+  "resolution_m": 0.05,
+  "dimensions": [
+    1000,
+    1000
+  ],
+  "usable_cells": 52827,
+  "snapshot_stamp_ns": 197502000000,
+  "localization_pcd": "/home/kim/ros2_ws_nav/src/navigation_real/FAST_LIO_ROS2/PCD/2026_07_22_10_43_57.pcd",
+  "localization_pcd_sha256": "3a8d98ceaffcb57017ce5ebe974e95ec5f61c1f21c4b4e731017d9fb4249ef3f",
+  "alignment_verified": false,
+  "note": "Saved live wrapper snapshot. Shared map frame is not an alignment QC result. Acquisition continues."
+}

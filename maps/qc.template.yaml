@@ -1,0 +1,8 @@
+verified: false
+method: "Describe how PCD, occupancy and height were placed in the same gravity-aligned map frame"
+site_id: ""
+landmark_xy_error_p95_m: null
+floor_height_error_p95_m: null
+step_height_error_m: null
+unknown_regions_reviewed: false
+path_trials: []

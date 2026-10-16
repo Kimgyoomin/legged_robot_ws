@@ -1,0 +1,9 @@
+build/
+install/
+log/
+.sdk/
+__pycache__/
+.pytest_cache/
+*.pyc
+maps/site/
+backups/

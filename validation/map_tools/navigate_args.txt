@@ -1,0 +1,45 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'site':
+        no description given
+        (default: '')
+
+    'mode':
+        no description given
+        (default: 'nav2')
+
+    'use_sim_time':
+        no description given
+        (default: 'false')
+
+    'rviz':
+        no description given
+        (default: 'true')
+
+    'odom_topic':
+        no description given
+        (default: '/Odometry')
+
+    'cloud_topic':
+        no description given
+        (default: '/livox/lidar')
+
+    'planner':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/planner.yaml')
+
+    'costmap':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/costmap.yaml')
+
+    'nav2':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/nav2.yaml')
+
+    'pursuit':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/pursuit.yaml')
+
+    'collision':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/collision.yaml')

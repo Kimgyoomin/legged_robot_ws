@@ -1,0 +1,6 @@
+Starting >>> rubi_height_mapping
+Finished <<< rubi_height_mapping [1.71s]
+Starting >>> legged_bringup
+Finished <<< legged_bringup [0.19s]
+
+Summary: 2 packages finished [2.04s]

@@ -1,0 +1,16 @@
+{
+  "fast_lio": "/home/kim/legged_robot_ws/install/fast_lio",
+  "fast_lio_localization": "/home/kim/legged_robot_ws/install/fast_lio_localization",
+  "genz_icp": "/home/kim/legged_robot_ws/install/genz_icp",
+  "livox_ros_driver2": "/home/kim/legged_robot_ws/install/livox_ros_driver2",
+  "rubi_height_mapping": "/home/kim/legged_robot_ws/install/rubi_height_mapping",
+  "rubi_global_heightmap_wrapper": "/home/kim/legged_robot_ws/install/rubi_global_heightmap_wrapper",
+  "legged_navigation": "/home/kim/legged_robot_ws/install/legged_navigation",
+  "legged_bringup": "/home/kim/legged_robot_ws/install/legged_bringup",
+  "rclpy_module": "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py",
+  "cupy_module": "/home/kim/.local/lib/python3.10/site-packages/cupy/__init__.py",
+  "open3d_module": "/home/kim/.local/lib/python3.10/site-packages/open3d/__init__.py",
+  "sensor_msgs_py_module": "/opt/ros/humble/lib/python3.10/site-packages/sensor_msgs_py/__init__.py",
+  "tf_transformations_module": "/opt/ros/humble/lib/python3.10/site-packages/tf_transformations/__init__.py",
+  "legged_bringup_module": "/home/kim/legged_robot_ws/install/legged_bringup/local/lib/python3.10/dist-packages/legged_bringup/__init__.py"
+}

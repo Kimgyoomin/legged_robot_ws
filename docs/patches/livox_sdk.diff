@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 05f84c5..9e2f08b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -17,4 +17,7 @@ if (UNIX)
+ endif(UNIX)
+ 
+ add_subdirectory(sdk_core)
+-add_subdirectory(samples)
++option(BUILD_SAMPLES "Build SDK examples" OFF)
++if(BUILD_SAMPLES)
++  add_subdirectory(samples)
++endif()

@@ -1,0 +1,14 @@
+{
+  "domain": 177,
+  "clear_command_07": true,
+  "clear_side_wall_pass": true,
+  "inside_width_stop": true,
+  "stop_length_m": 1.0,
+  "stop_width_m": 0.9,
+  "mapped_blind_zone_stop": true,
+  "inflation_not_double_counted": true,
+  "unknown_stop": true,
+  "stale_pose_stop": true,
+  "stale_cloud_stop": true,
+  "malformed_costmap_stop": true
+}

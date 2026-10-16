@@ -1,0 +1,393 @@
+[INFO] [1792129015.336826565] [simple_pure_pursuit_controller]: Simple Pure Pursuit ready: path=/rubi/planner_comparison/grid/tracking_path cmd=/test/cmd frames=map<-base_link frequency=10.0 Hz
+[INFO] [1792129015.344376227] [rubi_hybrid_planner_comparison]: Hybrid planner ready; mode=grid_only goal_topic='/test/goal' planner_cmd_vel_publishers=0
+[INFO] [1792129015.344449765] [rubi_hybrid_planner_comparison]: 
+[STEP EVALUATION CONFIG]
+planner_run_mode=grid_only
+adjacent_threshold_m=0.100
+distance_weight=1.000
+height_cost_weight=1.000
+grid_cot_height_cost_enabled=true
+grid_cot_calibration_points=7
+sampling_sobel_hard_reject_enabled=true
+grid_sobel_hard_reject_enabled=false
+grid_sobel_kernel_size=5
+sobel_threshold_m=0.100
+legacy_sampling_sobel_cost_weight=0.000
+grid_sobel_gradient_cost_weight=0.000
+sobel_cost_exponent=2.000
+grid_terrain_clearance_enabled=true
+grid_terrain_clearance_distance_m=0.200
+local_relief_enabled=true
+local_relief_threshold_m=0.100
+local_relief_first_window_radius_m=0.100
+local_relief_second_window_radius_m=0.100
+local_relief_quantiles=[0.100, 0.900]
+local_relief_min_observed_ratio=0.700
+local_relief_critical_cell_count=3
+[INFO] [1792129015.436934403] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792129018.249132967] [rubi_hybrid_planner_comparison]: 
+[TRACKING PATH REFINER]
+mode=grid raw_points=61 smoothing_attempts=0 smoothing_accepts=0 smoothing_rejects=0 tracking_points=61 raw_cost=3.000000 tracking_cost=3.000000 raw_max_heading_change_rad=0.000000 tracking_max_heading_change_rad=0.000000 fallback=false
+[INFO] [1792129018.249177656] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792129018.249198076] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=1 heightmap_generation=1 start=(0.975,0.975) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129018.249204606] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=6.613688 cache_hit=false cache_builds=1 cache_hits=0 search_cost=3.000000045 validation_cost=3.000000045 path_validation_ms=0.192317 total_request_ms=7.554762
+[INFO] [1792129018.249211156] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=3.000 total_cost=3.000 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=61 nodes=61 edges=60 time_ms=0.674 costmap_hard_blocked_samples=0 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=600
+[INFO] [1792129018.249219115] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : true
+termination            : post_goal_complete
+map_generation         : costmap=1 heightmap=1
+path_length_m          : 3.000000
+total_cost             : 3.000000
+distance_cost          : 3.000000
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 61
+neighbor_candidates    : 480
+astar_open_pushes      : 186
+node_eval_calls        : 186
+edge_eval_calls        : 480
+grid_transition_evaluations: 600
+grid_sobel_queries     : 186
+grid_sobel_cache_hits  : 1014
+grid_sobel_5x5_valid   : 186
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 186
+costmap_queries        : 186
+local_relief_queries  : 2418
+local_relief_cache_hits: 1968
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 1200
+search_time_ms         : 0.668039
+path_finalize_time_ms  : 0.005430
+total_planning_time_ms : 0.673999
+============================================================
+[INFO] [1792129018.249255635] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129018.336932454] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792129018.337024212] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.044,-0.084) goal_dist=2.975
+[INFO] [1792129019.436907403] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.594,-0.084) goal_dist=2.975
+[INFO] [1792129020.536867507] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=13 lookahead=(1.625,0.975) cte=0.035 curvature=-0.128 cmd=(0.658,-0.084) goal_dist=2.975
+[WARN] [1792129021.344564419] [rubi_hybrid_planner_comparison]: [REPLAN EVENT] trigger=tracking_deviation mode=grid_only costmap_generation=1 heightmap_generation=1 remaining_path_valid=false invalid_reason=tracking_deviation failing_segment=0 tracking_error_m=0.675 action=stop_then_replan
+[INFO] [1792129021.344618618] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[WARN] [1792129021.344652487] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792129021.346404648] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792129021.346426428] [rubi_hybrid_planner_comparison]: 
+[TRACKING PATH REFINER]
+mode=grid raw_points=61 smoothing_attempts=0 smoothing_accepts=0 smoothing_rejects=0 tracking_points=61 raw_cost=3.269239 tracking_cost=3.269239 raw_max_heading_change_rad=0.785398 tracking_max_heading_change_rad=0.785398 fallback=false
+[INFO] [1792129021.346449227] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=1 heightmap_generation=1 start=(0.975,1.625) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129021.346454637] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000040 cache_hit=true cache_builds=1 cache_hits=2 search_cost=3.269238864 validation_cost=3.269238864 path_validation_ms=0.194437 total_request_ms=1.743251
+[INFO] [1792129021.346461037] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=3.269 total_cost=3.269 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=445 nodes=445 edges=444 time_ms=1.508 costmap_hard_blocked_samples=0 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=4056
+[INFO] [1792129021.346468737] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : true
+termination            : post_goal_complete
+map_generation         : costmap=1 heightmap=1
+path_length_m          : 3.269239
+total_cost             : 3.269239
+distance_cost          : 3.269239
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 445
+neighbor_candidates    : 3552
+astar_open_pushes      : 1035
+node_eval_calls        : 721
+edge_eval_calls        : 3552
+grid_transition_evaluations: 4056
+grid_sobel_queries     : 721
+grid_sobel_cache_hits  : 7391
+grid_sobel_5x5_valid   : 721
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 721
+costmap_queries        : 721
+local_relief_queries  : 9373
+local_relief_cache_hits: 8301
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 8112
+search_time_ms         : 1.501285
+path_finalize_time_ms  : 0.005750
+total_planning_time_ms : 1.507605
+============================================================
+[INFO] [1792129021.346493106] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129021.346497076] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=true costmap_generation=1 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=61 sampling_raw_points=0 sampling_tracking_points=0 action=resume_tracking
+[INFO] [1792129021.436860780] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792129021.636844925] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.439,1.175) cte=0.035 curvature=-2.273 cmd=(0.145,-0.290) goal_dist=3.051
+[INFO] [1792129022.736828166] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.439,1.175) cte=0.035 curvature=-2.273 cmd=(0.328,-0.745) goal_dist=3.051
+[INFO] [1792129023.836797782] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.439,1.175) cte=0.035 curvature=-2.273 cmd=(0.328,-0.745) goal_dist=3.051
+[INFO] [1792129024.936745849] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.439,1.175) cte=0.035 curvature=-2.273 cmd=(0.328,-0.745) goal_dist=3.051
+[WARN] [1792129025.844465790] [rubi_hybrid_planner_comparison]: [REPLAN EVENT] trigger=tracking_deviation mode=grid_only costmap_generation=2 heightmap_generation=1 remaining_path_valid=false invalid_reason=tracking_deviation failing_segment=0 tracking_error_m=0.675 action=stop_then_replan
+[INFO] [1792129025.844526389] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792129025.844549069] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=2 heightmap_generation=1 start=(0.975,2.275) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[WARN] [1792129025.844554179] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792129025.844559588] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000050 cache_hit=true cache_builds=1 cache_hits=4 search_cost=0.000000000 validation_cost=0.000000000 path_validation_ms=0.000470 total_request_ms=0.005680
+[WARN] [1792129025.844571218] [rubi_hybrid_planner_comparison]: planner=grid hard_rejection=(0.975,2.275) raw_cost=254 height_evidence=true known_height=0.000
+[INFO] [1792129025.844577498] [rubi_hybrid_planner_comparison]: planner=grid success=false length_m=0.000 total_cost=0.000 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=0 nodes=0 edges=0 time_ms=0.000 costmap_hard_blocked_samples=1 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=0
+[WARN] [1792129025.844598088] [rubi_hybrid_planner_comparison]: comparison input is confounded by Costmap obstacle marking planner=grid hard_samples=1
+[INFO] [1792129025.844602718] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : false
+termination            : invalid_request
+map_generation         : costmap=2 heightmap=1
+path_length_m          : 0.000000
+total_cost             : 0.000000
+distance_cost          : 0.000000
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 0
+neighbor_candidates    : 0
+astar_open_pushes      : 0
+node_eval_calls        : 2
+edge_eval_calls        : 0
+grid_transition_evaluations: 0
+grid_sobel_queries     : 0
+grid_sobel_cache_hits  : 0
+grid_sobel_5x5_valid   : 0
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 0
+costmap_queries        : 0
+local_relief_queries  : 0
+local_relief_cache_hits: 0
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 0
+search_time_ms         : 0.000000
+path_finalize_time_ms  : 0.000000
+total_planning_time_ms : 0.000000
+============================================================
+[INFO] [1792129025.844627567] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129025.844632527] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=false costmap_generation=2 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=0 sampling_raw_points=0 sampling_tracking_points=0 action=remain_stopped
+[INFO] [1792129025.936706466] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792129026.944298503] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=2 heightmap_generation=1 start=(0.975,2.275) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129026.944350852] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000020 cache_hit=true cache_builds=1 cache_hits=6 search_cost=0.000000000 validation_cost=0.000000000 path_validation_ms=0.000530 total_request_ms=0.010539
+[INFO] [1792129026.944366611] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[WARN] [1792129026.944372911] [rubi_hybrid_planner_comparison]: planner=grid hard_rejection=(0.975,2.275) raw_cost=254 height_evidence=true known_height=0.000
+[INFO] [1792129026.944383341] [rubi_hybrid_planner_comparison]: planner=grid success=false length_m=0.000 total_cost=0.000 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=0 nodes=0 edges=0 time_ms=0.000 costmap_hard_blocked_samples=1 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=0
+[WARN] [1792129026.944390351] [rubi_hybrid_planner_comparison]: comparison input is confounded by Costmap obstacle marking planner=grid hard_samples=1
+[WARN] [1792129026.944396891] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792129026.944396951] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : false
+termination            : invalid_request
+map_generation         : costmap=2 heightmap=1
+path_length_m          : 0.000000
+total_cost             : 0.000000
+distance_cost          : 0.000000
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 0
+neighbor_candidates    : 0
+astar_open_pushes      : 0
+node_eval_calls        : 2
+edge_eval_calls        : 0
+grid_transition_evaluations: 0
+grid_sobel_queries     : 0
+grid_sobel_cache_hits  : 0
+grid_sobel_5x5_valid   : 0
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 0
+costmap_queries        : 0
+local_relief_queries  : 0
+local_relief_cache_hits: 0
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 0
+search_time_ms         : 0.000000
+path_finalize_time_ms  : 0.000000
+total_planning_time_ms : 0.000000
+============================================================
+[INFO] [1792129026.944413061] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129026.944417431] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=false costmap_generation=2 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=0 sampling_raw_points=0 sampling_tracking_points=0 action=remain_stopped
+[INFO] [1792129027.036693561] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792129028.044245918] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=2 heightmap_generation=1 start=(0.975,2.275) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129028.044281008] [simple_pure_pursuit_controller]: Tracking state: empty_path
+[INFO] [1792129028.044296007] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000030 cache_hit=true cache_builds=1 cache_hits=8 search_cost=0.000000000 validation_cost=0.000000000 path_validation_ms=0.000720 total_request_ms=0.007290
+[WARN] [1792129028.044305627] [rubi_hybrid_planner_comparison]: planner=grid hard_rejection=(0.975,2.275) raw_cost=254 height_evidence=true known_height=0.000
+[WARN] [1792129028.044306687] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=empty_path
+[INFO] [1792129028.044322987] [rubi_hybrid_planner_comparison]: planner=grid success=false length_m=0.000 total_cost=0.000 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=0 nodes=0 edges=0 time_ms=0.000 costmap_hard_blocked_samples=1 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=0
+[WARN] [1792129028.044329067] [rubi_hybrid_planner_comparison]: comparison input is confounded by Costmap obstacle marking planner=grid hard_samples=1
+[INFO] [1792129028.044333277] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : false
+termination            : invalid_request
+map_generation         : costmap=2 heightmap=1
+path_length_m          : 0.000000
+total_cost             : 0.000000
+distance_cost          : 0.000000
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 0
+neighbor_candidates    : 0
+astar_open_pushes      : 0
+node_eval_calls        : 2
+edge_eval_calls        : 0
+grid_transition_evaluations: 0
+grid_sobel_queries     : 0
+grid_sobel_cache_hits  : 0
+grid_sobel_5x5_valid   : 0
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 0
+costmap_queries        : 0
+local_relief_queries  : 0
+local_relief_cache_hits: 0
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 0
+search_time_ms         : 0.000000
+path_finalize_time_ms  : 0.000000
+total_planning_time_ms : 0.000000
+============================================================
+[INFO] [1792129028.044350716] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129028.044354806] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=false costmap_generation=2 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=0 sampling_raw_points=0 sampling_tracking_points=0 action=remain_stopped
+[INFO] [1792129028.136671171] [simple_pure_pursuit_controller]: Tracking state: idle
+[INFO] [1792129029.146266526] [rubi_hybrid_planner_comparison]: 
+[TRACKING PATH REFINER]
+mode=grid raw_points=61 smoothing_attempts=0 smoothing_accepts=0 smoothing_rejects=0 tracking_points=61 raw_cost=3.538478 tracking_cost=3.538478 raw_max_heading_change_rad=0.785398 tracking_max_heading_change_rad=0.785398 fallback=false
+[INFO] [1792129029.146267116] [simple_pure_pursuit_controller]: Accepted replacement Path: size=61; progress reset
+[INFO] [1792129029.146324925] [rubi_hybrid_planner_comparison]: comparison_snapshot costmap_generation=3 heightmap_generation=1 start=(0.975,2.275) goal=(3.975,0.975) sampling_policy=trg_random_ring seed=42
+[INFO] [1792129029.146330485] [rubi_hybrid_planner_comparison]: [GRID TERRAIN CLEARANCE] enabled=true configured_distance_m=0.200000 seed_count=0 evidence_invalid_count=0 rejects=0 evidence_rejects=0 minimum_clearance_m=inf minimum_clearance_kind=exact preprocess_ms=0.000020 cache_hit=true cache_builds=1 cache_hits=10 search_cost=3.538477684 validation_cost=3.538477684 path_validation_ms=0.193047 total_request_ms=1.994667
+[INFO] [1792129029.146336865] [rubi_hybrid_planner_comparison]: planner=grid success=true length_m=3.538 total_cost=3.538 inflation_cost=0.000 height_cost=0.000 sobel_cost=0.000 sobel_gradient_exposure_m=0.000 expanded=532 nodes=532 edges=531 time_ms=1.758 costmap_hard_blocked_samples=0 costmap_max_raw_cost_on_selected_path=0 height_evidence_missing_samples=0 height_max_jump_m=0.000 max_sobel_equivalent_step_m=0.000 max_sobel_gradient=0.000 max_grid_sobel_gradient=0.000 max_local_relief_m=0.000 max_supported_local_relief_m=0.000 adjacent_step_rejects=0 sobel_step_rejects=0 local_relief_step_rejects=0 both_step_rejects=0 grid_transition_evaluations=4839
+[INFO] [1792129029.146355484] [rubi_hybrid_planner_comparison]: 
+============================================================
+[GRID A* RESULT]
+success                : true
+termination            : post_goal_complete
+map_generation         : costmap=3 heightmap=1
+path_length_m          : 3.538478
+total_cost             : 3.538478
+distance_cost          : 3.538478
+inflation_cost         : 0.000000
+height_cost            : 0.000000
+sobel_cost             : 0.000000
+grid_sobel_kernel_size : 5
+grid_sobel_gradient_cost_weight: 0.000000
+sobel_gradient_exposure_m: 0.000000
+max_grid_sobel_gradient: 0.000000
+max_height_jump_m      : 0.000000
+max_sobel_equivalent_step_m: 0.000000
+max_sobel_gradient    : 0.000000
+max_local_relief_m     : 0.000000
+max_supported_local_relief_m: 0.000000
+height_jump_events     : 0
+adjacent_step_rejects : 0
+sobel_step_rejects     : 0
+local_relief_step_rejects: 0
+both_step_rejects     : 0
+expanded_cells         : 532
+neighbor_candidates    : 4248
+astar_open_pushes      : 1186
+node_eval_calls        : 757
+edge_eval_calls        : 4248
+grid_transition_evaluations: 4839
+grid_sobel_queries     : 757
+grid_sobel_cache_hits  : 8921
+grid_sobel_5x5_valid   : 757
+grid_sobel_5x5_fallback_to_3x3: 0
+grid_sobel_missing    : 0
+edge_samples_total     : 0
+height_evidence_queries: 757
+costmap_queries        : 757
+local_relief_queries  : 9841
+local_relief_cache_hits: 8813
+local_relief_missing_neighborhoods: 0
+supported_relief_queries: 9678
+search_time_ms         : 1.751981
+path_finalize_time_ms  : 0.005830
+total_planning_time_ms : 1.758441
+============================================================
+[INFO] [1792129029.146373724] [rubi_hybrid_planner_comparison]: planner=sampling status=not_run mode=grid_only
+[INFO] [1792129029.146377824] [rubi_hybrid_planner_comparison]: [REPLAN RESULT] mode=grid_only success=true costmap_generation=3 heightmap_generation=1 grid_raw_points=61 grid_tracking_points=61 sampling_raw_points=0 sampling_tracking_points=0 action=resume_tracking
+[INFO] [1792129029.236666596] [simple_pure_pursuit_controller]: Tracking state: tracking_raw_path
+[INFO] [1792129029.236723665] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.435,1.815) cte=0.035 curvature=-2.287 cmd=(0.045,-0.090) goal_dist=3.257
+[INFO] [1792129030.336664183] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.435,1.815) cte=0.035 curvature=-2.287 cmd=(0.327,-0.747) goal_dist=3.257
+[INFO] [1792129031.436628674] [simple_pure_pursuit_controller]: PP tracking: path_size=61 nearest_idx=0 lookahead_idx=10 lookahead=(1.435,1.815) cte=0.035 curvature=-2.287 cmd=(0.327,-0.747) goal_dist=3.257
+[INFO] [1792129032.336603834] [simple_pure_pursuit_controller]: Tracking state: stale_tf
+[WARN] [1792129032.336686582] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=stale_tf
+[WARN] [1792129033.436577014] [simple_pure_pursuit_controller]: Pure Pursuit zero command: stop_reason=stale_tf
+[INFO] [1792129033.861174605] [rclcpp]: signal_handler(signum=2)
+[INFO] [1792129033.861177945] [rclcpp]: signal_handler(signum=2)

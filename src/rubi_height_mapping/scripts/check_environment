@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Read-only environment report and a tiny CUDA compile/run check."""
+import json,platform,sys
+from pathlib import Path
+
+def main():
+    result={'platform':platform.platform(),'architecture':platform.machine(),'python':sys.version,
+            'jetson_l4t':Path('/etc/nv_tegra_release').read_text().strip() if Path('/etc/nv_tegra_release').exists() else None}
+    try:
+        import numpy as np
+        import cupy as cp
+        result.update(numpy=np.__version__,cupy=cp.__version__,cuda_runtime=cp.cuda.runtime.runtimeGetVersion(),cuda_driver=cp.cuda.runtime.driverGetVersion())
+        result['gpu']=cp.cuda.runtime.getDeviceProperties(0)['name'].decode()
+        from rubi_height_mapping.traversability_cupy import CupyTraversability
+        from ament_index_python.packages import get_package_share_directory
+        w=Path(get_package_share_directory('rubi_height_mapping'))/'config/traversability_weights.npz'
+        output=CupyTraversability(str(w))(cp.zeros((10,10),dtype=cp.float32))
+        cp.cuda.Stream.null.synchronize()
+        assert np.allclose(cp.asnumpy(output),1)
+        result['gpu_compile_and_inference']='PASS'
+        result['torch_loaded']='torch' in sys.modules
+        print(json.dumps(result,indent=2));return 0
+    except Exception as exc:
+        result['error']=str(exc);print(json.dumps(result,indent=2));return 1
+if __name__=='__main__':
+    sys.exit(main())

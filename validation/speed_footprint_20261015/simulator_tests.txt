@@ -1,0 +1,39 @@
+-- run_test.py: invoking following command in '/home/kim/rubi_ws/build/rubi_gazebo_plugins':
+ - /home/kim/rubi_ws/build/rubi_gazebo_plugins/velocity_input_arbitration_test --gtest_output=xml:/home/kim/rubi_ws/build/rubi_gazebo_plugins/test_results/rubi_gazebo_plugins/velocity_input_arbitration_test.gtest.xml
+
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from VelocityInputArbitrator
+[ RUN      ] VelocityInputArbitrator.StartsInJoystickMode
+[       OK ] VelocityInputArbitrator.StartsInJoystickMode (0 ms)
+[ RUN      ] VelocityInputArbitrator.ShortButtonArraysDoNotAccessButtonThree
+[       OK ] VelocityInputArbitrator.ShortButtonArraysDoNotAccessButtonThree (0 ms)
+[ RUN      ] VelocityInputArbitrator.ToggleUsesOnlyRisingEdges
+[       OK ] VelocityInputArbitrator.ToggleUsesOnlyRisingEdges (0 ms)
+[ RUN      ] VelocityInputArbitrator.SwitchAppliesOneZeroBeforeJoystickCommand
+[       OK ] VelocityInputArbitrator.SwitchAppliesOneZeroBeforeJoystickCommand (0 ms)
+[ RUN      ] VelocityInputArbitrator.Nav2IgnoresJoystickAxesAndUsesFluComponents
+[       OK ] VelocityInputArbitrator.Nav2IgnoresJoystickAxesAndUsesFluComponents (0 ms)
+[ RUN      ] VelocityInputArbitrator.EntryInvalidatesPreviousNavCommand
+[       OK ] VelocityInputArbitrator.EntryInvalidatesPreviousNavCommand (0 ms)
+[ RUN      ] VelocityInputArbitrator.TimeoutAndInvalidCommandsStayZeroWithoutFallback
+[       OK ] VelocityInputArbitrator.TimeoutAndInvalidCommandsStayZeroWithoutFallback (0 ms)
+[ RUN      ] VelocityInputArbitrator.SafetyZeroOverridesAllSources
+[       OK ] VelocityInputArbitrator.SafetyZeroOverridesAllSources (0 ms)
+[ RUN      ] VelocityInputArbitrator.TerrainNavigationPreservesVelocityUnits
+[       OK ] VelocityInputArbitrator.TerrainNavigationPreservesVelocityUnits (0 ms)
+[ RUN      ] VelocityInputArbitrator.TerrainNavigationRetainsInputLimitsWithoutAmplifying
+[       OK ] VelocityInputArbitrator.TerrainNavigationRetainsInputLimitsWithoutAmplifying (0 ms)
+[ RUN      ] VelocityInputArbitrator.TerrainJoystickKeepsLegacyAxesAtBoundary
+[       OK ] VelocityInputArbitrator.TerrainJoystickKeepsLegacyAxesAtBoundary (0 ms)
+[----------] 11 tests from VelocityInputArbitrator (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 11 tests.
+
+
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/rubi_ws/build/rubi_gazebo_plugins/test_results/rubi_gazebo_plugins/velocity_input_arbitration_test.gtest.xml'
+-- run_test.py: verify result file '/home/kim/rubi_ws/build/rubi_gazebo_plugins/test_results/rubi_gazebo_plugins/velocity_input_arbitration_test.gtest.xml'

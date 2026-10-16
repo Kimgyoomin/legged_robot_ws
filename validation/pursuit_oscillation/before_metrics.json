@@ -1,0 +1,44 @@
+{
+  "samples": {
+    "/ground_truth/odom": 883,
+    "/legged/cmd_safe": 105,
+    "/legged/cmd_raw": 340,
+    "/localization": 301,
+    "/rubi/simple_pp/lookahead": 185,
+    "/cmd_vel": 698,
+    "/Odometry": 301,
+    "/rubi/planner_comparison/grid/tracking_path": 1
+  },
+  "path_messages": 1,
+  "nonempty_paths": 1,
+  "localization_travel_m": 12.962949527121513,
+  "yaw_difference_demeaned_p95_deg": 0.15137293798243118,
+  "body_to_nearest_path_point_p50_p95_m": [
+    0.27512160197915836,
+    0.9129441024964576
+  ],
+  "/legged/cmd_raw": {
+    "vx_median": 0.10537367620668907,
+    "zero_command_fraction": 0.45588235294117646,
+    "wz_p05_p95": [
+      -0.37004526698134066,
+      0.3402727334086729
+    ]
+  },
+  "/legged/cmd_safe": {
+    "vx_median": 0.17267454200666765,
+    "zero_command_fraction": 0.11428571428571428,
+    "wz_p05_p95": [
+      -0.385488965664806,
+      0.35923976711157346
+    ]
+  },
+  "/cmd_vel": {
+    "vx_median": 0.07791267361569473,
+    "zero_command_fraction": 0.4871060171919771,
+    "wz_p05_p95": [
+      -0.36985202049505894,
+      0.3490151290813383
+    ]
+  }
+}

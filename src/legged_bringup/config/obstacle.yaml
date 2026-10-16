@@ -1,0 +1,4 @@
+obstacle_cloud:
+  ros__parameters:
+    min_range: 0.6
+    max_range: 5.0

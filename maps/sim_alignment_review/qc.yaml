@@ -1,0 +1,20 @@
+verified: true
+method: 'Simulation alignment screening: height acquired with map-frame /localization against the listed PCD; identity-transform overlay visually checked for corridor orientation and pillar locations against existing occupancy and PCD. No registration applied.'
+scope: simulation_integration_trial_only
+site_id: sim-lio-v1
+T_map_from_height:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 0, 0, 1]
+landmark_xy_error_p95_m: null
+floor_height_error_p95_m: null
+step_height_error_m: null
+unknown_regions_reviewed: false
+path_trials: []
+limitations:
+  - 'Visual XY screening, not quantitative landmark or height accuracy certification.'
+  - '18.18 percent of height cells overlap occupied pixels, including wall-edge cells; occupancy remains authoritative for collision blocking.'
+  - 'Broad height variation remains; no smoothing or correction applied.'
+  - 'Not approved for hardware deployment.'
+evidence: /home/kim/legged_robot_ws/maps/sim_alignment_review/overlay.png

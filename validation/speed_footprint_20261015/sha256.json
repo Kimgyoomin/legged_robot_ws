@@ -1,0 +1,8 @@
+{
+  "/home/kim/legged_robot_ws/src/legged_bringup/config/pursuit.yaml": "730f9e75038448a6476e4e7fb5e59b8ed1f100f0008ce189e539ad2176e4fa01",
+  "/home/kim/legged_robot_ws/src/legged_bringup/config/collision.yaml": "8f7ac69d3a09bf5bac6b61f82591e9aa63cf7e7eaf673713a08890a2e0b0cefd",
+  "/home/kim/legged_robot_ws/src/legged_bringup/launch/navigate.launch.py": "c50343d1e76db808edaa5b52db408084acb348c06729f68a601625fc851f7c78",
+  "/home/kim/legged_robot_ws/src/legged_bringup/legged_bringup/costmap_guard.py": "8df2e5150c942be86149631bca819ed53d43f2103975521b20a1fb8680c47964",
+  "/home/kim/legged_robot_ws/src/legged_bringup/legged_bringup/command_watchdog.py": "90c85a072245eb0e6d342eac673708b680ac365e0cf10f38f593cf637b4fe07e",
+  "/home/kim/rubi_ws/build/rubi_gazebo_plugins/librubi_gazebo_legacy_policy_plugin.so": "9241a8517decb842e1f039c6db114f3444a4698ab99c22b39382bd3a5b360514"
+}

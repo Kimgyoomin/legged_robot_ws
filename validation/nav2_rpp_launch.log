@@ -1,0 +1,255 @@
+[INFO] [launch]: All log files can be found below /home/kim/.ros/log/2026-10-15-19-17-56-399177-Kim9975-977399
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [map_server-1]: process started with pid [977436]
+[INFO] [frozen_map-2]: process started with pid [977438]
+[INFO] [obstacle_cloud-3]: process started with pid [977440]
+[INFO] [collision_monitor-4]: process started with pid [977442]
+[INFO] [command_watchdog-5]: process started with pid [977444]
+[INFO] [planner_server-6]: process started with pid [977446]
+[INFO] [controller_server-7]: process started with pid [977448]
+[INFO] [bt_navigator-8]: process started with pid [977450]
+[INFO] [lifecycle_manager-9]: process started with pid [977452]
+[obstacle_cloud-3] [INFO] [1792059476.553850331] [obstacle_cloud]: Collision input: waiting_for_scan_and_mount
+[collision_monitor-4] [INFO] [1792059476.554686166] [collision_monitor]: 
+[collision_monitor-4] 	collision_monitor lifecycle node launched. 
+[collision_monitor-4] 	Waiting on external lifecycle transitions to activate
+[collision_monitor-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-9] [INFO] [1792059476.556491075] [lifecycle_navigation]: Creating
+[planner_server-6] [INFO] [1792059476.557292439] [planner_server]: 
+[planner_server-6] 	planner_server lifecycle node launched. 
+[planner_server-6] 	Waiting on external lifecycle transitions to activate
+[planner_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-6] [INFO] [1792059476.558298043] [planner_server]: Creating
+[lifecycle_manager-9] [INFO] [1792059476.557805136] [lifecycle_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[controller_server-7] [INFO] [1792059476.562794064] [controller_server]: 
+[controller_server-7] 	controller_server lifecycle node launched. 
+[controller_server-7] 	Waiting on external lifecycle transitions to activate
+[controller_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-8] [INFO] [1792059476.563797008] [bt_navigator]: 
+[bt_navigator-8] 	bt_navigator lifecycle node launched. 
+[bt_navigator-8] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-8] [INFO] [1792059476.563865217] [bt_navigator]: Creating
+[map_server-1] [INFO] [1792059476.563851237] [map_server]: 
+[map_server-1] 	map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1792059476.563914257] [map_server]: Creating
+[controller_server-7] [INFO] [1792059476.565288028] [controller_server]: Creating controller server
+[planner_server-6] [INFO] [1792059476.570203667] [global_costmap.global_costmap]: 
+[planner_server-6] 	global_costmap lifecycle node launched. 
+[planner_server-6] 	Waiting on external lifecycle transitions to activate
+[planner_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-6] [INFO] [1792059476.570890902] [global_costmap.global_costmap]: Creating Costmap
+[controller_server-7] [INFO] [1792059476.572674991] [local_costmap.local_costmap]: 
+[controller_server-7] 	local_costmap lifecycle node launched. 
+[controller_server-7] 	Waiting on external lifecycle transitions to activate
+[controller_server-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-7] [INFO] [1792059476.572984609] [local_costmap.local_costmap]: Creating Costmap
+[obstacle_cloud-3] [INFO] [1792059476.589983370] [obstacle_cloud]: Collision input: ready
+[lifecycle_manager-9] [INFO] [1792059476.669359413] [lifecycle_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-9] [INFO] [1792059476.669405093] [lifecycle_navigation]: [34m[1mConfiguring map_server[0m[0m
+[map_server-1] [INFO] [1792059476.669678211] [map_server]: Configuring
+[map_server-1] [INFO] [1792059476.669740381] [map_io]: Loading yaml file: /home/kim/legged_robot_ws/maps/demo/occupancy.yaml
+[map_server-1] [INFO] [1792059476.669932089] [map_io]: resolution: 0.05
+[map_server-1] [INFO] [1792059476.669938039] [map_io]: origin[0]: 0
+[map_server-1] [INFO] [1792059476.669940829] [map_io]: origin[1]: 0
+[map_server-1] [INFO] [1792059476.669943319] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1792059476.669946309] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1792059476.669949099] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1792059476.669952119] [map_io]: mode: trinary
+[map_server-1] [INFO] [1792059476.669955689] [map_io]: negate: 0
+[map_server-1] [INFO] [1792059476.670084528] [map_io]: Loading image_file: /home/kim/legged_robot_ws/maps/demo/floor.pgm
+[map_server-1] [INFO] [1792059476.671189551] [map_io]: Read map /home/kim/legged_robot_ws/maps/demo/floor.pgm: 120 X 120 map @ 0.05 m/cell
+[lifecycle_manager-9] [INFO] [1792059476.677813889] [lifecycle_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-6] [INFO] [1792059476.678091337] [planner_server]: Configuring
+[planner_server-6] [INFO] [1792059476.678123587] [global_costmap.global_costmap]: Configuring
+[planner_server-6] [INFO] [1792059476.684544896] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-6] [INFO] [1792059476.689001947] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-6] [INFO] [1792059476.690542788] [global_costmap.global_costmap]: Subscribing to updates
+[planner_server-6] [INFO] [1792059476.692284086] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-6] [INFO] [1792059476.692297596] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-6] [INFO] [1792059476.693093391] [global_costmap.global_costmap]: Subscribed to Topics: livox_cloud
+[planner_server-6] [INFO] [1792059476.696096752] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-6] [INFO] [1792059476.696112422] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-6] [INFO] [1792059476.696938997] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-6] [INFO] [1792059476.705278723] [planner_server]: Created global planner plugin Height of type legged_navigation/HeightPlanner
+[planner_server-6] [INFO] [1792059476.706047248] [planner_server]: Planner Server has Height  planners available.
+[lifecycle_manager-9] [INFO] [1792059476.707907487] [lifecycle_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-7] [INFO] [1792059476.708015846] [controller_server]: Configuring controller interface
+[controller_server-7] [INFO] [1792059476.708087315] [controller_server]: getting goal checker plugins..
+[controller_server-7] [INFO] [1792059476.708127505] [controller_server]: Controller frequency set to 10.0000Hz
+[controller_server-7] [INFO] [1792059476.708145145] [local_costmap.local_costmap]: Configuring
+[controller_server-7] [INFO] [1792059476.709814084] [local_costmap.local_costmap]: Using plugin "static_layer"
+[controller_server-7] [INFO] [1792059476.711259485] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[controller_server-7] [INFO] [1792059476.711707302] [local_costmap.local_costmap]: Subscribing to updates
+[controller_server-7] [INFO] [1792059476.712277319] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[controller_server-7] [INFO] [1792059476.712288658] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-7] [INFO] [1792059476.712407128] [local_costmap.local_costmap]: Subscribed to Topics: livox_cloud
+[controller_server-7] [INFO] [1792059476.713088283] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-7] [INFO] [1792059476.713101453] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-7] [INFO] [1792059476.713315772] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-7] [INFO] [1792059476.715509538] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-7] [INFO] [1792059476.715754846] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-7] [INFO] [1792059476.715829196] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[controller_server-7] [INFO] [1792059476.716711780] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-7] [INFO] [1792059476.717667534] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-9] [INFO] [1792059476.719759681] [lifecycle_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-8] [INFO] [1792059476.719894760] [bt_navigator]: Configuring
+[lifecycle_manager-9] [INFO] [1792059476.737213849] [lifecycle_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[collision_monitor-4] [INFO] [1792059476.737333178] [collision_monitor]: Configuring
+[collision_monitor-4] [INFO] [1792059476.739056937] [collision_monitor]: [Stop]: Creating Polygon
+[collision_monitor-4] [INFO] [1792059476.739406775] [collision_monitor]: [lidar]: Creating PointCloud
+[lifecycle_manager-9] [INFO] [1792059476.740289700] [lifecycle_navigation]: [34m[1mActivating map_server[0m[0m
+[map_server-1] [INFO] [1792059476.740351359] [map_server]: Activating
+[map_server-1] [INFO] [1792059476.740430289] [map_server]: Creating bond (map_server) to lifecycle manager.
+[controller_server-7] [INFO] [1792059476.740484938] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 120 X 120 at 0.050000 m/pix
+[planner_server-6] [INFO] [1792059476.740485228] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 120 X 120 at 0.050000 m/pix
+[frozen_map-2] [INFO] [1792059476.757806487] [frozen_map]: Frozen height loaded: 14400 cells; cead4ce6e961d092f48510d6e9e39e9b3b209a79205e6bb500ad6bcf3f5ce894
+[command_watchdog-5] [INFO] [1792059476.830118275] [command_watchdog]: Motion status: costmap_timeout
+[lifecycle_manager-9] [INFO] [1792059476.841707241] [lifecycle_navigation]: Server map_server connected with bond.
+[lifecycle_manager-9] [INFO] [1792059476.841751961] [lifecycle_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-6] [INFO] [1792059476.841905320] [planner_server]: Activating
+[planner_server-6] [INFO] [1792059476.841941490] [global_costmap.global_costmap]: Activating
+[planner_server-6] [INFO] [1792059476.841950470] [global_costmap.global_costmap]: Checking transform
+[planner_server-6] [INFO] [1792059476.842037199] [global_costmap.global_costmap]: start
+[planner_server-6] [INFO] [1792059477.042970075] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[command_watchdog-5] [INFO] [1792059477.072914235] [command_watchdog]: Motion status: safe_command_timeout
+[lifecycle_manager-9] [INFO] [1792059477.144292470] [lifecycle_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-9] [INFO] [1792059477.144346359] [lifecycle_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-7] [INFO] [1792059477.144491488] [controller_server]: Activating
+[controller_server-7] [INFO] [1792059477.144523548] [local_costmap.local_costmap]: Activating
+[controller_server-7] [INFO] [1792059477.144531608] [local_costmap.local_costmap]: Checking transform
+[controller_server-7] [INFO] [1792059477.144587888] [local_costmap.local_costmap]: start
+[controller_server-7] [INFO] [1792059477.345068920] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-7] [INFO] [1792059477.345111900] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-9] [INFO] [1792059477.446921811] [lifecycle_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-9] [INFO] [1792059477.446958531] [lifecycle_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-8] [INFO] [1792059477.447120570] [bt_navigator]: Activating
+[bt_navigator-8] [INFO] [1792059477.451840270] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-9] [INFO] [1792059477.553102385] [lifecycle_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-9] [INFO] [1792059477.553137824] [lifecycle_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[collision_monitor-4] [INFO] [1792059477.553309393] [collision_monitor]: Activating
+[collision_monitor-4] [INFO] [1792059477.553373573] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[lifecycle_manager-9] [INFO] [1792059477.654826686] [lifecycle_navigation]: Server collision_monitor connected with bond.
+[lifecycle_manager-9] [INFO] [1792059477.654866646] [lifecycle_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-9] [INFO] [1792059477.654876426] [lifecycle_navigation]: [34m[1mCreating bond timer...[0m[0m
+[bt_navigator-8] [INFO] [1792059484.306563913] [bt_navigator]: Begin navigating from current location (1.00, 1.00) to (4.00, 1.00)
+[controller_server-7] [INFO] [1792059484.327013346] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-7] [WARN] [1792059484.327085456] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded goal_checker . This warning will appear once.
+[command_watchdog-5] [INFO] [1792059484.372843920] [command_watchdog]: Motion status: pass
+[controller_server-7] [INFO] [1792059485.427171885] [controller_server]: Passing new path to controller.
+[controller_server-7] [INFO] [1792059486.427167778] [controller_server]: Passing new path to controller.
+[controller_server-7] [INFO] [1792059487.327167048] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-7] [INFO] [1792059487.327216217] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-8] [INFO] [1792059487.327293647] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-8] [INFO] [1792059487.327358267] [bt_navigator]: Goal canceled
+[command_watchdog-5] [INFO] [1792059487.372792106] [command_watchdog]: Motion status: unknown
+[command_watchdog-5] [INFO] [1792059487.672778693] [command_watchdog]: Motion status: safe_command_timeout
+[command_watchdog-5] [INFO] [1792059492.372920722] [command_watchdog]: Motion status: pass
+[collision_monitor-4] [INFO] [1792059492.437690799] [collision_monitor]: Robot to stop due to Stop polygon
+[command_watchdog-5] [INFO] [1792059492.472699526] [command_watchdog]: Motion status: collision_or_upstream_stop
+[command_watchdog-5] [INFO] [1792059493.272887497] [command_watchdog]: Motion status: safe_command_timeout
+[planner_server-6] [WARN] [1792059496.242133933] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.40 seconds, and it should be updated every 0.40 seconds.
+[command_watchdog-5] [INFO] [1792059496.272622940] [command_watchdog]: Motion status: collision_cloud_timeout
+[collision_monitor-4] [WARN] [1792059496.337484410] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.500335 seconds. Ignoring the source.
+[collision_monitor-4] [INFO] [1792059496.337528960] [collision_monitor]: Robot to continue normal operation
+[controller_server-7] [WARN] [1792059496.344678727] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 0.51 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059496.437538860] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.600392 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059496.442130802] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.60 seconds, and it should be updated every 0.40 seconds.
+[controller_server-7] [WARN] [1792059496.544699056] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 0.71 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059496.572811278] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.735665 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059496.642127991] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 0.80 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059496.687517489] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.850370 seconds. Ignoring the source.
+[controller_server-7] [WARN] [1792059496.744679476] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 0.91 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059496.822798447] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 0.985651 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059496.842130231] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.00 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059496.937505018] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.100357 seconds. Ignoring the source.
+[controller_server-7] [WARN] [1792059496.944677605] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 1.11 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059497.037626058] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.200479 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059497.042129131] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.20 seconds, and it should be updated every 0.40 seconds.
+[controller_server-7] [WARN] [1792059497.144675857] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 1.31 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059497.172831309] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.335685 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059497.242130544] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.40 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059497.287461873] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.450314 seconds. Ignoring the source.
+[controller_server-7] [WARN] [1792059497.344683641] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 1.51 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059497.387471894] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.550325 seconds. Ignoring the source.
+[planner_server-6] [WARN] [1792059497.442138757] [global_costmap.global_costmap]: The /legged/obstacles observation buffer has not been updated for 1.60 seconds, and it should be updated every 0.40 seconds.
+[collision_monitor-4] [WARN] [1792059497.522752695] [collision_monitor]: [lidar]: Latest source and current collision monitor node timestamps differ on 1.685606 seconds. Ignoring the source.
+[controller_server-7] [WARN] [1792059497.544679204] [local_costmap.local_costmap]: The /legged/obstacles observation buffer has not been updated for 1.71 seconds, and it should be updated every 0.40 seconds.
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[controller_server-7] [INFO] [1792059497.637847856] [rclcpp]: signal_handler(signum=2)
+[controller_server-7] [INFO] [1792059497.637908076] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[controller_server-7] [INFO] [1792059497.637955725] [controller_server]: Deactivating
+[controller_server-7] [INFO] [1792059497.637965535] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[bt_navigator-8] [INFO] [1792059497.637847906] [rclcpp]: signal_handler(signum=2)
+[bt_navigator-8] [INFO] [1792059497.637902886] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[bt_navigator-8] [INFO] [1792059497.637953005] [bt_navigator]: Deactivating
+[bt_navigator-8] [INFO] [1792059497.637966235] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-9] [INFO] [1792059497.637849006] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-9] [INFO] [1792059497.637938386] [lifecycle_navigation]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_navigation)
+[lifecycle_manager-9] [INFO] [1792059497.637973205] [lifecycle_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[planner_server-6] [INFO] [1792059497.637854006] [rclcpp]: signal_handler(signum=2)
+[planner_server-6] [INFO] [1792059497.637901996] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[planner_server-6] [INFO] [1792059497.637953435] [planner_server]: Deactivating
+[planner_server-6] [INFO] [1792059497.637974205] [global_costmap.global_costmap]: Deactivating
+[collision_monitor-4] [INFO] [1792059497.637856016] [rclcpp]: signal_handler(signum=2)
+[collision_monitor-4] [INFO] [1792059497.637944605] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[collision_monitor-4] [INFO] [1792059497.637986935] [collision_monitor]: Deactivating
+[collision_monitor-4] [INFO] [1792059497.637997305] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [lifecycle_manager-9]: sending signal 'SIGINT' to process[lifecycle_manager-9]
+[INFO] [bt_navigator-8]: sending signal 'SIGINT' to process[bt_navigator-8]
+[INFO] [controller_server-7]: sending signal 'SIGINT' to process[controller_server-7]
+[INFO] [planner_server-6]: sending signal 'SIGINT' to process[planner_server-6]
+[INFO] [command_watchdog-5]: sending signal 'SIGINT' to process[command_watchdog-5]
+[INFO] [collision_monitor-4]: sending signal 'SIGINT' to process[collision_monitor-4]
+[INFO] [obstacle_cloud-3]: sending signal 'SIGINT' to process[obstacle_cloud-3]
+[INFO] [frozen_map-2]: sending signal 'SIGINT' to process[frozen_map-2]
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[obstacle_cloud-3] [INFO] [1792059497.637864146] [rclcpp]: signal_handler(signum=2)
+[map_server-1] [INFO] [1792059497.637877046] [rclcpp]: signal_handler(signum=2)
+[map_server-1] [INFO] [1792059497.637944215] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-1] [INFO] [1792059497.637992215] [map_server]: Deactivating
+[map_server-1] [INFO] [1792059497.638000445] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[controller_server-7] [INFO] [1792059497.637980025] [local_costmap.local_costmap]: Deactivating
+[lifecycle_manager-9] [INFO] [1792059497.641320815] [rclcpp]: signal_handler(signum=2)
+[bt_navigator-8] [INFO] [1792059497.641626443] [rclcpp]: signal_handler(signum=2)
+[controller_server-7] [INFO] [1792059497.641915342] [rclcpp]: signal_handler(signum=2)
+[planner_server-6] [INFO] [1792059497.642142390] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-6] [INFO] [1792059497.642191930] [rclcpp]: signal_handler(signum=2)
+[collision_monitor-4] [INFO] [1792059497.642823246] [rclcpp]: signal_handler(signum=2)
+[map_server-1] [INFO] [1792059497.643610042] [rclcpp]: signal_handler(signum=2)
+[ERROR] [obstacle_cloud-3]: process has died [pid 977440, exit code -2, cmd '/home/kim/legged_robot_ws/install/legged_navigation/lib/legged_navigation/obstacle_cloud --ros-args -r __node:=obstacle_cloud --params-file /home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/obstacle.yaml --params-file /tmp/launch_params_bhke6xo7 -r /livox/lidar:=/livox/lidar'].
+[ERROR] [command_watchdog-5]: process has died [pid 977444, exit code -2, cmd '/home/kim/legged_robot_ws/install/legged_bringup/lib/legged_bringup/command_watchdog --ros-args -r __node:=command_watchdog --params-file /tmp/launch_params_a8msmvam'].
+[ERROR] [frozen_map-2]: process has died [pid 977438, exit code -2, cmd '/home/kim/legged_robot_ws/install/legged_bringup/lib/legged_bringup/frozen_map --ros-args -r __node:=frozen_map --params-file /tmp/launch_params_1nbh8u1b'].
+[bt_navigator-8] [INFO] [1792059497.648142955] [bt_navigator]: Cleaning up
+[map_server-1] [INFO] [1792059497.648153515] [map_server]: Cleaning up
+[collision_monitor-4] [INFO] [1792059497.648154275] [collision_monitor]: Cleaning up
+[collision_monitor-4] [INFO] [1792059497.648176274] [collision_monitor]: [Stop]: Destroying Polygon
+[map_server-1] [INFO] [1792059497.648177904] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[collision_monitor-4] [INFO] [1792059497.648183524] [collision_monitor]: [lidar]: Destroying PointCloud
+[collision_monitor-4] [INFO] [1792059497.648849190] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[map_server-1] [INFO] [1792059497.649058199] [map_server]: Destroying
+[collision_monitor-4] [INFO] [1792059497.649571416] [collision_monitor]: Destroying
+[planner_server-6] [INFO] [1792059497.652257130] [planner_server]: Cleaning up
+[planner_server-6] [INFO] [1792059497.653791041] [global_costmap.global_costmap]: Cleaning up
+[planner_server-6] [INFO] [1792059497.655538750] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[bt_navigator-8] [INFO] [1792059497.656032337] [bt_navigator]: Completed Cleaning up
+[bt_navigator-8] [INFO] [1792059497.656056707] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[planner_server-6] [INFO] [1792059497.656355055] [global_costmap.global_costmap]: Destroying
+[bt_navigator-8] [INFO] [1792059497.656860592] [bt_navigator]: Destroying
+[planner_server-6] [INFO] [1792059497.657921446] [planner_server]: Destroying
+[lifecycle_manager-9] [INFO] [1792059497.691771133] [lifecycle_navigation]: Destroying lifecycle_navigation
+[controller_server-7] [INFO] [1792059497.744713867] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [collision_monitor-4]: process has finished cleanly [pid 977442]
+[INFO] [map_server-1]: process has finished cleanly [pid 977436]
+[controller_server-7] [INFO] [1792059497.754848716] [controller_server]: Cleaning up
+[controller_server-7] [INFO] [1792059497.754866206] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-7] [INFO] [1792059497.754889446] [local_costmap.local_costmap]: Cleaning up
+[controller_server-7] [INFO] [1792059497.757098033] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[controller_server-7] [INFO] [1792059497.757817598] [local_costmap.local_costmap]: Destroying
+[controller_server-7] [INFO] [1792059497.758728923] [controller_server]: Destroying
+[INFO] [planner_server-6]: process has finished cleanly [pid 977446]
+[INFO] [bt_navigator-8]: process has finished cleanly [pid 977450]
+[INFO] [lifecycle_manager-9]: process has finished cleanly [pid 977452]
+[INFO] [controller_server-7]: process has finished cleanly [pid 977448]

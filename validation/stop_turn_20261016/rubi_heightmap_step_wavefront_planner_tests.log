@@ -1,0 +1,1078 @@
+Start testing: Oct 16 14:36 KST
+----------------------------------------------------------
+1/27 Testing: core_smoke
+1/27 Test: core_smoke
+Command: "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/core_smoke"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"core_smoke" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+core_smoke: PASS
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"core_smoke" end time: Oct 16 14:36 KST
+"core_smoke" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/27 Testing: test_heightmap_snapshot
+2/27 Test: test_heightmap_snapshot
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_heightmap_snapshot.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_heightmap_snapshot" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from HeightmapSnapshot
+[ RUN      ] HeightmapSnapshot.ReconstructsFiveCentimeterLatticeAndPreservesUnknown
+[       OK ] HeightmapSnapshot.ReconstructsFiveCentimeterLatticeAndPreservesUnknown (0 ms)
+[ RUN      ] HeightmapSnapshot.RejectsDuplicateOffLatticeNonFiniteAndMaxGrid
+[       OK ] HeightmapSnapshot.RejectsDuplicateOffLatticeNonFiniteAndMaxGrid (0 ms)
+[ RUN      ] HeightmapSnapshot.AcceptsShiftedRegularAndNegativeLattices
+[       OK ] HeightmapSnapshot.AcceptsShiftedRegularAndNegativeLattices (0 ms)
+[ RUN      ] HeightmapSnapshot.ShiftedSparseLatticePreservesUnknownAndRoundTrips
+[       OK ] HeightmapSnapshot.ShiftedSparseLatticePreservesUnknownAndRoundTrips (0 ms)
+[ RUN      ] HeightmapSnapshot.RejectsIrregularAndDuplicateShiftedCellsWithDiagnostic
+[       OK ] HeightmapSnapshot.RejectsIrregularAndDuplicateShiftedCellsWithDiagnostic (0 ms)
+[ RUN      ] HeightmapSnapshot.ShiftedHashAndGeometryAreOrderIndependent
+[       OK ] HeightmapSnapshot.ShiftedHashAndGeometryAreOrderIndependent (0 ms)
+[ RUN      ] HeightmapSnapshot.BoundaryRoundingAndCanonicalHashAreDeterministic
+[       OK ] HeightmapSnapshot.BoundaryRoundingAndCanonicalHashAreDeterministic (0 ms)
+[ RUN      ] HeightmapSnapshot.DisappearingCellBecomesUnknownInNewSnapshot
+[       OK ] HeightmapSnapshot.DisappearingCellBecomesUnknownInNewSnapshot (0 ms)
+[----------] 8 tests from HeightmapSnapshot (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 8 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_heightmap_snapshot.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_heightmap_snapshot" end time: Oct 16 14:36 KST
+"test_heightmap_snapshot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/27 Testing: test_step_evaluator
+3/27 Test: test_step_evaluator
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_evaluator.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_step_evaluator.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_evaluator" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_evaluator.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_step_evaluator" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_evaluator --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_evaluator.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 16 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 16 tests from StepEvaluator
+[ RUN      ] StepEvaluator.SobelHardRejectRequiresExplicitOptIn
+[       OK ] StepEvaluator.SobelHardRejectRequiresExplicitOptIn (0 ms)
+[ RUN      ] StepEvaluator.RejectsInvalidLocalReliefParameters
+[       OK ] StepEvaluator.RejectsInvalidLocalReliefParameters (0 ms)
+[ RUN      ] StepEvaluator.FlatEdgeUsesMetricLengthOnly
+[       OK ] StepEvaluator.FlatEdgeUsesMetricLengthOnly (0 ms)
+[ RUN      ] StepEvaluator.AccumulatesCrossableHeightEventsWithContractedCost
+[       OK ] StepEvaluator.AccumulatesCrossableHeightEventsWithContractedCost (0 ms)
+[ RUN      ] StepEvaluator.ExactLimitIsCrossableAndOverLimitIsRejected
+[       OK ] StepEvaluator.ExactLimitIsCrossableAndOverLimitIsRejected (0 ms)
+[ RUN      ] StepEvaluator.SobelRejectsSmearedFifteenCentimeterStepMissedByAdjacentJump
+[       OK ] StepEvaluator.SobelRejectsSmearedFifteenCentimeterStepMissedByAdjacentJump (1 ms)
+[ RUN      ] StepEvaluator.SobelKeepsSharpFiveCentimeterStepCrossableAtTenCentimeterThreshold
+[       OK ] StepEvaluator.SobelKeepsSharpFiveCentimeterStepCrossableAtTenCentimeterThreshold (0 ms)
+[ RUN      ] StepEvaluator.LocalReliefRejectsSmearedFifteenCentimeterStepMissedByAdjacentAndSobel
+[       OK ] StepEvaluator.LocalReliefRejectsSmearedFifteenCentimeterStepMissedByAdjacentAndSobel (0 ms)
+[ RUN      ] StepEvaluator.LocalReliefKeepsSharpFiveCentimeterStepAndFlatTerrainValid
+[       OK ] StepEvaluator.LocalReliefKeepsSharpFiveCentimeterStepAndFlatTerrainValid (0 ms)
+[ RUN      ] StepEvaluator.LocalReliefQuantilesIgnoreOneIsolatedOutlier
+[       OK ] StepEvaluator.LocalReliefQuantilesIgnoreOneIsolatedOutlier (0 ms)
+[ RUN      ] StepEvaluator.LocalReliefCreatesSpatiallySupportedExtendedBoundary
+[       OK ] StepEvaluator.LocalReliefCreatesSpatiallySupportedExtendedBoundary (0 ms)
+[ RUN      ] StepEvaluator.LocalReliefObservedRatioControlsMissingNeighborhoods
+[       OK ] StepEvaluator.LocalReliefObservedRatioControlsMissingNeighborhoods (1 ms)
+[ RUN      ] StepEvaluator.LocalReliefCachesBothWindowPassesPerRequest
+[       OK ] StepEvaluator.LocalReliefCachesBothWindowPassesPerRequest (0 ms)
+[ RUN      ] StepEvaluator.CostIsSymmetricAndSegmentationInvariant
+[       OK ] StepEvaluator.CostIsSymmetricAndSegmentationInvariant (0 ms)
+[ RUN      ] StepEvaluator.EnforcesUnknownClearanceDiscontinuityCornerAndBoundary
+[       OK ] StepEvaluator.EnforcesUnknownClearanceDiscontinuityCornerAndBoundary (0 ms)
+[ RUN      ] StepEvaluator.OptionalPreferredClearanceAddsOnlySoftNonnegativeRisk
+[       OK ] StepEvaluator.OptionalPreferredClearanceAddsOnlySoftNonnegativeRisk (0 ms)
+[----------] 16 tests from StepEvaluator (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 16 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_evaluator.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_evaluator.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_step_evaluator" end time: Oct 16 14:36 KST
+"test_step_evaluator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/27 Testing: test_spatial_index_2d
+4/27 Test: test_spatial_index_2d
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_spatial_index_2d.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_spatial_index_2d" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SpatialIndex2D
+[ RUN      ] SpatialIndex2D.EmptyBoundaryDuplicateAndRandomizedGroundTruth
+[       OK ] SpatialIndex2D.EmptyBoundaryDuplicateAndRandomizedGroundTruth (1 ms)
+[----------] 1 test from SpatialIndex2D (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_spatial_index_2d.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_spatial_index_2d" end time: Oct 16 14:36 KST
+"test_spatial_index_2d" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/27 Testing: test_astar_search
+5/27 Test: test_astar_search
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_astar_search.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_astar_search.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_astar_search" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_astar_search.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_astar_search" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_astar_search --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_astar_search.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from AStarSearch
+[ RUN      ] AStarSearch.DeterministicTieBreakAndInvalidEdges
+[       OK ] AStarSearch.DeterministicTieBreakAndInvalidEdges (0 ms)
+[ RUN      ] AStarSearch.NonnegativeClearanceRiskSelectsSaferDetour
+[       OK ] AStarSearch.NonnegativeClearanceRiskSelectsSaferDetour (0 ms)
+[----------] 2 tests from AStarSearch (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_astar_search.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_astar_search.gtest.xml'
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"test_astar_search" end time: Oct 16 14:36 KST
+"test_astar_search" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/27 Testing: test_clearance_sweep
+6/27 Test: test_clearance_sweep
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_clearance_sweep.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_clearance_sweep.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_clearance_sweep" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_clearance_sweep.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_clearance_sweep" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_clearance_sweep --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_clearance_sweep.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ClearanceSweep
+[ RUN      ] ClearanceSweep.ReportsPhaseOneHardRadiusTradeoff
+SWEEP hard_radius_m=0.200 success=true nodes=105 edges=332 path_length_m=2.432 total_cost=2.432 min_clearance_m=0.200 graph_ms=110.770 astar_ms=0.024
+SWEEP hard_radius_m=0.250 success=true nodes=95 edges=282 path_length_m=2.683 total_cost=2.683 min_clearance_m=0.250 graph_ms=130.843 astar_ms=0.016
+SWEEP hard_radius_m=0.300 success=true nodes=91 edges=303 path_length_m=2.501 total_cost=2.501 min_clearance_m=0.300 graph_ms=200.478 astar_ms=0.015
+SWEEP hard_radius_m=0.350 success=true nodes=73 edges=210 path_length_m=2.642 total_cost=2.642 min_clearance_m=0.350 graph_ms=235.395 astar_ms=0.012
+[       OK ] ClearanceSweep.ReportsPhaseOneHardRadiusTradeoff (678 ms)
+[----------] 1 test from ClearanceSweep (678 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (678 ms total)
+[  PASSED  ] 1 test.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_clearance_sweep.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_clearance_sweep.gtest.xml'
+<end of output>
+Test time =   0.72 sec
+----------------------------------------------------------
+Test Passed.
+"test_clearance_sweep" end time: Oct 16 14:36 KST
+"test_clearance_sweep" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/27 Testing: test_step_wavefront_planner
+7/27 Test: test_step_wavefront_planner
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_step_wavefront_planner.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_step_wavefront_planner" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from StepWavefrontPlanner
+[ RUN      ] StepWavefrontPlanner.HeightWeightSelectsFlatDetourOnSameGraph
+[       OK ] StepWavefrontPlanner.HeightWeightSelectsFlatDetourOnSameGraph (0 ms)
+[ RUN      ] StepWavefrontPlanner.AStarMatchesDijkstraGroundTruthAndTieBreakIsDeterministic
+[       OK ] StepWavefrontPlanner.AStarMatchesDijkstraGroundTruthAndTieBreakIsDeterministic (0 ms)
+[ RUN      ] StepWavefrontPlanner.PostGoalExpansionsContinueDeterministicGraphBuild
+[       OK ] StepWavefrontPlanner.PostGoalExpansionsContinueDeterministicGraphBuild (1 ms)
+[ RUN      ] StepWavefrontPlanner.OverLimitEdgesNeverEnterAcceptedGraph
+[       OK ] StepWavefrontPlanner.OverLimitEdgesNeverEnterAcceptedGraph (4 ms)
+[ RUN      ] StepWavefrontPlanner.FullGraphAndPathAreDeterministicAcrossTwentyRuns
+[       OK ] StepWavefrontPlanner.FullGraphAndPathAreDeterministicAcrossTwentyRuns (9 ms)
+[----------] 5 tests from StepWavefrontPlanner (14 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (14 ms total)
+[  PASSED  ] 5 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_wavefront_planner.gtest.xml'
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"test_step_wavefront_planner" end time: Oct 16 14:36 KST
+"test_step_wavefront_planner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/27 Testing: test_planning_query_resolver
+8/27 Test: test_planning_query_resolver
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_planning_query_resolver.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_planning_query_resolver" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from PlanningQueryResolver
+[ RUN      ] PlanningQueryResolver.ExactValidQueryIsUnchanged
+[       OK ] PlanningQueryResolver.ExactValidQueryIsUnchanged (0 ms)
+[ RUN      ] PlanningQueryResolver.UnknownRequestedCellSnapsToNearestValidCell
+[       OK ] PlanningQueryResolver.UnknownRequestedCellSnapsToNearestValidCell (0 ms)
+[ RUN      ] PlanningQueryResolver.InsufficientClearanceSupportSnapsToSupportedCell
+[       OK ] PlanningQueryResolver.InsufficientClearanceSupportSnapsToSupportedCell (0 ms)
+[ RUN      ] PlanningQueryResolver.SelectsNearestValidCandidateRatherThanLoopFirst
+[       OK ] PlanningQueryResolver.SelectsNearestValidCandidateRatherThanLoopFirst (0 ms)
+[ RUN      ] PlanningQueryResolver.EqualDistanceTieBreakIsDeterministic
+[       OK ] PlanningQueryResolver.EqualDistanceTieBreakIsDeterministic (0 ms)
+[ RUN      ] PlanningQueryResolver.SearchRadiusIsStrictlyBounded
+[       OK ] PlanningQueryResolver.SearchRadiusIsStrictlyBounded (0 ms)
+[ RUN      ] PlanningQueryResolver.DisabledSnappingPreservesExactFailure
+[       OK ] PlanningQueryResolver.DisabledSnappingPreservesExactFailure (0 ms)
+[ RUN      ] PlanningQueryResolver.OutOfBoundsQueryCanSnapBackInsideMap
+[       OK ] PlanningQueryResolver.OutOfBoundsQueryCanSnapBackInsideMap (0 ms)
+[ RUN      ] PlanningQueryResolver.ZeroRadiusRetainsOnlyExactValidQueries
+[       OK ] PlanningQueryResolver.ZeroRadiusRetainsOnlyExactValidQueries (0 ms)
+[ RUN      ] PlanningQueryResolver.ObservedButClearanceInvalidCandidateIsRejected
+[       OK ] PlanningQueryResolver.ObservedButClearanceInvalidCandidateIsRejected (0 ms)
+[ RUN      ] PlanningQueryResolver.RejectsInvalidRadius
+[       OK ] PlanningQueryResolver.RejectsInvalidRadius (0 ms)
+[----------] 11 tests from PlanningQueryResolver (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 11 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_query_resolver.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_planning_query_resolver" end time: Oct 16 14:36 KST
+"test_planning_query_resolver" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/27 Testing: test_costmap_snapshot
+9/27 Test: test_costmap_snapshot
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_costmap_snapshot.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_costmap_snapshot" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from CostmapSnapshot
+[ RUN      ] CostmapSnapshot.GeometryIndexRoundTripAndRawSemantics
+[       OK ] CostmapSnapshot.GeometryIndexRoundTripAndRawSemantics (0 ms)
+[ RUN      ] CostmapSnapshot.RejectsMalformedGeometryAndData
+[       OK ] CostmapSnapshot.RejectsMalformedGeometryAndData (0 ms)
+[ RUN      ] CostmapSnapshot.ContentHashDeduplicatesAndDetectsGeometryOrCellChanges
+[       OK ] CostmapSnapshot.ContentHashDeduplicatesAndDetectsGeometryOrCellChanges (0 ms)
+[ RUN      ] CostmapSnapshot.StopEnvelopeClearanceDoesNotModifyPhysicalMapOrDoubleInflate
+[       OK ] CostmapSnapshot.StopEnvelopeClearanceDoesNotModifyPhysicalMapOrDoubleInflate (0 ms)
+[ RUN      ] CostmapSnapshot.ClearanceBlocksUnknownAndMapBoundary
+[       OK ] CostmapSnapshot.ClearanceBlocksUnknownAndMapBoundary (0 ms)
+[ RUN      ] CostmapSnapshot.BoundarySeedOptimizationMatchesBruteForceDiskExclusion
+[       OK ] CostmapSnapshot.BoundarySeedOptimizationMatchesBruteForceDiskExclusion (1 ms)
+[ RUN      ] CostmapSnapshot.ATooNarrowMapHasNoClearPlanningCells
+[       OK ] CostmapSnapshot.ATooNarrowMapHasNoClearPlanningCells (0 ms)
+[----------] 7 tests from CostmapSnapshot (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 7 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_costmap_snapshot.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_costmap_snapshot" end time: Oct 16 14:36 KST
+"test_costmap_snapshot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/27 Testing: test_height_evidence
+10/27 Test: test_height_evidence
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_height_evidence.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_height_evidence.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_height_evidence" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_height_evidence.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_height_evidence" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_height_evidence --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_height_evidence.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from HeightEvidence
+[ RUN      ] HeightEvidence.ExactAndNearbyMissingCellUseNearestObservedElevation
+[       OK ] HeightEvidence.ExactAndNearbyMissingCellUseNearestObservedElevation (0 ms)
+[ RUN      ] HeightEvidence.EnforcesCountDistanceAndOutlierRatio
+[       OK ] HeightEvidence.EnforcesCountDistanceAndOutlierRatio (0 ms)
+[ RUN      ] HeightEvidence.EqualDistanceTieBreakAndEdgeQueryAreDeterministic
+[       OK ] HeightEvidence.EqualDistanceTieBreakAndEdgeQueryAreDeterministic (0 ms)
+[ RUN      ] HeightEvidence.OriginalTrgUsesUpperMedianStrictRatioAndNearestZ
+[       OK ] HeightEvidence.OriginalTrgUsesUpperMedianStrictRatioAndNearestZ (0 ms)
+[----------] 4 tests from HeightEvidence (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_height_evidence.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_height_evidence.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_height_evidence" end time: Oct 16 14:36 KST
+"test_height_evidence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/27 Testing: test_hybrid_step_evaluator
+11/27 Test: test_hybrid_step_evaluator
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_hybrid_step_evaluator.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_hybrid_step_evaluator" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from HybridStepEvaluator
+[ RUN      ] HybridStepEvaluator.RawHardCostsRejectAndInflationIsSoft
+[       OK ] HybridStepEvaluator.RawHardCostsRejectAndInflationIsSoft (0 ms)
+[ RUN      ] HybridStepEvaluator.MidEdgeObstacleAndStepThresholdsAreHard
+[       OK ] HybridStepEvaluator.MidEdgeObstacleAndStepThresholdsAreHard (0 ms)
+[ RUN      ] HybridStepEvaluator.SparseCellRecoversButLongEvidenceGapRejects
+[       OK ] HybridStepEvaluator.SparseCellRecoversButLongEvidenceGapRejects (0 ms)
+[ RUN      ] HybridStepEvaluator.DirectGridTransitionUsesCellGeometryAndNoSubcellSamples
+[       OK ] HybridStepEvaluator.DirectGridTransitionUsesCellGeometryAndNoSubcellSamples (0 ms)
+[ RUN      ] HybridStepEvaluator.GridSobelExposureUsesEndpointMeanAndMetricLength
+[       OK ] HybridStepEvaluator.GridSobelExposureUsesEndpointMeanAndMetricLength (0 ms)
+[ RUN      ] HybridStepEvaluator.GridSobelThreeAndFiveNormalizeFlatAndLinearPlanes
+[       OK ] HybridStepEvaluator.GridSobelThreeAndFiveNormalizeFlatAndLinearPlanes (0 ms)
+[ RUN      ] HybridStepEvaluator.GridSobelRejectsUnsupportedKernelSize
+[       OK ] HybridStepEvaluator.GridSobelRejectsUnsupportedKernelSize (0 ms)
+[ RUN      ] HybridStepEvaluator.FiveByFiveHasWiderSupportThanThreeByThree
+[       OK ] HybridStepEvaluator.FiveByFiveHasWiderSupportThanThreeByThree (0 ms)
+[ RUN      ] HybridStepEvaluator.IncompleteFiveByFiveFallsBackToCachedThreeByThree
+[       OK ] HybridStepEvaluator.IncompleteFiveByFiveFallsBackToCachedThreeByThree (0 ms)
+[ RUN      ] HybridStepEvaluator.GridSobelHardRejectPolicyIsIndependentFromSampling
+[       OK ] HybridStepEvaluator.GridSobelHardRejectPolicyIsIndependentFromSampling (0 ms)
+[ RUN      ] HybridStepEvaluator.GridSobelWeightDoesNotChangeSamplingEdgeEvaluation
+[       OK ] HybridStepEvaluator.GridSobelWeightDoesNotChangeSamplingEdgeEvaluation (0 ms)
+[ RUN      ] HybridStepEvaluator.DirectGridTransitionPreservesHeightAndInflationCosts
+[       OK ] HybridStepEvaluator.DirectGridTransitionPreservesHeightAndInflationCosts (0 ms)
+[ RUN      ] HybridStepEvaluator.DirectGridTransitionRejectsUnknownAndObstacleEndpoints
+[       OK ] HybridStepEvaluator.DirectGridTransitionRejectsUnknownAndObstacleEndpoints (0 ms)
+[ RUN      ] HybridStepEvaluator.LocalReliefUsesHeightmapNeighborhoodInHybridMode
+[       OK ] HybridStepEvaluator.LocalReliefUsesHeightmapNeighborhoodInHybridMode (0 ms)
+[ RUN      ] HybridStepEvaluator.GridCotDisabledPreservesLegacyQuadraticHeightScore
+[       OK ] HybridStepEvaluator.GridCotDisabledPreservesLegacyQuadraticHeightScore (0 ms)
+[ RUN      ] HybridStepEvaluator.GridCotUsesExactCalibrationAndLinearInterpolation
+[       OK ] HybridStepEvaluator.GridCotUsesExactCalibrationAndLinearInterpolation (0 ms)
+[ RUN      ] HybridStepEvaluator.GridCotAppliesOnlyToAscent
+[       OK ] HybridStepEvaluator.GridCotAppliesOnlyToAscent (0 ms)
+[ RUN      ] HybridStepEvaluator.GridCotDoesNotChangeSamplingEdgeEvaluation
+[       OK ] HybridStepEvaluator.GridCotDoesNotChangeSamplingEdgeEvaluation (1 ms)
+[ RUN      ] HybridStepEvaluator.GridCotConservesMonotonicSmearedAscentCost
+[       OK ] HybridStepEvaluator.GridCotConservesMonotonicSmearedAscentCost (0 ms)
+[ RUN      ] HybridStepEvaluator.GridCotRejectsInvalidCalibration
+[       OK ] HybridStepEvaluator.GridCotRejectsInvalidCalibration (0 ms)
+[----------] 20 tests from HybridStepEvaluator (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 20 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_step_evaluator.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_hybrid_step_evaluator" end time: Oct 16 14:36 KST
+"test_hybrid_step_evaluator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/27 Testing: test_step_grid_astar_planner
+12/27 Test: test_step_grid_astar_planner
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_step_grid_astar_planner.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_step_grid_astar_planner" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from StepGridAStarPlanner
+[ RUN      ] StepGridAStarPlanner.FlatEightConnectedUsesDiagonalMetricAndOctileHeuristic
+[       OK ] StepGridAStarPlanner.FlatEightConnectedUsesDiagonalMetricAndOctileHeuristic (0 ms)
+[ RUN      ] StepGridAStarPlanner.DiagonalCornerCuttingIsBlocked
+[       OK ] StepGridAStarPlanner.DiagonalCornerCuttingIsBlocked (0 ms)
+[ RUN      ] StepGridAStarPlanner.InflationAndHeightWeightsSelectSaferDetours
+[       OK ] StepGridAStarPlanner.InflationAndHeightWeightsSelectSaferDetours (1 ms)
+[ RUN      ] StepGridAStarPlanner.OverLimitBarrierRejectedAndTwentyRunsDeterministic
+[       OK ] StepGridAStarPlanner.OverLimitBarrierRejectedAndTwentyRunsDeterministic (0 ms)
+[ RUN      ] StepGridAStarPlanner.ReportsSelectedSobelMetricAndSobelOnlyRejections
+[       OK ] StepGridAStarPlanner.ReportsSelectedSobelMetricAndSobelOnlyRejections (0 ms)
+[ RUN      ] StepGridAStarPlanner.SobelSoftCostPrefersLongerLowGradientPath
+SOBEL_SWEEP weight=0 length_m=2.4 exposure_m=0.37 sobel_cost=0 total_cost=2.4 planning_ms=0.107008
+SOBEL_SWEEP weight=0.25 length_m=2.4 exposure_m=0.37 sobel_cost=0.0925 total_cost=2.4925 planning_ms=0.099628
+SOBEL_SWEEP weight=0.5 length_m=2.4 exposure_m=0.37 sobel_cost=0.185 total_cost=2.585 planning_ms=0.142108
+SOBEL_SWEEP weight=1 length_m=2.4 exposure_m=0.37 sobel_cost=0.37 total_cost=2.77 planning_ms=0.283235
+SOBEL_SWEEP weight=2 length_m=2.76569 exposure_m=0.0607088 sobel_cost=0.121418 total_cost=2.8871 planning_ms=0.288894
+SOBEL_SWEEP weight=4 length_m=2.76569 exposure_m=0.0607088 sobel_cost=0.242835 total_cost=3.00852 planning_ms=0.278375
+[       OK ] StepGridAStarPlanner.SobelSoftCostPrefersLongerLowGradientPath (1 ms)
+[ RUN      ] StepGridAStarPlanner.FiveByFiveSoftCostExtendsStepEdgeInfluence
+KERNEL_COMPARE kernel=3 length_m=2 total_cost=2 exposure_m=0 sobel_cost=0 max_grid_sobel=0 min_edge_distance_m=0.15 within_one_cell_m=0 within_two_cells_m=2 expanded=21 planning_ms=0.080649
+KERNEL_COMPARE kernel=5 length_m=2.08284 total_cost=2.10052 exposure_m=0.00883883 sobel_cost=0.0176777 max_grid_sobel=0.0625 min_edge_distance_m=0.2 within_one_cell_m=0 within_two_cells_m=0.282843 expanded=40 planning_ms=0.092148
+[       OK ] StepGridAStarPlanner.FiveByFiveSoftCostExtendsStepEdgeInfluence (0 ms)
+[ RUN      ] StepGridAStarPlanner.FiveCentimeterStepRemainsCrossableWithFiveByFiveSoftCost
+[       OK ] StepGridAStarPlanner.FiveCentimeterStepRemainsCrossableWithFiveByFiveSoftCost (0 ms)
+[ RUN      ] StepGridAStarPlanner.ElevenCentimeterMeasuredStepIsHardRejectedForBothKernels
+[       OK ] StepGridAStarPlanner.ElevenCentimeterMeasuredStepIsHardRejectedForBothKernels (0 ms)
+[ RUN      ] StepGridAStarPlanner.CotWeightChangesRouteChoiceWithoutChangingHardStepValidity
+[       OK ] StepGridAStarPlanner.CotWeightChangesRouteChoiceWithoutChangingHardStepValidity (0 ms)
+[----------] 10 tests from StepGridAStarPlanner (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 10 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_step_grid_astar_planner.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_step_grid_astar_planner" end time: Oct 16 14:36 KST
+"test_step_grid_astar_planner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/27 Testing: test_trg_sampling_policy
+13/27 Test: test_trg_sampling_policy
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_trg_sampling_policy.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_trg_sampling_policy" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from TrgSamplingPolicy
+[ RUN      ] TrgSamplingPolicy.Seed42IsDeterministicAcrossTwentyRuns
+[       OK ] TrgSamplingPolicy.Seed42IsDeterministicAcrossTwentyRuns (17 ms)
+[ RUN      ] TrgSamplingPolicy.HybridAcceptedGraphContainsOnlyValidNodesAndEdges
+[       OK ] TrgSamplingPolicy.HybridAcceptedGraphContainsOnlyValidNodesAndEdges (5 ms)
+[----------] 2 tests from TrgSamplingPolicy (22 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (22 ms total)
+[  PASSED  ] 2 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_trg_sampling_policy.gtest.xml'
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"test_trg_sampling_policy" end time: Oct 16 14:36 KST
+"test_trg_sampling_policy" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/27 Testing: test_original_trg_construction
+14/27 Test: test_original_trg_construction
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_original_trg_construction.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_original_trg_construction.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_original_trg_construction" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_original_trg_construction.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_original_trg_construction" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_original_trg_construction --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_original_trg_construction.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from OriginalTrgConstruction
+[ RUN      ] OriginalTrgConstruction.FixedRadiusSeedIsDeterministicAndFrontierIsQueued
+[       OK ] OriginalTrgConstruction.FixedRadiusSeedIsDeterministicAndFrontierIsQueued (1 ms)
+[ RUN      ] OriginalTrgConstruction.GridSobelKernelDoesNotChangeSamplingGraph
+[       OK ] OriginalTrgConstruction.GridSobelKernelDoesNotChangeSamplingGraph (0 ms)
+[ RUN      ] OriginalTrgConstruction.ExistingNodeInsideRobotSizeIsRewiredWithoutCreation
+[       OK ] OriginalTrgConstruction.ExistingNodeInsideRobotSizeIsRewiredWithoutCreation (0 ms)
+[ RUN      ] OriginalTrgConstruction.FailedWiringMarksIsolatedAndCleanRemovesNode
+[       OK ] OriginalTrgConstruction.FailedWiringMarksIsolatedAndCleanRemovesNode (1 ms)
+[ RUN      ] OriginalTrgConstruction.CostmapHardBlockRejectsBeforeGraphCommit
+[       OK ] OriginalTrgConstruction.CostmapHardBlockRejectsBeforeGraphCommit (0 ms)
+[ RUN      ] OriginalTrgConstruction.HybridEdgeKeepsExactStepAndRejectsOverLimit
+[       OK ] OriginalTrgConstruction.HybridEdgeKeepsExactStepAndRejectsOverLimit (0 ms)
+[----------] 6 tests from OriginalTrgConstruction (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 6 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_original_trg_construction.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_original_trg_construction.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_original_trg_construction" end time: Oct 16 14:36 KST
+"test_original_trg_construction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/27 Testing: test_grid_sampling_contract
+15/27 Test: test_grid_sampling_contract
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_grid_sampling_contract.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_grid_sampling_contract" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GridSamplingContract
+[ RUN      ] GridSamplingContract.SameHybridEvaluatorProducesHardValidAdditivePaths
+[       OK ] GridSamplingContract.SameHybridEvaluatorProducesHardValidAdditivePaths (1 ms)
+[----------] 1 test from GridSamplingContract (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_grid_sampling_contract.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_grid_sampling_contract" end time: Oct 16 14:36 KST
+"test_grid_sampling_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/27 Testing: test_path_cost_evaluator
+16/27 Test: test_path_cost_evaluator
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_path_cost_evaluator.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_path_cost_evaluator" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PathCostEvaluator
+[ RUN      ] PathCostEvaluator.AccumulatesTheSameHybridEdgeCostComponents
+[       OK ] PathCostEvaluator.AccumulatesTheSameHybridEdgeCostComponents (0 ms)
+[ RUN      ] PathCostEvaluator.ReportsHardStepAndCostmapFailuresAtTheIncidentSegment
+[       OK ] PathCostEvaluator.ReportsHardStepAndCostmapFailuresAtTheIncidentSegment (0 ms)
+[ RUN      ] PathCostEvaluator.MinimumImprovementHysteresisUsesTheExactConfiguredRatio
+[       OK ] PathCostEvaluator.MinimumImprovementHysteresisUsesTheExactConfiguredRatio (0 ms)
+[----------] 3 tests from PathCostEvaluator (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_cost_evaluator.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_path_cost_evaluator" end time: Oct 16 14:36 KST
+"test_path_cost_evaluator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/27 Testing: test_path_revalidation
+17/27 Test: test_path_revalidation
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_revalidation.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_path_revalidation.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_path_revalidation" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_revalidation.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_path_revalidation" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_path_revalidation --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_revalidation.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from PathRevalidation
+[ RUN      ] PathRevalidation.ValidAndOutsideChangesKeepRemainingPath
+[       OK ] PathRevalidation.ValidAndOutsideChangesKeepRemainingPath (0 ms)
+[ RUN      ] PathRevalidation.PassedSegmentIgnoredAndFutureStepRejected
+[       OK ] PathRevalidation.PassedSegmentIgnoredAndFutureStepRejected (0 ms)
+[----------] 2 tests from PathRevalidation (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_revalidation.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_path_revalidation.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_path_revalidation" end time: Oct 16 14:36 KST
+"test_path_revalidation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/27 Testing: test_plan_lifecycle
+18/27 Test: test_plan_lifecycle
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_plan_lifecycle.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_plan_lifecycle" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlanLifecycle
+[ RUN      ] PlanLifecycle.StaleGoalMapAndFrameCannotPublish
+[       OK ] PlanLifecycle.StaleGoalMapAndFrameCannotPublish (0 ms)
+[----------] 1 test from PlanLifecycle (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_plan_lifecycle.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_plan_lifecycle" end time: Oct 16 14:36 KST
+"test_plan_lifecycle" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/27 Testing: test_tracking_path_refiner
+19/27 Test: test_tracking_path_refiner
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_tracking_path_refiner.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_tracking_path_refiner" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from TrackingPathRefiner
+[ RUN      ] TrackingPathRefiner.StraightLinePreservesEndpointsAndUsesFixedSpacing
+[       OK ] TrackingPathRefiner.StraightLinePreservesEndpointsAndUsesFixedSpacing (0 ms)
+[ RUN      ] TrackingPathRefiner.ValidZigzagReducesMaximumHeadingChangeDeterministically
+[       OK ] TrackingPathRefiner.ValidZigzagReducesMaximumHeadingChangeDeterministically (3 ms)
+[ RUN      ] TrackingPathRefiner.CostmapObstacleRejectsMeanCandidateWithoutShortcutting
+[       OK ] TrackingPathRefiner.CostmapObstacleRejectsMeanCandidateWithoutShortcutting (0 ms)
+[ RUN      ] TrackingPathRefiner.ExcessiveSoftCostIncreaseFallsBackToRawRoute
+[       OK ] TrackingPathRefiner.ExcessiveSoftCostIncreaseFallsBackToRawRoute (0 ms)
+[ RUN      ] TrackingPathRefiner.OverLimitStepAndEvidenceGapRejectMeanCandidate
+[       OK ] TrackingPathRefiner.OverLimitStepAndEvidenceGapRejectMeanCandidate (0 ms)
+[ RUN      ] TrackingPathRefiner.AcceptedSmoothedPointUsesCurrentTerrainElevation
+[       OK ] TrackingPathRefiner.AcceptedSmoothedPointUsesCurrentTerrainElevation (0 ms)
+[----------] 6 tests from TrackingPathRefiner (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (3 ms total)
+[  PASSED  ] 6 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_tracking_path_refiner.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_tracking_path_refiner" end time: Oct 16 14:36 KST
+"test_tracking_path_refiner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/27 Testing: test_local_relief_hazard_snapshot
+20/27 Test: test_local_relief_hazard_snapshot
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_local_relief_hazard_snapshot.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_local_relief_hazard_snapshot" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 8 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from LocalReliefHazardGeometry
+[ RUN      ] LocalReliefHazardGeometry.AxisBoundaryUsesClosedCellAreaNotCellCenter
+[       OK ] LocalReliefHazardGeometry.AxisBoundaryUsesClosedCellAreaNotCellCenter (0 ms)
+[ RUN      ] LocalReliefHazardGeometry.CornerDistanceAndContinuousSegmentAreExact
+[       OK ] LocalReliefHazardGeometry.CornerDistanceAndContinuousSegmentAreExact (0 ms)
+[ RUN      ] LocalReliefHazardGeometry.PhysicalDistanceIsResolutionIndependent
+[       OK ] LocalReliefHazardGeometry.PhysicalDistanceIsResolutionIndependent (0 ms)
+[----------] 3 tests from LocalReliefHazardGeometry (0 ms total)
+
+[----------] 2 tests from LocalReliefHazardSnapshot
+[ RUN      ] LocalReliefHazardSnapshot.FullyObservedFlatMapHasNoSeedsAndCachesByReliefSignature
+[       OK ] LocalReliefHazardSnapshot.FullyObservedFlatMapHasNoSeedsAndCachesByReliefSignature (1 ms)
+[ RUN      ] LocalReliefHazardSnapshot.MissingReliefEvidenceIsNotTreatedAsSafe
+[       OK ] LocalReliefHazardSnapshot.MissingReliefEvidenceIsNotTreatedAsSafe (0 ms)
+[----------] 2 tests from LocalReliefHazardSnapshot (1 ms total)
+
+[----------] 1 test from GridPathEvaluator
+[ RUN      ] GridPathEvaluator.RawAdjacentReplayEqualsAStarSearchCostAndDisabledRefinerIsIdentity
+[       OK ] GridPathEvaluator.RawAdjacentReplayEqualsAStarSearchCostAndDisabledRefinerIsIdentity (0 ms)
+[----------] 1 test from GridPathEvaluator (0 ms total)
+
+[----------] 1 test from GridTerrainClearanceConfiguration
+[ RUN      ] GridTerrainClearanceConfiguration.EnabledRequiresLocalReliefHardGate
+[       OK ] GridTerrainClearanceConfiguration.EnabledRequiresLocalReliefHardGate (0 ms)
+[----------] 1 test from GridTerrainClearanceConfiguration (0 ms total)
+
+[----------] 1 test from GridTerrainClearancePlanning
+[ RUN      ] GridTerrainClearancePlanning.ClearanceOffPreservesSearchAndOnMakesExactDetour
+[       OK ] GridTerrainClearancePlanning.ClearanceOffPreservesSearchAndOnMakesExactDetour (3 ms)
+[----------] 1 test from GridTerrainClearancePlanning (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 5 test suites ran. (4 ms total)
+[  PASSED  ] 8 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_local_relief_hazard_snapshot.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_local_relief_hazard_snapshot" end time: Oct 16 14:36 KST
+"test_local_relief_hazard_snapshot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/27 Testing: test_planning_fsm
+21/27 Test: test_planning_fsm
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_fsm.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_planning_fsm.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planning_fsm" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_fsm.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_planning_fsm" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planning_fsm --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_fsm.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 14 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 14 tests from PlanningFsm
+[ RUN      ] PlanningFsm.PendingGoalStartsPlanningOnFirstMap
+[       OK ] PlanningFsm.PendingGoalStartsPlanningOnFirstMap (0 ms)
+[ RUN      ] PlanningFsm.SuccessfulExternalPlanningTracks
+[       OK ] PlanningFsm.SuccessfulExternalPlanningTracks (0 ms)
+[ RUN      ] PlanningFsm.FirstInvalidFrameSuspendsButRetainsPath
+[       OK ] PlanningFsm.FirstInvalidFrameSuspendsButRetainsPath (0 ms)
+[ RUN      ] PlanningFsm.TwoValidFramesRecoverRetainedPathWithoutReplan
+[       OK ] PlanningFsm.TwoValidFramesRecoverRetainedPathWithoutReplan (0 ms)
+[ RUN      ] PlanningFsm.TwoInvalidFramesConfirmAndStartReplanning
+[       OK ] PlanningFsm.TwoInvalidFramesConfirmAndStartReplanning (0 ms)
+[ RUN      ] PlanningFsm.ReplanSuccessReturnsToTracking
+[       OK ] PlanningFsm.ReplanSuccessReturnsToTracking (0 ms)
+[ RUN      ] PlanningFsm.ReplanFailureWaitsForRetry
+[       OK ] PlanningFsm.ReplanFailureWaitsForRetry (0 ms)
+[ RUN      ] PlanningFsm.RetryRequiresBothPeriodAndNewMap
+[       OK ] PlanningFsm.RetryRequiresBothPeriodAndNewMap (0 ms)
+[ RUN      ] PlanningFsm.RetryBudgetExhaustionBlocks
+[       OK ] PlanningFsm.RetryBudgetExhaustionBlocks (0 ms)
+[ RUN      ] PlanningFsm.ExternalGoalSupersedesBlockedState
+[       OK ] PlanningFsm.ExternalGoalSupersedesBlockedState (0 ms)
+[ RUN      ] PlanningFsm.NewGoalDiscardsVerificationState
+[       OK ] PlanningFsm.NewGoalDiscardsVerificationState (0 ms)
+[ RUN      ] PlanningFsm.InvalidInputBlocksWithoutVerification
+[       OK ] PlanningFsm.InvalidInputBlocksWithoutVerification (0 ms)
+[ RUN      ] PlanningFsm.FrameChangeFullyResetsToIdleWhenNewMapExists
+[       OK ] PlanningFsm.FrameChangeFullyResetsToIdleWhenNewMapExists (0 ms)
+[ RUN      ] PlanningFsm.TransitionRecordHasRequiredNamesAndReason
+[       OK ] PlanningFsm.TransitionRecordHasRequiredNamesAndReason (0 ms)
+[----------] 14 tests from PlanningFsm (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 14 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_fsm.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planning_fsm.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_planning_fsm" end time: Oct 16 14:36 KST
+"test_planning_fsm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/27 Testing: test_pointcloud2_heightmap_adapter
+22/27 Test: test_pointcloud2_heightmap_adapter
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_pointcloud2_heightmap_adapter.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_pointcloud2_heightmap_adapter" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from PointCloud2HeightmapAdapter
+[ RUN      ] PointCloud2HeightmapAdapter.StrictLayoutAndSnapshot
+[       OK ] PointCloud2HeightmapAdapter.StrictLayoutAndSnapshot (0 ms)
+[ RUN      ] PointCloud2HeightmapAdapter.AcceptsShiftedRuntimeEntryLattice
+[       OK ] PointCloud2HeightmapAdapter.AcceptsShiftedRuntimeEntryLattice (0 ms)
+[----------] 2 tests from PointCloud2HeightmapAdapter (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_pointcloud2_heightmap_adapter.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_pointcloud2_heightmap_adapter" end time: Oct 16 14:36 KST
+"test_pointcloud2_heightmap_adapter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/27 Testing: test_nav2_costmap_adapter
+23/27 Test: test_nav2_costmap_adapter
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_nav2_costmap_adapter.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_nav2_costmap_adapter" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from Nav2CostmapAdapter
+[ RUN      ] Nav2CostmapAdapter.ConvertsFullRawSnapshotAndRejectsRotation
+[       OK ] Nav2CostmapAdapter.ConvertsFullRawSnapshotAndRejectsRotation (1 ms)
+[ RUN      ] Nav2CostmapAdapter.RejectsPartialOrMalformedData
+[       OK ] Nav2CostmapAdapter.RejectsPartialOrMalformedData (0 ms)
+[----------] 2 tests from Nav2CostmapAdapter (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 2 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_nav2_costmap_adapter.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_nav2_costmap_adapter" end time: Oct 16 14:36 KST
+"test_nav2_costmap_adapter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/27 Testing: test_planner_visualization
+24/27 Test: test_planner_visualization
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planner_visualization.gtest.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_gtest/test_planner_visualization.txt" "--command" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planner_visualization" "--gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planner_visualization.gtest.xml"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_planner_visualization" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_planner_visualization --gtest_output=xml:/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planner_visualization.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from PlannerVisualization
+[ RUN      ] PlannerVisualization.UsesContractedBatchesColorsAndCap
+[       OK ] PlannerVisualization.UsesContractedBatchesColorsAndCap (0 ms)
+[ RUN      ] PlannerVisualization.FullResetIsSingleDeleteAllWithFrameAndStamp
+[       OK ] PlannerVisualization.FullResetIsSingleDeleteAllWithFrameAndStamp (0 ms)
+[ RUN      ] PlannerVisualization.RevalidationFailureIsThickRedLineAndCanBeDeleted
+[       OK ] PlannerVisualization.RevalidationFailureIsThickRedLineAndCanBeDeleted (0 ms)
+[----------] 3 tests from PlannerVisualization (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planner_visualization.gtest.xml'
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_planner_visualization.gtest.xml'
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"test_planner_visualization" end time: Oct 16 14:36 KST
+"test_planner_visualization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/27 Testing: test_config_contract
+25/27 Test: test_config_contract
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_config_contract.xunit.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_config_contract.txt" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_config_contract.py" "-o" "cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_config_contract/.cache" "--junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_config_contract.xunit.xml" "--junit-prefix=rubi_heightmap_step_wavefront_planner"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_config_contract" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_config_contract.py -o cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_config_contract/.cache --junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_config_contract.xunit.xml --junit-prefix=rubi_heightmap_step_wavefront_planner
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_config_contract/.cache
+rootdir: /home/kim/legged_robot_ws
+plugins: ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.10, ament-copyright-0.12.14, ament-lint-0.12.14, launch-pytest-1.0.14, launch-testing-ros-0.19.10, ament-pep257-0.12.14, dash-4.1.0, repeat-0.9.1, colcon-core-0.19.0, cov-3.0.0, rerunfailures-10.2
+collected 14 items
+
+../../src/rubi_heightmap_step_wavefront_planner/test/test_config_contract.py . [  7%]
+.............                                                            [100%]
+
+- generated xml file: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_config_contract.xunit.xml -
+============================== 14 passed in 0.21s ==============================
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_config_contract.xunit.xml'
+<end of output>
+Test time =   0.77 sec
+----------------------------------------------------------
+Test Passed.
+"test_config_contract" end time: Oct 16 14:36 KST
+"test_config_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/27 Testing: test_hybrid_map_install
+26/27 Test: test_hybrid_map_install
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_map_install.xunit.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_map_install.txt" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_map_install.py" "-o" "cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_map_install/.cache" "--junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_map_install.xunit.xml" "--junit-prefix=rubi_heightmap_step_wavefront_planner"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_hybrid_map_install" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_map_install.py -o cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_map_install/.cache --junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_map_install.xunit.xml --junit-prefix=rubi_heightmap_step_wavefront_planner
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_map_install/.cache
+rootdir: /home/kim/legged_robot_ws
+plugins: ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.10, ament-copyright-0.12.14, ament-lint-0.12.14, launch-pytest-1.0.14, launch-testing-ros-0.19.10, ament-pep257-0.12.14, dash-4.1.0, repeat-0.9.1, colcon-core-0.19.0, cov-3.0.0, rerunfailures-10.2
+collected 2 items
+
+../../src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_map_install.py . [ 50%]
+.                                                                        [100%]
+
+- generated xml file: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_map_install.xunit.xml -
+============================== 2 passed in 0.01s ===============================
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_map_install.xunit.xml'
+<end of output>
+Test time =   0.56 sec
+----------------------------------------------------------
+Test Passed.
+"test_hybrid_map_install" end time: Oct 16 14:36 KST
+"test_hybrid_map_install" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/27 Testing: test_hybrid_costmap_config
+27/27 Test: test_hybrid_costmap_config
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_costmap_config.xunit.xml" "--package-name" "rubi_heightmap_step_wavefront_planner" "--output-file" "/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_costmap_config.txt" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_costmap_config.py" "-o" "cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_costmap_config/.cache" "--junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_costmap_config.xunit.xml" "--junit-prefix=rubi_heightmap_step_wavefront_planner"
+Directory: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+"test_hybrid_costmap_config" start time: Oct 16 14:36 KST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_costmap_config.py -o cache_dir=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_costmap_config/.cache --junit-xml=/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_costmap_config.xunit.xml --junit-prefix=rubi_heightmap_step_wavefront_planner
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+cachedir: build/rubi_heightmap_step_wavefront_planner/ament_cmake_pytest/test_hybrid_costmap_config/.cache
+rootdir: /home/kim/legged_robot_ws
+plugins: ament-flake8-0.12.14, ament-xmllint-0.12.14, launch-testing-1.0.10, ament-copyright-0.12.14, ament-lint-0.12.14, launch-pytest-1.0.14, launch-testing-ros-0.19.10, ament-pep257-0.12.14, dash-4.1.0, repeat-0.9.1, colcon-core-0.19.0, cov-3.0.0, rerunfailures-10.2
+collected 5 items
+
+../../src/rubi_heightmap_step_wavefront_planner/test/test_hybrid_costmap_config.py . [ 20%]
+....                                                                     [100%]
+
+- generated xml file: /home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_costmap_config.xunit.xml -
+============================== 5 passed in 0.01s ===============================
+-- run_test.py: return code 0
+-- run_test.py: verify result file '/home/kim/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_hybrid_costmap_config.xunit.xml'
+<end of output>
+Test time =   0.57 sec
+----------------------------------------------------------
+Test Passed.
+"test_hybrid_costmap_config" end time: Oct 16 14:36 KST
+"test_hybrid_costmap_config" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 16 14:36 KST
+
+gtest =   1.56 sec*proc
+
+pytest =   1.90 sec*proc
+

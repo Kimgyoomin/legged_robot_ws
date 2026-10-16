@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+from legged_bringup.frozen_map import main
+main()

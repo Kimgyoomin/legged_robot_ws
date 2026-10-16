@@ -1,0 +1,10 @@
+{
+  "unchanged_map_deviation_replan": true,
+  "stop_before_replan": true,
+  "goal_preserved": true,
+  "no_replan_loop": true,
+  "blocked_start_stays_stopped": true,
+  "clear_start_retries": true,
+  "stale_pose_not_used": true,
+  "domain": 176
+}

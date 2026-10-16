@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" disabled="0" errors="0" time="0" timestamp="2026-10-15T21:28:17" name="AllTests">
+  <testsuite name="VelocityInputArbitrator" tests="11" failures="0" disabled="0" errors="0" time="0" timestamp="2026-10-15T21:28:17">
+    <testcase name="StartsInJoystickMode" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="ShortButtonArraysDoNotAccessButtonThree" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="ToggleUsesOnlyRisingEdges" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="SwitchAppliesOneZeroBeforeJoystickCommand" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="Nav2IgnoresJoystickAxesAndUsesFluComponents" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="EntryInvalidatesPreviousNavCommand" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="TimeoutAndInvalidCommandsStayZeroWithoutFallback" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="SafetyZeroOverridesAllSources" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="TerrainNavigationPreservesVelocityUnits" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="TerrainNavigationRetainsInputLimitsWithoutAmplifying" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+    <testcase name="TerrainJoystickKeepsLegacyAxesAtBoundary" status="run" result="completed" time="0" timestamp="2026-10-15T21:28:17" classname="rubi_gazebo_plugins.VelocityInputArbitrator" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,23 @@
+{
+  "/cmd_vel": [
+    0.0,
+    0.0
+  ],
+  "/legged/motion_status": "{\"gate\": \"stopped\", \"reason\": \"safe_command_timeout\", \"tracking\": \"unknown\", \"collision_input\": \"ready\", \"vx\": 0.0, \"wz\": 0.0}",
+  "/legged/collision_input_state": "ready",
+  "clouds": 28,
+  "stamp": 2091.502,
+  "min_hits": 37,
+  "max_hits": 305,
+  "last_hits": 139,
+  "hit_xyz_min": [
+    -0.6997334957122803,
+    0.3907134532928467,
+    -0.340706467628479
+  ],
+  "hit_xyz_max": [
+    -0.6739163994789124,
+    0.4499320089817047,
+    -0.0840405598282814
+  ]
+}

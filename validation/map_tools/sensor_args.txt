@@ -1,0 +1,5 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'config':
+        no description given
+        (default: '/home/kim/legged_robot_ws/install/legged_bringup/share/legged_bringup/config/sensor.json')

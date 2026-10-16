@@ -1,0 +1,49 @@
+# 배포 설계용 작성 양식. ROS 파라미터 파일이 아니며 null은 미확인 값이다.
+schema_version: 1
+status: draft
+deployable: false
+site_id: null
+revision: null
+created_at_utc: null
+frame:
+  id: map
+  convention: right_handed_z_up_meters
+  gravity_verified: false
+  vertical_datum_description: null
+assets:
+  localization_pcd: {path: localization.pcd, sha256: null}
+  occupancy_yaml: {path: occupancy.yaml, sha256: null}
+  occupancy_image: {path: occupancy.pgm, sha256: null}
+  height_raw: {path: height_raw.rghm, sha256: null}
+  height_frozen: {path: height_frozen.rghm, sha256: null}
+  height_surface: {path: height_surface.pcd, sha256: null}
+  processing_metrics: {path: processing_metrics.json, sha256: null}
+  alignment_qc: {path: alignment_qc.json, sha256: null}
+height_grid:
+  resolution_m: 0.05
+  origin_xy_m: null
+  dimensions_xy_cells: null
+  unknown_policy: preserve_unknown
+  source_observation_stamp_ns: null
+occupancy_grid:
+  resolution_m: null
+  origin_xy_yaw: null
+alignment:
+  method: null # built_in_reference_frame / registered_3d_then_regenerated
+  source_frame: null
+  target_frame: map
+  transform_direction: p_map = T_map_from_height * p_height
+  T_map_from_height_4x4: null # 미확인 변환에 identity를 가정하지 않는다
+  applied_to_height_coordinates: false
+  independent_qc_passed: false
+provenance:
+  source_bag_id: null
+  source_trajectory_sha256: null
+  mapper_source_sha256: null
+  parameters_sha256: null
+  postprocess_source_sha256: null
+qc:
+  accepted: false
+  thresholds: null
+  measurements: null
+  # 국소 평면 잔차, 넓은 범위 Z 변형, XY 잔차, 실측 높이, coverage, 경로 판정을 기록
