@@ -7,3 +7,31 @@ __pycache__/
 *.pyc
 maps/site/
 backups/
+
+# Local real-world map bundle; keep its site.yaml manifest in Git.
+/maps/rubi_1f_legacy/data/
+# Newly generated mapping runs. Already tracked test fixtures stay tracked.
+/maps/raw/
+/maps/sim/
+/maps/sim_lio_snapshot/
+*.pcd
+*.ply
+*.rghm
+# Allow intentional small demo fixtures to be added/updated.
+!/maps/demo/*.pcd
+!/maps/demo/*.rghm
+
+# Sensor recordings and rosbag-generated metadata, not source JSON/YAML configs.
+rosbag2_*/
+*.bag
+*.bag.active
+*.db3
+*.db3-*
+*.mcap
+*.lvx
+*.lvx2
+metadata.yaml
+*.pyo
+.DS_Store
+*.swp
+*.swo

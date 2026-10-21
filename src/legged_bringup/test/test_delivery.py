@@ -37,11 +37,17 @@ def test_map_hash_and_alignment_are_checked(tmp_path):
     with pytest.raises(ValueError,match='hash mismatch'): load_site(f)
 
 
-def test_sensor_rotation_has_no_translation():
-    p=json.loads((ROOT/'src/legged_bringup/config/sensor.json').read_text())
-    extrinsic=p['lidar_configs'][0]['extrinsic_parameter']
-    assert extrinsic['roll']==180
-    assert all(extrinsic[k]==0 for k in ['x','y','z'])
+@pytest.mark.parametrize('config_path', [
+    'src/legged_bringup/config/sensor.json',
+    'src/livox_ros_driver2/config/MID360s_config.json',
+])
+def test_sensor_rotation_has_no_translation(config_path):
+    # Both the bringup and standalone RViz launch must publish upright axes.
+    p=json.loads((ROOT/config_path).read_text())
+    for lidar in p['lidar_configs']:
+        extrinsic=lidar['extrinsic_parameter']
+        assert extrinsic['roll']==180
+        assert all(extrinsic[k]==0 for k in ['pitch','yaw','x','y','z'])
 
 
 def test_frozen_map_keeps_acquisition_epoch():
