@@ -1,0 +1,13 @@
+{
+  "samples": 98,
+  "points": 301535,
+  "gt_time_skew_max_s": 0.009999999999990905,
+  "upper_roi_center_map": [
+    8.95,
+    5.25
+  ],
+  "upper_roi_radius_m": 0.12,
+  "upper_points": 0,
+  "upper_surface_matches": {},
+  "upper_unmatched": 0
+}

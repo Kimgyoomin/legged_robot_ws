@@ -1,0 +1,19 @@
+<!-- Trial-only prolonged retry policy. Halt tracking on failure and retain the goal.
+     600 retries, each preceded by a 1-second wall-clock delay. Repeated immediate
+     planner failure therefore waits about 10 minutes, plus action execution time.
+     This is NOT a 600-second total goal deadline: controller attempts can also
+     wait up to their configured failure/progress limits before entering recovery.
+     Cancellation remains available. No obstacle clearing or blind escape motion. -->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode name="RetryTemporaryBlockage" number_of_retries="600">
+      <PipelineSequence name="ReplanAndTrack">
+        <RateController hz="1.0">
+          <ComputePathToPose goal="{goal}" path="{path}" planner_id="Height"/>
+        </RateController>
+        <FollowPath path="{path}" controller_id="FollowPath"/>
+      </PipelineSequence>
+      <Delay delay_msec="1000"><AlwaysSuccess/></Delay>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

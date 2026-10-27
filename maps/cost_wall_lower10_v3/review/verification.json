@@ -1,0 +1,25 @@
+{
+  "source_snapshot_unchanged": true,
+  "heightmap_hash": "1976335512810986777",
+  "costmap_hash": "4132940850726058965",
+  "new_measured_heightmap_float32_matches_publisher": true,
+  "costmap_source": "Archived real Nav2 static/inflation costmap from previous run; not a new capture",
+  "all_8_queries_succeeded": true,
+  "all_paths_feasible_under_both_modes_and_weights": true,
+  "D_roi_common_gate_counts_equal": true,
+  "each_selected_path_optimal_among_compared_candidates_under_its_own_objective": true,
+  "approximate_world_frame_clearance": {
+    "vanilla_w5": {
+      "D_min_signed_center_distance_m": -0.5423935134440974
+    },
+    "cot_w1": {
+      "D_min_signed_center_distance_m": -0.5791348674945498
+    },
+    "cot_w5": {
+      "D_min_signed_center_distance_m": 0.04119030884668651
+    }
+  },
+  "new_site_packaged": false,
+  "live_navigation_performed": false,
+  "map_values_modified": false
+}

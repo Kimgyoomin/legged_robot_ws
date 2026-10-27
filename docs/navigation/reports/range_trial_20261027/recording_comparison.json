@@ -1,0 +1,24 @@
+{
+  "source": "z_ghost_20261020/all.pkl: recorded old-filter output (267 scans)",
+  "input_points": 1515119,
+  "front_sector_points": 339706,
+  "profiles": {
+    "1.0": {
+      "remaining": 1328825,
+      "removed": 186294,
+      "removed_percent": 12.295667865032383,
+      "known_suspect_points_retained": 424
+    },
+    "1.5": {
+      "remaining": 1066724,
+      "removed": 448395,
+      "removed_percent": 29.594705102371496,
+      "known_suspect_points_retained": 424
+    }
+  },
+  "known_suspect_range_m": [
+    1.8840185771096731,
+    3.9897158642498614
+  ],
+  "note": "Point selection comparison only; not a costmap replay or Jetson performance benchmark."
+}

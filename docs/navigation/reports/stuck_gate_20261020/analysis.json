@@ -1,0 +1,1090 @@
+[
+  {
+    "i": 0,
+    "wall": 2.518263890000526,
+    "stamp": 291.102,
+    "xy": [
+      7.718388615676696,
+      2.828370510230423
+    ],
+    "yaw": -2.4632681829363445,
+    "cell": [
+      207,
+      314
+    ],
+    "center": [
+      7.725000154599547,
+      2.8250002343207594
+    ],
+    "raw_cost": 223,
+    "distance_nearest_lethal_unknown_cell_center": 0.44721360216395983,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "pass",
+      "reverse_0.1": "pass",
+      "left_0.2": "pass",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 1,
+    "wall": 3.3182089990004897,
+    "stamp": 291.702,
+    "xy": [
+      7.723033605015409,
+      2.793724600672279
+    ],
+    "yaw": -2.4046664084080316,
+    "cell": [
+      207,
+      313
+    ],
+    "center": [
+      7.725000154599547,
+      2.7750002335757014
+    ],
+    "raw_cost": 233,
+    "distance_nearest_lethal_unknown_cell_center": 0.4031128934217776,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 2,
+    "wall": 3.918471962970216,
+    "stamp": 292.302,
+    "xy": [
+      7.669702809429421,
+      2.7876650880097134
+    ],
+    "yaw": -2.401682013410535,
+    "cell": [
+      206,
+      313
+    ],
+    "center": [
+      7.675000153854489,
+      2.7750002335757014
+    ],
+    "raw_cost": 226,
+    "distance_nearest_lethal_unknown_cell_center": 0.43011626976136313,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "pass",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 3,
+    "wall": 4.7181984600028954,
+    "stamp": 292.902,
+    "xy": [
+      7.683782622339155,
+      2.792948660568292
+    ],
+    "yaw": -2.333119751209614,
+    "cell": [
+      206,
+      313
+    ],
+    "center": [
+      7.675000153854489,
+      2.7750002335757014
+    ],
+    "raw_cost": 226,
+    "distance_nearest_lethal_unknown_cell_center": 0.43011626976136313,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 4,
+    "wall": 5.318421464995481,
+    "stamp": 293.502,
+    "xy": [
+      7.675831876726014,
+      2.8134995280413935
+    ],
+    "yaw": -2.3395904643466685,
+    "cell": [
+      206,
+      314
+    ],
+    "center": [
+      7.675000153854489,
+      2.8250002343207594
+    ],
+    "raw_cost": 217,
+    "distance_nearest_lethal_unknown_cell_center": 0.47169906363169384,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "pass",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 5,
+    "wall": 6.118307274009567,
+    "stamp": 294.102,
+    "xy": [
+      7.67916717340586,
+      2.836171661950433
+    ],
+    "yaw": -2.314930854383966,
+    "cell": [
+      206,
+      314
+    ],
+    "center": [
+      7.675000153854489,
+      2.8250002343207594
+    ],
+    "raw_cost": 217,
+    "distance_nearest_lethal_unknown_cell_center": 0.47169906363169384,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "pass",
+      "reverse_0.1": "pass",
+      "left_0.2": "pass",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 6,
+    "wall": 6.718491387960967,
+    "stamp": 294.702,
+    "xy": [
+      7.686956082271127,
+      2.805113225873425
+    ],
+    "yaw": -2.254597334634865,
+    "cell": [
+      206,
+      314
+    ],
+    "center": [
+      7.675000153854489,
+      2.8250002343207594
+    ],
+    "raw_cost": 217,
+    "distance_nearest_lethal_unknown_cell_center": 0.47169906363169384,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 7,
+    "wall": 7.518364057003055,
+    "stamp": 295.402,
+    "xy": [
+      7.641839743107714,
+      2.788836342897509
+    ],
+    "yaw": -2.250479678963351,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 8,
+    "wall": 8.318543157016393,
+    "stamp": 296.002,
+    "xy": [
+      7.6274728170878845,
+      2.7822146452562366
+    ],
+    "yaw": -2.1741129361905625,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 9,
+    "wall": 8.918310950975865,
+    "stamp": 296.602,
+    "xy": [
+      7.617076757130427,
+      2.7794651661220264
+    ],
+    "yaw": -2.185215163453601,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 10,
+    "wall": 9.718304381007329,
+    "stamp": 297.202,
+    "xy": [
+      7.616576227327495,
+      2.800781082129679
+    ],
+    "yaw": -2.13388368608923,
+    "cell": [
+      205,
+      314
+    ],
+    "center": [
+      7.625000153109431,
+      2.8250002343207594
+    ],
+    "raw_cost": 211,
+    "distance_nearest_lethal_unknown_cell_center": 0.5000000074505806,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 11,
+    "wall": 10.518196301010903,
+    "stamp": 297.902,
+    "xy": [
+      7.646647980437438,
+      2.7862528883427666
+    ],
+    "yaw": -2.1059224761391837,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "predicted_costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 12,
+    "wall": 11.318248990981374,
+    "stamp": 298.602,
+    "xy": [
+      7.614404687951936,
+      2.8107322030111233
+    ],
+    "yaw": -2.080506385548276,
+    "cell": [
+      205,
+      314
+    ],
+    "center": [
+      7.625000153109431,
+      2.8250002343207594
+    ],
+    "raw_cost": 211,
+    "distance_nearest_lethal_unknown_cell_center": 0.5000000074505806,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "pass",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 13,
+    "wall": 12.118336670973804,
+    "stamp": 299.302,
+    "xy": [
+      7.634713586205953,
+      2.7916103828759735
+    ],
+    "yaw": -2.0091147451578983,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 14,
+    "wall": 12.918474881967995,
+    "stamp": 300.002,
+    "xy": [
+      7.615299073387905,
+      2.785723724090321
+    ],
+    "yaw": -1.9792159123513486,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "predicted_costmap_collision",
+      "reverse_0.1": "pass",
+      "left_0.2": "predicted_costmap_collision",
+      "right_0.2": "pass"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 15,
+    "wall": 13.718229293008335,
+    "stamp": 300.602,
+    "xy": [
+      7.615983902150099,
+      2.7702715739057373
+    ],
+    "yaw": -1.9076921977198074,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 16,
+    "wall": 14.318424799013883,
+    "stamp": 301.202,
+    "xy": [
+      7.609609838774578,
+      2.770701611256216
+    ],
+    "yaw": -1.9383862276761143,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "pass",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 17,
+    "wall": 15.1182239499758,
+    "stamp": 301.802,
+    "xy": [
+      7.624128350767994,
+      2.7607986978848507
+    ],
+    "yaw": -1.8791177564134742,
+    "cell": [
+      205,
+      313
+    ],
+    "center": [
+      7.625000153109431,
+      2.7750002335757014
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 18,
+    "wall": 15.91829985100776,
+    "stamp": 302.502,
+    "xy": [
+      7.618718722224008,
+      2.7346638972408446
+    ],
+    "yaw": -1.8534672714435727,
+    "cell": [
+      205,
+      312
+    ],
+    "center": [
+      7.625000153109431,
+      2.7250002328306433
+    ],
+    "raw_cost": 228,
+    "distance_nearest_lethal_unknown_cell_center": 0.4242640750339558,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 1,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 19,
+    "wall": 16.71823991299607,
+    "stamp": 303.202,
+    "xy": [
+      7.607467003403051,
+      2.7313017056367928
+    ],
+    "yaw": -1.8039502841151431,
+    "cell": [
+      205,
+      312
+    ],
+    "center": [
+      7.625000153109431,
+      2.7250002328306433
+    ],
+    "raw_cost": 228,
+    "distance_nearest_lethal_unknown_cell_center": 0.4242640750339558,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 1,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 20,
+    "wall": 17.518233114969917,
+    "stamp": 303.902,
+    "xy": [
+      7.601131441968469,
+      2.7221689923506087
+    ],
+    "yaw": -1.7801388204519493,
+    "cell": [
+      205,
+      312
+    ],
+    "center": [
+      7.625000153109431,
+      2.7250002328306433
+    ],
+    "raw_cost": 228,
+    "distance_nearest_lethal_unknown_cell_center": 0.4242640750339558,
+    "nearest_obstacle": [
+      7.925000157579779,
+      2.425000228360295
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 1,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 21,
+    "wall": 18.318276041012723,
+    "stamp": 304.602,
+    "xy": [
+      7.555156122588706,
+      2.7363911588320446
+    ],
+    "yaw": -1.7540085707651394,
+    "cell": [
+      204,
+      312
+    ],
+    "center": [
+      7.575000152364373,
+      2.7250002328306433
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.875000156834721,
+      2.375000227615237
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 22,
+    "wall": 19.118529477971606,
+    "stamp": 305.302,
+    "xy": [
+      7.571350600342624,
+      2.714962811659461
+    ],
+    "yaw": -1.6945710833521663,
+    "cell": [
+      204,
+      312
+    ],
+    "center": [
+      7.575000152364373,
+      2.7250002328306433
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.875000156834721,
+      2.375000227615237
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 23,
+    "wall": 19.918241950974334,
+    "stamp": 305.902,
+    "xy": [
+      7.52735650642276,
+      2.708483408446487
+    ],
+    "yaw": -1.6900779798811907,
+    "cell": [
+      203,
+      312
+    ],
+    "center": [
+      7.525000151619315,
+      2.7250002328306433
+    ],
+    "raw_cost": 213,
+    "distance_nearest_lethal_unknown_cell_center": 0.4924428974277761,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 24,
+    "wall": 20.51865723001538,
+    "stamp": 306.502,
+    "xy": [
+      7.527468799831612,
+      2.7062322892548787
+    ],
+    "yaw": -1.6093587880507914,
+    "cell": [
+      203,
+      312
+    ],
+    "center": [
+      7.525000151619315,
+      2.7250002328306433
+    ],
+    "raw_cost": 213,
+    "distance_nearest_lethal_unknown_cell_center": 0.4924428974277761,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 25,
+    "wall": 21.318303405016195,
+    "stamp": 307.102,
+    "xy": [
+      7.552164336029589,
+      2.7016726097707737
+    ],
+    "yaw": -1.620027283261749,
+    "cell": [
+      204,
+      312
+    ],
+    "center": [
+      7.575000152364373,
+      2.7250002328306433
+    ],
+    "raw_cost": 219,
+    "distance_nearest_lethal_unknown_cell_center": 0.4609772297337403,
+    "nearest_obstacle": [
+      7.875000156834721,
+      2.375000227615237
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 0,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 26,
+    "wall": 21.918352793960366,
+    "stamp": 307.702,
+    "xy": [
+      7.573253138184381,
+      2.6903384166819153
+    ],
+    "yaw": -1.5781386363763874,
+    "cell": [
+      204,
+      311
+    ],
+    "center": [
+      7.575000152364373,
+      2.6750002320855852
+    ],
+    "raw_cost": 228,
+    "distance_nearest_lethal_unknown_cell_center": 0.4242640750339558,
+    "nearest_obstacle": [
+      7.875000156834721,
+      2.375000227615237
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 1,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 27,
+    "wall": 22.718484050012194,
+    "stamp": 308.302,
+    "xy": [
+      7.601906436421682,
+      2.653192712253041
+    ],
+    "yaw": -1.5562503808278096,
+    "cell": [
+      205,
+      311
+    ],
+    "center": [
+      7.625000153109431,
+      2.6750002320855852
+    ],
+    "raw_cost": 236,
+    "distance_nearest_lethal_unknown_cell_center": 0.3905124896144222,
+    "nearest_obstacle": [
+      7.875000156834721,
+      2.375000227615237
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 6,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 28,
+    "wall": 23.318410601990763,
+    "stamp": 308.902,
+    "xy": [
+      7.560349574499872,
+      2.6343292393419926
+    ],
+    "yaw": -1.5408655681887824,
+    "cell": [
+      204,
+      310
+    ],
+    "center": [
+      7.575000152364373,
+      2.625000231340527
+    ],
+    "raw_cost": 238,
+    "distance_nearest_lethal_unknown_cell_center": 0.38078866096738856,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 3,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 29,
+    "wall": 24.11841822898714,
+    "stamp": 309.502,
+    "xy": [
+      7.555168297387986,
+      2.6200125386461313
+    ],
+    "yaw": -1.459148800463243,
+    "cell": [
+      204,
+      310
+    ],
+    "center": [
+      7.575000152364373,
+      2.625000231340527
+    ],
+    "raw_cost": 238,
+    "distance_nearest_lethal_unknown_cell_center": 0.38078866096738856,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 3,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 30,
+    "wall": 24.718504905991722,
+    "stamp": 310.102,
+    "xy": [
+      7.543218694313895,
+      2.6201792543371423
+    ],
+    "yaw": -1.4661729219313104,
+    "cell": [
+      203,
+      310
+    ],
+    "center": [
+      7.525000151619315,
+      2.625000231340527
+    ],
+    "raw_cost": 233,
+    "distance_nearest_lethal_unknown_cell_center": 0.4031128934217776,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 3,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  },
+  {
+    "i": 31,
+    "wall": 25.518252228968777,
+    "stamp": 310.702,
+    "xy": [
+      7.531557228443409,
+      2.619480451510019
+    ],
+    "yaw": -1.4185791213654015,
+    "cell": [
+      203,
+      310
+    ],
+    "center": [
+      7.525000151619315,
+      2.625000231340527
+    ],
+    "raw_cost": 233,
+    "distance_nearest_lethal_unknown_cell_center": 0.4031128934217776,
+    "nearest_obstacle": [
+      7.725000154599547,
+      2.2750002261251208
+    ],
+    "extra_planner_clearance_blocks": true,
+    "physical_rectangle_cell_centers": 3,
+    "offline_guard": {
+      "stationary": "costmap_collision",
+      "forward_0.1": "costmap_collision",
+      "reverse_0.1": "costmap_collision",
+      "left_0.2": "costmap_collision",
+      "right_0.2": "costmap_collision"
+    },
+    "nearest_obstacle_distance_to_static": 0.0
+  }
+]

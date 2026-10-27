@@ -1,0 +1,2 @@
+exit_code=1
+Out-of-bounds pattern access: k=-2147483648, index=-283648, size=800000

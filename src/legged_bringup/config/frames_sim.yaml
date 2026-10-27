@@ -1,0 +1,6 @@
+# Corrected upright sensor frame already published by the RUBI simulator.
+# Simulator: BODY -> livox_frame. This launch: body -> BODY -> base_link.
+# Do not apply a second 180-degree rotation: the simulator adapter does it.
+robot_body_frame: BODY
+base_to_lidar: [0.101, 0.0, -0.1169]
+imu_to_base: [-0.112, 0.02329, 0.07278]

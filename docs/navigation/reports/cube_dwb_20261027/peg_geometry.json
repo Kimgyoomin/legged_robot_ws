@@ -1,0 +1,54 @@
+[
+  {
+    "name": "BODY_collision_10",
+    "center_body": [
+      0.1495,
+      0.1,
+      -0.095
+    ],
+    "center_sensor_distance_m": 0.11327780011988227,
+    "range_bound_m": [
+      0.09765730076806896,
+      0.12889829947169557
+    ]
+  },
+  {
+    "name": "BODY_collision_11",
+    "center_body": [
+      0.1495,
+      -0.1,
+      -0.095
+    ],
+    "center_sensor_distance_m": 0.11327780011988227,
+    "range_bound_m": [
+      0.09765730076806896,
+      0.12889829947169557
+    ]
+  },
+  {
+    "name": "BODY_collision_12",
+    "center_body": [
+      -0.0925,
+      0.1,
+      -0.095
+    ],
+    "center_sensor_distance_m": 0.21891062103059322,
+    "range_bound_m": [
+      0.2032901216787799,
+      0.23453112038240653
+    ]
+  },
+  {
+    "name": "BODY_collision_13",
+    "center_body": [
+      -0.0925,
+      -0.1,
+      -0.095
+    ],
+    "center_sensor_distance_m": 0.21891062103059322,
+    "range_bound_m": [
+      0.2032901216787799,
+      0.23453112038240653
+    ]
+  }
+]

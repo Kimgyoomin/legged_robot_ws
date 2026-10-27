@@ -12,6 +12,7 @@ from rclpy.qos import qos_profile_sensor_data, QoSProfile, DurabilityPolicy
 from rclpy.time import Time
 from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry, Path as RosPath
+from rosgraph_msgs.msg import Clock
 from sensor_msgs.msg import Joy
 from std_msgs.msg import String
 from tf2_ros import Buffer, TransformListener
@@ -46,6 +47,8 @@ def record(m, topic):
         d.update(axes=list(m.axes), buttons=list(m.buttons))
     elif isinstance(m, String):
         d['state'] = m.data
+    elif isinstance(m, Clock):
+        d['clock'] = m.clock.sec + m.clock.nanosec/1e9
     else:
         d.update(x=m.pose.position.x, y=m.pose.position.y)
     data.append(d)
@@ -53,12 +56,18 @@ def record(m, topic):
 
 topics = [(t, Odometry) for t in ['/Odometry', '/localization', '/ground_truth/odom']]
 topics += [(t, Twist) for t in ['/legged/cmd_raw', '/legged/cmd_safe', '/cmd_vel']]
-topics += [(t, String) for t in ['/legged/tracking_state', '/legged/motion_status']]
+topics += [(t, String) for t in ['/legged/tracking_state', '/legged/motion_status',
+                              '/legged/collision_input_state', '/rubi_gazebo_legacy/status']]
+topics += [('/clock', Clock)]
 topics += [('/joy', Joy), ('/rubi/planner_comparison/grid/tracking_path', RosPath)]
 topics += [(t, Marker) for t in ['/rubi/simple_pp/lookahead', '/rubi/simple_pp/nearest_path_point']]
 for topic, typ in topics:
     qos = QoSProfile(depth=10, durability=DurabilityPolicy.TRANSIENT_LOCAL) if typ == RosPath else qos_profile_sensor_data
-    subscriptions.append(n.create_subscription(typ, topic, lambda m, t=topic: record(m, t), qos))
+    def callback_for(topic):
+        def callback(message):
+            record(message, topic)
+        return callback
+    subscriptions.append(n.create_subscription(typ, topic, callback_for(topic), qos))
 
 
 def pose_tick():
@@ -79,5 +88,9 @@ try:
         rclpy.spin_once(n, timeout_sec=.02)
 finally:
     args.output.write_text(json.dumps(data))
+    publishers = [dict(node=e.node_name, namespace=e.node_namespace,
+                       gid=bytes(e.endpoint_gid).hex())
+                  for e in n.get_publishers_info_by_topic('/cmd_vel')]
+    args.output.with_suffix('.publishers.json').write_text(json.dumps(publishers, indent=2)+'\n')
     print(json.dumps(dict(Counter(d['topic'] for d in data))))
     n.destroy_node(); rclpy.shutdown()

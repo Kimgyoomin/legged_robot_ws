@@ -1,0 +1,21 @@
+{
+  "frame": "map",
+  "pose": [
+    14.370156209608183,
+    -4.9794718931218895,
+    0.7370252009693224
+  ],
+  "stamp": 695.004,
+  "stationary_guard": "costmap_collision",
+  "center_cost": 253,
+  "lethal_cells_under_rectangle": 151,
+  "unknown_cells_under_rectangle": 0,
+  "nearest_blocked_cell_center_m": 0.14183748030276588,
+  "half_length": 0.5,
+  "half_width": 0.45,
+  "nearest_static_occupied_cell_center_m": 0.14183737020770978,
+  "nearest_static_obstacle_xy": [
+    14.475,
+    -5.075
+  ]
+}

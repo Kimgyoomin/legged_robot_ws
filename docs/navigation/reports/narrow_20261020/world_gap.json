@@ -1,0 +1,6 @@
+{
+  "world": "/tmp/rubi_sensor_world_g50rm92a/world.sdf",
+  "cylinder": "corridor_nav::link_6",
+  "wall": "corridor_nav::link_2_clone_0_clone",
+  "normal_gap_m": 1.6313224507668558
+}

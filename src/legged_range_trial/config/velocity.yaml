@@ -1,0 +1,9 @@
+controller_odom:
+  ros__parameters:
+    output_topic: /legged/controller_odom
+    base_frame: base_link
+    window: 0.4
+    min_span: 0.2
+    max_gap: 0.5
+    max_speed: 3.0
+    max_yaw_rate: 4.0

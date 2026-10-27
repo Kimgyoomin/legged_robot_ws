@@ -1,0 +1,34 @@
+{
+  "/global_costmap/global_costmap": {
+    "before": {
+      "inflation_layer.inflation_radius": 0.7,
+      "inflation_layer.cost_scaling_factor": 1.0,
+      "footprint": "[[0.35, 0.325], [0.35, -0.325], [-0.35, -0.325], [-0.35, 0.325]]",
+      "footprint_padding": 0.0
+    },
+    "set_successful": true,
+    "reason": "",
+    "after": {
+      "inflation_layer.inflation_radius": 0.55,
+      "inflation_layer.cost_scaling_factor": 1.0,
+      "footprint": "[[0.35, 0.325], [0.35, -0.325], [-0.35, -0.325], [-0.35, 0.325]]",
+      "footprint_padding": 0.0
+    }
+  },
+  "/local_costmap/local_costmap": {
+    "before": {
+      "inflation_layer.inflation_radius": 0.7,
+      "inflation_layer.cost_scaling_factor": 5.0,
+      "footprint": "[[0.35, 0.325], [0.35, -0.325], [-0.35, -0.325], [-0.35, 0.325]]",
+      "footprint_padding": 0.0
+    },
+    "set_successful": true,
+    "reason": "",
+    "after": {
+      "inflation_layer.inflation_radius": 0.55,
+      "inflation_layer.cost_scaling_factor": 5.0,
+      "footprint": "[[0.35, 0.325], [0.35, -0.325], [-0.35, -0.325], [-0.35, 0.325]]",
+      "footprint_padding": 0.0
+    }
+  }
+}

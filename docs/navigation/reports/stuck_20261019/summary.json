@@ -1,0 +1,91 @@
+{
+  "sources": {
+    "controller_log": "/home/kim/.ros/log/pure_pursuit_270179_1792400473260.log",
+    "launch_log": "/home/kim/.ros/log/2026-10-19-18-01-13-060710-Kim9975-270149/launch.log"
+  },
+  "logged_run": {
+    "start_local": "2026-10-19T18:47:15.144651+09:00",
+    "alignment_wall_s": 6.200006484985352,
+    "goal_reached_after_wall_s": 73.24293899536133,
+    "predicted_stop_intervals": [
+      {
+        "start_relative_wall_s": 35.693241357803345,
+        "duration_wall_s": 0.25012898445129395
+      },
+      {
+        "start_relative_wall_s": 36.243035316467285,
+        "duration_wall_s": 0.050275564193725586
+      },
+      {
+        "start_relative_wall_s": 57.94346475601196,
+        "duration_wall_s": 0.8999233245849609
+      }
+    ],
+    "total_predicted_stop_wall_s": 1.2003278732299805,
+    "limitation": "Logged controller requests and gate states; not continuous measured robot velocity."
+  },
+  "initial_capture": {
+    "topic_counts": {
+      "/joy": 641,
+      "/rubi/planner_comparison/grid/tracking_path": 1,
+      "/cmd_vel": 996,
+      "/legged/motion_status": 94,
+      "/legged/cmd_raw": 494,
+      "/legged/tracking_state": 494
+    },
+    "tracking_state_counts": {
+      "idle": 494
+    },
+    "motion_reason_message_counts": {
+      "collision_cloud_timeout": 94
+    },
+    "/legged/cmd_raw": {
+      "count": 494,
+      "nonzero": 0
+    },
+    "/legged/cmd_safe": {
+      "count": 0,
+      "nonzero": 0
+    },
+    "/cmd_vel": {
+      "count": 996,
+      "nonzero": 0
+    },
+    "gate_samples": 110,
+    "stationary_guard_counts": {
+      "unavailable": 110
+    }
+  },
+  "followup_capture": {
+    "topic_counts": {
+      "/cmd_vel": 800,
+      "/joy": 553,
+      "/legged/cmd_raw": 400,
+      "/legged/tracking_state": 400,
+      "/rubi/planner_comparison/grid/tracking_path": 1,
+      "/legged/motion_status": 75
+    },
+    "tracking_state_counts": {
+      "idle": 400
+    },
+    "motion_reason_message_counts": {
+      "collision_cloud_timeout": 75
+    },
+    "/legged/cmd_raw": {
+      "count": 400,
+      "nonzero": 0
+    },
+    "/legged/cmd_safe": {
+      "count": 0,
+      "nonzero": 0
+    },
+    "/cmd_vel": {
+      "count": 800,
+      "nonzero": 0
+    },
+    "gate_samples": 80,
+    "stationary_guard_counts": {
+      "unavailable": 80
+    }
+  }
+}

@@ -6,6 +6,7 @@ lethal (254) and unknown (255) cells block this check. This is a constant-Twist
 prediction, not a model of the biped's measured braking/gait dynamics.
 """
 import math
+import json
 import numpy as np
 
 
@@ -42,6 +43,27 @@ def rectangle_half_extents(points):
                 close(x, nx) == close(y, ny)):
             raise ValueError('Stop.points must follow a centered axis-aligned rectangle')
     return hx, hy
+
+
+def configure_costmap_footprint(costmaps, points, base_frame):
+    """Use the stop envelope for Nav2's padded footprint and the final guard.
+
+    Stop.points already includes physical clearance. Extra Nav2 padding would
+    create a different geometry; set it to zero here, at the launch boundary.
+    Leave soft inflation settings and the planner's separate clearance alone.
+    """
+    extents = rectangle_half_extents(points)
+    footprint = json.dumps([[float(x), float(y)] for x, y in zip(points[::2], points[1::2])])
+    parameters = [costmaps[name][name]['ros__parameters']
+                  for name in ('local_costmap', 'global_costmap')]
+    if not base_frame or any(p['robot_base_frame'] != base_frame for p in parameters):
+        raise ValueError('Costmap and collision base frames must match')
+    for p in parameters:
+        p['footprint'] = footprint
+        p['footprint_padding'] = 0.0
+        # An explicit footprint replaces the radius in Nav2; remove ambiguity.
+        p.pop('robot_radius', None)
+    return extents
 
 
 class CostmapGuard:
@@ -112,6 +134,28 @@ class CostmapGuard:
             if reason:
                 return reason if i == 0 else 'predicted_'+reason
         return 'pass'
+
+    def regulate(self, pose, velocity, scales=(.8, .6, .4, .2)):
+        """Shorten the requested arc without changing direction or curvature.
+
+        Never invent reverse/turn commands, bypass current overlap, or relax
+        obstacle/unknown geometry. Every candidate uses the full swept guard.
+        This is approach regulation, not a recovery trajectory generator.
+        """
+        reason = self.check(pose, velocity)
+        if reason == 'pass':
+            return reason, 1.0
+        if reason not in ('predicted_costmap_collision', 'predicted_costmap_boundary'):
+            return reason, 0.0
+        stationary = self.check(pose, (0., 0., 0.))
+        if stationary != 'pass':
+            return stationary, 0.0
+        for scale in scales:
+            if not math.isfinite(scale) or not 0. < scale < 1.:
+                raise ValueError('regulation scales must be between zero and one')
+            if self.check(pose, tuple(scale*v for v in velocity)) == 'pass':
+                return 'obstacle_slowdown', scale
+        return reason, 0.0
 
     def _at_pose(self, x, y, yaw, hx, hy):
         r = self.resolution

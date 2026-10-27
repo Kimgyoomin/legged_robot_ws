@@ -1,0 +1,29 @@
+{
+  "samples": 61,
+  "points": 342385,
+  "gt_time_skew_max_s": 0.009999999999990905,
+  "upper_roi_center_map": [
+    8.95,
+    5.25
+  ],
+  "upper_roi_radius_m": 0.12,
+  "upper_points": 29,
+  "upper_surface_matches": {
+    "cost_step_A_upper_h09::link": 29
+  },
+  "upper_unmatched": 0,
+  "upper_world_xyz_median": [
+    3.1619649353301096,
+    6.201590058221868,
+    0.07346083356133787
+  ],
+  "upper_world_z_range": [
+    0.07301688360785019,
+    0.11030967813566134
+  ],
+  "upper_body_z_range": [
+    -0.3498399555683136,
+    -0.24002106487751007
+  ],
+  "upper_nearest_surface_error_max_m": 0.020492442062479126
+}

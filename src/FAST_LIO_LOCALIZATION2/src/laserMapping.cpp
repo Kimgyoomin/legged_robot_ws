@@ -61,6 +61,7 @@
 #include <geometry_msgs/msg/vector3.hpp>
 #include <livox_ros_driver2/msg/custom_msg.hpp>
 #include "preprocess.h"
+#include "velocity_output.hpp"
 #include <ikd-Tree/ikd_Tree.h>
 
 #define INIT_TIME (0.1)
@@ -579,13 +580,14 @@ void set_posestamp(T &out)
     out.pose.orientation.w = geoQuat.w;
 }
 
-void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped, std::unique_ptr<tf2_ros::TransformBroadcaster> &tf_br)
+void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped,
+                      const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity,
+                      std::unique_ptr<tf2_ros::TransformBroadcaster> &tf_br)
 {
     odomAftMapped.header.frame_id = "camera_init";
     odomAftMapped.child_frame_id = "body";
     odomAftMapped.header.stamp = get_ros_time(lidar_end_time);
     set_posestamp(odomAftMapped.pose);
-    pubOdomAftMapped->publish(odomAftMapped);
     auto P = kf.get_P();
     for (int i = 0; i < 6; i++)
     {
@@ -596,6 +598,28 @@ void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPt
         odomAftMapped.pose.covariance[i * 6 + 3] = P(k, 0);
         odomAftMapped.pose.covariance[i * 6 + 4] = P(k, 1);
         odomAftMapped.pose.covariance[i * 6 + 5] = P(k, 2);
+    }
+    pubOdomAftMapped->publish(odomAftMapped);
+
+    // Separate output allows velocity validation before changing a controller's
+    // input. The existing /Odometry and TF pose contract remain unchanged.
+    const auto velocity = fastlio_output::body_velocity(
+        state_point.rot.toRotationMatrix(), state_point.vel,
+        p_imu->last_propagation_gyro(), state_point.bg, P, p_imu->cov_gyr);
+    if (velocity.linear.allFinite() && velocity.angular.allFinite() &&
+        velocity.covariance.allFinite())
+    {
+        auto measured = odomAftMapped;
+        measured.twist.twist.linear.x = velocity.linear.x();
+        measured.twist.twist.linear.y = velocity.linear.y();
+        measured.twist.twist.linear.z = velocity.linear.z();
+        measured.twist.twist.angular.x = velocity.angular.x();
+        measured.twist.twist.angular.y = velocity.angular.y();
+        measured.twist.twist.angular.z = velocity.angular.z();
+        for (int row = 0; row < 6; ++row)
+            for (int col = 0; col < 6; ++col)
+                measured.twist.covariance[row * 6 + col] = velocity.covariance(row, col);
+        pubVelocity->publish(measured);
     }
 
     geometry_msgs::msg::TransformStamped trans;
@@ -770,6 +794,11 @@ public:
         this->declare_parameter<int>("point_filter_num", 2);
         this->declare_parameter<bool>("feature_extract_enable", false);
         this->declare_parameter<bool>("runtime_pos_log_enable", false);
+        max_scans_per_tick_ = this->declare_parameter<int>("processing.max_scans_per_tick", 1);
+        max_batch_time_ms_ = this->declare_parameter<double>("processing.max_batch_time_ms", 20.0);
+        if (max_scans_per_tick_ < 1 || max_scans_per_tick_ > 16 ||
+            !std::isfinite(max_batch_time_ms_) || max_batch_time_ms_ <= 0.0)
+            throw std::invalid_argument("Invalid bounded scan processing limits");
         this->declare_parameter<bool>("pcd_save.pcd_save_en", false);
         this->declare_parameter<vector<double>>("mapping.extrinsic_T", vector<double>());
         this->declare_parameter<vector<double>>("mapping.extrinsic_R", vector<double>());
@@ -871,6 +900,7 @@ public:
         pubLaserCloudEffect_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_effected", 20);
         pubLaserCloudMap_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/Laser_map", 20);
         pubOdomAftMapped_ = this->create_publisher<nav_msgs::msg::Odometry>("/Odometry", 20);
+        pubVelocity_ = this->create_publisher<nav_msgs::msg::Odometry>("/fastlio/odometry_velocity", 20);
         pubPath_ = this->create_publisher<nav_msgs::msg::Path>("/path", 20);
         tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -890,6 +920,25 @@ public:
 
 private:
     void timer_callback()
+    {
+        // With a 10 Hz /clock, a nominal 20 Hz ROS timer may only wake once per
+        // scan. Processing exactly one queued scan then preserves startup lag
+        // indefinitely. Catch up FIFO data within a bounded callback budget.
+        // The node uses a single-threaded executor, so callbacks cannot append
+        // scans while this callback runs. Never alter measurement timestamps.
+        const auto begin = std::chrono::steady_clock::now();
+        for (int scan = 0; scan < max_scans_per_tick_; ++scan)
+        {
+            if (scan > 0 && std::chrono::duration<double, std::milli>(
+                    std::chrono::steady_clock::now() - begin).count() >= max_batch_time_ms_)
+                break;
+            const auto queued = lidar_buffer.size();
+            process_one_scan();
+            if (lidar_buffer.size() >= queued) break;  // No complete synchronized scan.
+        }
+    }
+
+    void process_one_scan()
     {
         if (sync_packages(Measures))
         {
@@ -998,7 +1047,7 @@ private:
             double t_update_end = omp_get_wtime();
 
             /******* Publish odometry *******/
-            publish_odometry(pubOdomAftMapped_, tf_broadcaster_);
+            publish_odometry(pubOdomAftMapped_, pubVelocity_, tf_broadcaster_);
 
             /*** add the feature points to map kdtree ***/
             t3 = omp_get_wtime();
@@ -1054,6 +1103,7 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudEffect_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudMap_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped_;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pubPath_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr sub_pcl_pc_;
@@ -1072,6 +1122,8 @@ private:
 
     FILE *fp;
     ofstream fout_pre, fout_out, fout_dbg;
+    int max_scans_per_tick_ = 1;
+    double max_batch_time_ms_ = 20.0;
 };
 
 int main(int argc, char **argv)

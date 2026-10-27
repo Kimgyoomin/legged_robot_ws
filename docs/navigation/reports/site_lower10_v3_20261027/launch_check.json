@@ -1,0 +1,19 @@
+{
+  "site_id": "cost-wall-lower10-v3",
+  "frozen_map": {
+    "use_sim_time": true,
+    "file": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3/height.rghm",
+    "frame": "map"
+  },
+  "map_server": {
+    "use_sim_time": true,
+    "yaml_filename": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3/occupancy.yaml",
+    "frame_id": "map"
+  },
+  "controller": "dwb_core::DWBLocalPlanner",
+  "failure_tolerance_s": 3.0,
+  "final_guard": false,
+  "inflation_radius_m": 0.4,
+  "nodes_started": false,
+  "motion_commands_sent": false
+}

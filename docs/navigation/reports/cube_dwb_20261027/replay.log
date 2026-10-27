@@ -1,0 +1,68 @@
+CASE validation/cube_dwb_20261027/live_0.txt clearance 0.45 terrain 1 start none goal none
+TERRAIN start distance 0.2 violation 0 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid path not found expansions 5648 ms 38.0826
+REJECTION costmap_collision 834
+REJECTION terrain_clearance_violation 67
+CASE validation/cube_dwb_20261027/live_0.txt clearance 0.45 terrain 0 start none goal none
+RESULT 0 grid path not found expansions 5742 ms 15.0075
+REJECTION costmap_collision 847
+REJECTION step_limit 62
+CASE validation/cube_dwb_20261027/live_0.txt clearance 0 terrain 1 start none goal none
+TERRAIN start distance 0.2 violation 0 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid path not found expansions 7503 ms 48.2256
+REJECTION costmap_collision 894
+REJECTION terrain_clearance_violation 92
+CASE validation/cube_dwb_20261027/live_0.txt clearance 0 terrain 0 start none goal none
+RESULT 1 grid path found expansions 19675 ms 50.1845
+REJECTION costmap_collision 1998
+REJECTION step_limit 278
+CASE validation/cube_dwb_20261027/static_0.txt clearance 0.45 terrain 1 start none goal none
+TERRAIN start distance 0.2 violation 0 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 1 grid path found expansions 15850 ms 98.4917
+REJECTION costmap_collision 1840
+REJECTION terrain_clearance_violation 328
+CASE validation/cube_dwb_20261027/static_0.txt clearance 0.45 terrain 0 start none goal none
+RESULT 1 grid path found expansions 16257 ms 40.3773
+REJECTION costmap_collision 1874
+REJECTION step_limit 231
+CASE validation/cube_dwb_20261027/static_0.txt clearance 0 terrain 1 start none goal none
+TERRAIN start distance 0.2 violation 0 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 1 grid path found expansions 19744 ms 128.203
+REJECTION costmap_collision 1856
+REJECTION terrain_clearance_violation 366
+CASE validation/cube_dwb_20261027/static_0.txt clearance 0 terrain 0 start none goal none
+RESULT 1 grid path found expansions 20208 ms 51.1092
+REJECTION costmap_collision 1880
+REJECTION step_limit 278
+CASE validation/cube_dwb_20261027/live_8.txt clearance 0.45 terrain 1 start none goal none
+TERRAIN start distance 0.145773 violation 1 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid endpoint violates terrain clearance expansions 0 ms 0
+REJECTION terrain_clearance_violation 1
+CASE validation/cube_dwb_20261027/live_8.txt clearance 0.45 terrain 0 start none goal none
+RESULT 0 grid path not found expansions 5764 ms 13.8897
+REJECTION costmap_collision 853
+REJECTION step_limit 66
+CASE validation/cube_dwb_20261027/live_8.txt clearance 0 terrain 1 start none goal none
+TERRAIN start distance 0.145773 violation 1 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid endpoint violates terrain clearance expansions 0 ms 0
+REJECTION terrain_clearance_violation 1
+CASE validation/cube_dwb_20261027/live_8.txt clearance 0 terrain 0 start none goal none
+RESULT 1 grid path found expansions 19310 ms 51.1549
+REJECTION costmap_collision 2160
+REJECTION step_limit 278
+CASE validation/cube_dwb_20261027/static_8.txt clearance 0.45 terrain 1 start none goal none
+TERRAIN start distance 0.145773 violation 1 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid endpoint violates terrain clearance expansions 0 ms 0
+REJECTION terrain_clearance_violation 1
+CASE validation/cube_dwb_20261027/static_8.txt clearance 0.45 terrain 0 start none goal none
+RESULT 1 grid path found expansions 16257 ms 40.1141
+REJECTION costmap_collision 1874
+REJECTION step_limit 231
+CASE validation/cube_dwb_20261027/static_8.txt clearance 0 terrain 1 start none goal none
+TERRAIN start distance 0.145773 violation 1 evidence 1 goal distance 0.2 violation 0 evidence 1
+RESULT 0 grid endpoint violates terrain clearance expansions 0 ms 0
+REJECTION terrain_clearance_violation 1
+CASE validation/cube_dwb_20261027/static_8.txt clearance 0 terrain 0 start none goal none
+RESULT 1 grid path found expansions 20206 ms 51.9021
+REJECTION costmap_collision 1877
+REJECTION step_limit 278

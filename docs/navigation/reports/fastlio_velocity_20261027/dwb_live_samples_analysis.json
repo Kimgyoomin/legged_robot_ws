@@ -1,0 +1,108 @@
+{
+  "input": "/home/kim/legged_robot_ws/validation/fastlio_velocity_20261027/dwb_live_samples.json",
+  "native_samples": 366,
+  "gt_samples": 1131,
+  "clock_samples": 385,
+  "stage": "recorded_not_yet_accepted",
+  "dw_b_input_changed": true,
+  "aligned_samples": 366,
+  "sim_duration": 36.502000001,
+  "axes": [
+    "vx",
+    "vy",
+    "vz",
+    "wx",
+    "wy",
+    "wz"
+  ],
+  "gt_frame_conversion": "world rates -> BODY/base_link",
+  "native_frame_conversion": "IMU/body origin -> base_link using TF + omega cross offset",
+  "against_gt_twist": {
+    "rmse": [
+      0.02356816114641537,
+      0.029740693787679125,
+      0.024638459635149677,
+      0.1810470302355391,
+      0.09881643142072515,
+      0.03438063093163329
+    ],
+    "bias": [
+      -0.0071283060297104486,
+      -0.00856852424055604,
+      0.006045058409745725,
+      -0.03894414527944029,
+      0.010290278984714511,
+      0.005044029428918115
+    ],
+    "absolute_error_p95": [
+      0.045211055295167925,
+      0.05220704996659607,
+      0.05718514729798529,
+      0.4163305213286932,
+      0.21465979960719658,
+      0.07456877711646985
+    ]
+  },
+  "against_gt_pose_derivative": {
+    "rmse": [
+      0.026124751881333227,
+      0.03140999257092119,
+      0.05382098595030586,
+      0.3380351946376033,
+      0.2134467162920538,
+      0.08693986501801772
+    ],
+    "bias": [
+      -0.007446443373890147,
+      -0.00959871949383323,
+      0.010695415228826992,
+      -0.08494482673417347,
+      0.015422239543166542,
+      0.012240439213010998
+    ],
+    "absolute_error_p95": [
+      0.047636735484356534,
+      0.05513711037458002,
+      0.11694279817392292,
+      0.7241519021330337,
+      0.4781597752512293,
+      0.17408548623301703
+    ]
+  },
+  "gt_twist_vs_pose_derivative": {
+    "rmse": [
+      0.014297315270932818,
+      0.01330550740472586,
+      0.045893873629514546,
+      0.2507087993495193,
+      0.16957746608975385,
+      0.0692453991891654
+    ],
+    "bias": [
+      -0.00031813734417971307,
+      -0.0010301952532771922,
+      0.004650356819081263,
+      -0.04600068145473322,
+      0.005131960558452027,
+      0.007196409784092879
+    ],
+    "absolute_error_p95": [
+      0.026335071104535375,
+      0.0249505333943517,
+      0.10166762212870664,
+      0.569329754377513,
+      0.3744555797314202,
+      0.1637571133340731
+    ]
+  },
+  "coverage": {
+    "moving_samples": 318,
+    "turning_samples": 220,
+    "stationary_samples": 0
+  },
+  "receipt_age_sim_seconds": {
+    "median": 0.10000000099999795,
+    "p95": 0.1020000010000004
+  },
+  "note": "Pose derivative is an offline +/-0.10s regression cross-check, not controller feedback. Production FAST-LIO stream; DWB input connection verified separately. Coverage and GT consistency require review; velocity accuracy alone does not prove tracking performance."
+}

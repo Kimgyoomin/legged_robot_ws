@@ -1,0 +1,31 @@
+# Official Nav2 Humble RPP comparison; selected only by controller:=rpp.
+# Same straight-line target as DWB, with explicit curvature regulation.
+plugin: nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+desired_linear_vel: 0.7
+lookahead_dist: 0.6
+min_lookahead_dist: 0.4
+max_lookahead_dist: 0.8
+lookahead_time: 1.2
+use_velocity_scaled_lookahead_dist: true
+use_interpolation: true
+transform_tolerance: 0.6
+min_approach_linear_velocity: 0.05
+approach_velocity_scaling_dist: 0.6
+use_collision_detection: true
+max_allowed_time_to_collision_up_to_carrot: 1.0
+use_regulated_linear_velocity_scaling: true
+# Below 1.2 m turn radius, curvature alone scales v approximately by R/1.2.
+# These are comparison settings, not measured braking/actuator guarantees.
+regulated_linear_scaling_min_radius: 1.2
+regulated_linear_scaling_min_speed: 0.05
+use_cost_regulated_linear_velocity_scaling: true
+cost_scaling_dist: 0.4
+cost_scaling_gain: 1.0
+# Match the trial local inflation layer (not global inflation).
+inflation_cost_scaling_factor: 5.0
+use_rotate_to_heading: true
+rotate_to_heading_angular_vel: 0.4
+rotate_to_heading_min_angle: 0.7
+max_angular_accel: 1.0
+allow_reversing: false
+max_robot_pose_search_dist: 3.0

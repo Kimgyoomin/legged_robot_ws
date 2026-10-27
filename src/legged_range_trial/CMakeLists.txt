@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+project(legged_range_trial)
+find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+ament_python_install_package(${PROJECT_NAME})
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/freshness_watchdog DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/controller_odom DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/fastlio_controller_odom DESTINATION lib/${PROJECT_NAME})
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(test_pose_velocity test/test_pose_velocity.py
+    APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR})
+  ament_add_pytest_test(test_twist_frame test/test_twist_frame.py
+    APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR})
+endif()
+ament_package()

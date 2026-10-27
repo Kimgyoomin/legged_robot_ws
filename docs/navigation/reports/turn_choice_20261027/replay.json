@@ -1,0 +1,30 @@
+[
+  {
+    "snapshot": 0,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=15 includes_start=251\nTrajectory Hits Obstacle.: 236\nleft valid=9 total=120\nright valid=5 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=25\nleft_rotation_first_collision_deg=37\n"
+  },
+  {
+    "snapshot": 1,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=16 includes_start=251\nTrajectory Hits Obstacle.: 235\nleft valid=11 total=120\nright valid=4 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=19\nleft_rotation_first_collision_deg=40\n"
+  },
+  {
+    "snapshot": 8,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=9 includes_start=251\nTrajectory Hits Obstacle.: 242\nleft valid=5 total=120\nright valid=3 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=25\nleft_rotation_first_collision_deg=23\n"
+  },
+  {
+    "snapshot": 10,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=18 includes_start=251\nTrajectory Hits Obstacle.: 233\nleft valid=6 total=120\nright valid=11 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=35\nleft_rotation_first_collision_deg=28\n"
+  },
+  {
+    "snapshot": 12,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=13 includes_start=251\nTrajectory Hits Obstacle.: 238\nleft valid=6 total=120\nright valid=6 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=38\nleft_rotation_first_collision_deg=29\n"
+  },
+  {
+    "snapshot": 13,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=10 includes_start=251\nTrajectory Hits Obstacle.: 241\nleft valid=4 total=120\nright valid=5 total=120\nstraight valid=1 total=11\nright_rotation_first_collision_deg=39\nleft_rotation_first_collision_deg=23\n"
+  },
+  {
+    "snapshot": 14,
+    "result": "CURRENT_POSE score=253\ntotal=251 obstacle_valid=2 includes_start=251\nTrajectory Hits Obstacle.: 249\nleft valid=2 total=120\nright valid=0 total=120\nstraight valid=0 total=11\nright_rotation_first_collision_deg=4\nleft_rotation_first_collision_deg=21\n"
+  }
+]

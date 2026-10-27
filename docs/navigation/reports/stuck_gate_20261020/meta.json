@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "unpause_request_wall": 2.0129797349800356,
+    "unpause_confirmed_wall": 2.0135957659804262,
+    "pause_request_wall": 26.024879570992198,
+    "pause_confirmed_wall": 26.025434512004722
+  },
+  "counts": {
+    "/map": 1,
+    "/navigate_to_pose/_action/status": 1,
+    "/cmd_vel": 530,
+    "/legged/motion_status": 52,
+    "/tf_static": 4,
+    "/follow_path/_action/status": 1,
+    "/local_costmap/published_footprint": 128,
+    "/ground_truth/odom": 605,
+    "/tf": 1645,
+    "/clock": 206,
+    "/Odometry": 206,
+    "/legged/obstacles": 206,
+    "/legged/collision_points": 206,
+    "/legged/collision_input_state": 206,
+    "/global_costmap/costmap_raw": 32,
+    "/local_costmap/costmap_raw": 32
+  }
+}

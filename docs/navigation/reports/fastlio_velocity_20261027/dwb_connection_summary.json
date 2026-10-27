@@ -1,0 +1,31 @@
+{
+  "transport_max_error": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "policy_sources": {
+    "NAV2": 19211
+  },
+  "/legged/cmd_raw": {
+    "count": 434,
+    "stopped_fraction": 0.11059907834101383,
+    "vmax": 0.6999999999999997,
+    "yaw_max": 0.8,
+    "high_speed_turn_fraction": 0.1382488479262673
+  },
+  "/cmd_vel": {
+    "count": 859,
+    "stopped_fraction": 0.11874272409778813,
+    "vmax": 0.6999999999999997,
+    "yaw_max": 0.8,
+    "high_speed_turn_fraction": 0.1362048894062864
+  },
+  "controller_odom_age": {
+    "median": 0.10000000099999795,
+    "p95": 0.1020000010000004
+  }
+}

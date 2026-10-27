@@ -1,0 +1,41 @@
+[
+  {
+    "half_angle_deg": 20,
+    "new_points_20_scans": 0,
+    "collision_band_points": 0,
+    "z_range": null
+  },
+  {
+    "half_angle_deg": 30,
+    "new_points_20_scans": 0,
+    "collision_band_points": 0,
+    "z_range": null
+  },
+  {
+    "half_angle_deg": 40,
+    "new_points_20_scans": 27,
+    "collision_band_points": 0,
+    "z_range": [
+      -0.5779465168952943,
+      -0.573763969564438
+    ]
+  },
+  {
+    "half_angle_deg": 50,
+    "new_points_20_scans": 124,
+    "collision_band_points": 0,
+    "z_range": [
+      -0.5822943479061128,
+      -0.57282799782753
+    ]
+  },
+  {
+    "half_angle_deg": 60,
+    "new_points_20_scans": 371,
+    "collision_band_points": 0,
+    "z_range": [
+      -0.5849925309658052,
+      -0.57226807179451
+    ]
+  }
+]

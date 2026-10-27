@@ -1,0 +1,15 @@
+{
+  "site": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3/site.yaml",
+  "height": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3/height.rghm",
+  "source": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3_raw/run_1793023986818997341/map.rghm",
+  "height_sha256": "3cb78ea0148646bb6c579c7c7d7061e424a3612d55c3958c32ab77a892304876",
+  "native_height_bytes_preserved": true,
+  "reference_assets_identical_to_v2": true,
+  "frame": "map",
+  "resolution_m": 0.05,
+  "usable_cells": 53018,
+  "world_file": "/home/kim/cot_experiment/navigation_cost_comparison/worlds_v3_lower10/rubi_cost_comparison_lower10.world",
+  "world_sha256": "328bfebd8900f5a6cf456671435aa74ed8e3a1c50c238cf0bf2afc534c49fc20",
+  "runtime_world_matches_prior_review": true,
+  "live_navigation_started": false
+}

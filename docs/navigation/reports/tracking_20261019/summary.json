@@ -1,0 +1,42 @@
+{
+  "live": {
+    "final_commands": 1600,
+    "fixed_0p5_commands": 800,
+    "nonzero_final_commands": 1131,
+    "status_message_counts": {
+      "collision_cloud_timeout": 42,
+      "costmap_timeout": 1,
+      "pass": 34,
+      "predicted_costmap_collision": 3
+    },
+    "odometry_samples": 153,
+    "all_odometry_twist_zero": true,
+    "joystick_motion_samples": 0
+  },
+  "followup": {
+    "final_commands": 800,
+    "fixed_0p5_commands": 0,
+    "nonzero_final_commands": 84,
+    "status_message_counts": {
+      "safe_command_timeout": 66,
+      "costmap_collision": 2,
+      "predicted_costmap_collision": 1,
+      "pass": 8
+    },
+    "odometry_samples": 341,
+    "all_odometry_twist_zero": true,
+    "joystick_motion_samples": 227
+  },
+  "single_publisher": {
+    "final_commands": 700,
+    "fixed_0p5_commands": 0,
+    "nonzero_final_commands": 0,
+    "status_message_counts": {
+      "costmap_collision": 57,
+      "safe_command_timeout": 9
+    },
+    "odometry_samples": 303,
+    "all_odometry_twist_zero": true,
+    "joystick_motion_samples": 0
+  }
+}

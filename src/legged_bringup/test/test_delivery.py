@@ -37,6 +37,26 @@ def test_map_hash_and_alignment_are_checked(tmp_path):
     with pytest.raises(ValueError,match='hash mismatch'): load_site(f)
 
 
+def test_body_obstacles_are_not_rejected_by_map_altitude():
+    config = ROOT/'src/legged_bringup/config'
+    source = yaml.safe_load((config/'obstacle.yaml').read_text())['obstacle_cloud']['ros__parameters']
+    collision = yaml.safe_load((config/'collision.yaml').read_text())['collision_monitor']['ros__parameters']
+    assert source['base_frame'] == collision['base_frame_id']
+    assert source['min_body_height'] == collision['lidar']['min_height']
+    assert source['max_body_height'] == collision['lidar']['max_height']
+    maps = yaml.safe_load((config/'costmap.yaml').read_text())
+    # A body obstacle must survive typical positive/negative site altitude
+    # offsets in both the observation buffer and the obstacle layer itself.
+    for name in ('local_costmap', 'global_costmap'):
+        layer = maps[name][name]['ros__parameters']['obstacle_layer']
+        assert layer['livox_cloud']['topic'] == '/legged/obstacles'
+        assert layer['livox_cloud']['obstacle_min_range'] <= source['front_min_range']
+        for gate in (layer, layer['livox_cloud']):
+            for altitude in (-500., 0., 500.):
+                assert gate['min_obstacle_height'] < altitude + source['min_body_height']
+                assert gate['max_obstacle_height'] > altitude + source['max_body_height']
+
+
 def test_sensor_rotation_has_no_translation():
     p=json.loads((ROOT/'src/legged_bringup/config/sensor.json').read_text())
     extrinsic=p['lidar_configs'][0]['extrinsic_parameter']

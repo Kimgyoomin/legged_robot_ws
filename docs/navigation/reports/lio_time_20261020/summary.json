@@ -1,0 +1,129 @@
+{
+  "/Odometry": {
+    "count": 71,
+    "first": 52.101999999,
+    "last": 59.103999999,
+    "age_p50": 0.09799999999999898,
+    "age_p95": 0.0980000009999955,
+    "age_max": 0.10000000099999795,
+    "backwards": 0
+  },
+  "/clock": {
+    "count": 71,
+    "first": 52.202,
+    "last": 59.202,
+    "age_p50": 0.0,
+    "age_p95": 0.0,
+    "age_max": 0.0,
+    "backwards": 0
+  },
+  "/cloud_registered_body": {
+    "count": 62,
+    "first": 52.404,
+    "last": 59.103999999,
+    "age_p50": 0.09799999999999898,
+    "age_p95": 0.0980000009999955,
+    "age_max": 0.10000000000000142,
+    "backwards": 0
+  },
+  "/legged/obstacles": {
+    "count": 71,
+    "first": 52.202,
+    "last": 59.204,
+    "age_p50": -0.0020000000000024443,
+    "age_p95": -0.001999999999995339,
+    "age_max": 0.0,
+    "backwards": 0
+  },
+  "/livox/imu": {
+    "count": 825,
+    "first": 52.176,
+    "last": 59.21,
+    "age_p50": -0.07399999999999807,
+    "age_p95": -0.003999999999997783,
+    "age_max": -0.003999999999997783,
+    "backwards": 0
+  },
+  "/livox/lidar": {
+    "count": 57,
+    "first": 52.304,
+    "last": 59.204,
+    "age_p50": -0.0020000000000024443,
+    "age_p95": -0.001999999999995339,
+    "age_max": 0.0,
+    "backwards": 0
+  },
+  "/livox/lidar_PointCloud2": {
+    "count": 71,
+    "first": 52.202,
+    "last": 59.204,
+    "age_p50": -0.0020000000000024443,
+    "age_p95": -0.001999999999995339,
+    "age_max": 0.0,
+    "backwards": 0
+  },
+  "/localization": {
+    "count": 71,
+    "first": 52.003999999,
+    "last": 59.003999999,
+    "age_p50": 0.1980000000000004,
+    "age_p95": 0.19800000099999693,
+    "age_max": 0.20000000099999937,
+    "backwards": 0
+  },
+  "/tf:camera_init->body": {
+    "count": 67,
+    "first": 52.101999999,
+    "last": 59.103999999,
+    "age_p50": 0.09799999999999898,
+    "age_p95": 0.0980000009999955,
+    "age_max": 0.10000000099999795,
+    "backwards": 0
+  },
+  "/tf:map->camera_init": {
+    "count": 71,
+    "first": 52.003999999,
+    "last": 59.003999999,
+    "age_p50": 0.1980000000000004,
+    "age_p95": 0.19800000099999693,
+    "age_max": 0.20000000099999937,
+    "backwards": 0
+  },
+  "tf_lookup": {
+    "count": 71,
+    "success": 68,
+    "wait_p50": 0.3464872830081731,
+    "wait_p95": 2.3082745340070687,
+    "errors": [
+      "Lookup would require extrapolation into the future.  Requested time 59.004000 but the latest data is at time 59.004000, when looking up transform from frame [livox_frame] to frame [map]",
+      "Lookup would require extrapolation into the future.  Requested time 59.104000 but the latest data is at time 59.104000, when looking up transform from frame [livox_frame] to frame [map]"
+    ]
+  },
+  "custom_examples": [
+    {
+      "wall": 0.2511751389829442,
+      "clock": 52.302,
+      "topic": "/livox/lidar",
+      "stamp": 52.304,
+      "frame": "livox_frame",
+      "count": 40000,
+      "timebase": 52304000000,
+      "offset_min": 0,
+      "offset_max": 0,
+      "last_offset": 0
+    },
+    {
+      "wall": 0.3578538110014051,
+      "clock": 52.402,
+      "topic": "/livox/lidar",
+      "stamp": 52.404,
+      "frame": "livox_frame",
+      "count": 40000,
+      "timebase": 52404000000,
+      "offset_min": 0,
+      "offset_max": 0,
+      "last_offset": 0
+    }
+  ],
+  "logs": []
+}

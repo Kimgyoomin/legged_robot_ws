@@ -112,10 +112,12 @@ class Inputs(Node):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['nav2','pursuit'])
-    parser.add_argument('--controller', choices=['dwb','rpp'], default='dwb');args=parser.parse_args()
+    parser.add_argument('--controller', choices=['dwb','rpp'], default='dwb')
+    parser.add_argument('--out', type=Path, default=ROOT/'validation')
+    args=parser.parse_args()
     domain=int(os.environ.get('ROS_DOMAIN_ID','0'))
     if domain not in (173,174,175):raise SystemExit('Set ROS_DOMAIN_ID=174 or 175; robot domains are refused')
-    out=ROOT/'validation';out.mkdir(exist_ok=True)
+    out=args.out.resolve();out.mkdir(exist_ok=True, parents=True)
     label=args.mode+('_rpp' if args.controller=='rpp' else '')
     log=(out/(label+'_launch.log')).open('w')
     rclpy.init();node=Inputs(args.mode)
@@ -132,6 +134,18 @@ def main():
         guard=node.parameters('/command_watchdog',['footprint_half_length','footprint_half_width'])
         assert abs(guard[0].double_value-half_length)<1.e-9
         assert abs(guard[1].double_value-half_width)<1.e-9
+        for name in (['global_costmap'] if args.mode == 'pursuit'
+                     else ['global_costmap', 'local_costmap']):
+            geometry=node.parameters('/'+name+'/'+name, ['footprint', 'footprint_padding'])
+            actual=[v for xy in json.loads(geometry[0].string_value) for v in xy]
+            assert list(points) == actual, name+' footprint differs from Stop.points'
+            assert geometry[1].double_value == 0., name+' adds another geometry margin'
+        if args.mode=='nav2' and args.controller=='dwb':
+            critics=node.parameters('/controller_server',['FollowPath.critics'])[0].string_array_value
+            assert 'ObstacleFootprint' in critics and 'BaseObstacle' not in critics
+        approach=node.parameters('/command_watchdog',['regulate_approach'])[0].bool_value
+        expected_motion=yaml.safe_load((ROOT/'src/legged_bringup/config/motion.yaml').read_text())
+        assert approach == expected_motion['regulate_approach']
         planner_node='/rubi_hybrid_planner_comparison' if args.mode=='pursuit' else '/planner_server'
         clearance_name='costmap_clearance_m' if args.mode=='pursuit' else 'Height.costmap_clearance_m'
         clearance=node.parameters(planner_node,[clearance_name])[0].double_value
@@ -175,9 +189,11 @@ def main():
         result={'mode':args.mode,'controller':args.controller,'first_path_points':len(original.poses),'rerouted_points':len(rerouted.poses),
             'detour_max_y_m':deviation,'frozen_acquisition_stamp_preserved':True,
             'shared_stop_length_m':2*half_length,'shared_stop_width_m':2*half_width,
+            'costmap_footprint_matches_stop_polygon':True,
             'planner_obstacle_clearance_m':clearance,
             'max_forward_command_mps':max(v for _,v in node.commands),
-            'controller_produced_motion':True,'near_obstacle_stop':True,'stale_sensor_stop':True,'domain':domain}
+            'controller_produced_motion':True,'near_obstacle_stop':True,'stale_sensor_stop':True,
+            'approach_regulation':approach,'domain':domain}
         (out/(label+'_smoke.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     finally:
         # Let ros2 launch forward one SIGINT to its nodes. Signalling the whole

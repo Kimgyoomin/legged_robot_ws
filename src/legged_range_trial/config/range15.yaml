@@ -1,0 +1,14 @@
+# Trial only: front +/-60 deg keeps 0.3 m; other bearings use min_range.
+# Distances are sensor-origin 3D ranges. Body height band remains unchanged.
+obstacle_cloud:
+  ros__parameters:
+    min_range: 1.5
+    # Sensor-origin 3D range; front bearing follows base_frame +X using static TF.
+    # Trial profile: validate near obstacles and the complete gait envelope on HW.
+    front_min_range: 0.3
+    front_half_angle_deg: 60.0
+    base_frame: base_link
+    # Same body-relative starter band as collision.yaml. Not height above ground.
+    min_body_height: -0.35
+    max_body_height: 1.5
+    max_range: 5.0

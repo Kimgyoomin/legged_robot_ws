@@ -1,0 +1,84 @@
+format: 1
+id: cost-wall-main-v2
+frame: map
+height_resolution: 0.05
+alignment:
+  verified: true
+  method: 'Map-frame alignment screening: height acquired using the listed localization
+    PCD; unchanged native XY geometry and observed mask relative to the reviewed snapshot;
+    occupancy overlap checked; actual-world landmarks and four relative step heights
+    checked. No data registration or Z correction applied.'
+  scope: simulation_planner_and_pilot_only
+  site_id: cost-wall-main-v2
+  snapshot_source: /home/kim/legged_robot_ws/maps/cost_wall_main_v2_raw/run_1792997379349091070/map.rghm
+  snapshot_sha256: b4dfc548cff6401dfe8a4b22c5f5beb5530297a766f0a2be9b27baf0fcf1401e
+  world_file: /home/kim/cot_experiment/navigation_cost_comparison/worlds_v2_wall/rubi_cost_comparison_main.world
+  world_sha256: 2acf40da1d29af8ba6084c9b6d5b95d9a06442acc56934b352aee4d47cbfa21f
+  T_map_from_height:
+  - - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+  - - 0.0
+    - 1.0
+    - 0.0
+    - 0.0
+  - - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+  - - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+  floor_height_error_p95_m: null
+  landmark_xy_error_p95_m: null
+  observed_heldout_xy_residuals_m:
+  - 0.07004643386649823
+  - 0.023964938273356048
+  relative_step_heights_m:
+    cost_step_A_upper_h09: 0.09112079222572489
+    cost_step_B_east_upper_h07: 0.06965444605223559
+    cost_step_C_east_lower_h09: 0.08852519260450775
+    cost_step_D_lower_h05: 0.0504918637554726
+  interior_floor_coverage:
+    expected_floor_cells: 35119
+    observed_floor_cells: 35119
+    floor_coverage_fraction: 1.0
+  occupancy_overlap_evidence: /home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based
+    Navigation/output/heightmap_world_review_20261026/occupancy_check.json
+  offline_planner_checks:
+    passed: 8
+    total: 8
+    core: Actual StepGridAStarPlanner and StepEvaluator
+    inflation: Offline approximate static/inflation costmap, not a live Nav2 capture
+    modes:
+    - vanilla
+    - cot_degree3
+    hard_threshold_m: 0.1
+    height_weight: 5.0
+    results: /home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/output/frozen_site_ready_20261026/planner_results.json
+  live_navigation_validated: false
+  hardware_deployment_validated: false
+  limitations:
+  - Global ground nonplanarity remains; no absolute Z calibration or correction.
+  - Map/world XY are not identical; world coordinates must not be directly published
+    as map goals.
+  - Localization PCD and occupancy are reused from sim_site_v1; corridor/obstacle
+    footprint screening passed, but live localization must be checked after reset.
+  - Approximate footprint inflation used offline; live Nav2 costmap, current TF, path
+    tracking and bag sample QC remain pilot checks.
+  evidence: /home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/output/frozen_site_ready_20261026
+assets:
+  pcd:
+    path: localization.pcd
+    sha256: 3a8d98ceaffcb57017ce5ebe974e95ec5f61c1f21c4b4e731017d9fb4249ef3f
+  height:
+    path: height.rghm
+    sha256: b4dfc548cff6401dfe8a4b22c5f5beb5530297a766f0a2be9b27baf0fcf1401e
+  occupancy:
+    path: occupancy.yaml
+    sha256: ecc7f165b4e6dd497e27d7cd3870e1678b7c31051d581d7416fa7d3e9dd2aa68
+  image:
+    path: floor.pgm
+    sha256: 9fd3d1a7faf5e75382bfbdf29c2d1b52930848d6d88c7ceea8c0e24e73fa6d86

@@ -1,0 +1,18 @@
+{
+  "scans": 103,
+  "points": 585113,
+  "sensor_translation_body": [
+    0.101,
+    0.0,
+    -0.1169
+  ],
+  "minimum_sensor_range": 0.9973383126025775,
+  "inside_guard_xy_count": 0,
+  "under_body_count": 0,
+  "nearest_point_body": [
+    0.8893784284591675,
+    -0.6105818748474121,
+    -0.13514657318592072
+  ],
+  "range_under_06_count": 0
+}

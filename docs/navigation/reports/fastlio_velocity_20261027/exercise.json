@@ -1,0 +1,103 @@
+{
+  "result": "completed",
+  "started": true,
+  "events": [
+    {
+      "stage": "settle",
+      "sim_start": 1546.702,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1549.702
+    },
+    {
+      "stage": "forward",
+      "sim_start": 1549.702,
+      "command": [
+        0.25,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1551.702
+    },
+    {
+      "stage": "stop_forward",
+      "sim_start": 1551.702,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1554.702
+    },
+    {
+      "stage": "reverse",
+      "sim_start": 1554.702,
+      "command": [
+        -0.15,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1557.202
+    },
+    {
+      "stage": "stop_reverse",
+      "sim_start": 1557.202,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1560.202
+    },
+    {
+      "stage": "left",
+      "sim_start": 1560.202,
+      "command": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "sim_end": 1562.202
+    },
+    {
+      "stage": "stop_left",
+      "sim_start": 1562.202,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1565.202
+    },
+    {
+      "stage": "right",
+      "sim_start": 1565.202,
+      "command": [
+        0.0,
+        0.0,
+        -0.4
+      ],
+      "sim_end": 1567.202
+    },
+    {
+      "stage": "stop_right",
+      "sim_start": 1567.202,
+      "command": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sim_end": 1570.202
+    }
+  ],
+  "command_topic": "/legged/cmd_raw",
+  "collision_monitor_bypassed": false,
+  "test_envelope": [
+    0.7,
+    0.7
+  ],
+  "stopped": true
+}

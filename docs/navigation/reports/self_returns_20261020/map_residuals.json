@@ -1,0 +1,6 @@
+{
+  "last_costmap_stamp": 899.702,
+  "lethal_cells": 11564,
+  "lethal_cells_over_10cm_from_static": 154,
+  "note": "A snapshot cannot establish which old observations created these cells."
+}

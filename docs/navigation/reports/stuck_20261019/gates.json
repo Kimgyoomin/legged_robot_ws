@@ -1,0 +1,3522 @@
+[
+  {
+    "wall": 0.50507122502313,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044367769005475566,
+      "/legged/motion_status": 0.4943221040011849,
+      "/map": 0.49247534200549126,
+      "/rubi/planner_comparison/grid/tracking_path": 0.4810668239952065,
+      "/legged/cmd_raw": 0.08682549701188691,
+      "/legged/tracking_state": 0.08663793801679276
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 1.0050041369977407,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04421967099187896,
+      "/legged/motion_status": 0.4439850249909796,
+      "/map": 0.9924056140007451,
+      "/rubi/planner_comparison/grid/tracking_path": 0.9809972659859341,
+      "/legged/cmd_raw": 0.08673132900730707,
+      "/legged/tracking_state": 0.0866842289979104
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 1.505129577999469,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04440384899498895,
+      "/legged/motion_status": 0.3941779999877326,
+      "/map": 1.4925390949938446,
+      "/rubi/planner_comparison/grid/tracking_path": 1.4811306969786528,
+      "/legged/cmd_raw": 0.08693126699654385,
+      "/legged/tracking_state": 0.086740517988801
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 2.005132363003213,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426399999647401,
+      "/legged/motion_status": 0.394119082018733,
+      "/map": 1.9925397089973558,
+      "/rubi/planner_comparison/grid/tracking_path": 1.981131310982164,
+      "/legged/cmd_raw": 0.08688843800337054,
+      "/legged/tracking_state": 0.08683727800962515
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 2.5050709180068225,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044217899994691834,
+      "/legged/motion_status": 0.39390877398545854,
+      "/map": 2.49247305499739,
+      "/rubi/planner_comparison/grid/tracking_path": 2.4810645369871054,
+      "/legged/cmd_raw": 0.08684097800869495,
+      "/legged/tracking_state": 0.08679845801088959
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 3.00507295600255,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0442425110086333,
+      "/legged/motion_status": 0.344011690991465,
+      "/map": 2.992475442995783,
+      "/rubi/planner_comparison/grid/tracking_path": 2.981067164975684,
+      "/legged/cmd_raw": 0.08680762897711247,
+      "/legged/tracking_state": 0.08675345900701359
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 3.505115175008541,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04438412998570129,
+      "/legged/motion_status": 0.34412759100086987,
+      "/map": 3.492523302003974,
+      "/rubi/planner_comparison/grid/tracking_path": 3.4811149339948315,
+      "/legged/cmd_raw": 0.08691228899988346,
+      "/legged/tracking_state": 0.08686477900482714
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 4.005109956022352,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04432714998256415,
+      "/legged/motion_status": 0.3441027629887685,
+      "/map": 3.9925144129956607,
+      "/rubi/planner_comparison/grid/tracking_path": 3.981105894985376,
+      "/legged/cmd_raw": 0.08689815900288522,
+      "/legged/tracking_state": 0.08669085998553783
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 4.505051398999058,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04424795100931078,
+      "/legged/motion_status": 0.2940311479906086,
+      "/map": 4.4924527859839145,
+      "/rubi/planner_comparison/grid/tracking_path": 4.481044357991777,
+      "/legged/cmd_raw": 0.08683278001262806,
+      "/legged/tracking_state": 0.0866427409928292
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 5.005063254007837,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426368200802244,
+      "/legged/motion_status": 0.2940465610008687,
+      "/map": 4.9924655109934974,
+      "/rubi/planner_comparison/grid/tracking_path": 4.981056992983213,
+      "/legged/cmd_raw": 0.08686013001715764,
+      "/legged/tracking_state": 0.08672011099406518
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 5.505064710014267,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04437638999661431,
+      "/legged/motion_status": 0.2441164840129204,
+      "/map": 5.4924663759884425,
+      "/rubi/planner_comparison/grid/tracking_path": 5.481058187986491,
+      "/legged/cmd_raw": 0.08678705999045633,
+      "/legged/tracking_state": 0.08653880099882372
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 6.005066698009614,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04425245200400241,
+      "/legged/motion_status": 0.19408735100296326,
+      "/map": 5.992470844998024,
+      "/rubi/planner_comparison/grid/tracking_path": 5.98106232698774,
+      "/legged/cmd_raw": 0.08681996099767275,
+      "/legged/tracking_state": 0.08658657199703157
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 6.505047417012975,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04431626101722941,
+      "/legged/motion_status": 0.14390858498518355,
+      "/map": 6.492450863996055,
+      "/rubi/planner_comparison/grid/tracking_path": 6.481042375991819,
+      "/legged/cmd_raw": 0.08683992098667659,
+      "/legged/tracking_state": 0.08679826100706123
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 7.0050518280186225,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04443055100273341,
+      "/legged/motion_status": 0.09401959899696521,
+      "/map": 6.992453944985755,
+      "/rubi/planner_comparison/grid/tracking_path": 6.98104542697547,
+      "/legged/cmd_raw": 0.08687854098388925,
+      "/legged/tracking_state": 0.08675215201219544
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 7.505015141010517,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04434148198924959,
+      "/legged/motion_status": 0.09405760900699534,
+      "/map": 7.492417517991271,
+      "/rubi/planner_comparison/grid/tracking_path": 7.481008969974937,
+      "/legged/cmd_raw": 0.08682921100989915,
+      "/legged/tracking_state": 0.08680885098874569
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 8.005040365998866,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044321802008198574,
+      "/legged/motion_status": 0.04413262300658971,
+      "/map": 7.9924435729917604,
+      "/rubi/planner_comparison/grid/tracking_path": 7.981035054981476,
+      "/legged/cmd_raw": 0.08685172200785019,
+      "/legged/tracking_state": 0.0867029229993932
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 8.505028772022342,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04432912199990824,
+      "/legged/motion_status": 0.04416366299847141,
+      "/map": 8.49243087900686,
+      "/rubi/planner_comparison/grid/tracking_path": 8.48102261099848,
+      "/legged/cmd_raw": 0.08682930198847316,
+      "/legged/tracking_state": 0.08665601300890557
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 9.005040730000474,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426836199127138,
+      "/legged/motion_status": 0.04407630299101584,
+      "/map": 8.99244338698918,
+      "/rubi/planner_comparison/grid/tracking_path": 8.981034878990613,
+      "/legged/cmd_raw": 0.08685289201093838,
+      "/legged/tracking_state": 0.08670883299782872
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 9.505051420012023,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04427597299218178,
+      "/legged/motion_status": 0.5440883830015082,
+      "/map": 9.492455476982286,
+      "/rubi/planner_comparison/grid/tracking_path": 9.481046928995056,
+      "/legged/cmd_raw": 0.08683963300427422,
+      "/legged/tracking_state": 0.08679692298755981
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 10.005037472001277,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0442872220010031,
+      "/legged/motion_status": 0.49417096699471585,
+      "/map": 9.992440778005403,
+      "/rubi/planner_comparison/grid/tracking_path": 9.9810322499834,
+      "/legged/cmd_raw": 0.08686437300639227,
+      "/legged/tracking_state": 0.08673254298628308
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 10.505061194009613,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04419284299365245,
+      "/legged/motion_status": 0.44417650101240724,
+      "/map": 10.492464431008557,
+      "/rubi/planner_comparison/grid/tracking_path": 10.481055912998272,
+      "/legged/cmd_raw": 0.08682457299437374,
+      "/legged/tracking_state": 0.08677800299483351
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 11.005063450022135,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044148813001811504,
+      "/legged/motion_status": 0.4440768840140663,
+      "/map": 10.992468615993857,
+      "/rubi/planner_comparison/grid/tracking_path": 10.98106010799529,
+      "/legged/cmd_raw": 0.08681445399997756,
+      "/legged/tracking_state": 0.08664643397787586
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 11.504995256022085,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04433901299489662,
+      "/legged/motion_status": 0.4438347260002047,
+      "/map": 11.492396362998988,
+      "/rubi/planner_comparison/grid/tracking_path": 11.480987844988704,
+      "/legged/cmd_raw": 0.0868177939846646,
+      "/legged/tracking_state": 0.08669361399370246
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 12.005058194015874,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04429330301354639,
+      "/legged/motion_status": 0.3941248689952772,
+      "/map": 11.992465180985164,
+      "/rubi/planner_comparison/grid/tracking_path": 11.98105676297564,
+      "/legged/cmd_raw": 0.086893804022111,
+      "/legged/tracking_state": 0.08676591500989161
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 12.505007484025555,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044254953012568876,
+      "/legged/motion_status": 0.3939847510191612,
+      "/map": 12.492408700985834,
+      "/rubi/planner_comparison/grid/tracking_path": 12.48100018297555,
+      "/legged/cmd_raw": 0.08686886398936622,
+      "/legged/tracking_state": 0.08683495401055552
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 13.004989836015739,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04422333399998024,
+      "/legged/motion_status": 0.34398644501925446,
+      "/map": 12.992390442988835,
+      "/rubi/planner_comparison/grid/tracking_path": 12.98098192497855,
+      "/legged/cmd_raw": 0.08679817500524223,
+      "/legged/tracking_state": 0.08675608498742804
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 13.50500880900654,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04433506401255727,
+      "/legged/motion_status": 0.29405403599957936,
+      "/map": 13.492409345984925,
+      "/rubi/planner_comparison/grid/tracking_path": 13.481000828003744,
+      "/legged/cmd_raw": 0.08683546498650685,
+      "/legged/tracking_state": 0.08670049600186758
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 14.005008964013541,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044266323995543644,
+      "/legged/motion_status": 0.2438964600150939,
+      "/map": 13.992410190985538,
+      "/rubi/planner_comparison/grid/tracking_path": 13.981001672975253,
+      "/legged/cmd_raw": 0.08682588598458096,
+      "/legged/tracking_state": 0.0867874460236635
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 14.504954800009727,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044309532997431234,
+      "/legged/motion_status": 0.24404389900155365,
+      "/map": 14.49235518698697,
+      "/rubi/planner_comparison/grid/tracking_path": 14.480946658994071,
+      "/legged/cmd_raw": 0.08680463500786573,
+      "/legged/tracking_state": 0.08667619599145837
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 15.004996569012292,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04416840500198305,
+      "/legged/motion_status": 0.1939234230085276,
+      "/map": 14.992397205991438,
+      "/rubi/planner_comparison/grid/tracking_path": 14.980988667986821,
+      "/legged/cmd_raw": 0.0868054459861014,
+      "/legged/tracking_state": 0.086748477013316
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 15.505011469009332,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044353343022521585,
+      "/legged/motion_status": 0.1442119519924745,
+      "/map": 15.492414054984692,
+      "/rubi/planner_comparison/grid/tracking_path": 15.481005537003512,
+      "/legged/cmd_raw": 0.08676235601888038,
+      "/legged/tracking_state": 0.0867039859876968
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 16.00503267001477,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04422900499776006,
+      "/legged/motion_status": 0.09409574497840367,
+      "/map": 15.992439377005212,
+      "/rubi/planner_comparison/grid/tracking_path": 15.981031098985113,
+      "/legged/cmd_raw": 0.08691601600730792,
+      "/legged/tracking_state": 0.0868903259979561
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 16.50499471402145,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04428054500021972,
+      "/legged/motion_status": 0.04412068601232022,
+      "/map": 16.492395860987017,
+      "/rubi/planner_comparison/grid/tracking_path": 16.48098740298883,
+      "/legged/cmd_raw": 0.08680316701065749,
+      "/legged/tracking_state": 0.08666129797347821
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 17.00495954899816,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044154086004709825,
+      "/legged/motion_status": 0.04397430599783547,
+      "/map": 16.992361356009496,
+      "/rubi/planner_comparison/grid/tracking_path": 16.980952827987494,
+      "/legged/cmd_raw": 0.08675100799882784,
+      "/legged/tracking_state": 0.08670632800203748
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 17.504987635009456,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044293565006228164,
+      "/legged/motion_status": 0.5440013820189051,
+      "/map": 17.492388432001462,
+      "/rubi/planner_comparison/grid/tracking_path": 17.48097990397946,
+      "/legged/cmd_raw": 0.0868164770072326,
+      "/legged/tracking_state": 0.08664203801890835
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 18.004986814019503,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04433240499929525,
+      "/legged/motion_status": 0.4942257449729368,
+      "/map": 17.992387870996026,
+      "/rubi/planner_comparison/grid/tracking_path": 17.980979552987264,
+      "/legged/cmd_raw": 0.08678504798444919,
+      "/legged/tracking_state": 0.08672257899888791
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 18.504977073025657,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04421892500249669,
+      "/legged/motion_status": 0.44400488599785604,
+      "/map": 18.492377579997992,
+      "/rubi/planner_comparison/grid/tracking_path": 18.480969281983562,
+      "/legged/cmd_raw": 0.08677182800602168,
+      "/legged/tracking_state": 0.0867135479929857
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 19.005004985025153,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04419693601084873,
+      "/legged/motion_status": 0.44387090898817405,
+      "/map": 18.992408001999138,
+      "/rubi/planner_comparison/grid/tracking_path": 18.980999683990376,
+      "/legged/cmd_raw": 0.08685949799837545,
+      "/legged/tracking_state": 0.08671370899537578
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 19.505023568024626,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04425611498299986,
+      "/legged/motion_status": 0.44410716800484806,
+      "/map": 19.492427524994127,
+      "/rubi/planner_comparison/grid/tracking_path": 19.481019026978174,
+      "/legged/cmd_raw": 0.08684967798762955,
+      "/legged/tracking_state": 0.08680534799350426
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 20.00498917402001,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044163887010654435,
+      "/legged/motion_status": 0.3939962110016495,
+      "/map": 19.9923917609849,
+      "/rubi/planner_comparison/grid/tracking_path": 19.980983512999956,
+      "/legged/cmd_raw": 0.0868568790028803,
+      "/legged/tracking_state": 0.08682198898168281
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 20.504981380014215,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044234965986106545,
+      "/legged/motion_status": 0.3938350719981827,
+      "/map": 20.492383036995307,
+      "/rubi/planner_comparison/grid/tracking_path": 20.480974509002408,
+      "/legged/cmd_raw": 0.08679830899927765,
+      "/legged/tracking_state": 0.08673664898378775
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 21.00501676800195,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04434365499764681,
+      "/legged/motion_status": 0.34411501200520433,
+      "/map": 20.992422234994592,
+      "/rubi/planner_comparison/grid/tracking_path": 20.98101373697864,
+      "/legged/cmd_raw": 0.08681519998935983,
+      "/legged/tracking_state": 0.08674711000639945
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 21.504943988024024,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044242105999728665,
+      "/legged/motion_status": 0.2940552919753827,
+      "/map": 21.49234519500169,
+      "/rubi/planner_comparison/grid/tracking_path": 21.480936676991405,
+      "/legged/cmd_raw": 0.08680457901209593,
+      "/legged/tracking_state": 0.08666911997715943
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 22.005008150008507,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044356495985994115,
+      "/legged/motion_status": 0.24409011300303973,
+      "/map": 21.9924157570058,
+      "/rubi/planner_comparison/grid/tracking_path": 21.981007348978892,
+      "/legged/cmd_raw": 0.08689736999804154,
+      "/legged/tracking_state": 0.08685891001368873
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 22.504948993009748,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04429490599432029,
+      "/legged/motion_status": 0.1940781210141722,
+      "/map": 22.492351049993886,
+      "/rubi/planner_comparison/grid/tracking_path": 22.48094254199532,
+      "/legged/cmd_raw": 0.08681100001558661,
+      "/legged/tracking_state": 0.08665998099604622
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 23.004917808022583,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0441931770183146,
+      "/legged/motion_status": 0.1940581720264163,
+      "/map": 22.992318125005113,
+      "/rubi/planner_comparison/grid/tracking_path": 22.98090959698311,
+      "/legged/cmd_raw": 0.0867296110081952,
+      "/legged/tracking_state": 0.08641409198753536
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 23.505014804017264,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04437884598155506,
+      "/legged/motion_status": 0.14406985000823624,
+      "/map": 23.492422560986597,
+      "/rubi/planner_comparison/grid/tracking_path": 23.481014142977074,
+      "/legged/cmd_raw": 0.08683140101493336,
+      "/legged/tracking_state": 0.08677527098916471
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 24.004983953025658,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04423852698528208,
+      "/legged/motion_status": 0.09414166997885332,
+      "/map": 23.99239041999681,
+      "/rubi/planner_comparison/grid/tracking_path": 23.980982011999004,
+      "/legged/cmd_raw": 0.08682739100186154,
+      "/legged/tracking_state": 0.08661193199804984
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 24.504942922998453,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04429596700356342,
+      "/legged/motion_status": 0.044114517979323864,
+      "/map": 24.49234401001013,
+      "/rubi/planner_comparison/grid/tracking_path": 24.480935481988126,
+      "/legged/cmd_raw": 0.0868190820037853,
+      "/legged/tracking_state": 0.0866879420063924
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 25.004974644019967,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04435742599889636,
+      "/legged/motion_status": 0.5441508590010926,
+      "/map": 24.992380220995983,
+      "/rubi/planner_comparison/grid/tracking_path": 24.98097182298079,
+      "/legged/cmd_raw": 0.08687158100656234,
+      "/legged/tracking_state": 0.08683307201135904
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 25.504938827012666,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04425440699560568,
+      "/legged/motion_status": 0.4941047279862687,
+      "/map": 25.492340564000187,
+      "/rubi/planner_comparison/grid/tracking_path": 25.480932035978185,
+      "/legged/cmd_raw": 0.0868349320080597,
+      "/legged/tracking_state": 0.0866968719928991
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 26.0049142120115,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044250826991628855,
+      "/legged/motion_status": 0.4440587279968895,
+      "/map": 25.992314348986838,
+      "/rubi/planner_comparison/grid/tracking_path": 25.98090584098827,
+      "/legged/cmd_raw": 0.08679273200687021,
+      "/legged/tracking_state": 0.08661041298182681
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 26.50490567900124,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0442065880051814,
+      "/legged/motion_status": 0.4440084800007753,
+      "/map": 26.492308925982798,
+      "/rubi/planner_comparison/grid/tracking_path": 26.4809003979899,
+      "/legged/cmd_raw": 0.08668318399577402,
+      "/legged/tracking_state": 0.08661811400088482
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 27.00499674602179,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04436882701702416,
+      "/legged/motion_status": 0.44405697099864483,
+      "/map": 26.99240521300817,
+      "/rubi/planner_comparison/grid/tracking_path": 26.98099699500017,
+      "/legged/cmd_raw": 0.08688087301561609,
+      "/legged/tracking_state": 0.08682831298210658
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 27.504999596014386,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04449748701881617,
+      "/legged/motion_status": 0.3941182690032292,
+      "/map": 27.49240769300377,
+      "/rubi/planner_comparison/grid/tracking_path": 27.480999174993485,
+      "/legged/cmd_raw": 0.08689603299717419,
+      "/legged/tracking_state": 0.08685293298913166
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 28.004987838008674,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044240929011721164,
+      "/legged/motion_status": 0.39393375301733613,
+      "/map": 27.99239605499315,
+      "/rubi/planner_comparison/grid/tracking_path": 27.980987636983627,
+      "/legged/cmd_raw": 0.08687216401449405,
+      "/legged/tracking_state": 0.08681615398381837
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 28.504944230022375,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044311267003649846,
+      "/legged/motion_status": 0.39397953200386837,
+      "/map": 28.492346166982315,
+      "/rubi/planner_comparison/grid/tracking_path": 28.480937638989417,
+      "/legged/cmd_raw": 0.08685700298519805,
+      "/legged/tracking_state": 0.08681795300799422
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 29.004954525007633,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044259457994485274,
+      "/legged/motion_status": 0.39419164301943965,
+      "/map": 28.99235842199414,
+      "/rubi/planner_comparison/grid/tracking_path": 28.98094989400124,
+      "/legged/cmd_raw": 0.08681347398669459,
+      "/legged/tracking_state": 0.08676704397657886
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 29.504932021023706,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04406929897959344,
+      "/legged/motion_status": 0.393849805026548,
+      "/map": 29.49233444800484,
+      "/rubi/planner_comparison/grid/tracking_path": 29.480925979994936,
+      "/legged/cmd_raw": 0.0868155240023043,
+      "/legged/tracking_state": 0.0867721039976459
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 30.005005559010897,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044318978005321696,
+      "/legged/motion_status": 0.34398223299649544,
+      "/map": 29.992410726001253,
+      "/rubi/planner_comparison/grid/tracking_path": 29.981002218002686,
+      "/legged/cmd_raw": 0.08690969401504844,
+      "/legged/tracking_state": 0.08687079400988296
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 30.504921719024424,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044244639022508636,
+      "/legged/motion_status": 0.34386914398055524,
+      "/map": 30.492323126003612,
+      "/rubi/planner_comparison/grid/tracking_path": 30.480914607993327,
+      "/legged/cmd_raw": 0.08677605501725338,
+      "/legged/tracking_state": 0.08660644601332024
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 31.004984400002286,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04421156898024492,
+      "/legged/motion_status": 0.29376025300007313,
+      "/map": 30.992391156993108,
+      "/rubi/planner_comparison/grid/tracking_path": 30.98098264899454,
+      "/legged/cmd_raw": 0.0868055059981998,
+      "/legged/tracking_state": 0.08674626599531621
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 31.5049342730199,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04428006798843853,
+      "/legged/motion_status": 0.2439746269956231,
+      "/map": 31.492337278992636,
+      "/rubi/planner_comparison/grid/tracking_path": 31.480928990989923,
+      "/legged/cmd_raw": 0.08682694498565979,
+      "/legged/tracking_state": 0.0867836450051982
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 32.004936527024256,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04424194898456335,
+      "/legged/motion_status": 0.1940445940126665,
+      "/map": 31.992339093994815,
+      "/rubi/planner_comparison/grid/tracking_path": 31.98093067598529,
+      "/legged/cmd_raw": 0.08678895598859526,
+      "/legged/tracking_state": 0.08674222600529902
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 32.50495938301901,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044226539990631863,
+      "/legged/motion_status": 0.19404504398698919,
+      "/map": 32.492365259997314,
+      "/rubi/planner_comparison/grid/tracking_path": 32.48095685199951,
+      "/legged/cmd_raw": 0.08677872602129355,
+      "/legged/tracking_state": 0.08672352699795738
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 33.004917370999465,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426088000764139,
+      "/legged/motion_status": 0.1439989710052032,
+      "/map": 32.992319248005515,
+      "/rubi/planner_comparison/grid/tracking_path": 32.98091072999523,
+      "/legged/cmd_raw": 0.08685304599930532,
+      "/legged/tracking_state": 0.08673429698683321
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 33.50494308001362,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04419542002142407,
+      "/legged/motion_status": 0.14388472100836225,
+      "/map": 33.49234861700097,
+      "/rubi/planner_comparison/grid/tracking_path": 33.4809402289975,
+      "/legged/cmd_raw": 0.08680581697262824,
+      "/legged/tracking_state": 0.0867542469932232
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 34.004960351012414,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044215650006663054,
+      "/legged/motion_status": 0.09400535601889715,
+      "/map": 33.99236723801005,
+      "/rubi/planner_comparison/grid/tracking_path": 33.980958839994855,
+      "/legged/cmd_raw": 0.08687650697538629,
+      "/legged/tracking_state": 0.08683954700245522
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 34.504924683016725,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044201890006661415,
+      "/legged/motion_status": 0.0940472160000354,
+      "/map": 34.49232633999782,
+      "/rubi/planner_comparison/grid/tracking_path": 34.48091782198753,
+      "/legged/cmd_raw": 0.08682443702127784,
+      "/legged/tracking_state": 0.08668915700400248
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 35.00491609700839,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04425127001013607,
+      "/legged/motion_status": 0.0440440509992186,
+      "/map": 34.99231877399143,
+      "/rubi/planner_comparison/grid/tracking_path": 34.980910255981144,
+      "/legged/cmd_raw": 0.0868352570105344,
+      "/legged/tracking_state": 0.08679534701514058
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 35.50490660301875,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044167190993903205,
+      "/legged/motion_status": 0.043973480991553515,
+      "/map": 35.4923087900097,
+      "/rubi/planner_comparison/grid/tracking_path": 35.48090027199942,
+      "/legged/cmd_raw": 0.08681661801529117,
+      "/legged/tracking_state": 0.08677382799214683
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 36.00494737102417,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04430407998734154,
+      "/legged/motion_status": 0.5440201780002099,
+      "/map": 35.992355566995684,
+      "/rubi/planner_comparison/grid/tracking_path": 35.98094716898049,
+      "/legged/cmd_raw": 0.08687508801813237,
+      "/legged/tracking_state": 0.08673348900629207
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 36.504968749010004,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04436435998650268,
+      "/legged/motion_status": 0.4940207449835725,
+      "/map": 36.492377675982425,
+      "/rubi/planner_comparison/grid/tracking_path": 36.48096926798462,
+      "/legged/cmd_raw": 0.08685386800789274,
+      "/legged/tracking_state": 0.08679327802383341
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 37.00496976001887,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04429983999580145,
+      "/legged/motion_status": 0.444045409996761,
+      "/map": 36.99238309598877,
+      "/rubi/planner_comparison/grid/tracking_path": 36.980974748003064,
+      "/legged/cmd_raw": 0.08685981799499132,
+      "/legged/tracking_state": 0.08680984799866565
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 37.504944982007146,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0442206010047812,
+      "/legged/motion_status": 0.4438295529980678,
+      "/map": 37.49234751900076,
+      "/rubi/planner_comparison/grid/tracking_path": 37.480939000990475,
+      "/legged/cmd_raw": 0.08688040901324712,
+      "/legged/tracking_state": 0.08684074901975691
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 38.00492206600029,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04410141200060025,
+      "/legged/motion_status": 0.39419872700818814,
+      "/map": 37.99232487299014,
+      "/rubi/planner_comparison/grid/tracking_path": 37.98091634499724,
+      "/legged/cmd_raw": 0.08677039001486264,
+      "/legged/tracking_state": 0.08669058998930268
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 38.50488849100657,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426317100296728,
+      "/legged/motion_status": 0.3939999279973563,
+      "/map": 38.49228956800653,
+      "/rubi/planner_comparison/grid/tracking_path": 38.480881059978856,
+      "/legged/cmd_raw": 0.08683386899065226,
+      "/legged/tracking_state": 0.08669393000309356
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 39.004882129025646,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044199222000315785,
+      "/legged/motion_status": 0.34394639398669824,
+      "/map": 38.99228354598745,
+      "/rubi/planner_comparison/grid/tracking_path": 38.98087501799455,
+      "/legged/cmd_raw": 0.08681103997514583,
+      "/legged/tracking_state": 0.08676985101192258
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 39.50484442702145,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04418893199181184,
+      "/legged/motion_status": 0.29409054602729157,
+      "/map": 39.49224720400525,
+      "/rubi/planner_comparison/grid/tracking_path": 39.48083867598325,
+      "/legged/cmd_raw": 0.0867863799794577,
+      "/legged/tracking_state": 0.0867421200091485
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 40.004906977002975,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04418046199134551,
+      "/legged/motion_status": 0.294030227989424,
+      "/map": 39.99231183400843,
+      "/rubi/planner_comparison/grid/tracking_path": 39.98090342598152,
+      "/legged/cmd_raw": 0.08689577999757603,
+      "/legged/tracking_state": 0.08673056098632514
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 40.50492180901347,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0441706929996144,
+      "/legged/motion_status": 0.29399393900530413,
+      "/map": 40.49232738598948,
+      "/rubi/planner_comparison/grid/tracking_path": 40.480918988003395,
+      "/legged/cmd_raw": 0.08688001098926179,
+      "/legged/tracking_state": 0.08671667199814692
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 41.00490490201628,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04423926200252026,
+      "/legged/motion_status": 0.24402935299440287,
+      "/map": 40.992308179003885,
+      "/rubi/planner_comparison/grid/tracking_path": 40.9808996609936,
+      "/legged/cmd_raw": 0.08685410101315938,
+      "/legged/tracking_state": 0.08680883099441417
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 41.50484021700686,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04427457199199125,
+      "/legged/motion_status": 0.19384735598578118,
+      "/map": 41.49224201400648,
+      "/rubi/planner_comparison/grid/tracking_path": 41.48083369599772,
+      "/legged/cmd_raw": 0.08682622099877335,
+      "/legged/tracking_state": 0.08671280200360343
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 42.00483629401424,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426819199579768,
+      "/legged/motion_status": 0.1440103790082503,
+      "/map": 41.992238640988944,
+      "/rubi/planner_comparison/grid/tracking_path": 41.9808303329919,
+      "/legged/cmd_raw": 0.08677389199147001,
+      "/legged/tracking_state": 0.08671690200571902
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 42.50485770200612,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04424669299623929,
+      "/legged/motion_status": 0.09404159098630771,
+      "/map": 42.492260928993346,
+      "/rubi/planner_comparison/grid/tracking_path": 42.48085272099706,
+      "/legged/cmd_raw": 0.08681316202273592,
+      "/legged/tracking_state": 0.08661705302074552
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 43.0048311810242,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04414328301209025,
+      "/legged/motion_status": 0.09393336100038141,
+      "/map": 42.992237358004786,
+      "/rubi/planner_comparison/grid/tracking_path": 42.980828879983164,
+      "/legged/cmd_raw": 0.08681361202616245,
+      "/legged/tracking_state": 0.08656344297924079
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 43.50486586202169,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044195021997438744,
+      "/legged/motion_status": 0.09379740199074149,
+      "/map": 43.49226985900896,
+      "/rubi/planner_comparison/grid/tracking_path": 43.480861350981286,
+      "/legged/cmd_raw": 0.08682385200518183,
+      "/legged/tracking_state": 0.08678645198233426
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 44.00490139500471,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044230272993445396,
+      "/legged/motion_status": 0.044149042980279773,
+      "/map": 43.99231005201,
+      "/rubi/planner_comparison/grid/tracking_path": 43.98090164398309,
+      "/legged/cmd_raw": 0.08679670302080922,
+      "/legged/tracking_state": 0.08673026302130893
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 44.504902309010504,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426890198374167,
+      "/legged/motion_status": 0.5441457970009651,
+      "/map": 44.49230679598986,
+      "/rubi/planner_comparison/grid/tracking_path": 44.48089824800263,
+      "/legged/cmd_raw": 0.08692676201462746,
+      "/legged/tracking_state": 0.08681468199938536
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 45.00486509600887,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044182673998875543,
+      "/legged/motion_status": 0.4942185410181992,
+      "/map": 44.992266932997154,
+      "/rubi/planner_comparison/grid/tracking_path": 44.98085840497515,
+      "/legged/cmd_raw": 0.0867237140191719,
+      "/legged/tracking_state": 0.08637009499943815
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 45.504881572996965,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04425278300186619,
+      "/legged/motion_status": 0.4940599419933278,
+      "/map": 45.49228515999857,
+      "/rubi/planner_comparison/grid/tracking_path": 45.480876831978094,
+      "/legged/cmd_raw": 0.08684373300638981,
+      "/legged/tracking_state": 0.08679614300490357
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 46.00483619302395,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044284392992267385,
+      "/legged/motion_status": 0.44395861600060016,
+      "/map": 45.99223812998389,
+      "/rubi/planner_comparison/grid/tracking_path": 45.98082961200271,
+      "/legged/cmd_raw": 0.08684301399625838,
+      "/legged/tracking_state": 0.08666373498272151
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 46.50484516299912,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04433315299684182,
+      "/legged/motion_status": 0.44405739597277716,
+      "/map": 46.49224647000665,
+      "/rubi/planner_comparison/grid/tracking_path": 46.480837941984646,
+      "/legged/cmd_raw": 0.08683366398327053,
+      "/legged/tracking_state": 0.08665313399978913
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 47.0048695760197,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04415423501632176,
+      "/legged/motion_status": 0.3940358100226149,
+      "/map": 46.99227234299178,
+      "/rubi/planner_comparison/grid/tracking_path": 46.98086389497621,
+      "/legged/cmd_raw": 0.0868454450101126,
+      "/legged/tracking_state": 0.08662072601146065
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 47.50486825002008,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04426611299277283,
+      "/legged/motion_status": 0.39400915999431163,
+      "/map": 47.49227003598935,
+      "/rubi/planner_comparison/grid/tracking_path": 47.480861517979065,
+      "/legged/cmd_raw": 0.08684858400374651,
+      "/legged/tracking_state": 0.08679509398643859
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 48.00487882501329,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04421164400991984,
+      "/legged/motion_status": 0.39384704301483,
+      "/map": 47.992286741995485,
+      "/rubi/planner_comparison/grid/tracking_path": 47.980878343980294,
+      "/legged/cmd_raw": 0.08689433499239385,
+      "/legged/tracking_state": 0.0867644049867522
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 48.504845172021305,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04422414398868568,
+      "/legged/motion_status": 0.34396701300283894,
+      "/map": 48.492246418987634,
+      "/rubi/planner_comparison/grid/tracking_path": 48.48083790097735,
+      "/legged/cmd_raw": 0.08686901498003863,
+      "/legged/tracking_state": 0.08683410499361344
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 49.004863691021455,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04434268400655128,
+      "/legged/motion_status": 0.29411172500113025,
+      "/map": 48.992266387998825,
+      "/rubi/planner_comparison/grid/tracking_path": 48.98085786998854,
+      "/legged/cmd_raw": 0.08683792600641027,
+      "/legged/tracking_state": 0.08677695601363666
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 49.50483245099895,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04417703501530923,
+      "/legged/motion_status": 0.2940571650105994,
+      "/map": 49.49223540798994,
+      "/rubi/planner_comparison/grid/tracking_path": 49.48082684999099,
+      "/legged/cmd_raw": 0.08681738600716926,
+      "/legged/tracking_state": 0.08662688700133003
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 50.00484055301058,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04422760399756953,
+      "/legged/motion_status": 0.2940073169884272,
+      "/map": 49.99224193900591,
+      "/rubi/planner_comparison/grid/tracking_path": 49.980833410983905,
+      "/legged/cmd_raw": 0.08679058600682765,
+      "/legged/tracking_state": 0.08653994699125178
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 50.504839446017286,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04427505499916151,
+      "/legged/motion_status": 0.2937746779934969,
+      "/map": 50.4922419229988,
+      "/rubi/planner_comparison/grid/tracking_path": 50.48083366500214,
+      "/legged/cmd_raw": 0.08677157599595375,
+      "/legged/tracking_state": 0.08649813800002448
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 51.00489969100454,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04427131501142867,
+      "/legged/motion_status": 0.244293137016939,
+      "/map": 50.99230667800293,
+      "/rubi/planner_comparison/grid/tracking_path": 50.98089819998131,
+      "/legged/cmd_raw": 0.08686881698668003,
+      "/legged/tracking_state": 0.0865940070070792
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 51.50483737702598,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044220705021871254,
+      "/legged/motion_status": 0.24399967800127342,
+      "/map": 51.492239143990446,
+      "/rubi/planner_comparison/grid/tracking_path": 51.48083061599755,
+      "/legged/cmd_raw": 0.08682836600928567,
+      "/legged/tracking_state": 0.08678141701966524
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 52.00483973501832,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044211014988832176,
+      "/legged/motion_status": 0.19413511801394634,
+      "/map": 51.992241901985835,
+      "/rubi/planner_comparison/grid/tracking_path": 51.98083337399294,
+      "/legged/cmd_raw": 0.08684741699835286,
+      "/legged/tracking_state": 0.08680973699665628
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 52.50484997499734,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04414517601253465,
+      "/legged/motion_status": 0.19397925899829715,
+      "/map": 52.49225280198152,
+      "/rubi/planner_comparison/grid/tracking_path": 52.48084428400034,
+      "/legged/cmd_raw": 0.08681344799697399,
+      "/legged/tracking_state": 0.08675678799045272
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 53.004854736005655,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044328504998702556,
+      "/legged/motion_status": 0.14412544798688032,
+      "/map": 52.992257153004175,
+      "/rubi/planner_comparison/grid/tracking_path": 52.98084863499389,
+      "/legged/cmd_raw": 0.08679902798030525,
+      "/legged/tracking_state": 0.0867535580182448
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 53.504826139018405,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04424028599169105,
+      "/legged/motion_status": 0.14398414999595843,
+      "/map": 53.49222716598888,
+      "/rubi/planner_comparison/grid/tracking_path": 53.48081863799598,
+      "/legged/cmd_raw": 0.0868166680156719,
+      "/legged/tracking_state": 0.08677479802281596
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 54.00483942302526,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.044277844979660586,
+      "/legged/motion_status": 0.09401890798471868,
+      "/map": 53.992241300002206,
+      "/rubi/planner_comparison/grid/tracking_path": 53.98083278199192,
+      "/legged/cmd_raw": 0.0868218679970596,
+      "/legged/tracking_state": 0.0867820989806205
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 54.50485372802359,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.04420877498341724,
+      "/legged/motion_status": 0.0439952359884046,
+      "/map": 54.49225565500092,
+      "/rubi/planner_comparison/grid/tracking_path": 54.48084713699063,
+      "/legged/cmd_raw": 0.08676352800102904,
+      "/legged/tracking_state": 0.08671138799400069
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  },
+  {
+    "wall": 55.00481810601195,
+    "ros": 0.0,
+    "age_wall": {
+      "/cmd_vel": 0.0442410760151688,
+      "/legged/motion_status": 0.5439587039873004,
+      "/map": 54.99221913298243,
+      "/rubi/planner_comparison/grid/tracking_path": 54.980810615001246,
+      "/legged/cmd_raw": 0.08683930800179951,
+      "/legged/tracking_state": 0.08680162800010294
+    },
+    "/legged/cmd_raw": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/cmd_vel": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "/legged/motion_status": {
+      "gate": "stopped",
+      "reason": "collision_cloud_timeout",
+      "tracking": "idle",
+      "collision_input": "ready",
+      "vx": 0.0,
+      "wz": 0.0
+    },
+    "/legged/tracking_state": "idle",
+    "pose_or_map_error": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+  }
+]

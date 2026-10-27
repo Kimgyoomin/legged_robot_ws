@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-27",
+  "branch": "codex/navigation-handoff-20261027",
+  "build": {
+    "packages": [
+      "fast_lio_localization",
+      "legged_navigation",
+      "legged_bringup",
+      "legged_range_trial"
+    ],
+    "success": true,
+    "incremental": true,
+    "elapsed_s": 4.68,
+    "warning": "FAST-LIO pre-existing CMake CMP0074/PCL_ROOT developer warning"
+  },
+  "existing_tests": {
+    "fast_lio_localization": [
+      {
+        "file": "test_livox_time.gtest.xml",
+        "test_cases": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "file": "test_velocity_output.gtest.xml",
+        "test_cases": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "legged_navigation": [
+      {
+        "file": "test_pure_pursuit_core.gtest.xml",
+        "test_cases": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "file": "test_sector_filter.gtest.xml",
+        "test_cases": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "legged_bringup": [
+      {
+        "file": "costmap_guard.xunit.xml",
+        "test_cases": 30,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "file": "delivery_contract.xunit.xml",
+        "test_cases": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "file": "navigation_recovery.gtest.xml",
+        "test_cases": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "legged_range_trial": [
+      {
+        "file": "test_pose_velocity.xunit.xml",
+        "test_cases": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "file": "test_twist_frame.xunit.xml",
+        "test_cases": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "sites": [
+    {
+      "site": "maps/cost_wall_lower10_v3/site.yaml",
+      "validated_assets": [
+        "occupancy",
+        "image",
+        "pcd",
+        "height"
+      ]
+    },
+    {
+      "site": "maps/cost_wall_main_v2/site.yaml",
+      "validated_assets": [
+        "occupancy",
+        "image",
+        "pcd",
+        "height"
+      ]
+    }
+  ],
+  "config_snapshot_hashes_match": true,
+  "live_robot_or_simulator_command_sent": false,
+  "new_navigation_AB_trial": false,
+  "jetson_benchmark": false,
+  "local_link_targets_checked": 213,
+  "missing_local_link_targets": [],
+  "staged_link_targets_available": true,
+  "secret_pattern_scan_matches": 0,
+  "whitespace_check_scope": "code and authored documents; archived evidence keeps original log/text whitespace",
+  "total_test_cases": 76
+}

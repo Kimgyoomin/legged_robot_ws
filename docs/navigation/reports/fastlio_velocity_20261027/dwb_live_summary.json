@@ -1,0 +1,41 @@
+{
+  "dwb_tracking": {
+    "samples": 290,
+    "sim_span": 29.0,
+    "cross_track_m_p50_p95_max": [
+      0.057905124836812476,
+      0.27249691842651924,
+      0.7268658518256339
+    ],
+    "warnings": {
+      "planner_server: Height plugin failed to plan calculation to (0.71, -0.32): \"Height planner: grid path not found\"": 4,
+      "planner_server: [compute_path_to_pose] [ActionServer] Aborting handle.": 4
+    },
+    "goal_events": [
+      {
+        "t": 0.0,
+        "topic": "/navigate_to_pose/_action/status",
+        "value": [
+          4,
+          6,
+          2
+        ]
+      }
+    ],
+    "gate_counts": {
+      "safe_command_timeout": 40,
+      "pass": 249
+    },
+    "observed_envelope_counts": {
+      "pass": 282,
+      "costmap_collision": 8
+    }
+  },
+  "dwb_lateral_after": {
+    "samples": 0,
+    "warnings": {
+      "planner_server: Height plugin failed to plan calculation to (6.46, -9.68): \"Height planner: grid path not found\"": 29,
+      "planner_server: [compute_path_to_pose] [ActionServer] Aborting handle.": 29
+    }
+  }
+}

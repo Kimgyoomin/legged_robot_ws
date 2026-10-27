@@ -1,0 +1,11 @@
+{
+  "snapshot_source": "/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3_raw/run_1793023986818997341/map.rghm",
+  "snapshot_sha256": "3cb78ea0148646bb6c579c7c7d7061e424a3612d55c3958c32ab77a892304876",
+  "actual_gzserver_world": "/tmp/rubi_sensor_world_frp15jju/world.sdf",
+  "actual_world_sha256": "1575fbcc56912b57d866925ceb176dfc73cc59a46ca4ae773c97a8b5233d4f14",
+  "requested_world": "/home/kim/cot_experiment/navigation_cost_comparison/worlds_v3_lower10/rubi_cost_comparison_lower10.world",
+  "requested_world_sha256": "328bfebd8900f5a6cf456671435aa74ed8e3a1c50c238cf0bf2afc534c49fc20",
+  "static_collision_primitives_identical": true,
+  "localization_pcd": "/home/kim/legged_robot_ws/maps/cost_wall_main_v2/localization.pcd",
+  "source_files_modified": false
+}

@@ -1,0 +1,16 @@
+{
+  "/controller_server": {
+    "odom_topic": "/Odometry",
+    "failure_tolerance": 0.0,
+    "FollowPath.max_vel_theta": 0.8,
+    "FollowPath.min_vel_x": 0.0,
+    "FollowPath.debug_trajectory_details": false,
+    "FollowPath.trajectory_generator_name": "dwb_plugins::StandardTrajectoryGenerator"
+  },
+  "/global_costmap/global_costmap": {
+    "inflation_layer.inflation_radius": 0.4
+  },
+  "/local_costmap/local_costmap": {
+    "inflation_layer.inflation_radius": 0.4
+  }
+}

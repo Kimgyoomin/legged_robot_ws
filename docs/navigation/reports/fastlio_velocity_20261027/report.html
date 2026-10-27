@@ -1,0 +1,77 @@
+<aside style="padding:12px;background:#fff3cd;color:#302600;font:15px sans-serif;border:1px solid #ba9b39"><strong>과거 실험 기록 보관본</strong> — 수치·설정·상태는 기록 당시 기준입니다. <a href="../../README.md">현재 인계 문서</a>를 함께 확인하세요. 링크 경로와 이 안내만 추가했으며 실험 결과는 수정하지 않았습니다.</aside><!doctype html><html lang="ko"><meta charset="utf-8">
+<title>FAST-LIO velocity · GT comparison</title>
+<style>body{font:16px/1.65 system-ui;max-width:1080px;margin:36px auto;padding:0 24px;color:#203044}
+h1,h2{line-height:1.3}h2{margin-top:34px}table{border-collapse:collapse;width:100%}
+td,th{padding:9px;border-bottom:1px solid #d3dce5;text-align:right}td:first-child,th:first-child{text-align:left}
+.note{background:#eaf3ff;border-left:4px solid #257bb5;padding:16px}img{width:100%;height:auto}
+pre{background:#edf1f5;padding:18px;overflow:auto}a{color:#126b9d}.muted{color:#536577}</style>
+<h1>FAST-LIO 내부 속도와 Gazebo GT 비교</h1><p>2026-10-27 · ROS 2 Humble · RUBI / domain 45</p>
+<p class="note"><b>저속 전진·후진·좌우 회전의 속도 비교 완료.</b> 이 결과는 DWB 입력으로
+시험할 근거입니다. 실제 DWB 추종/급회전 개선은 아직 검증하지 않았습니다.</p>
+<h2>측정 결과</h2><table><tr><th>항목</th><th>결과</th></tr>
+<tr><td>동일 timestamp로 맞춘 표본</td><td>511개 / 51.002 simulation seconds</td></tr>
+<tr><td>전진 속도 RMSE / 절대 오차 p95</td><td>0.0368 / 0.0708 m/s</td></tr>
+<tr><td>Yaw 속도 RMSE / 절대 오차 p95</td><td>0.0317 / 0.0651 rad/s</td></tr>
+<tr><td>수신 시점 표본 나이 중앙값 / p95</td><td>0.100 / 0.102 s</td></tr></table>
+<p>전진 +0.25m/s, 후진 −0.15m/s, 좌우 회전 ±0.4rad/s를 요청하고 각 구간 사이에
+정지했습니다. /legged/cmd_raw를 사용해 기존 Collision Monitor와 watchdog을 거쳤으며,
+시험 종료 시 0 명령을 반복 발행했습니다. 정책이 실제 소비한 명령도 함께 기록했습니다.</p>
+<img src="exercise_samples_comparison.png" alt="GT and FAST-LIO forward, lateral, yaw velocity">
+<p class="muted">0 명령에서도 보행에 따른 몸체 속도 진동이 있습니다. 회색은 Gazebo twist,
+주황은 GT pose의 오프라인 미분, 파랑은 FAST-LIO 내부 상태입니다. GT pose 미분은
+검산용이며 controller 입력으로 사용하지 않습니다.</p>
+<table><tr><th>구간</th><th>표본</th><th>vx RMSE (m/s)</th><th>yaw RMSE (rad/s)</th>
+<th>GT 평균 vx</th><th>GT 평균 yaw</th></tr><tr><td>settle</td><td>30</td><td>0.0294</td><td>0.0553</td><td>0.017</td><td>0.057</td></tr><tr><td>forward</td><td>20</td><td>0.0139</td><td>0.0538</td><td>0.214</td><td>0.007</td></tr><tr><td>stop_forward</td><td>30</td><td>0.0124</td><td>0.0350</td><td>0.027</td><td>0.017</td></tr><tr><td>reverse</td><td>25</td><td>0.0082</td><td>0.0288</td><td>-0.115</td><td>0.018</td></tr><tr><td>stop_reverse</td><td>30</td><td>0.0083</td><td>0.0266</td><td>0.022</td><td>0.027</td></tr><tr><td>left</td><td>20</td><td>0.0580</td><td>0.0384</td><td>-0.016</td><td>0.408</td></tr><tr><td>stop_left</td><td>30</td><td>0.0693</td><td>0.0251</td><td>0.011</td><td>0.035</td></tr><tr><td>right</td><td>20</td><td>0.0270</td><td>0.0269</td><td>0.033</td><td>-0.358</td></tr><tr><td>stop_right</td><td>30</td><td>0.0094</td><td>0.0245</td><td>0.001</td><td>0.012</td></tr></table>
+<h2>좌표와 시각을 맞춘 방법</h2><p>Gazebo p3d의 world 축 선/각속도를 BODY 축으로
+회전했습니다. FAST-LIO state.vel은 camera_init 축에서 body 축으로 회전하고,
+body→base_link TF의 원점 차이는 ω×offset으로 보정했습니다. 두 스트림을 message
+timestamp로 정렬하고 GT는 보간했습니다. BODY와 base_link는 현재 모델에서 동일 원점입니다.
+GT pose는 ±0.10초 회귀 미분으로 독립 검산했습니다.</p>
+<p>FAST-LIO probe는 기존 localization과 같은 원시 센서를 사용하되 출력/TF를
+/velocity_probe 아래로 분리했습니다. 기존 DWB 입력은 이 시험 동안 변경하지 않았습니다.</p>
+<h2>대기열 지연 수정</h2><p>10Hz /clock에서 nominal 20Hz ROS timer가 사실상 scan당
+한 번만 깨어나면서, 콜백당 한 scan 처리 시 초기 대기열이 계속 남았습니다. 콜백당 최대
+4개를 FIFO로 처리하고, 추가 scan 시작 전 20ms 예산을 검사하도록 바꿨습니다.
+timestamp 조작이나 scan 삭제는 없습니다. 첫 scan 자체가 20ms를 넘으면 그 시간까지
+강제로 중단하지는 않습니다. 기본 코드값은 1개, mid360 profile은 4개입니다.</p>
+<p>별도 probe 기록에서 표본 나이 중앙값은 0.500→0.100초, p95는 0.502→0.102초였습니다.
+서로 다른 실행이므로 RMSE 변화 전체를 이 수정의 효과로 단정하지 않습니다.</p>
+<h2>연결과 검증 범위</h2><pre>FAST-LIO state.vel + gyro − bias
+  → /fastlio/odometry_velocity (body origin/axes)
+  → rigid origin/axis transform
+  → /legged/controller_odom (base_link)
+  → DWB</pre>
+<p>기존 /Odometry의 zero twist는 보존했습니다. 새 입력은 fastlio_velocity:=true일 때만
+연결됩니다. 위치 수치미분 및 별도 시간창 평활화는 사용하지 않습니다. frame 누락,
+오래된 입력, 비유한 값은 버립니다. covariance는 모델 근사치이며 실측 정확도 보장이 아닙니다.</p>
+<p>FAST-LIO C++ 테스트, trial Python 테스트, 격리 ROS domain의 원점/축 변환·timestamp
+보존·stale/nonfinite 입력 차단 및 launch 조합 검사가 통과했습니다. 0.7m/s 급회전,
+좁은 통로 완주, Orin NX 부하는 미검증입니다. 선속도 y의 약 0.029m/s bias 및 보행
+진동이 DWB 예측에 미치는 영향도 다음 주행에서 확인해야 합니다.</p>
+<h2>현재 중단 사유</h2><p>시험 완료 후 19:13:50에 gzserver가 libros2_livox.so에서
+segmentation fault로 종료됐습니다. launch도 exit code −11을 기록했습니다.
+충돌 ELF 주소 0x40cf0은 오후에 분석한 scan index 오류 위치와 같습니다. 이 Gazebo는
+15:09에 시작했고, 기존 index 수정본은 15:15에 설치돼 이전 메모리 매핑을 계속 썼습니다.
+커널의 “(deleted)” 표시도 교체 전 라이브러리 매핑과 일치합니다. 이번 core는 확보하지
+못했으므로 원인을 독립적으로 완전히 확증한 것은 아닙니다.</p>
+<p>시뮬레이터를 종료하는 명령은 보내지 않았습니다. localization과 navigation은
+새 속도 출력을 연결하려고 이후 종료했으며, 아직 재시작하지 않았습니다. 모든 시험용
+명령/관측 probe는 종료됐습니다. 시뮬레이터를 다시 시작하면 설치된 index 수정본을
+읽을 수 있습니다. GUI World Reset만으로는 플러그인이 바뀌지 않습니다.</p>
+<h2>재개 명령</h2><p>시뮬레이터 및 새 FAST-LIO localization이 실행되고 map TF가 정상인
+것을 확인한 뒤 navigation을 다음 옵션으로 시작합니다. 새 localization에는 초기 위치
+정합이 필요합니다. MPPI는 추가하지 않았습니다.</p>
+<pre>source /home/kim/legged_robot_ws/install/local_setup.bash
+ros2 launch legged_range_trial navigate.launch.py \
+  site:=/home/kim/legged_robot_ws/maps/cost_wall_lower10_v3/site.yaml \
+  use_sim_time:=true cloud_topic:=/livox/lidar_PointCloud2 \
+  controller:=dwb fastlio_velocity:=true estimate_velocity:=false</pre>
+<p>비교 원복: fastlio_velocity:=false estimate_velocity:=false. DWB 속도/critic 계수는
+이번에 변경하지 않았습니다. 먼저 정상 속도 입력만 바꾸고, 같은 경로에서 추종 오차·
+코너 진입 속도·정지 빈도를 비교해야 합니다.</p>
+<h2>근거</h2><ul><li><a href="exercise_samples_analysis.json">전체 수치</a> ·
+<a href="exercise_stages.json">구간 수치</a> · <a href="exercise.json">실제 시험 진행 기록</a></li>
+<li><a href="check_connection.json">격리 ROS 연결 검사</a> · <a href="review.json">검토 범위</a></li>
+<li><a href="gazebo_crash.log">이번 종료 로그</a> ·
+<a href="../sim_crash_20261027/report.html">기존 Livox index 수정 기록</a></li>
+<li><a href="https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_plugins/src/gazebo_ros_p3d.cpp">Gazebo p3d 공식 소스</a></li></ul></html>

@@ -1,0 +1,141 @@
+[INFO] [1793075771.738299225] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1793075771.740020862] [planner_server]: Creating
+[INFO] [1793075771.771958426] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1793075771.772693106] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1793075771.968234197] [planner_server]: Configuring
+[INFO] [1793075771.968266216] [global_costmap.global_costmap]: Configuring
+[INFO] [1793075771.973101420] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1793075771.975685335] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[INFO] [1793075771.976259127] [global_costmap.global_costmap]: Subscribing to updates
+[INFO] [1793075771.976880099] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1793075771.976892039] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1793075771.977081496] [global_costmap.global_costmap]: Subscribed to Topics: livox_cloud
+[INFO] [1793075771.978191411] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1793075771.978204880] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1793075771.978449047] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1793075771.982056388] [planner_server]: Created global planner plugin Height of type legged_navigation/HeightPlanner
+[INFO] [1793075771.984229908] [planner_server]: Planner Server has Height  planners available.
+[INFO] [1793075772.043657128] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 464 X 454 at 0.050000 m/pix
+[INFO] [1793075772.145961064] [planner_server]: Activating
+[INFO] [1793075772.145993104] [global_costmap.global_costmap]: Activating
+[INFO] [1793075772.146001204] [global_costmap.global_costmap]: Checking transform
+[INFO] [1793075772.146048613] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation at time 3523.200000, but only time 3523.300000 is in the buffer, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1793075772.646087821] [global_costmap.global_costmap]: start
+[INFO] [1793075772.897460387] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[WARN] [1793075794.904749563] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075794.904802822] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075808.733830972] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075808.733882141] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075823.985179639] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075823.985232148] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075825.045468562] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075825.045520831] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075826.105045413] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075826.105106112] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075827.167793533] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075827.167862242] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075828.226241943] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075828.226298953] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075831.200836115] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075831.200894144] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075832.260113082] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075832.260169592] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075833.321878578] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075833.321936077] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075834.383122247] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075834.383188107] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075835.442842463] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075835.442904073] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075836.501228713] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075836.501280192] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075837.554784147] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075837.554837556] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075912.717350716] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075912.717405835] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075913.785641640] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075913.785705279] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075914.845876850] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075914.845930829] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075915.905008924] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075915.905067484] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075916.965583248] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075916.965645827] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075918.026316454] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075918.026368904] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075919.086170724] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075919.086227523] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075920.149329373] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075920.149408283] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075923.385040418] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075923.385118457] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075924.455345572] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075924.455410791] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075925.517548680] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075925.517620039] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075927.667900879] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid start invalid"
+[WARN] [1793075927.667960608] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075933.067645905] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid endpoint violates terrain clearance"
+[WARN] [1793075933.067707665] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075934.146438671] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid endpoint violates terrain clearance"
+[WARN] [1793075934.146496650] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075935.208580362] [planner_server]: Height plugin failed to plan calculation to (6.63, -9.73): "Height planner: grid endpoint violates terrain clearance"
+[WARN] [1793075935.208655131] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075975.753572488] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075975.753642917] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075976.825291077] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075976.825378306] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075977.884922105] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075977.884997814] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075978.946825824] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075978.946889963] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075980.006657772] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075980.006729592] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075981.067165517] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075981.067244706] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075982.127525943] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075982.127595403] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075983.186655922] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075983.186722301] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075984.246366916] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075984.246424325] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075985.306180069] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075985.306236269] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075986.363478566] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075986.363532755] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075987.431947465] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075987.432003504] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075988.491427134] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075988.491509063] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075989.543174454] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075989.543232693] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075990.604738325] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075990.604792354] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075991.667320088] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075991.667389357] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075992.724407029] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075992.724458248] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075993.783715421] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075993.783770841] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075994.852680380] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075994.852738580] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075995.922619742] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075995.922679621] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075996.992251367] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075996.992318746] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075998.052083927] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075998.052147787] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793075999.113964400] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793075999.114025009] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793076000.181975361] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793076000.182044660] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793076001.243797195] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793076001.243855714] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793076002.311925096] [planner_server]: Height plugin failed to plan calculation to (6.83, -9.54): "Height planner: grid start invalid"
+[WARN] [1793076002.311988175] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[WARN] [1793076003.371907285] [planner_server]: Height plugin fai

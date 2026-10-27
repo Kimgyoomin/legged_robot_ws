@@ -132,6 +132,7 @@ def generate_launch_description():
         package="rviz2",
         executable="rviz2",
         arguments=["-d", rviz_cfg],
+        parameters=[{"use_sim_time": use_sim_time}],
         condition=IfCondition(rviz_use)
     )
 
@@ -165,20 +166,26 @@ def generate_launch_description():
         ],
     )
 
-    # For just fixxing
+    # Map/world alignment is site-specific. Do not invent an identity transform
+    # merely to display the PCD (RViz already uses map as its fixed frame).
+    declare_world_tf = DeclareLaunchArgument(
+        "publish_world_tf", default_value="false",
+        description="Publish identity world->map only for explicitly aligned sites")
     world_to_map_tf = Node(
         package="tf2_ros",
         executable="static_transform_publisher",
         name="world_to_map",
         arguments=["0", "0", "0", "0", "0", "0", "world", "map"],
         output="screen",
+        parameters=[{"use_sim_time": use_sim_time}],
+        condition=IfCondition(LaunchConfiguration("publish_world_tf")),
     )
 
     
 
     ld = LaunchDescription()
     # 
-    ld.add_action(world_to_map_tf)
+    ld.add_action(declare_world_tf)
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_config_path_cmd)
     ld.add_action(declare_config_file_cmd)
@@ -190,6 +197,7 @@ def generate_launch_description():
     # ✅ 추가 액션들
     ld.add_action(declare_map_yaml)
     ld.add_action(declare_publish_2d_map)
+    ld.add_action(world_to_map_tf)
 
     # nodes
     ld.add_action(fast_lio_node)

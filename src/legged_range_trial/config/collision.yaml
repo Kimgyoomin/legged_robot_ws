@@ -1,0 +1,36 @@
+# Isolated range-trial geometry; original legged_bringup remains unchanged.
+collision_monitor:
+  ros__parameters:
+    base_frame_id: base_link
+    odom_frame_id: camera_init
+    cmd_vel_in_topic: /legged/cmd_raw
+    cmd_vel_out_topic: /legged/cmd_safe
+    transform_tolerance: 0.2
+    source_timeout: 0.4
+    # Collision points are already in the rigid body frame at acquisition time.
+    # Avoid requiring a not-yet-estimated current odometry pose. Keep the age limit.
+    # Optional final_guard checks the swept footprint; default Nav2 trial retains freshness checks only.
+    base_shift_correction: false
+    stop_pub_timeout: 0.5
+    polygons: [Stop]
+    Stop:
+      type: polygon
+      # Simulation trial: length 0.55 m (X), width 0.55 m (Y).
+      # Recorded mesh envelope: X [-0.215, 0.199], Y [-0.246, 0.246] m.
+      # Includes observed legs/camera; full gait and HW envelope remain unverified.
+      # Single geometry source for costmaps, Collision Monitor and final map guard.
+      points: [0.275, 0.275, 0.275, -0.275, -0.275, -0.275, -0.275, 0.275]
+      action_type: stop
+      max_points: 2
+      visualize: true
+      polygon_pub_topic: /legged/stop_zone
+      enabled: true
+    observation_sources: [lidar]
+    lidar:
+      type: pointcloud
+      topic: /legged/collision_points
+      # Heights are relative to base_link, unlike the map-frame costmap gates.
+      # Starter values: measure standing/gait floor Z before hardware operation.
+      min_height: -0.35
+      max_height: 1.5
+      enabled: true

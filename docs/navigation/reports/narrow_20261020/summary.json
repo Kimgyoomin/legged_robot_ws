@@ -1,0 +1,91 @@
+{
+  "transitions": [
+    {
+      "wall": 0.489,
+      "reason": "pass"
+    },
+    {
+      "wall": 0.589,
+      "reason": "obstacle_slowdown"
+    },
+    {
+      "wall": 1.889,
+      "reason": "predicted_costmap_collision"
+    },
+    {
+      "wall": 4.389,
+      "reason": "costmap_collision"
+    },
+    {
+      "wall": 4.739,
+      "reason": "predicted_costmap_collision"
+    },
+    {
+      "wall": 5.089,
+      "reason": "costmap_collision"
+    },
+    {
+      "wall": 6.889,
+      "reason": "predicted_costmap_collision"
+    },
+    {
+      "wall": 7.389,
+      "reason": "obstacle_slowdown"
+    },
+    {
+      "wall": 8.489,
+      "reason": "pass"
+    },
+    {
+      "wall": 18.29,
+      "reason": "obstacle_slowdown"
+    },
+    {
+      "wall": 18.389,
+      "reason": "costmap_collision"
+    },
+    {
+      "wall": 18.939,
+      "reason": "unknown"
+    },
+    {
+      "wall": 19.188,
+      "reason": "safe_command_timeout"
+    }
+  ],
+  "status_message_counts": {
+    "pass": 20,
+    "obstacle_slowdown": 7,
+    "predicted_costmap_collision": 7,
+    "costmap_collision": 7,
+    "unknown": 1,
+    "safe_command_timeout": 2
+  },
+  "last_pose": [
+    7.888746979033747,
+    3.07643144118929,
+    -2.6316323549660834
+  ],
+  "failure_logs": [
+    [
+      "rubi_gazebo_legacy.legacy_policy_controller",
+      "NAV2_CMD_VEL_TIMEOUT=zero_selected timeout_sec=0.500"
+    ],
+    [
+      "planner_server",
+      "Height plugin failed to plan calculation to (1.30, -0.31): \"Height planner: grid start invalid\""
+    ],
+    [
+      "planner_server",
+      "[compute_path_to_pose] [ActionServer] Aborting handle."
+    ],
+    [
+      "bt_navigator",
+      "[navigate_to_pose] [ActionServer] Aborting handle."
+    ],
+    [
+      "bt_navigator",
+      "Goal failed"
+    ]
+  ]
+}

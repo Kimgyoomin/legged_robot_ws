@@ -2,6 +2,7 @@
 import math
 import time
 import json
+from copy import deepcopy
 import rclpy
 from rclpy.node import Node
 from rclpy.executors import ExternalShutdownException
@@ -43,6 +44,13 @@ class CommandWatchdog(Node):
         self.create_subscription(Costmap, '/global_costmap/costmap_raw', self.receive_costmap, 1)
         self.base_frame = self.declare_parameter('base_frame', 'base_link').value
         self.pose_timeout = self.declare_parameter('max_pose_age', .5).value
+        self.regulate_approach = self.declare_parameter('regulate_approach', False).value
+        self.scale_rise = self.declare_parameter('speed_scale_recovery_rate', 1.0).value
+        if not math.isfinite(self.scale_rise) or self.scale_rise <= 0:
+            raise ValueError('speed_scale_recovery_rate must be positive and finite')
+        self.command_scale = 1.0
+        self.scale_tick = time.monotonic()
+        self.output_command = Twist()
         self.guard = CostmapGuard(
             half_length=self.declare_parameter('footprint_half_length', .5).value,
             half_width=self.declare_parameter('footprint_half_width', .45).value,
@@ -85,6 +93,7 @@ class CommandWatchdog(Node):
         self.guard.update(msg)
 
     def check_motion(self):
+        self.output_command = Twist()
         if self.guard.grid is None:
             return 'invalid_costmap'
         try:
@@ -98,8 +107,28 @@ class CommandWatchdog(Node):
             pose = (p.x, p.y, planar_yaw(t.transform.rotation))
         except (TransformException, ValueError):
             return 'costmap_pose_unavailable'
-        return self.guard.check(pose, (self.command.linear.x, self.command.linear.y,
-                                      self.command.angular.z))
+        velocity = (self.command.linear.x, self.command.linear.y, self.command.angular.z)
+        if not self.regulate_approach:
+            reason = self.guard.check(pose, velocity)
+            if reason == 'pass': self.output_command = self.command
+            return reason
+        reason, scale = self.guard.regulate(pose, velocity)
+        if scale == 0.:
+            self.command_scale = 0.
+            return reason
+        # Recovery of speed is gradual. A reduced candidate is still rechecked:
+        # discrete swept-cell margins must not be assumed to be monotonic.
+        dt = min(.1, max(0., time.monotonic()-self.scale_tick))
+        scale = min(scale, self.command_scale + self.scale_rise*dt)
+        if self.guard.check(pose, tuple(scale*v for v in velocity)) != 'pass':
+            self.command_scale = 0.
+            return 'regulated_command_blocked'
+        self.command_scale = scale
+        self.output_command = deepcopy(self.command)
+        self.output_command.linear.x *= scale
+        self.output_command.linear.y *= scale
+        self.output_command.angular.z *= scale
+        return 'obstacle_slowdown' if scale < 1.-1.e-6 else reason
 
     def tick(self):
         steady = time.monotonic()
@@ -114,8 +143,10 @@ class CommandWatchdog(Node):
         elif not fresh(self.last_costmap,self.costmap_stamp,self.source_timeout): reason = 'costmap_timeout'
         elif steady-self.last >= self.timeout: reason = 'safe_command_timeout'
         else: reason = self.check_motion()
-        ready = reason == 'pass'
-        output = self.command if ready else Twist()
+        ready = reason in ('pass', 'obstacle_slowdown')
+        output = self.output_command if ready else Twist()
+        if not ready: self.command_scale = 0.
+        self.scale_tick = steady
         self.pub.publish(output)
         if ready and abs(output.linear.x) < 1.e-6 and abs(output.angular.z) < 1.e-6:
             raw_moving = abs(self.raw.linear.x) > 1.e-6 or abs(self.raw.angular.z) > 1.e-6
@@ -124,6 +155,8 @@ class CommandWatchdog(Node):
             self.status_pub.publish(String(data=json.dumps({
                 'gate': 'open' if ready else 'stopped', 'reason': reason,
                 'tracking': self.tracking_state, 'collision_input': self.collision_input_state,
+                'recovery_required': reason in ('costmap_collision', 'costmap_boundary'),
+                'speed_scale': self.command_scale if ready else 0.,
                 'vx': output.linear.x, 'wz': output.angular.z})))
             if reason != self.last_reason:
                 self.get_logger().info('Motion status: ' + reason)

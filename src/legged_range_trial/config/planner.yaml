@@ -1,0 +1,97 @@
+# Grid CoT height cost enabled; table inherited from RUBI experiments, not a generic robot calibration.
+use_sim_time: false
+planner_run_mode: grid_only
+detailed_timing: false
+input_costmap_topic: /global_costmap/costmap_raw
+input_heightmap_topic: /legged/height
+comparison_goal_topic: /goal_pose
+base_frame: base_link
+required_map_frame: map
+max_costmap_age_s: 1.0
+max_heightmap_age_s: 2.5
+max_input_stamp_skew_s: 2.0
+transform_timeout_s: 0.2
+map_resolution_m: 0.05
+lattice_tolerance_m: 0.01
+max_grid_cells: 5000000
+costmap_unknown_is_blocked: true
+# Planner-only center clearance from lethal/unknown cells (cell margin added).
+# 0 disables this extra mask, not Nav2 inflation or the final collision guard.
+# This is not a guarantee of space for the stop rectangle at every heading.
+# Trial: use Nav2 costs directly without a second obstacle expansion.
+# A* still rejects costs >=253; it does not validate oriented footprints.
+costmap_clearance_m: 0.0
+evaluation.edge_check_spacing_m: 0.025
+evaluation.max_crossable_height_jump_m: 0.1
+evaluation.height_noise_floor_m: 0.01
+evaluation.height_cost_exponent: 2.0
+evaluation.distance_weight: 1.0
+evaluation.height_cost_weight: 1.0
+evaluation.inflation_cost_weight: 5.0
+evaluation.inflation_cost_exponent: 1.0
+evaluation.sobel_hard_reject_enabled: true
+evaluation.sobel_equivalent_step_height_m: 0.1
+evaluation.sobel_cost_weight: 0.0
+evaluation.sobel_cost_exponent: 2.0
+evaluation.local_relief_hard_reject_enabled: true
+evaluation.local_relief_threshold_m: 0.1
+evaluation.local_relief_first_window_radius_m: 0.1
+evaluation.local_relief_second_window_radius_m: 0.1
+evaluation.local_relief_lower_quantile: 0.1
+evaluation.local_relief_upper_quantile: 0.9
+evaluation.local_relief_min_observed_ratio: 0.7
+evaluation.local_relief_critical_cell_count: 3
+node_evidence_radius_m: 0.1
+node_min_observed_cells: 3
+node_max_nearest_evidence_distance_m: 0.075
+node_height_outlier_threshold_m: 0.08
+node_max_height_outlier_ratio: 0.3
+edge_height_query_radius_m: 0.075
+edge_max_height_evidence_gap_m: 0.1
+grid_allow_diagonal: true
+grid_max_expanded_states: 500000
+grid_max_planning_time_ms: 500
+grid_visualization_max_cells: 10000
+grid_visualization_stride: 1
+evaluation.grid_sobel_hard_reject_enabled: false
+evaluation.grid_sobel_kernel_size: 5
+evaluation.grid_sobel_gradient_cost_weight: 0.0
+evaluation.grid_terrain_clearance_enabled: true
+evaluation.grid_terrain_clearance_distance_m: 0.2
+tracking_refiner.enabled: false
+tracking_refiner.method: trg_three_point_mean_validated
+tracking_refiner.smoothing_passes: 1
+tracking_refiner.resample_spacing_m: 0.1
+tracking_refiner.max_cost_increase_ratio: 0.05
+replanning.enabled: true
+replanning.check_period_s: 0.1
+replanning.min_replan_interval_s: 0.5
+replanning.soft_reoptimize_min_interval_s: 1.5
+replanning.on_heightmap_change: true
+replanning.on_costmap_change: true
+replanning.stop_before_hard_replan: true
+replanning.min_cost_improvement_ratio: 0.05
+replanning.goal_tolerance_m: 0.2
+replanning.retry_failed_plan: true
+replanning.failed_retry_interval_s: 1.0
+# Must not exceed the selected custom tracker's cross-track stop distance.
+replanning.max_tracking_error_m: 0.4
+replanning.max_pose_age_s: 0.5
+static_heightmap: true
+evaluation.grid_cot_height_cost_enabled: true
+evaluation.grid_cot_step_heights_m:
+- 0.0
+- 0.05
+- 0.07
+- 0.09
+- 0.11
+- 0.13
+- 0.15
+evaluation.grid_cot_equivalent_penalties_m:
+- 0.0
+- 0.361
+- 0.716
+- 1.083
+- 1.272
+- 1.604
+- 1.634

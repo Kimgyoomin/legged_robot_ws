@@ -1,0 +1,68 @@
+{
+  "snapshots": [
+    {
+      "index": 0,
+      "stamp": 336.902,
+      "position": [
+        7.755670939557347,
+        3.4746406683437008
+      ],
+      "yaw": 0.8697030309240171,
+      "extra_lethal_cells": 87,
+      "components": [
+        {
+          "cells": 72,
+          "xmin": 8.800000170618295,
+          "xmax": 9.400000179558992,
+          "ymin": 3.350000242143869,
+          "ymax": 4.450000258535146
+        },
+        {
+          "cells": 8,
+          "xmin": 9.550000181794166,
+          "xmax": 9.70000018402934,
+          "ymin": 4.450000258535146,
+          "ymax": 4.6000002607703205
+        },
+        {
+          "cells": 3,
+          "xmin": 9.650000183284282,
+          "xmax": 9.750000184774398,
+          "ymin": 4.5500002600252625,
+          "ymax": 4.650000261515379
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "stamp": 342.102,
+      "position": [
+        7.824936726657761,
+        3.552226713048407
+      ],
+      "yaw": 1.0974858303160058,
+      "extra_lethal_cells": 82,
+      "components": [
+        {
+          "cells": 68,
+          "xmin": 8.850000171363353,
+          "xmax": 9.750000184774398,
+          "ymin": 3.400000242888927,
+          "ymax": 4.650000261515379
+        }
+      ]
+    }
+  ],
+  "motion_status": {
+    "collision_cloud_timeout": 5,
+    "costmap_timeout": 1,
+    "safe_command_timeout": 23
+  },
+  "nonzero_cmd_count": 0,
+  "goal": [
+    6.19,
+    -9.75
+  ],
+  "goal_source": "User planner log rounded to 2 decimal places",
+  "static_reconstruction": "OccupancyGrid + matching global inflation (radius .7, inscribed .325, scaling 1.0); diagnostic counterfactual"
+}

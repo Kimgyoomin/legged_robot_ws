@@ -1,0 +1,16 @@
+{
+  "decision": "suitable_for_next_low_speed_dwb_comparison",
+  "live_dwb_validated": false,
+  "record": "exercise_samples.json",
+  "exercise_result": "completed",
+  "aligned_samples": 511,
+  "rmse_vx_mps": 0.03678898587546826,
+  "rmse_yaw_radps": 0.03166567862383194,
+  "limits": [
+    "Independent FAST-LIO probe; production node restart and DWB driving still required.",
+    "Low-speed commands only: +0.25 / -0.15 m/s and +/-0.4 rad/s.",
+    "No 0.7 m/s corner, narrow-passage completion or Jetson runtime validation.",
+    "Roll/pitch angular accuracy is not accepted by this planar-control review.",
+    "Gazebo Livox plugin crashed after the completed measurement."
+  ]
+}

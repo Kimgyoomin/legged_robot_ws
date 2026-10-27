@@ -1,4 +1,8 @@
-# Both costmaps use map Z. Default floor is z=0; tune gates for the surveyed site.
+# obstacle_cloud selects body-relative height first. Nav2 tests Z after
+# transforming to map: use a broad +/-10 km pass band at BOTH layer/source
+# levels so an arbitrary map altitude does not remove valid robot obstacles.
+# navigate.launch.py replaces the radius below with collision.yaml Stop.points
+# and zero extra padding. The radius is only a standalone costmap fallback.
 local_costmap:
   local_costmap:
     ros__parameters:
@@ -28,8 +32,8 @@ local_costmap:
       obstacle_layer:
         plugin: nav2_costmap_2d::ObstacleLayer
         enabled: true
-        min_obstacle_height: 0.2
-        max_obstacle_height: 2.0
+        min_obstacle_height: -10000.0
+        max_obstacle_height: 10000.0
         footprint_clearing_enabled: true
         combination_method: 1
         observation_sources: livox_cloud
@@ -38,12 +42,13 @@ local_costmap:
           data_type: PointCloud2
           marking: true
           clearing: true
-          obstacle_min_range: 0.6
+          # Directional 0.3/0.6 m rejection is already applied by obstacle_cloud.
+          obstacle_min_range: 0.3
           obstacle_max_range: 4.0
           raytrace_min_range: 0.0
           raytrace_max_range: 4.0
-          min_obstacle_height: 0.2
-          max_obstacle_height: 2.0
+          min_obstacle_height: -10000.0
+          max_obstacle_height: 10000.0
           observation_persistence: 0.0
           expected_update_rate: 0.4
       inflation_layer:
@@ -79,8 +84,8 @@ global_costmap:
       obstacle_layer:
         plugin: nav2_costmap_2d::ObstacleLayer
         enabled: true
-        min_obstacle_height: 0.2
-        max_obstacle_height: 2.0
+        min_obstacle_height: -10000.0
+        max_obstacle_height: 10000.0
         footprint_clearing_enabled: true
         combination_method: 1
         observation_sources: livox_cloud
@@ -89,12 +94,13 @@ global_costmap:
           data_type: PointCloud2
           marking: true
           clearing: true
-          obstacle_min_range: 0.6
+          # Keep consistent with obstacle.yaml front_min_range.
+          obstacle_min_range: 0.3
           obstacle_max_range: 4.0
           raytrace_min_range: 0.0
           raytrace_max_range: 5.0
-          min_obstacle_height: 0.2
-          max_obstacle_height: 2.0
+          min_obstacle_height: -10000.0
+          max_obstacle_height: 10000.0
           observation_persistence: 0.0
           expected_update_rate: 0.4
       inflation_layer:

@@ -1,0 +1,68 @@
+verified: true
+method: 'Simulation map-set screening using the existing 2026-10-26 v3 review: measured
+  height acquired against the listed localization PCD, static-world landmarks and
+  relative step heights checked, archived reference costmap used for offline planning.
+  Native map-frame snapshot preserved byte-for-byte; no new registration or Z correction
+  applied.'
+scope: simulation_map_bundle_and_pilot_only
+site_id: cost-wall-lower10-v3
+snapshot_source: /home/kim/legged_robot_ws/maps/cost_wall_lower10_v3_raw/run_1793023986818997341/map.rghm
+snapshot_sha256: 3cb78ea0148646bb6c579c7c7d7061e424a3612d55c3958c32ab77a892304876
+world_file: /home/kim/cot_experiment/navigation_cost_comparison/worlds_v3_lower10/rubi_cost_comparison_lower10.world
+world_sha256: 328bfebd8900f5a6cf456671435aa74ed8e3a1c50c238cf0bf2afc534c49fc20
+runtime_world_sha256: 1575fbcc56912b57d866925ceb176dfc73cc59a46ca4ae773c97a8b5233d4f14
+T_map_from_height:
+- - 1.0
+  - 0.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 1.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 1.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+transform_note: Identity describes already-map-frame height data, not Gazebo world-to-map
+  alignment.
+localization_pcd_sha256: 3a8d98ceaffcb57017ce5ebe974e95ec5f61c1f21c4b4e731017d9fb4249ef3f
+observed_heldout_xy_residuals_m:
+- 0.07605522294683303
+- 0.08857877685431599
+relative_step_heights_m:
+  cost_step_A_upper_h09: 0.09008413019354805
+  cost_step_B_east_upper_h07: 0.0733305276656196
+  cost_step_C_east_lower_h09: 0.08858415410408926
+  cost_step_D_lower_h10: 0.09881687788123963
+interior_floor_coverage:
+  expected_floor_cells: 34702
+  observed_floor_cells: 34702
+  floor_coverage_fraction: 1.0
+offline_planner_checks:
+  passed: 8
+  total: 8
+  costmap_source: Archived real Nav2 static/inflation costmap from previous run; not
+    a new capture
+  configuration: Historical experimental grid planner, not current legged_range_trial
+    settings
+  evidence: review/verification.json
+live_navigation_validated: false
+hardware_deployment_validated: false
+limitations:
+- Approximate static-landmark overlay has held-out residuals about 7.6 and 8.9 cm;
+  exact map/world alignment and current live localization are not certified.
+- Ground nonplanarity remains. No absolute-Z calibration, flattening or height correction
+  is applied.
+- PCD and occupancy are reused from cost_wall_main_v2 because reference walls/columns
+  are unchanged; new movable cubes are handled by live obstacle observations.
+- Historical offline checks do not certify current DWB tracking, planner clearance
+  settings or robot passage.
+reviewed_at: '2026-10-26'
+packaged_at: '2026-10-27'
+evidence: review/
+original_evidence: /home/kim/Documents/ChatGPT/RCLab RUBI Height Map Based Navigation/output/lower10_v3_map_review_20261026

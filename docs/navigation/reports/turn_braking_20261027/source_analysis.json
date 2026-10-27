@@ -1,0 +1,20 @@
+{
+  "source_intervals": [
+    {
+      "start": 1.6602802129928023,
+      "end": 12.652136091026478,
+      "source": "NAV2"
+    },
+    {
+      "start": 12.6541083289776,
+      "end": 15.967764626955613,
+      "source": "JOYSTICK"
+    },
+    {
+      "start": 15.969755745027214,
+      "end": 20.01483078999445,
+      "source": "NAV2"
+    }
+  ],
+  "nav2_high_forward_high_turn": []
+}

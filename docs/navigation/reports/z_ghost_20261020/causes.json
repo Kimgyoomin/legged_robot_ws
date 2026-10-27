@@ -1,0 +1,10 @@
+{
+  "suspect_total": 424,
+  "floor": 53,
+  "step_15cm": 368,
+  "other": 3,
+  "final_cells": 68,
+  "final_cells_within_5cm_suspect": 67,
+  "min_distance": 0.0013319945681327867,
+  "max_distance": 1.3311298524754496
+}

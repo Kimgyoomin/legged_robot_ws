@@ -1,0 +1,13 @@
+{
+  "sim_start": 290.202,
+  "sim_end": 296.60200000000003,
+  "samples": 64,
+  "policy_sources": {
+    "NAV2": 64
+  },
+  "first_conservative_overlap": 295.702,
+  "warnings": {
+    "controller_server: No valid trajectories out of 272! ": 3
+  },
+  "note": "Costmap overlap uses a conservative cell/rectangle check, not direct DWB critic instrumentation. Feedback is received data with ~0.1s age. TF poses are ~0.2s old; not exact contact timing."
+}

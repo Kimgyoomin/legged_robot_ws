@@ -1,0 +1,62 @@
+
+/home/kim/rubi_ws/build/ros2_livox_simulation/libros2_livox.so:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000040c70 <gazebo::LivoxPointsPlugin::InitializeRays(std::vector<std::pair<int, gazebo::AviaRotateInfo>, std::allocator<std::pair<int, gazebo::AviaRotateInfo> > >&, boost::shared_ptr<gazebo::physics::LivoxOdeMultiRayShape>&)+0xb0>:
+   40c70:	b0 ff                	mov    $0xff,%al
+   40c72:	ff 49 8b             	decl   -0x75(%rcx)
+   40c75:	97                   	xchg   %eax,%edi
+   40c76:	b0 01                	mov    $0x1,%al
+   40c78:	00 00                	add    %al,(%rax)
+   40c7a:	48 63 c2             	movslq %edx,%rax
+   40c7d:	48 39 c5             	cmp    %rax,%rbp
+   40c80:	0f 8e 36 02 00 00    	jle    40ebc <gazebo::LivoxPointsPlugin::InitializeRays(std::vector<std::pair<int, gazebo::AviaRotateInfo>, std::allocator<std::pair<int, gazebo::AviaRotateInfo> > >&, boost::shared_ptr<gazebo::physics::LivoxOdeMultiRayShape>&)+0x2fc>
+   40c86:	48 8d 7c 24 50       	lea    0x50(%rsp),%rdi
+   40c8b:	41 89 d6             	mov    %edx,%r14d
+   40c8e:	45 31 ed             	xor    %r13d,%r13d
+   40c91:	48 89 7c 24 18       	mov    %rdi,0x18(%rsp)
+   40c96:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   40c9d:	00 00 00 
+   40ca0:	66 0f 10 ac 24 a8 00 	movupd 0xa8(%rsp),%xmm5
+   40ca7:	00 00 
+   40ca9:	48 99                	cqto   
+   40cab:	f2 0f 10 a4 24 b0 00 	movsd  0xb0(%rsp),%xmm4
+   40cb2:	00 00 
+   40cb4:	49 f7 bf b8 01 00 00 	idivq  0x1b8(%r15)
+   40cbb:	66 0f 28 8c 24 a0 00 	movapd 0xa0(%rsp),%xmm1
+   40cc2:	00 00 
+   40cc4:	f2 0f 10 b4 24 98 00 	movsd  0x98(%rsp),%xmm6
+   40ccb:	00 00 
+   40ccd:	66 0f 16 a4 24 a0 00 	movhpd 0xa0(%rsp),%xmm4
+   40cd4:	00 00 
+   40cd6:	f2 0f 58 f6          	addsd  %xmm6,%xmm6
+   40cda:	48 8d 04 d5 00 00 00 	lea    0x0(,%rdx,8),%rax
+   40ce1:	00 
+   40ce2:	48 29 d0             	sub    %rdx,%rax
+   40ce5:	49 8b 97 20 01 00 00 	mov    0x120(%r15),%rdx
+   40cec:	48 8d 0c c2          	lea    (%rdx,%rax,8),%rcx
+   40cf0:	66 0f 10 79 20       	movupd 0x20(%rcx),%xmm7
+   40cf5:	66 0f 10 59 28       	movupd 0x28(%rcx),%xmm3
+   40cfa:	48 89 4c 24 08       	mov    %rcx,0x8(%rsp)
+   40cff:	66 0f 59 9c 24 a0 00 	mulpd  0xa0(%rsp),%xmm3
+   40d06:	00 00 
+   40d08:	f2 0f 10 51 30       	movsd  0x30(%rcx),%xmm2
+   40d0d:	66 0f 28 c7          	movapd %xmm7,%xmm0
+   40d11:	66 0f 59 c5          	mulpd  %xmm5,%xmm0
+   40d15:	66 0f 16 51 20       	movhpd 0x20(%rcx),%xmm2
+   40d1a:	66 0f 59 ca          	mulpd  %xmm2,%xmm1
+   40d1e:	66 0f 5c d8          	subpd  %xmm0,%xmm3
+   40d22:	66 0f 28 c4          	movapd %xmm4,%xmm0
+   40d26:	66 0f 59 c7          	mulpd  %xmm7,%xmm0
+   40d2a:	66 0f 5c c1          	subpd  %xmm1,%xmm0
+   40d2e:	66 0f 28 ca          	movapd %xmm2,%xmm1
+   40d32:	66 0f 10 51 28       	movupd 0x28(%rcx),%xmm2
+   40d37:	66 0f 59 cd          	mulpd  %xmm5,%xmm1
+   40d3b:	66 0f 59 d4          	mulpd  %xmm4,%xmm2
+   40d3f:	66 0f 59 e0          	mulpd  %xmm0,%xmm4
+   40d43:	66 0f 5c ca          	subpd  %xmm2,%xmm1
+   40d47:	66 0f 28 d6          	movapd %xmm6,%xmm2
+   40d4b:	66 0f 14 d2          	unpcklpd %xmm2,%xmm2
+   40d4f:	66                   	data16

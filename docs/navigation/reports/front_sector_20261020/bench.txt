@@ -1,0 +1,3 @@
+uniform points=800000 median_us=872.9 p95_us=961.33 per_40000_us=43.645
+sector points=800000 median_us=880.19 p95_us=984.4 per_40000_us=44.0095
+checksum 163100760

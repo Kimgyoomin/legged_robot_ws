@@ -33,12 +33,12 @@ controller_server:
       trajectory_generator_name: dwb_plugins::StandardTrajectoryGenerator
       debug_trajectory_details: false
       min_vel_x: 0.0
-      max_vel_x: 0.3
+      max_vel_x: 0.6
       min_vel_y: 0.0
       max_vel_y: 0.0
       max_vel_theta: 0.8
       min_speed_xy: 0.0
-      max_speed_xy: 0.3
+      max_speed_xy: 0.6
       min_speed_theta: 0.0
       acc_lim_x: 0.5
       acc_lim_y: 0.0
@@ -59,12 +59,13 @@ controller_server:
       critics:
       - RotateToGoal
       - Oscillation
-      - BaseObstacle
+      # Use the polygon supplied from collision.yaml, not a radius-only check.
+      - ObstacleFootprint
       - GoalAlign
       - PathAlign
       - PathDist
       - GoalDist
-      BaseObstacle.scale: 0.02
+      ObstacleFootprint.scale: 0.02
       PathAlign.scale: 32.0
       PathAlign.forward_point_distance: 0.1
       GoalAlign.scale: 24.0

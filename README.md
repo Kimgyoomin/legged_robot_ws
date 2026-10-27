@@ -1,5 +1,9 @@
 # legged_robot_ws
 
+## 2026-10-27 Navigation 인계
+
+현재 비대칭 ±60° 필터, Nav2 RPP/DWB, 높이 기반 전역 계획, FAST-LIO 실제 속도 피드백은 **[Navigation 인계 문서](docs/navigation/README.md)**에 모았습니다. 현재 실행은 `legged_range_trial`을 기준으로 하며, 아래의 기존 bringup 설명과 값이 다를 수 있습니다. 실행 명령·현재 설정·검증 보고서·남은 과제를 함께 정리했습니다.
+
 RUBI 이족보행 로봇용 **LiDAR → localization → height mapping → 전역 경로 → 주행** ROS 2 workspace입니다. 기존 소스를 복사해 구성했으며, 원본 `ros2_ws_nav`, `rubi_mapping_ws`는 변경하지 않았습니다.
 
 **현재 상태:** PC 빌드 및 합성 ROS 통합 시험 완료. Jetson Orin NX 16 GB / 25 W와 MID-360S 실물 검증은 남아 있습니다. `maps/demo`는 합성 시험 지도입니다.

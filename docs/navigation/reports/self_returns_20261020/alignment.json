@@ -1,0 +1,314 @@
+{
+  "summary": {
+    "samples": 39,
+    "xy_drift_max": 0.059807900023252605,
+    "angle_drift_max_deg": 0.9254807458369654,
+    "first": [
+      {
+        "stamp": 882.904,
+        "xy_drift": 1.7763568394002505e-15,
+        "angle_drift_deg": 1.3870202718680616e-15,
+        "static_distance_p50": 0.019933468663539834,
+        "static_distance_p95": 0.02984689498564289
+      },
+      {
+        "stamp": 883.304,
+        "xy_drift": 0.01423066262147997,
+        "angle_drift_deg": 0.13062181899387024,
+        "static_distance_p50": 0.020058365555610323,
+        "static_distance_p95": 0.0298305711135638
+      }
+    ],
+    "last": [
+      {
+        "stamp": 899.104,
+        "xy_drift": 0.035860686422458536,
+        "angle_drift_deg": 0.7448152109716716,
+        "static_distance_p50": 0.019857757452137074,
+        "static_distance_p95": 0.029803202342398857
+      },
+      {
+        "stamp": 899.504,
+        "xy_drift": 0.03567407258133687,
+        "angle_drift_deg": 0.6263781287337777,
+        "static_distance_p50": 0.019930915006021167,
+        "static_distance_p95": 0.029807696902420112
+      }
+    ]
+  },
+  "rows": [
+    {
+      "stamp": 882.904,
+      "xy_drift": 1.7763568394002505e-15,
+      "angle_drift_deg": 1.3870202718680616e-15,
+      "static_distance_p50": 0.019933468663539834,
+      "static_distance_p95": 0.02984689498564289
+    },
+    {
+      "stamp": 883.304,
+      "xy_drift": 0.01423066262147997,
+      "angle_drift_deg": 0.13062181899387024,
+      "static_distance_p50": 0.020058365555610323,
+      "static_distance_p95": 0.0298305711135638
+    },
+    {
+      "stamp": 883.704,
+      "xy_drift": 0.008919095713381375,
+      "angle_drift_deg": 0.23703704678542156,
+      "static_distance_p50": 0.02001771320262912,
+      "static_distance_p95": 0.029996485248502305
+    },
+    {
+      "stamp": 884.104,
+      "xy_drift": 0.026172446920742595,
+      "angle_drift_deg": 0.1976669676752888,
+      "static_distance_p50": 0.01999613386236572,
+      "static_distance_p95": 0.029788287310537506
+    },
+    {
+      "stamp": 884.604,
+      "xy_drift": 0.021364059529393985,
+      "angle_drift_deg": 0.3362817036479308,
+      "static_distance_p50": 0.019912993057196727,
+      "static_distance_p95": 0.0299474489180076
+    },
+    {
+      "stamp": 885.004,
+      "xy_drift": 0.059807900023252605,
+      "angle_drift_deg": 0.386501766437332,
+      "static_distance_p50": 0.02016778765888178,
+      "static_distance_p95": 0.029729068702009018
+    },
+    {
+      "stamp": 885.504,
+      "xy_drift": 0.05700042246425575,
+      "angle_drift_deg": 0.47778025207332625,
+      "static_distance_p50": 0.019798763969216954,
+      "static_distance_p95": 0.029949185655848823
+    },
+    {
+      "stamp": 885.904,
+      "xy_drift": 0.03023144752321969,
+      "angle_drift_deg": 0.27013380100181816,
+      "static_distance_p50": 0.02018162933279136,
+      "static_distance_p95": 0.03008548884186789
+    },
+    {
+      "stamp": 886.304,
+      "xy_drift": 0.022039059926931653,
+      "angle_drift_deg": 0.30203734265357285,
+      "static_distance_p50": 0.01994959111258588,
+      "static_distance_p95": 0.03023700365981537
+    },
+    {
+      "stamp": 886.804,
+      "xy_drift": 0.022982334736248833,
+      "angle_drift_deg": 0.2931010364909305,
+      "static_distance_p50": 0.020024290331311527,
+      "static_distance_p95": 0.030013818717607332
+    },
+    {
+      "stamp": 887.204,
+      "xy_drift": 0.03858963489827492,
+      "angle_drift_deg": 0.4006938005223007,
+      "static_distance_p50": 0.02005647733541429,
+      "static_distance_p95": 0.029286879780077664
+    },
+    {
+      "stamp": 887.702,
+      "xy_drift": 0.04984486915773762,
+      "angle_drift_deg": 0.29099381968091337,
+      "static_distance_p50": 0.019556848492567645,
+      "static_distance_p95": 0.030079696050399847
+    },
+    {
+      "stamp": 888.104,
+      "xy_drift": 0.04511131360089457,
+      "angle_drift_deg": 0.520697551204064,
+      "static_distance_p50": 0.019570850346363737,
+      "static_distance_p95": 0.030217389141124217
+    },
+    {
+      "stamp": 888.504,
+      "xy_drift": 0.04470788125836084,
+      "angle_drift_deg": 0.727776056811766,
+      "static_distance_p50": 0.019688619514875196,
+      "static_distance_p95": 0.02974358776290881
+    },
+    {
+      "stamp": 889.004,
+      "xy_drift": 0.033401651910125264,
+      "angle_drift_deg": 0.5379093062308044,
+      "static_distance_p50": 0.019829151995308228,
+      "static_distance_p95": 0.029692171548285493
+    },
+    {
+      "stamp": 889.402,
+      "xy_drift": 0.03787727991498371,
+      "angle_drift_deg": 0.5122532074828475,
+      "static_distance_p50": 0.019990386884020744,
+      "static_distance_p95": 0.029966706753709594
+    },
+    {
+      "stamp": 889.904,
+      "xy_drift": 0.01574830156019272,
+      "angle_drift_deg": 0.4939781909330819,
+      "static_distance_p50": 0.019971064364895444,
+      "static_distance_p95": 0.03002352800505457
+    },
+    {
+      "stamp": 890.304,
+      "xy_drift": 0.010272521103007071,
+      "angle_drift_deg": 0.4916165754650824,
+      "static_distance_p50": 0.020052074133400547,
+      "static_distance_p95": 0.029953624342847728
+    },
+    {
+      "stamp": 890.704,
+      "xy_drift": 0.011989777846437398,
+      "angle_drift_deg": 0.25060806723900964,
+      "static_distance_p50": 0.020060083194966803,
+      "static_distance_p95": 0.02995440542489986
+    },
+    {
+      "stamp": 891.204,
+      "xy_drift": 0.013573808755508869,
+      "angle_drift_deg": 0.2715095545861124,
+      "static_distance_p50": 0.020211229761982488,
+      "static_distance_p95": 0.02991902709426409
+    },
+    {
+      "stamp": 891.604,
+      "xy_drift": 0.006209366632402892,
+      "angle_drift_deg": 0.37038819534857403,
+      "static_distance_p50": 0.02001328018522883,
+      "static_distance_p95": 0.02988402642631753
+    },
+    {
+      "stamp": 892.104,
+      "xy_drift": 0.013519482825731512,
+      "angle_drift_deg": 0.2846910839366961,
+      "static_distance_p50": 0.019996604152317743,
+      "static_distance_p95": 0.029888957837257004
+    },
+    {
+      "stamp": 892.504,
+      "xy_drift": 0.015919323990536402,
+      "angle_drift_deg": 0.23372444425659822,
+      "static_distance_p50": 0.02023713424795797,
+      "static_distance_p95": 0.029686676114112322
+    },
+    {
+      "stamp": 892.904,
+      "xy_drift": 0.023326492934124202,
+      "angle_drift_deg": 0.9254807458369654,
+      "static_distance_p50": 0.02007575092104475,
+      "static_distance_p95": 0.02988144457745226
+    },
+    {
+      "stamp": 893.404,
+      "xy_drift": 0.016550788745908384,
+      "angle_drift_deg": 0.7915982941980741,
+      "static_distance_p50": 0.020310852870232373,
+      "static_distance_p95": 0.030093956052838725
+    },
+    {
+      "stamp": 893.804,
+      "xy_drift": 0.026005395474898205,
+      "angle_drift_deg": 0.7714086746206812,
+      "static_distance_p50": 0.01990935964567976,
+      "static_distance_p95": 0.030101724724612096
+    },
+    {
+      "stamp": 894.204,
+      "xy_drift": 0.053506212633993994,
+      "angle_drift_deg": 0.5678316056240256,
+      "static_distance_p50": 0.020101253872981624,
+      "static_distance_p95": 0.029719328419167707
+    },
+    {
+      "stamp": 894.704,
+      "xy_drift": 0.052066679764410866,
+      "angle_drift_deg": 0.6385471694338591,
+      "static_distance_p50": 0.019895218718302434,
+      "static_distance_p95": 0.029820152925191138
+    },
+    {
+      "stamp": 895.104,
+      "xy_drift": 0.03803225601159449,
+      "angle_drift_deg": 0.6609373043044082,
+      "static_distance_p50": 0.019936031063412702,
+      "static_distance_p95": 0.029866285701381133
+    },
+    {
+      "stamp": 895.604,
+      "xy_drift": 0.04132283504818089,
+      "angle_drift_deg": 0.697912352185361,
+      "static_distance_p50": 0.01974453165938563,
+      "static_distance_p95": 0.03017046180143846
+    },
+    {
+      "stamp": 896.004,
+      "xy_drift": 0.043171869929439714,
+      "angle_drift_deg": 0.5460005494692127,
+      "static_distance_p50": 0.019872217648061286,
+      "static_distance_p95": 0.029690140462693266
+    },
+    {
+      "stamp": 896.404,
+      "xy_drift": 0.04483742944129476,
+      "angle_drift_deg": 0.46759933904575135,
+      "static_distance_p50": 0.02010378433697886,
+      "static_distance_p95": 0.02981058737970962
+    },
+    {
+      "stamp": 896.904,
+      "xy_drift": 0.043638588036277896,
+      "angle_drift_deg": 0.7098546842800493,
+      "static_distance_p50": 0.01987341831046622,
+      "static_distance_p95": 0.029905438959421972
+    },
+    {
+      "stamp": 897.304,
+      "xy_drift": 0.03890477494866068,
+      "angle_drift_deg": 0.46444209991514457,
+      "static_distance_p50": 0.01973299737175316,
+      "static_distance_p95": 0.030027092626752808
+    },
+    {
+      "stamp": 897.804,
+      "xy_drift": 0.03514075003769074,
+      "angle_drift_deg": 0.5416222771478504,
+      "static_distance_p50": 0.019975629916941524,
+      "static_distance_p95": 0.030058352717350596
+    },
+    {
+      "stamp": 898.204,
+      "xy_drift": 0.03267444422258772,
+      "angle_drift_deg": 0.6309735068977074,
+      "static_distance_p50": 0.019943697624569764,
+      "static_distance_p95": 0.03005583351102377
+    },
+    {
+      "stamp": 898.604,
+      "xy_drift": 0.041537755073516994,
+      "angle_drift_deg": 0.4491917812300314,
+      "static_distance_p50": 0.02002999358807045,
+      "static_distance_p95": 0.029805364603663728
+    },
+    {
+      "stamp": 899.104,
+      "xy_drift": 0.035860686422458536,
+      "angle_drift_deg": 0.7448152109716716,
+      "static_distance_p50": 0.019857757452137074,
+      "static_distance_p95": 0.029803202342398857
+    },
+    {
+      "stamp": 899.504,
+      "xy_drift": 0.03567407258133687,
+      "angle_drift_deg": 0.6263781287337777,
+      "static_distance_p50": 0.019930915006021167,
+      "static_distance_p95": 0.029807696902420112
+    }
+  ]
+}

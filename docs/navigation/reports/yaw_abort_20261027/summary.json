@@ -1,0 +1,504 @@
+{
+  "duration_wall": 20,
+  "odom_count": 172,
+  "zero_twist_count": 172,
+  "raw_safe_pairs": 87,
+  "raw_safe_max_difference": 0.0,
+  "raw_yaw_max": 0.8,
+  "recorded_gt_displacement": 3.909484330198878,
+  "status_counts": {
+    "safe_command_timeout": 21,
+    "pass": 17,
+    "unknown": 1
+  },
+  "failure_wall": 18.469250492053106,
+  "nearest_snapshot": {
+    "index": 23,
+    "wall": 18.3627248640405,
+    "stamp": 3630.302,
+    "pose": [
+      14.689604352674813,
+      -4.378471848544491,
+      -2.443942964276649
+    ],
+    "cell_cost": 0,
+    "nearest_obstacle_cell": [
+      14.87500026114285,
+      -4.824999879673124
+    ],
+    "cell_distance": 0.4924428974277761,
+    "planner_extra_mask": true,
+    "rectangle_overlap_check": "pass"
+  },
+  "local_snapshot_wall": 18.31614452006761,
+  "local_rectangle_rotation_checks": {
+    "-90": "pass",
+    "-60": "pass",
+    "-30": "pass",
+    "0": "pass",
+    "30": "pass",
+    "60": "pass",
+    "90": "pass"
+  },
+  "logs": [
+    {
+      "wall": 18.469250492053106,
+      "name": "planner_server",
+      "text": "Height plugin failed to plan calculation to (6.83, -9.54): \"Height planner: grid start invalid\""
+    },
+    {
+      "wall": 18.46945484005846,
+      "name": "planner_server",
+      "text": "[compute_path_to_pose] [ActionServer] Aborting handle."
+    },
+    {
+      "wall": 18.508144663996063,
+      "name": "bt_navigator_navigate_to_pose_rclcpp_node",
+      "text": "Failed to get result for follow_path in node halt!"
+    },
+    {
+      "wall": 19.541014311020263,
+      "name": "planner_server",
+      "text": "Height plugin failed to plan calculation to (6.83, -9.54): \"Height planner: grid start invalid\""
+    },
+    {
+      "wall": 19.54121490905527,
+      "name": "planner_server",
+      "text": "[compute_path_to_pose] [ActionServer] Aborting handle."
+    }
+  ],
+  "snapshots": [
+    {
+      "index": 1,
+      "wall": 1.5629186420701444,
+      "stamp": 3615.902,
+      "pose": [
+        16.441399040495014,
+        -1.2782763287144823,
+        -0.15181200925034755
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.850000012665987,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 2,
+      "wall": 2.3630018470576033,
+      "stamp": 3616.602,
+      "pose": [
+        16.44919244577435,
+        -1.3070210741063786,
+        -0.13485216297437336
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.8276472801952478,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 3,
+      "wall": 3.162735644960776,
+      "stamp": 3617.302,
+      "pose": [
+        16.443361401233233,
+        -1.295355673825612,
+        -0.08718202080112547
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.850000012665987,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 4,
+      "wall": 3.962737382040359,
+      "stamp": 3617.902,
+      "pose": [
+        16.465709582195746,
+        -1.3325720356968804,
+        -0.0974985141553321
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.8732124728405286,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 5,
+      "wall": 4.562945918063633,
+      "stamp": 3618.502,
+      "pose": [
+        16.471819082649457,
+        -1.3307148667623632,
+        -0.027604113637798335
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.8732124728405286,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 6,
+      "wall": 5.36322102707345,
+      "stamp": 3619.202,
+      "pose": [
+        16.465655184672904,
+        -1.344306404920951,
+        -0.03160973457835324
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.8732124728405286,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 7,
+      "wall": 6.162584034027532,
+      "stamp": 3619.802,
+      "pose": [
+        16.46452895630168,
+        -1.3564137652841644,
+        0.015858894407774188
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.850000012665987,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 8,
+      "wall": 6.962643348029815,
+      "stamp": 3620.502,
+      "pose": [
+        16.473882207106165,
+        -1.3195489077060651,
+        0.05281783375518449
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.675000273063779,
+        -1.674999832734466
+      ],
+      "cell_distance": 0.8732124728405286,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 9,
+      "wall": 7.762750221998431,
+      "stamp": 3621.202,
+      "pose": [
+        16.490087510038837,
+        -1.3643755864849636,
+        0.08100067909292753
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.850000012665987,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 10,
+      "wall": 8.56265799200628,
+      "stamp": 3621.902,
+      "pose": [
+        16.508245467663446,
+        -1.321447979919426,
+        0.13586528999616315
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.9178780012117388,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 11,
+      "wall": 9.36274427396711,
+      "stamp": 3622.602,
+      "pose": [
+        16.528994312330898,
+        -1.3619386505549076,
+        0.15533128677959415
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.8944272043279197,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 12,
+      "wall": 10.162610699073412,
+      "stamp": 3623.302,
+      "pose": [
+        16.51130960080099,
+        -1.3471145015493367,
+        0.09585341319932536
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.9178780012117388,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 13,
+      "wall": 10.962756832013838,
+      "stamp": 3624.002,
+      "pose": [
+        16.501710659814186,
+        -1.3679986698762008,
+        -0.44390203430378666
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.8944272043279197,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 14,
+      "wall": 11.76316036505159,
+      "stamp": 3624.602,
+      "pose": [
+        16.4969509846594,
+        -1.355854924117296,
+        -0.9134887561180383
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.850000012665987,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 15,
+      "wall": 12.362780679017305,
+      "stamp": 3625.202,
+      "pose": [
+        16.463367100407375,
+        -1.413490193014297,
+        -1.4354529420029272
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.8276472801952478,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 16,
+      "wall": 13.162663778988644,
+      "stamp": 3625.802,
+      "pose": [
+        16.508170313469645,
+        -1.7959927250838565,
+        -1.7583717154212506
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.774999834224582
+      ],
+      "cell_distance": 0.800000011920929,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 17,
+      "wall": 13.96272954007145,
+      "stamp": 3626.502,
+      "pose": [
+        16.36968332113235,
+        -2.295196919635074,
+        -2.0841687652969956
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.725000273808837,
+        -1.8749998357146982
+      ],
+      "cell_distance": 0.7632168874965051,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 18,
+      "wall": 14.762684302055277,
+      "stamp": 3627.202,
+      "pose": [
+        16.11977600301324,
+        -2.736182456105851,
+        -2.3152783924897364
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.575000271573662,
+        -2.0749998386949304
+      ],
+      "cell_distance": 0.8514693309842017,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 19,
+      "wall": 15.562899556010962,
+      "stamp": 3627.902,
+      "pose": [
+        15.78595541109087,
+        -3.0926687887573734,
+        -2.4116507245906775
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.175000265613198,
+        -2.3249998424202207
+      ],
+      "cell_distance": 0.9604686499270252,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 20,
+      "wall": 16.36270229704678,
+      "stamp": 3628.502,
+      "pose": [
+        15.483803895014516,
+        -3.4261052649333057,
+        -2.3629544428104667
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.025000263378024,
+        -2.424999843910337
+      ],
+      "cell_distance": 1.0965856263134643,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 21,
+      "wall": 16.96271443797741,
+      "stamp": 3629.102,
+      "pose": [
+        15.202564767419243,
+        -3.76260628092305,
+        -2.343657907119168
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        15.12500026486814,
+        -4.824999879673124
+      ],
+      "cell_distance": 1.0547511712034663,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 22,
+      "wall": 17.762547026970424,
+      "stamp": 3629.702,
+      "pose": [
+        14.93005991371058,
+        -4.141153379217138,
+        -2.3611620640435924
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        14.925000261887908,
+        -4.824999879673124
+      ],
+      "cell_distance": 0.7000000104308128,
+      "planner_extra_mask": false,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 23,
+      "wall": 18.3627248640405,
+      "stamp": 3630.302,
+      "pose": [
+        14.689604352674813,
+        -4.378471848544491,
+        -2.443942964276649
+      ],
+      "cell_cost": 0,
+      "nearest_obstacle_cell": [
+        14.87500026114285,
+        -4.824999879673124
+      ],
+      "cell_distance": 0.4924428974277761,
+      "planner_extra_mask": true,
+      "rectangle_overlap_check": "pass"
+    },
+    {
+      "index": 24,
+      "wall": 19.16256477497518,
+      "stamp": 3630.902,
+      "pose": [
+        14.446901905145006,
+        -4.625278853656917,
+        -2.50661460598821
+      ],
+      "cell_cost": 236,
+      "nearest_obstacle_cell": [
+        14.725000258907675,
+        -4.874999880418182
+      ],
+      "cell_distance": 0.39051248961442214,
+      "planner_extra_mask": true,
+      "rectangle_overlap_check": "pass"
+    }
+  ]
+}

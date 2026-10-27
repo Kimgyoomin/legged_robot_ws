@@ -1,0 +1,13 @@
+/command_watchdog:
+  ros__parameters:
+    base_frame: base_link
+    cloud_timeout: 0.4
+    footprint_half_length: 0.5
+    footprint_half_width: 0.45
+    max_pose_age: 0.5
+    odom_topic: /Odometry
+    prediction_horizon: 1.0
+    source_timeout: 1.0
+    timeout: 0.3
+    use_sim_time: true
+

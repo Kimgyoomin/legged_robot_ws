@@ -1,0 +1,92 @@
+[INFO] [1793075771.764286280] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1793075771.770268159] [controller_server]: Creating controller server
+[INFO] [1793075771.808854522] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1793075771.810399661] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1793075771.988098435] [controller_server]: Configuring controller interface
+[INFO] [1793075771.988191764] [controller_server]: getting goal checker plugins..
+[INFO] [1793075771.988263503] [controller_server]: Controller frequency set to 10.0000Hz
+[INFO] [1793075771.988282473] [local_costmap.local_costmap]: Configuring
+[INFO] [1793075771.990930337] [local_costmap.local_costmap]: Using plugin "static_layer"
+[INFO] [1793075771.992453066] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[INFO] [1793075771.993212945] [local_costmap.local_costmap]: Subscribing to updates
+[INFO] [1793075771.993851777] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[INFO] [1793075771.993865396] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[INFO] [1793075771.994066484] [local_costmap.local_costmap]: Subscribed to Topics: livox_cloud
+[INFO] [1793075771.995215518] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1793075771.995228308] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1793075771.995462415] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1793075771.998700831] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1793075771.999025566] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1793075771.999248063] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[INFO] [1793075772.000141831] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[INFO] [1793075772.000734133] [controller_server]: Setting transform_tolerance to 0.500000
+[INFO] [1793075772.004438772] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[INFO] [1793075772.004667319] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.004722559] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[INFO] [1793075772.004876816] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.004915316] [controller_server]: Using critic "ObstacleFootprint" (dwb_critics::ObstacleFootprintCritic)
+[INFO] [1793075772.004986465] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.005031494] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[INFO] [1793075772.005199972] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.005247081] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[INFO] [1793075772.005378770] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.005423649] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[INFO] [1793075772.005532148] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.005569487] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[INFO] [1793075772.005676816] [controller_server]: Critic plugin initialized
+[INFO] [1793075772.005685305] [controller_server]: Controller Server has FollowPath  controllers available.
+[INFO] [1793075772.043656528] [local_costmap.local_costmap]: StaticLayer: Resizing static layer to 464 X 454 at 0.050000 m/pix
+[INFO] [1793075772.999627705] [controller_server]: Activating
+[INFO] [1793075772.999661275] [local_costmap.local_costmap]: Activating
+[INFO] [1793075772.999669755] [local_costmap.local_costmap]: Checking transform
+[INFO] [1793075772.999764743] [local_costmap.local_costmap]: start
+[INFO] [1793075773.200431835] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[INFO] [1793075789.213116895] [controller_server]: Received a goal, begin computing control effort.
+[WARN] [1793075789.213158835] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded goal_checker . This warning will appear once.
+[INFO] [1793075790.413365807] [controller_server]: Passing new path to controller.
+[INFO] [1793075791.613368020] [controller_server]: Passing new path to controller.
+[INFO] [1793075792.713369338] [controller_server]: Passing new path to controller.
+[INFO] [1793075793.913326044] [controller_server]: Passing new path to controller.
+[INFO] [1793075795.013367469] [controller_server]: Goal was canceled. Stopping the robot.
+[INFO] [1793075795.013410948] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1793075796.103325419] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1793075797.303539584] [controller_server]: Passing new path to controller.
+[INFO] [1793075798.503541759] [controller_server]: Passing new path to controller.
+[INFO] [1793075799.603545270] [controller_server]: Passing new path to controller.
+[INFO] [1793075800.803539458] [controller_server]: Passing new path to controller.
+[INFO] [1793075801.903538456] [controller_server]: Passing new path to controller.
+[INFO] [1793075803.103541226] [controller_server]: Passing new path to controller.
+[INFO] [1793075804.303544397] [controller_server]: Passing new path to controller.
+[INFO] [1793075805.403538287] [controller_server]: Passing new path to controller.
+[INFO] [1793075806.603539768] [controller_server]: Passing new path to controller.
+[INFO] [1793075807.703540194] [controller_server]: Passing new path to controller.
+[INFO] [1793075808.803537190] [controller_server]: Goal was canceled. Stopping the robot.
+[INFO] [1793075808.803571690] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1793075809.923877902] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1793075811.124109252] [controller_server]: Passing new path to controller.
+[INFO] [1793075812.224106778] [controller_server]: Passing new path to controller.
+[INFO] [1793075813.424108823] [controller_server]: Passing new path to controller.
+[INFO] [1793075814.524107254] [controller_server]: Passing new path to controller.
+[INFO] [1793075815.624107626] [controller_server]: Passing new path to controller.
+[INFO] [1793075816.824106504] [controller_server]: Passing new path to controller.
+[INFO] [1793075817.924111470] [controller_server]: Passing new path to controller.
+[INFO] [1793075819.024108838] [controller_server]: Passing new path to controller.
+[INFO] [1793075820.124108128] [controller_server]: Passing new path to controller.
+[INFO] [1793075821.224108328] [controller_server]: Passing new path to controller.
+[INFO] [1793075822.324108149] [controller_server]: Passing new path to controller.
+[ERROR] [1793075822.926325118] [controller_server]: No valid trajectories out of 251! 
+[WARN] [1793075822.926380747] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1793075829.333790807] [controller_server]: Received a goal, begin computing control effort.
+[ERROR] [1793075830.136070082] [controller_server]: No valid trajectories out of 251! 
+[WARN] [1793075830.136134371] [controller_server]: [follow_path] [ActionServer] Aborting handle.
+[INFO] [1793075838.663784539] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1793075839.764000265] [controller_server]: Passing new path to controller.
+[INFO] [1793075911.764021842] [controller_server]: Passing new path to controller.
+[INFO] [1793075912.764014670] [controller_server]: Goal was canceled. Stopping the robot.
+[INFO] 

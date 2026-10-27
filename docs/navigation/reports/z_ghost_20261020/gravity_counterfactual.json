@@ -1,0 +1,7 @@
+{
+  "suspect_points": 424,
+  "rejected_by_gt_gravity_relative_height": 424,
+  "leveled_height_min": -0.576266872666843,
+  "leveled_height_max": -0.3950354318533475,
+  "method": "Offline counterfactual using Gazebo GT for analysis; not a production input."
+}

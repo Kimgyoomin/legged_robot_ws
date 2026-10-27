@@ -1,0 +1,18 @@
+{
+  "mode": "nav2",
+  "controller": "dwb",
+  "first_path_points": 61,
+  "rerouted_points": 61,
+  "detour_max_y_m": 0.8750000279396772,
+  "frozen_acquisition_stamp_preserved": true,
+  "shared_stop_length_m": 0.7,
+  "shared_stop_width_m": 0.65,
+  "costmap_footprint_matches_stop_polygon": true,
+  "planner_obstacle_clearance_m": 0.45,
+  "max_forward_command_mps": 0.5454545454545455,
+  "controller_produced_motion": true,
+  "near_obstacle_stop": true,
+  "stale_sensor_stop": true,
+  "approach_regulation": true,
+  "domain": 174
+}

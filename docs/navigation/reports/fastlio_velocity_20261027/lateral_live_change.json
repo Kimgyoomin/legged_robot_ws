@@ -1,0 +1,20 @@
+{
+  "before": {
+    "odom_topic": "/legged/controller_odom",
+    "FollowPath.acc_lim_y": 0.0,
+    "FollowPath.decel_lim_y": 0.0,
+    "FollowPath.min_vel_y": 0.0,
+    "FollowPath.max_vel_y": 0.0,
+    "FollowPath.max_vel_x": 0.7
+  },
+  "successful": true,
+  "reason": "",
+  "after": {
+    "odom_topic": "/legged/controller_odom",
+    "FollowPath.acc_lim_y": 0.5,
+    "FollowPath.decel_lim_y": -0.5,
+    "FollowPath.min_vel_y": 0.0,
+    "FollowPath.max_vel_y": 0.0,
+    "FollowPath.max_vel_x": 0.7
+  }
+}

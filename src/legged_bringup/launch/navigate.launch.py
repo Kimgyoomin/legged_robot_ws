@@ -7,7 +7,7 @@ from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from legged_bringup.site import load_site
-from legged_bringup.costmap_guard import rectangle_half_extents
+from legged_bringup.costmap_guard import configure_costmap_footprint
 
 # Hold this descriptor for the launch process lifetime. Both modes share /cmd_vel.
 _navigation_lock = None
@@ -38,9 +38,11 @@ def start(context):
     claim_navigation_instance()
     planner = yaml.safe_load(Path(get('planner')).read_text())
     costmaps = yaml.safe_load(Path(get('costmap')).read_text())
-    # collision.yaml is the single source for both near-cloud and map stop geometry.
+    # One geometry for Nav2 footprint, near-cloud stop and final map sweep.
     collision = yaml.safe_load(Path(get('collision')).read_text())['collision_monitor']['ros__parameters']
-    half_length, half_width = rectangle_half_extents(collision['Stop']['points'])
+    motion = yaml.safe_load(Path(get('motion')).read_text())
+    half_length, half_width = configure_costmap_footprint(
+        costmaps, collision['Stop']['points'], collision['base_frame_id'])
     # Preserve the planner YAML's explicit clearance. Forcing the stop
     # rectangle's circumcircle here requires full-turn space everywhere and
     # disconnects otherwise usable corridors. The full rectangle and its
@@ -91,10 +93,9 @@ def start(context):
       Node(package='nav2_collision_monitor',executable='collision_monitor',name='collision_monitor',
         output='screen',parameters=[collision,{'use_sim_time':sim}]),
       Node(package='legged_bringup',executable='command_watchdog',name='command_watchdog',
-        parameters=[{'use_sim_time':sim,'odom_topic':get('odom_topic'),
+        parameters=[motion, {'use_sim_time':sim,'odom_topic':get('odom_topic'),
                      'base_frame':collision['base_frame_id'],
-                     'footprint_half_length':half_length,'footprint_half_width':half_width,
-                     'prediction_horizon':1.0}])]
+                     'footprint_half_length':half_length,'footprint_half_width':half_width}])]
     lifecycle=['map_server']
     if mode=='nav2':
         for name,pkg in [('planner_server','nav2_planner'),('controller_server','nav2_controller'),
@@ -126,6 +127,6 @@ def generate_launch_description():
     share=get_package_share_directory('legged_bringup')
     defaults={'site':'','mode':'nav2','controller':'dwb','use_sim_time':'false','rviz':'true',
       'odom_topic':'/Odometry','cloud_topic':'/livox/lidar',
-      **{k:share+'/config/'+k+'.yaml' for k in ['planner','costmap','nav2','pursuit','collision','rpp']}}
+      **{k:share+'/config/'+k+'.yaml' for k in ['planner','costmap','nav2','pursuit','collision','rpp','motion']}}
     return LaunchDescription([DeclareLaunchArgument(k,default_value=v) for k,v in defaults.items()]+
                              [OpaqueFunction(function=start)])

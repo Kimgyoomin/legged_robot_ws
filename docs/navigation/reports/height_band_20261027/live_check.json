@@ -1,0 +1,11 @@
+{
+  "matched_frame_points": 301535,
+  "body_z_min": -0.1999998688697815,
+  "points_below_minus_020": 0,
+  "unit_box": 91629,
+  "cost_step_A_upper_h09::link": 0,
+  "upper_old_roi_lethal_cells": 0,
+  "nonzero_cmd_count": 0,
+  "observed_scans": 155,
+  "navigation_goal_messages": 0
+}

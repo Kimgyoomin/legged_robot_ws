@@ -1,0 +1,34 @@
+{
+  "domain": 184,
+  "no_motion_commands": true,
+  "offset_correction": true,
+  "same_stamp": true,
+  "stale_and_nonfinite_dropped": true,
+  "variants": [
+    {
+      "controller": "dwb",
+      "native": "false",
+      "fit": "false",
+      "topic": "/Odometry"
+    },
+    {
+      "controller": "dwb",
+      "native": "true",
+      "fit": "false",
+      "topic": "/legged/controller_odom"
+    },
+    {
+      "controller": "dwb",
+      "native": "false",
+      "fit": "true",
+      "topic": "/legged/controller_odom"
+    },
+    {
+      "controller": "rpp",
+      "native": "true",
+      "fit": "false",
+      "topic": "/legged/controller_odom"
+    }
+  ],
+  "conflicting_sources_rejected": true
+}

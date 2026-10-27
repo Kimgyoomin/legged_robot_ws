@@ -1,0 +1,6 @@
+# Final map guard for pursuit and Nav2. LiDAR remains required.
+# Geometry comes from collision.yaml, shared with Nav2. No obstacle erasure.
+prediction_horizon: 1.0
+regulate_approach: true
+# Rate at which the allowed command multiplier rises again after slowdown.
+speed_scale_recovery_rate: 1.0

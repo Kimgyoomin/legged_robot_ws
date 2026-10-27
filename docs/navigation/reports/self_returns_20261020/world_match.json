@@ -1,0 +1,12 @@
+{
+  "points": 209267,
+  "near": 22200,
+  "near_static_match": 22200,
+  "near_nonstatic": 0,
+  "near_nonstatic_front": 0,
+  "all_nonstatic": 0,
+  "median_static_distance_m": 0.000501446248520554,
+  "near_match_models": {
+    "corridor_nav::link_2_clone_0_clone": 22200
+  }
+}

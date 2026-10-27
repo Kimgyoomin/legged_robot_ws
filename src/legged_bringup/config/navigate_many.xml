@@ -1,10 +1,16 @@
+<!-- Same bounded retry policy as navigate.xml; retain the requested goals. -->
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <PipelineSequence name="ReplanAndTrack">
-      <RateController hz="1.0">
-        <ComputePathThroughPoses goals="{goals}" path="{path}" planner_id="Height"/>
-      </RateController>
-      <FollowPath path="{path}" controller_id="FollowPath"/>
-    </PipelineSequence>
+    <RecoveryNode name="RetryTemporaryBlockage" number_of_retries="30">
+      <PipelineSequence name="ReplanAndTrack">
+        <RateController hz="1.0">
+          <ComputePathThroughPoses goals="{goals}" path="{path}" planner_id="Height"/>
+        </RateController>
+        <FollowPath path="{path}" controller_id="FollowPath"/>
+      </PipelineSequence>
+      <Delay delay_msec="1000">
+        <AlwaysSuccess/>
+      </Delay>
+    </RecoveryNode>
   </BehaviorTree>
 </root>

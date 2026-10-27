@@ -1,0 +1,34 @@
+[
+  {
+    "profile": "range.yaml",
+    "parameters": [
+      1.0,
+      0.3,
+      60.0
+    ],
+    "accepted": [
+      "front",
+      "front_edge_in",
+      "side_12",
+      "side_16",
+      "rear_12",
+      "rear_16"
+    ],
+    "sensor_frame_and_point_bytes_preserved": true
+  },
+  {
+    "profile": "range15.yaml",
+    "parameters": [
+      1.5,
+      0.3,
+      60.0
+    ],
+    "accepted": [
+      "front",
+      "front_edge_in",
+      "side_16",
+      "rear_16"
+    ],
+    "sensor_frame_and_point_bytes_preserved": true
+  }
+]

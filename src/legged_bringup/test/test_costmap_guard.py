@@ -2,7 +2,8 @@ import math
 import numpy as np
 import pytest
 from nav2_msgs.msg import Costmap
-from legged_bringup.costmap_guard import CostmapGuard, rectangle_half_extents
+from legged_bringup.costmap_guard import (
+    CostmapGuard, rectangle_half_extents, configure_costmap_footprint)
 
 
 def grid(value=0, yaw=0.):
@@ -153,3 +154,52 @@ def test_rectangle_configuration_accepts_both_vertex_orders():
 def test_unsupported_stop_geometry_is_rejected(points):
     with pytest.raises(ValueError, match='Stop.points'):
         rectangle_half_extents(points)
+
+
+def test_costmaps_use_stop_polygon_without_extra_radius_or_padding():
+    import json
+    maps = {name: {name: {'ros__parameters': {
+        'robot_base_frame': 'base_link', 'robot_radius': .3,
+        'footprint_padding': .01, 'inflation_layer': {'inflation_radius': .7},
+    }}} for name in ('local_costmap', 'global_costmap')}
+    # Custom collision overrides must also propagate; do not hard-code the default.
+    points = [.4, .3, .4, -.3, -.4, -.3, -.4, .3]
+    assert configure_costmap_footprint(maps, points, 'base_link') == (.4, .3)
+    for name in maps:
+        p = maps[name][name]['ros__parameters']
+        assert [v for xy in json.loads(p['footprint']) for v in xy] == points
+        assert p['footprint_padding'] == 0.0 and 'robot_radius' not in p
+        assert p['inflation_layer']['inflation_radius'] == .7
+    maps['local_costmap']['local_costmap']['ros__parameters']['robot_base_frame'] = 'other'
+    with pytest.raises(ValueError, match='base frames'):
+        configure_costmap_footprint(maps, points, 'base_link')
+
+
+def test_approach_regulation_preserves_free_speed_and_checks_reduced_sweep():
+    g=guard(grid())
+    assert g.regulate((1.,1.,0.),(.7,0.,0.))==('pass',1.)
+    m=grid();obstacle(m,1.8,1.);g=guard(m)
+    assert g.check((1.,1.,0.),(.7,0.,0.))=='predicted_costmap_collision'
+    reason,scale=g.regulate((1.,1.,0.),(.7,0.,0.))
+    assert reason=='obstacle_slowdown' and 0.<scale<1.
+    assert g.check((1.,1.,0.),(.7*scale,0.,0.))=='pass'
+
+
+def test_regulation_never_escapes_an_existing_overlap_or_invalid_map():
+    m=grid();obstacle(m,1.1,1.);g=guard(m)
+    assert g.regulate((1.,1.,0.),(-.2,0.,.3))==('costmap_collision',0.)
+    g.grid=None
+    assert g.regulate((1.,1.,0.),(.7,0.,0.))==('invalid_costmap',0.)
+
+
+@pytest.mark.parametrize('yaw', [0.,.7,-1.2])
+def test_regulated_command_always_passes_original_guard(yaw):
+    # Exercise forward, reverse and curved arcs. No unknown cell may be erased.
+    m=grid();obstacle(m,2.7,2.,255);g=guard(m)
+    for vx in [-.5,.3,.7]:
+        for wz in [-.8,0.,.8]:
+            velocity=(vx,0.,wz);reason,scale=g.regulate((2.,2.,yaw),velocity)
+            if scale:
+                assert g.check((2.,2.,yaw),tuple(v*scale for v in velocity))=='pass'
+            else: assert reason!='pass'
+    assert np.any(g.grid==255)

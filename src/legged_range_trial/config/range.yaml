@@ -1,0 +1,15 @@
+# Trial only: front +/-60 deg keeps 0.3 m; other bearings use min_range.
+# Distances are sensor-origin 3D ranges. Body height is relative to base_link.
+obstacle_cloud:
+  ros__parameters:
+    min_range: 1.0
+    # Sensor-origin 3D range; front bearing follows base_frame +X using static TF.
+    # Trial profile: validate near obstacles and the complete gait envelope on HW.
+    front_min_range: 0.3
+    front_half_angle_deg: 60.0
+    base_frame: base_link
+    # Trial: reject points more than 20 cm below BODY. Not height above ground.
+    # Recorded 9 cm platform returns were z_BODY=-0.35..-0.24 m.
+    min_body_height: -0.20
+    max_body_height: 1.5
+    max_range: 5.0

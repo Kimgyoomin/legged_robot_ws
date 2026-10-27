@@ -1,0 +1,14 @@
+<!-- Same trial-only retry policy and timing limitations as navigate.xml. -->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode name="RetryTemporaryBlockage" number_of_retries="600">
+      <PipelineSequence name="ReplanAndTrack">
+        <RateController hz="1.0">
+          <ComputePathThroughPoses goals="{goals}" path="{path}" planner_id="Height"/>
+        </RateController>
+        <FollowPath path="{path}" controller_id="FollowPath"/>
+      </PipelineSequence>
+      <Delay delay_msec="1000"><AlwaysSuccess/></Delay>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

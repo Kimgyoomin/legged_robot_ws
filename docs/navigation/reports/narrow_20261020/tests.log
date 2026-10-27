@@ -1,0 +1,114 @@
+Starting >>> legged_bringup
+--- output: legged_bringup
+UpdateCTestConfiguration  from :/home/kim/legged_robot_ws/build/legged_bringup/CTestConfiguration.ini
+Parse Config file:/home/kim/legged_robot_ws/build/legged_bringup/CTestConfiguration.ini
+   Site: Kim9975
+   Build name: (empty)
+ Add coverage exclude regular expressions.
+Create new tag: 20261020-0513 - Experimental
+UpdateCTestConfiguration  from :/home/kim/legged_robot_ws/build/legged_bringup/CTestConfiguration.ini
+Parse Config file:/home/kim/legged_robot_ws/build/legged_bringup/CTestConfiguration.ini
+Test project /home/kim/legged_robot_ws/build/legged_bringup
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: delivery_contract
+
+1: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/delivery_contract.xunit.xml" "--package-name" "legged_bringup" "--output-file" "/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/delivery_contract.txt" "--env" "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/kim/legged_robot_ws/src/legged_bringup/test/test_delivery.py" "-o" "cache_dir=/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/delivery_contract/.cache" "--junit-xml=/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/delivery_contract.xunit.xml" "--junit-prefix=legged_bringup"
+1: Test timeout computed to be: 60
+1: -- run_test.py: extra environment variables:
+1:  - PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+1: -- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/legged_bringup':
+1:  - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/legged_bringup/test/test_delivery.py -o cache_dir=/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/delivery_contract/.cache --junit-xml=/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/delivery_contract.xunit.xml --junit-prefix=legged_bringup
+1: ============================= test session starts ==============================
+1: platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+1: cachedir: build/legged_bringup/ament_cmake_pytest/delivery_contract/.cache
+1: rootdir: /home/kim/legged_robot_ws
+1: collected 6 items
+1: 
+1: ../../src/legged_bringup/test/test_delivery.py ......                    [100%]
+1: 
+1: - generated xml file: /home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/delivery_contract.xunit.xml -
+1: ============================== 6 passed in 0.31s ===============================
+1: -- run_test.py: return code 0
+1: -- run_test.py: verify result file '/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/delivery_contract.xunit.xml'
+1/3 Test #1: delivery_contract ................   Passed    0.43 sec
+test 2
+    Start 2: costmap_guard
+
+2: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml" "--package-name" "legged_bringup" "--output-file" "/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/costmap_guard.txt" "--env" "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1" "--command" "/usr/bin/python3" "-u" "-m" "pytest" "/home/kim/legged_robot_ws/src/legged_bringup/test/test_costmap_guard.py" "-o" "cache_dir=/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/costmap_guard/.cache" "--junit-xml=/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml" "--junit-prefix=legged_bringup"
+2: Test timeout computed to be: 60
+2: -- run_test.py: extra environment variables:
+2:  - PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+2: -- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/legged_bringup':
+2:  - /usr/bin/python3 -u -m pytest /home/kim/legged_robot_ws/src/legged_bringup/test/test_costmap_guard.py -o cache_dir=/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_pytest/costmap_guard/.cache --junit-xml=/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml --junit-prefix=legged_bringup
+2: ============================= test session starts ==============================
+2: platform linux -- Python 3.10.12, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+2: cachedir: build/legged_bringup/ament_cmake_pytest/costmap_guard/.cache
+2: rootdir: /home/kim/legged_robot_ws
+2: collected 29 items
+2: 
+2: ../../src/legged_bringup/test/test_costmap_guard.py .................... [ 68%]
+2: .........                                                                [100%]
+2: 
+2: - generated xml file: /home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml -
+2: ============================== 29 passed in 0.19s ==============================
+2: -- run_test.py: return code 0
+2: -- run_test.py: verify result file '/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/costmap_guard.xunit.xml'
+2/3 Test #2: costmap_guard ....................   Passed    0.31 sec
+test 3
+    Start 3: navigation_recovery
+
+3: Test command: /usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/navigation_recovery.gtest.xml" "--package-name" "legged_bringup" "--output-file" "/home/kim/legged_robot_ws/build/legged_bringup/ament_cmake_gtest/navigation_recovery.txt" "--command" "/home/kim/legged_robot_ws/build/legged_bringup/navigation_recovery" "--gtest_output=xml:/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/navigation_recovery.gtest.xml"
+3: Test timeout computed to be: 60
+3: -- run_test.py: invoking following command in '/home/kim/legged_robot_ws/build/legged_bringup':
+3:  - /home/kim/legged_robot_ws/build/legged_bringup/navigation_recovery --gtest_output=xml:/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/navigation_recovery.gtest.xml
+3: Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+3: [==========] Running 10 tests from 1 test suite.
+3: [----------] Global test environment set-up.
+3: [----------] 10 tests from SingleAndMultipleGoals/NavigationRecovery
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.RetainsGoalAndWaitsBeforeRetryingPlanner/0
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.RetainsGoalAndWaitsBeforeRetryingPlanner/0 (1010 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.RetainsGoalAndWaitsBeforeRetryingPlanner/1
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.RetainsGoalAndWaitsBeforeRetryingPlanner/1 (1010 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.ControllerFailureTriggersFreshPlan/0
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.ControllerFailureTriggersFreshPlan/0 (25 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.ControllerFailureTriggersFreshPlan/1
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.ControllerFailureTriggersFreshPlan/1 (26 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.ReplanFailureHaltsRunningController/0
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.ReplanFailureHaltsRunningController/0 (1050 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.ReplanFailureHaltsRunningController/1
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.ReplanFailureHaltsRunningController/1 (1051 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.PermanentFailureHasBoundedRetries/0
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.PermanentFailureHasBoundedRetries/0 (612 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.PermanentFailureHasBoundedRetries/1
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.PermanentFailureHasBoundedRetries/1 (612 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.CancelDuringWaitDoesNotRestartWork/0
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.CancelDuringWaitDoesNotRestartWork/0 (100 ms)
+3: [ RUN      ] SingleAndMultipleGoals/NavigationRecovery.CancelDuringWaitDoesNotRestartWork/1
+3: [       OK ] SingleAndMultipleGoals/NavigationRecovery.CancelDuringWaitDoesNotRestartWork/1 (101 ms)
+3: [----------] 10 tests from SingleAndMultipleGoals/NavigationRecovery (5597 ms total)
+3: 
+3: [----------] Global test environment tear-down
+3: [==========] 10 tests from 1 test suite ran. (5597 ms total)
+3: [  PASSED  ] 10 tests.
+3: -- run_test.py: return code 0
+3: -- run_test.py: inject classname prefix into gtest result file '/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/navigation_recovery.gtest.xml'
+3: -- run_test.py: verify result file '/home/kim/legged_robot_ws/build/legged_bringup/test_results/legged_bringup/navigation_recovery.gtest.xml'
+3/3 Test #3: navigation_recovery ..............   Passed    5.63 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Label Time Summary:
+gtest     =   5.63 sec*proc (1 test)
+pytest    =   0.74 sec*proc (2 tests)
+
+Total Test time (real) =   6.37 sec
+---
+Finished <<< legged_bringup [6.39s]
+
+Summary: 1 package finished [6.56s]

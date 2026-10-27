@@ -1,0 +1,44 @@
+[
+  {
+    "mode": "nav2",
+    "final_guard_argument": "false",
+    "watchdog": "freshness_watchdog",
+    "global_inflation": 0.6,
+    "local_inflation": 0.4,
+    "footprint": [
+      0.55,
+      0.55
+    ],
+    "collision_monitor_stop": true,
+    "planner_clearance": 0.0,
+    "failure_tolerance": 600.0
+  },
+  {
+    "mode": "nav2",
+    "final_guard_argument": "true",
+    "watchdog": "command_watchdog",
+    "global_inflation": 0.6,
+    "local_inflation": 0.4,
+    "footprint": [
+      0.55,
+      0.55
+    ],
+    "collision_monitor_stop": true,
+    "planner_clearance": 0.0,
+    "failure_tolerance": 600.0
+  },
+  {
+    "mode": "pursuit",
+    "final_guard_argument": "false",
+    "watchdog": "command_watchdog",
+    "global_inflation": 0.6,
+    "local_inflation": 0.4,
+    "footprint": [
+      0.55,
+      0.55
+    ],
+    "collision_monitor_stop": true,
+    "planner_clearance": 0.0,
+    "failure_tolerance": 600.0
+  }
+]
