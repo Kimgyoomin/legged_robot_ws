@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850" role="img" aria-labelledby="title desc">
+<title id="title">Height Map 기반 전역 경로 계획 시스템 구성도</title>
+<desc id="desc">LiDAR와 IMU 기록 데이터, LIO/SLAM 지원 모듈, 지역 Height Map 생성, C++ 전역 누적, 저장과 선택적 후처리, Frozen Height Map과 costmap 기반 Grid A* 전역 경로 생성까지의 개요. SVG의 텍스트와 도형은 모두 편집 가능.</desc>
+<defs><marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M 1 1 L 11 6 L 1 11 z" fill="#1E3B5A"/></marker></defs>
+<g font-family="Noto Sans KR, Noto Sans CJK KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+<rect x="0" y="0" width="1600" height="850" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0" />
+<text x="42" y="70" font-size="43" font-weight="700" fill="#102A4A" text-anchor="start">제조환경 Height Map 생성 및 전역 경로 계획 시스템 구성도</text>
+<text x="43" y="114" font-size="23" font-weight="400" fill="#52677D" text-anchor="start">LiDAR/IMU 데이터 취득 → 2.5D Height Map 생성·저장 → 저장 지도 기반 Global Planning</text>
+<path d="M 42 144 H 1558" stroke="#D9E3EE" stroke-width="3"/>
+<rect x="42" y="184" width="344" height="492" rx="18" fill="#FBFCFE" stroke="#9AA8B9" stroke-width="3" stroke-dasharray="13 10"/>
+<rect x="412" y="184" width="644" height="492" rx="18" fill="#FBFAFF" stroke="#8E80D0" stroke-width="3" stroke-dasharray="13 10"/>
+<rect x="1082" y="184" width="476" height="492" rx="18" fill="#F8FBFF" stroke="#7EA6CF" stroke-width="3" stroke-dasharray="13 10"/>
+<text x="214" y="230" font-size="29" font-weight="700" fill="#3D5368" text-anchor="middle">01  데이터 취득·정합</text>
+<text x="734" y="230" font-size="31" font-weight="700" fill="#5445A0" text-anchor="middle">02  Height Map 생성·저장</text>
+<text x="1320" y="230" font-size="31" font-weight="700" fill="#305B88" text-anchor="middle">03  전역 경로 생성</text>
+<text x="214" y="264" font-size="19" font-weight="500" fill="#718195" text-anchor="middle">지원 모듈 · 데이터 재생</text>
+<text x="734" y="264" font-size="21" font-weight="600" fill="#6755B0" text-anchor="middle">핵심 납품 기능 ①</text>
+<text x="1320" y="264" font-size="21" font-weight="600" fill="#376995" text-anchor="middle">핵심 납품 기능 ②</text>
+<path d="M 132 370 V 410 H 215 V 445" fill="none" stroke="#7A8999" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 291 370 V 410 H 215 V 445" fill="none" stroke="#7A8999" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 348 502 H 399 V 421 H 432" fill="none" stroke="#1E3B5A" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 607 421 H 634" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 807 421 H 840" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1033 421 H 1067 V 345 H 1102" fill="none" stroke="#1E3B5A" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1320 401 V 437" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1320 552 V 585" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 933 495 V 525 H 899 V 548" fill="none" stroke="#7A6AC5" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" stroke-dasharray="8 7"/>
+<rect x="66" y="290" width="131" height="80" rx="14" fill="#F0F4F8" stroke="#BBC8D4" stroke-width="2" />
+<rect x="221" y="290" width="141" height="80" rx="14" fill="#F0F4F8" stroke="#BBC8D4" stroke-width="2" />
+<text x="131" y="326" font-size="27" font-weight="700" fill="#253B54" text-anchor="middle">LiDAR</text>
+<text x="131" y="353" font-size="18" font-weight="500" fill="#60738A" text-anchor="middle">3D PointCloud</text>
+<text x="291" y="326" font-size="27" font-weight="700" fill="#253B54" text-anchor="middle">IMU</text>
+<text x="291" y="353" font-size="19" font-weight="500" fill="#60738A" text-anchor="middle">자세 데이터</text>
+<rect x="86" y="445" width="262" height="112" rx="15" fill="#E9EFF5" stroke="#8EA2B6" stroke-width="2.5" />
+<text x="217" y="484" font-size="26" font-weight="700" fill="#29425E" text-anchor="middle">Offline SLAM / LIO</text>
+<text x="217" y="520" font-size="20" font-weight="500" fill="#50687E" text-anchor="middle">점군 보정·전역 Pose</text>
+<text x="214" y="614" font-size="20" font-weight="500" fill="#748397" text-anchor="middle">기록 데이터의 오프라인 처리</text>
+<rect x="433" y="348" width="174" height="147" rx="15" fill="#F0EDFC" stroke="#A497DE" stroke-width="2.5" />
+<rect x="634" y="348" width="173" height="147" rx="15" fill="#F0EDFC" stroke="#A497DE" stroke-width="2.5" />
+<rect x="840" y="348" width="193" height="147" rx="15" fill="#E8F6EF" stroke="#93C5AC" stroke-width="2.5" />
+<text x="520" y="390" font-size="22" font-weight="700" fill="#4E3C94" text-anchor="middle">지역 Height Map</text>
+<text x="520" y="426" font-size="17" font-weight="500" fill="#615589" text-anchor="middle">Elevation / Variance</text>
+<text x="520" y="466" font-size="16" font-weight="500" fill="#756DA0" text-anchor="middle">rubi_height_mapping</text>
+<text x="720" y="390" font-size="23" font-weight="700" fill="#4E3C94" text-anchor="middle">전역 지도 누적</text>
+<text x="720" y="426" font-size="19" font-weight="500" fill="#615589" text-anchor="middle">지역 GridMap 결합</text>
+<text x="720" y="465" font-size="19" font-weight="500" fill="#756DA0" text-anchor="middle">C++ Wrapper</text>
+<text x="936" y="388" font-size="23" font-weight="700" fill="#25654A" text-anchor="middle">Height Map 저장</text>
+<text x="936" y="425" font-size="22" font-weight="600" fill="#27694C" text-anchor="middle">map.rghm</text>
+<text x="936" y="461" font-size="21" font-weight="500" fill="#568671" text-anchor="middle">surface.pcd</text>
+<rect x="755" y="548" width="264" height="70" rx="12" fill="#F5F2FE" stroke="#B0A5DE" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="887" y="574" font-size="21" font-weight="700" fill="#6552AC" text-anchor="middle">선택: 후처리 · QC</text>
+<text x="887" y="602" font-size="16" font-weight="500" fill="#77708F" text-anchor="middle">rubi_heightmap_postprocess</text>
+<rect x="1102" y="288" width="436" height="113" rx="14" fill="#ECF4FC" stroke="#9AB9DA" stroke-width="2.5" />
+<text x="1320" y="328" font-size="25" font-weight="700" fill="#285889" text-anchor="middle">Frozen Height Map</text>
+<text x="1320" y="361" font-size="20" font-weight="500" fill="#4C7598" text-anchor="middle">+ Occupancy/Costmap · Start/Goal</text>
+<text x="1320" y="388" font-size="18" font-weight="500" fill="#6F8DA8" text-anchor="middle">+ 현재 위치(Pose)</text>
+<rect x="1102" y="437" width="436" height="115" rx="14" fill="#DCEBFA" stroke="#729CCB" stroke-width="2.5" />
+<text x="1320" y="482" font-size="29" font-weight="700" fill="#194F86" text-anchor="middle">Height-aware Grid A*</text>
+<text x="1320" y="520" font-size="21" font-weight="500" fill="#456E96" text-anchor="middle">거리 · 높이 변화 · 장애물 비용</text>
+<rect x="1200" y="585" width="242" height="62" rx="13" fill="#EAF5FF" stroke="#7FADCF" stroke-width="2.5" />
+<text x="1321" y="624" font-size="23" font-weight="700" fill="#265E8E" text-anchor="middle">nav_msgs/Path</text>
+<rect x="42" y="706" width="1516" height="100" rx="14" fill="#F7F9FC" stroke="#DCE5EE" stroke-width="1.8" />
+<text x="68" y="743" font-size="23" font-weight="700" fill="#1A3D5F" text-anchor="start">운용 흐름</text>
+<text x="205" y="743" font-size="23" font-weight="500" fill="#354D66" text-anchor="start">기록 데이터 재생 → Height Map 누적 → 스냅샷 저장 → 경로 계산</text>
+<text x="69" y="780" font-size="19" font-weight="400" fill="#63778C" text-anchor="start">※ SLAM/Localization은 위치·보정 점군 제공용 지원 기능이며, 검수 핵심은 Height Map 생성과 Global Planning이다.</text>
+</g></svg>
