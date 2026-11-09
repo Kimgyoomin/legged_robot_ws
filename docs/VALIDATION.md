@@ -32,9 +32,9 @@ Pure Pursuit/Nav2 DWB 통합 시험에서 YAML의 0.45 m가 실제 planner에 �
 목표나 속도 명령을 보내지 않았다. 적용은 **navigation만 동일 명령으로 재실행**한다.
 실제 보행 성공이나 모든 방향에서의 footprint 통과는 아직 검증하지 않았다.
 
-근거: [격리 재생 결과](../validation/planner_clearance_20261016/replay.json),
-[입력 snapshot](../validation/planner_clearance_20261016/capture.json).
-그림: [탐색 여유 비교](../validation/planner_clearance_20261016/clearance_comparison.png).
+근거: [격리 재생 결과](../archive/20261109/validation/planner_clearance_20261016/replay.json),
+[입력 snapshot](../archive/20261109/validation/planner_clearance_20261016/capture.json).
+그림: [탐색 여유 비교](../archive/20261109/validation/planner_clearance_20261016/clearance_comparison.png).
 재생 도구: `tools/replay_planner_clearance.py` (domain 179 전용, controller 없음).
 백업: `backups/planner_clearance_20261016_144905/`.
 
@@ -89,10 +89,10 @@ NumPy structured-array 변환 오류로 완료되지 않았다.
   목표나 속도 명령을 보내지 않았다. 새 구성으로 실제 stuck 감소는 아직 미검증.
 
 백업: `backups/stop_turn_20261016_143315/`.
-근거: [live 기록 요약](../validation/stop_turn_20261016/summary.json),
-[추종 연속성](../validation/stop_turn_20261016/pursuit_continuity.json),
-[Pure Pursuit](../validation/stop_turn_20261016/pursuit_smoke.json),
-[Nav2](../validation/stop_turn_20261016/nav2_smoke.json).
+근거: [live 기록 요약](../archive/20261109/validation/stop_turn_20261016/summary.json),
+[추종 연속성](../archive/20261109/validation/stop_turn_20261016/pursuit_continuity.json),
+[Pure Pursuit](../archive/20261109/validation/stop_turn_20261016/pursuit_smoke.json),
+[Nav2](../archive/20261109/validation/stop_turn_20261016/nav2_smoke.json).
 이번 수정 적용에는 **navigation만 같은 명령으로 재실행**하면 된다.
 
 ## 2026-10-15 1.0 × 0.9 m 정지 영역과 속도 상한 조정
@@ -122,9 +122,9 @@ NumPy structured-array 변환 오류로 완료되지 않았다.
   새 설정에서의 실제 보행·정지거리·좁은 통로 주행 성공은 아직 미검증이다.
 
 백업: `backups/rectangle_speed_20261015_222553/`.
-근거: [guard](../validation/rectangle_speed_20261015/watchdog.json),
-[Pure Pursuit](../validation/rectangle_speed_20261015/pursuit_smoke.json),
-[Nav2 DWB](../validation/rectangle_speed_20261015/nav2_smoke.json).
+근거: [guard](../archive/20261109/validation/rectangle_speed_20261015/watchdog.json),
+[Pure Pursuit](../archive/20261109/validation/rectangle_speed_20261015/pursuit_smoke.json),
+[Nav2 DWB](../archive/20261109/validation/rectangle_speed_20261015/nav2_smoke.json).
 운영 방법과 장애물 처리 흐름은 [OPERATIONS.md](OPERATIONS.md)의 최신 설정 절 참고.
 
 ## 2026-10-15 0.6 m/s 설정과 몸체 크기 정지 영역
@@ -163,10 +163,10 @@ lookahead를 0.45 m로 조정했습니다. 가속도·각속도 제한과 headin
 일정 Twist 예측은 보행 제동 모델이 아니며, 지도에도 없는 새 장애물이 LiDAR
 사각지대 안에 나타나는 상황을 보장하지 않습니다.
 
-근거: [guard 통합 결과](../validation/speed_footprint_20261015/watchdog.json),
-[Pure Pursuit](../validation/speed_footprint_20261015/pursuit_smoke.json),
-[Nav2](../validation/speed_footprint_20261015/nav2_smoke.json),
-[계산 시간](../validation/speed_footprint_20261015/guard_timing.json).
+근거: [guard 통합 결과](../archive/20261109/validation/speed_footprint_20261015/watchdog.json),
+[Pure Pursuit](../archive/20261109/validation/speed_footprint_20261015/pursuit_smoke.json),
+[Nav2](../archive/20261109/validation/speed_footprint_20261015/nav2_smoke.json),
+[계산 시간](../archive/20261109/validation/speed_footprint_20261015/guard_timing.json).
 
 ## 2026-10-15 시뮬레이터 navigation 명령 배율 수정
 
@@ -191,7 +191,7 @@ lookahead를 0.45 m로 조정했습니다. 가속도·각속도 제한과 headin
 재현하여 확인해야 합니다. 학습 정책 내부의 observation 정규화는 유지했습니다.
 
 근거: [수정 패치](patches/terrain_cmd_unity.diff),
-[검사 출력](../validation/terrain_cmd_unity_20261015/tests.txt).
+[검사 출력](../archive/20261109/validation/terrain_cmd_unity_20261015/tests.txt).
 
 검증일: 2026-10-14. Ubuntu 22.04 / ROS 2 Humble / x86_64 PC에서 수행했습니다. 기존 실행 중인 시뮬레이션 domain과 분리했으며, 로봇 구동기를 실행하지 않았습니다.
 
@@ -212,7 +212,7 @@ lookahead를 0.45 m로 조정했습니다. 가속도·각속도 제한과 headin
 
 PCD mapping launch도 sensor 입력 없이 시작하여 `Node init finished`까지 확인했습니다. 실제 PCD 취득 품질은 이 시작 시험에 포함되지 않습니다. 원본 FAST-LIO의 선택적 debug log 디렉터리 안내가 출력될 수 있습니다. 시험 종료를 위한 SIGINT 뒤 upstream process의 `exit code -2`가 표시되는 경우를 시작 실패와 구분했습니다.
 
-`rosdep check`는 현재 PC의 apt 상태에서 `python3-open3d`, `libapr1-dev`, `libaprutil1-dev` 세 항목을 미충족으로 보고했습니다. 이 PC의 Open3D는 이미 설치된 Python 패키지를 사용하여 import·시작 검사를 통과했습니다. 새 장치에서는 [설치 안내](INSTALL.md)의 apt 설치와 `rosdep install`을 완료해야 하며, 깨끗한 Jetson에서 해당 설치 절차 전체를 실행한 결과는 아직 없습니다. [의존성 검사 출력](../validation/rosdep_check.log).
+`rosdep check`는 현재 PC의 apt 상태에서 `python3-open3d`, `libapr1-dev`, `libaprutil1-dev` 세 항목을 미충족으로 보고했습니다. 이 PC의 Open3D는 이미 설치된 Python 패키지를 사용하여 import·시작 검사를 통과했습니다. 새 장치에서는 [설치 안내](INSTALL.md)의 apt 설치와 `rosdep install`을 완료해야 하며, 깨끗한 Jetson에서 해당 설치 절차 전체를 실행한 결과는 아직 없습니다. [의존성 검사 출력](../archive/20261109/validation/rosdep_check.log).
 
 자동 검사에는 timestamp decoder, row padding·잘못된 단위 거부, IMU 180° 회전, 높이 좌표·누적·저장, 후처리, planner core, controller, 배포 입력 계약 검사가 포함됩니다. 기존에 포함된 회귀시험도 함께 실행했습니다. 숫자 자체를 실물 동작 보증으로 해석하지 않습니다.
 
@@ -224,7 +224,7 @@ PCD mapping launch도 sensor 입력 없이 시작하여 `Node init finished`까�
 
 설치된 Humble Collision Monitor의 데이터 중단 동작만으로 최종 정지를 보장할 수 없었던 부분은 마지막 `command_watchdog`에 cloud freshness 검사를 추가하여 해결했습니다. 이 node는 cloud뿐 아니라 odometry·costmap·명령의 갱신도 확인합니다.
 
-근거: [Nav2 결과](../validation/nav2_smoke.json), [Pure Pursuit 결과](../validation/pursuit_smoke.json), [Localization 시작 결과](../validation/localization_startup.json), [독립 환경](../validation/standalone_environment.json), [지도·launch 도구 결과](../validation/map_tools/result.json).
+근거: [Nav2 결과](../archive/20261109/validation/nav2_smoke.json), [Pure Pursuit 결과](../archive/20261109/validation/pursuit_smoke.json), [Localization 시작 결과](../archive/20261109/validation/localization_startup.json), [독립 환경](../archive/20261109/validation/standalone_environment.json), [지도·launch 도구 결과](../archive/20261109/validation/map_tools/result.json).
 
 ## 기존 GT snapshot의 오프라인 후처리
 
@@ -238,7 +238,7 @@ PCD mapping launch도 sensor 입력 없이 시작하여 `Node init finished`까�
 | 전체 유효 셀의 높이 변경량 P95 | 1.413 mm |
 | 높이 변경량 최대 | 5.153 mm |
 
-이는 **후처리가 바꾼 양**이며 GT에 대한 절대 오차를 뜻하지 않습니다. 세계 모델에 대한 독립 오차 평가는 이번 실행에 추가하지 않았습니다. 평균 필터 baseline은 경계까지 수정하므로 배포 후보로 자동 채택하지 않습니다. [후처리 비교 보고서](../validation/postprocess/report.html), [원시 metrics](../validation/postprocess/metrics.json).
+이는 **후처리가 바꾼 양**이며 GT에 대한 절대 오차를 뜻하지 않습니다. 세계 모델에 대한 독립 오차 평가는 이번 실행에 추가하지 않았습니다. 평균 필터 baseline은 경계까지 수정하므로 배포 후보로 자동 채택하지 않습니다. [후처리 비교 보고서](../archive/20261109/validation/postprocess/report.html), [원시 metrics](../archive/20261109/validation/postprocess/metrics.json).
 
 ## 아직 확인하지 않은 사항
 
@@ -250,7 +250,7 @@ PCD mapping launch도 sensor 입력 없이 시작하여 `Node init finished`까�
 
 ## 재현 자료
 
-빌드·시험 출력은 [validation](../validation)에 보관합니다. 반복 실행 명령은 [운영 안내](OPERATIONS.md#i-반복-검증)에 있습니다. GPU 검사는 다음과 같이 별도로 실행했습니다.
+빌드·시험 출력은 [validation](../archive/20261109/validation)에 보관합니다. 반복 실행 명령은 [운영 안내](OPERATIONS.md#i-반복-검증)에 있습니다. GPU 검사는 다음과 같이 별도로 실행했습니다.
 
 ```bash
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ROS_DOMAIN_ID=176 FASTDDS_BUILTIN_TRANSPORTS=UDPv4 \
@@ -275,7 +275,7 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ROS_DOMAIN_ID=176 FASTDDS_BUILTIN_TRANSPORTS=UD
 
 수정 내용은 CPU에서 이미 finite XYZ를 확인한 입력의 중복 GPU 검사를 제거하고, 두 layer의 host 복사를 합치고, Python float 목록 대신 float32 buffer로 ROS 메시지를 만드는 것입니다. 해상도·pose 정책·높이 추정식·visibility cleanup·traversability 계산을 유지했습니다. 기존 single-layer API와 기본 입력 검증 경로도 유지했습니다.
 
-근거: [벤치마크 결과](../validation/performance_20261015/gpu_optimization.json). 재현 도구는 `tools/benchmark_height.py`이며 source 후 다음처럼 실행합니다.
+근거: [벤치마크 결과](../archive/20261109/validation/performance_20261015/gpu_optimization.json). 재현 도구는 `tools/benchmark_height.py`이며 source 후 다음처럼 실행합니다.
 
 ```bash
 python3 tools/benchmark_height.py \
@@ -284,7 +284,7 @@ python3 tools/benchmark_height.py \
 
 이전 버전과 비교하려면 `--baseline /path/to/copied/rubi_height_mapping`을 지정합니다. 현재 PC 백업은 `backups/gpu_light_20261015_131543/rubi_height_mapping`입니다. 합성 벤치마크만으로 Jetson NX/Nano에서 FAST-LIO·navigation 동시 실행이 충분하다고 판단하지 않습니다. JetPack·전력 모드·열 상태를 기록하고 실제 센서 또는 동일 bag으로 전체 파이프라인의 CPU·GPU·메모리·누락률·지연을 측정해야 합니다.
 
-별도 12초간 현재 domain 45를 읽기 전용으로 조회했지만 raw/deskewed/localization의 새 메시지는 수신되지 않았습니다. 따라서 이번 작업에서 실제 입력 경로 A/B 지연을 측정했다고 주장하지 않습니다. [조회 기록](../validation/performance_20261015/input_probe.json).
+별도 12초간 현재 domain 45를 읽기 전용으로 조회했지만 raw/deskewed/localization의 새 메시지는 수신되지 않았습니다. 따라서 이번 작업에서 실제 입력 경로 A/B 지연을 측정했다고 주장하지 않습니다. [조회 기록](../archive/20261109/validation/performance_20261015/input_probe.json).
 
 ## 2026-10-15 대표 ray 선택·구조 최적화
 
@@ -307,15 +307,15 @@ RTX 5090 / CuPy 13.6.0, 8 × 8 m / 5 cm 지도에서 15회 워밍업 뒤 각 200
 
 저장 점군은 이전 시뮬레이션 capture의 XYZ를 사용하되 R=I, t=(0,0,0.8)의 합성 고정 pose로 반복했습니다. 원래 주행·pose를 재생한 실험이 아니므로 그 행은 계산비용 확인용입니다. 이 반복에서는 all/voxel 높이 차이가 최대 약 73.0 mm, 통과한 관측 수도 달랐습니다. 입력점을 삭제하지 않는다는 것이 후속 상태·높이 결과까지 완전히 같다는 뜻은 아닙니다.
 
-기존 kernel에는 같은 셀의 variance·유효성 등을 병렬로 읽고 쓰는 순서 민감성이 있습니다. 동일 저장 입력을 215회 반복한 추가 확인에서도 같은 버전 재실행 간 차이가 관측됐습니다. 최종 반복성 기록에서는 수정 전 최대 약 1.20 mm, 수정 후 all 최대 약 80.3 mm였습니다. all 경로는 CUDA 소스·signature와 임시 error buffer 할당 방식을 기존과 동일하게 유지했지만, 복잡한 입력의 수치 결과가 허용 오차 내에서 재현된다는 검증은 통과하지 못했습니다. 단순한 반올림 오차라고 단정하지 않으며 병렬 상태 갱신 순서·메모리 배치 영향 등을 추가로 분리해야 합니다. 가상 pose에서의 반복 시험이므로 실제 월드의 높이 오차로 해석하지 않지만, 실제 취득 정확도를 보장하는 근거로도 사용할 수 없습니다. 이 때문에 voxel을 배포 기본값으로 바꾸지 않았습니다. [반복성 기록](../validation/ray_optimization_20261015/repeatability.json).
+기존 kernel에는 같은 셀의 variance·유효성 등을 병렬로 읽고 쓰는 순서 민감성이 있습니다. 동일 저장 입력을 215회 반복한 추가 확인에서도 같은 버전 재실행 간 차이가 관측됐습니다. 최종 반복성 기록에서는 수정 전 최대 약 1.20 mm, 수정 후 all 최대 약 80.3 mm였습니다. all 경로는 CUDA 소스·signature와 임시 error buffer 할당 방식을 기존과 동일하게 유지했지만, 복잡한 입력의 수치 결과가 허용 오차 내에서 재현된다는 검증은 통과하지 못했습니다. 단순한 반올림 오차라고 단정하지 않으며 병렬 상태 갱신 순서·메모리 배치 영향 등을 추가로 분리해야 합니다. 가상 pose에서의 반복 시험이므로 실제 월드의 높이 오차로 해석하지 않지만, 실제 취득 정확도를 보장하는 근거로도 사용할 수 없습니다. 이 때문에 voxel을 배포 기본값으로 바꾸지 않았습니다. [반복성 기록](../archive/20261109/validation/ray_optimization_20261015/repeatability.json).
 
 합성 평면/5 cm·15 cm 단차에서는 유효 mask와 높이가 허용 오차 내에서 일치했습니다. 모든 높이 관측이 융합 계수에 포함되는지 별도로 검사했습니다. 알려진 수평 normal과 40개의 동일 ray를 사용하는 고립 잔상 시험에서 old ghost 제거는 **all 1 scan / voxel 9 scans**였습니다. 가려진 옆 셀은 유지되고 미관측 셀은 unknown으로 남았습니다. 10 Hz를 가정하면 9 scan은 약 0.9초지만, 실제 환경의 제거시간을 보장하는 수치는 아닙니다.
 
 빌드 성공, mapper 전체 검사와 bringup 계약 검사 **30 passed**. GPU 선택·메모리 재사용·빈 입력·역방향 장착·음수 좌표·Z datum·hash 포화 fallback·좌표 범위 fallback·visibility 비활성·단차·가려짐을 포함했습니다. ROS direct-odometry 시험은 voxel로 실행했고, 기존 TF pipeline은 all로 실행하여 좌표·저장/복원·시각 reset 동작을 확인했습니다. 사용자 실행 중인 mapper는 재시작하지 않았습니다.
 
-- [측정 JSON](../validation/ray_optimization_20261015/benchmark.json)
-- [시험 로그](../validation/ray_optimization_20261015/tests.log)
-- [공개 launch 인자](../validation/ray_optimization_20261015/launch_args.log)
+- [측정 JSON](../archive/20261109/validation/ray_optimization_20261015/benchmark.json)
+- [시험 로그](../archive/20261109/validation/ray_optimization_20261015/tests.log)
+- [공개 launch 인자](../archive/20261109/validation/ray_optimization_20261015/launch_args.log)
 
 재현 예시:
 
@@ -387,9 +387,9 @@ outlier-only 분산 증가, 음수 upper bound의 순서 독립 집계, unknown 
 사용자의 실행 중인 mapper·simulator·localizer는 재시작하지 않았습니다.
 source 및 설치에 수정본을 반영했으며 새 mapping launch부터 사용합니다.
 
-- [측정 결과](../validation/snapshot_fusion_20261015/benchmark.json)
-- [검사 로그](../validation/snapshot_fusion_20261015/tests.log)
-- [빌드 로그](../validation/snapshot_fusion_20261015/build.log)
+- [측정 결과](../archive/20261109/validation/snapshot_fusion_20261015/benchmark.json)
+- [검사 로그](../archive/20261109/validation/snapshot_fusion_20261015/tests.log)
+- [빌드 로그](../archive/20261109/validation/snapshot_fusion_20261015/build.log)
 - [읽기·쓰기 구조](height_snapshot.svg)
 - 원본 백업: `backups/snapshot_fusion_20261015_152106/` (SHA-256 포함)
 
@@ -412,8 +412,8 @@ python3 tools/validate_snapshot.py \
 저장 경로의 홈 디렉터리 확장도 확인했습니다. 실행 중인 ROS 노드는 건드리지
 않는 launch 확장 검사이며, 새 live 주행을 했다는 의미는 아닙니다.
 
-- [확인 스크립트](../validation/mapping_yaml_20261015/check_launch.py)
-- [실제 전달 설정](../validation/mapping_yaml_20261015/expanded.json)
+- [확인 스크립트](../archive/20261109/validation/mapping_yaml_20261015/check_launch.py)
+- [실제 전달 설정](../archive/20261109/validation/mapping_yaml_20261015/expanded.json)
 - 백업: `backups/mapping_yaml_20261015_165827/legged_bringup`
 
 ## Navigation recovery — 2026-10-15

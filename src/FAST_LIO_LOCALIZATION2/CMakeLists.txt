@@ -52,6 +52,7 @@ find_path(MATPLOTLIB_CPP_INCLUDE_DIRS "matplotlibcpp.h")
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(tf2_ros REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(geometry_msgs REQUIRED)
@@ -119,8 +120,11 @@ endif()
 
 ament_target_dependencies(fastlio_mapping ${dependencies})
 
+add_executable(transform_fusion_cpp src/transformFusion.cpp)
+target_link_libraries(transform_fusion_cpp Eigen3::Eigen)
+ament_target_dependencies(transform_fusion_cpp rclcpp geometry_msgs nav_msgs tf2_ros)
 # ---------------- Install --------------- #
-install(TARGETS fastlio_mapping
+install(TARGETS fastlio_mapping transform_fusion_cpp
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -142,6 +146,12 @@ install(PROGRAMS
 
 if(BUILD_TESTING)
   find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_velocity_output test/test_velocity_output.cpp)
+  ament_target_dependencies(test_velocity_output nav_msgs)
+  target_include_directories(test_velocity_output PRIVATE include)
+  target_link_libraries(test_velocity_output Eigen3::Eigen)
+  ament_add_gtest(test_pipeline_timing test/test_pipeline_timing.cpp)
+  target_include_directories(test_pipeline_timing PRIVATE include)
   ament_add_gtest(test_livox_time test/test_livox_time.cpp)
   target_include_directories(test_livox_time PRIVATE include ../livox_ros_driver2/src/comm)
   ament_target_dependencies(test_livox_time sensor_msgs)

@@ -1,0 +1,69 @@
+import os,time,signal,subprocess,json,sys
+from pathlib import Path
+import rclpy
+from rclpy.node import Node
+from rclpy.action import ActionClient
+from geometry_msgs.msg import PoseStamped
+from nav2_msgs.action import ComputePathToPose
+from lifecycle_msgs.srv import GetState
+from nav2_msgs.srv import GetCostmap
+from rcl_interfaces.srv import GetParameters
+out=Path(sys.argv[2]);out.mkdir(exist_ok=True); env=os.environ.copy()
+assert env['ROS_DOMAIN_ID']=='187' and env['ROS_LOCALHOST_ONLY']=='1'
+log=(out/'review_launch.log').open('w')
+p=subprocess.Popen(['ros2','launch','legged_bringup','rubi_height_navigation.launch.py','rviz:=false','mode:=review','review_planning_time_ms:=800','site:='+sys.argv[1],'review_height_cost:=geometry','review_height_limit_m:=0.11'],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+rclpy.init();n=Node('height_integration_probe');c=ActionClient(n,ComputePathToPose,'/compute_path_to_pose');result=[]
+def pose(x,y):
+ m=PoseStamped();m.header.frame_id='map';m.header.stamp=n.get_clock().now().to_msg();m.pose.position.x=x;m.pose.position.y=y;m.pose.orientation.w=1.;return m
+try:
+ end=time.monotonic()+90
+ while time.monotonic()<end:
+  if p.poll() is not None:raise RuntimeError('launch exited')
+  if c.wait_for_server(timeout_sec=1.):break
+ else:raise RuntimeError('no planner action')
+ check=n.create_client(GetState,'/planner_server/get_state')
+ for i in range(80):
+  if check.wait_for_service(timeout_sec=.5):
+   f=check.call_async(GetState.Request());rclpy.spin_until_future_complete(n,f,timeout_sec=1)
+   if f.done() and f.result().current_state.id==3:break
+  time.sleep(.5)
+ else:raise RuntimeError('planner not active')
+ 
+ for _ in range(120):
+  if 'Frozen terrain READY:' in (out/'review_launch.log').read_text():break
+  time.sleep(.5)
+ else:raise RuntimeError('frozen terrain never ready')
+ params=n.create_client(GetParameters,'/planner_server/get_parameters')
+ if not params.wait_for_service(timeout_sec=10):raise RuntimeError('parameter service unavailable')
+ keys=['Height.evaluation.grid_cot_height_cost_enabled','Height.evaluation.max_crossable_height_jump_m','Height.evaluation.local_relief_threshold_m']
+ q=GetParameters.Request();q.names=keys;f=params.call_async(q)
+ rclpy.spin_until_future_complete(n,f,timeout_sec=10)
+ if not f.done():raise RuntimeError('parameter request timeout')
+ values=f.result().values
+ assert values[0].type==1 and not values[0].bool_value
+ assert all(v.type==3 and abs(v.double_value-.11)<1e-9 for v in values[1:])
+ print('Verified geometry cost and 0.11 m limits by service',flush=True)
+ for trial in range(10):
+  label,start,goal=f'full_route_{trial}',(2.85944,.169367),(48.4538,41.392)
+  g=ComputePathToPose.Goal();g.planner_id='Height';g.use_start=True;g.start=pose(*start);g.goal=pose(*goal)
+  t=time.monotonic();f=c.send_goal_async(g);rclpy.spin_until_future_complete(n,f,timeout_sec=10)
+  if not f.done() or not f.result().accepted:raise RuntimeError('goal rejected')
+  f=f.result().get_result_async();rclpy.spin_until_future_complete(n,f,timeout_sec=120)
+  if not f.done():raise RuntimeError('plan timeout')
+  r=f.result();d={'label':label,'start':start,'goal':goal,'status':r.status,'wall_seconds':time.monotonic()-t,'poses':[[v.pose.position.x,v.pose.position.y,v.pose.position.z] for v in r.result.path.poses]}
+  assert r.status==4 and len(d['poses'])==1652, d['status']
+  if result:assert d['poses']==result[0]['poses'], 'path changed'
+  result.append(d);(out/'review_results.json').write_text(json.dumps(result,indent=2));print({k:v for k,v in d.items() if k!='poses'},'points',len(d['poses']),flush=True)
+ topics=n.get_topic_names_and_types();assert not any(t in ['/cmd_vel','/legged/cmd_raw','/legged/cmd_safe'] for t,_ in topics)
+ cost_client=n.create_client(GetCostmap,'/global_costmap/get_costmap')
+ assert cost_client.wait_for_service(timeout_sec=10)
+ f=cost_client.call_async(GetCostmap.Request());rclpy.spin_until_future_complete(n,f,timeout_sec=10)
+ assert f.done()
+ m=f.result().map; (out/'costmap.u8').write_bytes(bytes(m.data))
+ (out/'costmap_geometry.json').write_text(json.dumps({'nx':m.metadata.size_x,'ny':m.metadata.size_y,'resolution':m.metadata.resolution,'origin':[m.metadata.origin.position.x,m.metadata.origin.position.y]}))
+ print('No command topics in review domain; raw costmap saved',flush=True)
+finally:
+ p.send_signal(signal.SIGINT)
+ try:p.wait(timeout=15)
+ except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGTERM);p.wait(timeout=10)
+ log.close();n.destroy_node();rclpy.shutdown()

@@ -1,0 +1,6 @@
+*.rghm
+*.pcd
+*.npz
+*.png
+*.json
+audit/

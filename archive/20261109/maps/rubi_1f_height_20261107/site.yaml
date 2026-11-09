@@ -1,0 +1,31 @@
+format: 1
+id: rubi-1f-height-20261107-raw
+frame: map
+height_resolution: 0.05
+alignment:
+  verified: true
+  scope: offline same-frame integration; not a surveyed or driving validation
+  method: Keep the map coordinates from FAST-LIO PCD localization. Compare unchanged
+    height geometry with the original PCD and occupancy pair; no rigid transform or
+    floor correction applied.
+  evidence: ../processed/run_1794037249460292244_postprocess_20261107/audits/reference/reference_audit.json
+  limitations: Local partial-structure nearest-neighbor median is about 0.025 m; diagnostic
+    local shifts vary. Large holes and temporary steps remain. Review spatial registration
+    and routes before hardware use.
+assets:
+  pcd:
+    path: ../../../../maps/rubi_1f_legacy/data/1f_fast_lio_260731_segmented.pcd
+    sha256: e3d8a70c5c47813bba48a8f4fadeb9718ed8960feb86ef9c7ff1c9be6151d70d
+  occupancy:
+    path: ../../../../maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+    sha256: 7d63dcaeee3ae2b0d7202b3c841117462aaa1a06dadfe0c5ee7149dc9b4f593d
+  image:
+    path: ../../../../maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm
+    sha256: 38a53eb28f702394d6d4f178211b32aaee35830990bcbe0e159e1f5111a3ef3b
+  height:
+    path: ../../../../maps/raw/run_1794037249460292244/map.rghm
+    sha256: 1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8
+provenance:
+  height: Original saved map, no postprocessing or fills
+  prepared_on: '2026-11-09'
+  navigation_hardware_validated: false

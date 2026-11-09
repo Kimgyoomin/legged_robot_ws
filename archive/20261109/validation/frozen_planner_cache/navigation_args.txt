@@ -1,0 +1,65 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'site':
+        no description given
+        (default: '/home/rclab/legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml')
+
+    'mode':
+        no description given
+        (default: 'review')
+
+    'controller':
+        no description given
+        (default: 'dwb')
+
+    'use_sim_time':
+        no description given
+        (default: 'false')
+
+    'review_planning_time_ms':
+        no description given
+        (default: '800')
+
+    'review_height_cost':
+        no description given
+        (default: 'configured')
+
+    'review_height_limit_m':
+        no description given
+        (default: '')
+
+    'planning_time_ms':
+        no description given
+        (default: '800')
+
+    'height_limit_m':
+        no description given
+        (default: '0.11')
+
+    'height_cost':
+        no description given
+        (default: 'geometry')
+
+    'launch_localization':
+        no description given
+        (default: 'false')
+
+    'use_fastlio_velocity':
+        no description given
+        (default: 'true')
+
+    'navigation_prefix':
+        no description given
+        (default: '')
+
+    'rviz':
+        no description given
+        (default: 'true')
+
+    'cloud_topic':
+        no description given
+        (default: '/livox/lidar_pointcloud')
+
+    'dds_profile':
+        no description given
+        (default: 'navigation')

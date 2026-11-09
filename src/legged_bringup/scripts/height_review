@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+from legged_bringup.height_review import main
+main()

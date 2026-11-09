@@ -1,0 +1,564 @@
+[INFO] [launch]: All log files can be found below /home/rclab/.ros/log/2026-11-09-16-10-15-479411-rclab-170254
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: RUBI height navigation DDS profile: 32 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: Height site: rubi-1f-height-wall-gap-v6-20261109 | /home/rclab/legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/map.rghm | mode=replay
+[INFO] [launch.user]: ROS BAG REPLAY: recorded motion is fixed; new commands go only to /legged/replay/cmd_vel. No LCM.
+[INFO] [launch.user]: RUBI localization DDS profile: 32 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: FAST-LIO localization DDS profile: 32 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: PCD map publisher DDS profile: 128 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: RUBI height navigation: DWB 5 Hz, velocity=True, command=/legged/replay/cmd_vel; height=0.11 m, cost=geometry, budget=5000 ms. 1 Hz replanning is a target, not a runtime guarantee.
+[INFO] [static_transform_publisher-1]: process started with pid [170277]
+[INFO] [fastlio_mapping-2]: process started with pid [170279]
+[INFO] [global_localization.py-3]: process started with pid [170281]
+[INFO] [transform_fusion_cpp-4]: process started with pid [170283]
+[INFO] [pcd_to_pointcloud-5]: process started with pid [170285]
+[INFO] [static_transform_publisher-6]: process started with pid [170287]
+[INFO] [static_transform_publisher-7]: process started with pid [170289]
+[INFO] [static_transform_publisher-8]: process started with pid [170291]
+[INFO] [map_server-9]: process started with pid [170293]
+[INFO] [frozen_map-10]: process started with pid [170316]
+[INFO] [costmap_sector_filter-11]: process started with pid [170330]
+[INFO] [fastlio_velocity_feedback-12]: process started with pid [170339]
+[INFO] [planner_server-13]: process started with pid [170350]
+[INFO] [controller_server-14]: process started with pid [170362]
+[INFO] [smoother_server-15]: process started with pid [170380]
+[INFO] [behavior_server-16]: process started with pid [170382]
+[INFO] [bt_navigator-17]: process started with pid [170393]
+[INFO] [lifecycle_manager-18]: process started with pid [170423]
+[static_transform_publisher-1] [WARN] [1794208217.260616194] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-1] [INFO] [1794208217.313067146] [world_to_map]: Spinning until stopped - publishing transform
+[static_transform_publisher-1] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-1] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-1] from 'world' to 'map'
+[transform_fusion_cpp-4] [INFO] [1794208217.377274676] [transform_fusion]: C++ transform fusion started (Odometry RELIABLE depth 1, TF depth 1)
+[static_transform_publisher-6] [INFO] [1794208217.316278283] [body_to_robot_body]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('-0.110500', '0.023290', '0.093380')
+[static_transform_publisher-6] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-6] from 'body' to 'BODY'
+[static_transform_publisher-7] [INFO] [1794208217.362258225] [BODY_to_base_link]: Spinning until stopped - publishing transform
+[static_transform_publisher-7] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-7] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-7] from 'BODY' to 'base_link'
+[static_transform_publisher-8] [INFO] [1794208217.378731072] [base_link_to_livox_frame]: Spinning until stopped - publishing transform
+[static_transform_publisher-8] translation: ('0.099500', '0.000000', '-0.137500')
+[static_transform_publisher-8] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-8] from 'base_link' to 'livox_frame'
+[map_server-9] [INFO] [1794208217.482152196] [map_server]: 
+[map_server-9] 	map_server lifecycle node launched. 
+[map_server-9] 	Waiting on external lifecycle transitions to activate
+[map_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-9] [INFO] [1794208217.482427309] [map_server]: Creating
+[smoother_server-15] [INFO] [1794208217.560761919] [smoother_server]: 
+[smoother_server-15] 	smoother_server lifecycle node launched. 
+[smoother_server-15] 	Waiting on external lifecycle transitions to activate
+[smoother_server-15] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-14] [INFO] [1794208217.561989252] [controller_server]: 
+[controller_server-14] 	controller_server lifecycle node launched. 
+[controller_server-14] 	Waiting on external lifecycle transitions to activate
+[controller_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-15] [INFO] [1794208217.569629513] [smoother_server]: Creating smoother server
+[controller_server-14] [INFO] [1794208217.570855342] [controller_server]: Creating controller server
+[fastlio_velocity_feedback-12] [INFO] [1794208217.629748024] [fastlio_velocity_feedback]: FAST-LIO velocity feedback /fastlio/odometry_velocity -> /fastlio/odometry_base: body origin -> base_link origin; reliable output, original stamp; max age 0.250s. No command watchdog.
+[controller_server-14] [INFO] [1794208217.640751939] [local_costmap.local_costmap]: 
+[controller_server-14] 	local_costmap lifecycle node launched. 
+[controller_server-14] 	Waiting on external lifecycle transitions to activate
+[controller_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-14] [INFO] [1794208217.641963528] [local_costmap.local_costmap]: Creating Costmap
+[behavior_server-16] [INFO] [1794208217.643822047] [behavior_server]: 
+[behavior_server-16] 	behavior_server lifecycle node launched. 
+[behavior_server-16] 	Waiting on external lifecycle transitions to activate
+[behavior_server-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[costmap_sector_filter-11] [INFO] [1794208217.652779021] [costmap_sector_filter]: Costmap only: /livox/lidar_pointcloud -> /livox/lidar_costmap; livox_frame +X +/-60.0 deg >=0.30 m, elsewhere >=1.00 m (sensor-origin XY range). Stamp/point records unchanged.
+[costmap_sector_filter-11] [INFO] [1794208217.653794091] [costmap_sector_filter]: Height: origin=BODY, gravity from /fastlio/up_body in body, [-0.200, 1.000] m. Timestamp interpolation only; missing/stale direction or TF drops clouds. Marking and clearing use the same retained real endpoints.
+[planner_server-13] [INFO] [1794208217.674476633] [planner_server]: 
+[planner_server-13] 	planner_server lifecycle node launched. 
+[planner_server-13] 	Waiting on external lifecycle transitions to activate
+[planner_server-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-13] [INFO] [1794208217.678722168] [planner_server]: Creating
+[bt_navigator-17] [INFO] [1794208217.706722466] [bt_navigator]: 
+[bt_navigator-17] 	bt_navigator lifecycle node launched. 
+[bt_navigator-17] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-17] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-17] [INFO] [1794208217.706968137] [bt_navigator]: Creating
+[planner_server-13] [INFO] [1794208217.726118953] [global_costmap.global_costmap]: 
+[planner_server-13] 	global_costmap lifecycle node launched. 
+[planner_server-13] 	Waiting on external lifecycle transitions to activate
+[planner_server-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-13] [INFO] [1794208217.727241451] [global_costmap.global_costmap]: Creating Costmap
+[pcd_to_pointcloud-5] [INFO] [1794208217.754732997] [map_publisher]: Publishing data with 565765 points (curvature _ intensity _ normal_x normal_y normal_z _ x y z _) on topic /cloud_pcd in frame map.
+[lifecycle_manager-18] [INFO] [1794208217.776700921] [lifecycle_rubi_height]: Creating
+[lifecycle_manager-18] [INFO] [1794208217.789063981] [lifecycle_rubi_height]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[fastlio_mapping-2] [INFO] [1794208217.801862445] [laser_mapping]: p_pre->lidar_type 1
+[fastlio_mapping-2] [INFO] [1794208217.802188855] [laser_mapping]: LiDAR-IMU extrinsic estimation: disabled; using fixed calibration (mapping.extrinsic_est_en=false), initial T=[-0.011000, 0.023290, -0.044120] m
+[fastlio_mapping-2] Multi thread started 
+[fastlio_mapping-2] ~~~~/home/rclab/legged_robot_ws/src/FAST_LIO_LOCALIZATION2/ doesn't exist
+[fastlio_mapping-2] [INFO] [1794208217.847301059] [laser_mapping]: Gravity direction: /fastlio/up_body (unit up in body, scan-end stamp)
+[fastlio_mapping-2] [INFO] [1794208217.847380805] [laser_mapping]: Native body velocity: /fastlio/odometry_velocity (diagnostic only; Nav2 input unchanged)
+[fastlio_mapping-2] [INFO] [1794208217.861417739] [laser_mapping]: Node init finished.
+[lifecycle_manager-18] [INFO] [1794208217.897195615] [lifecycle_rubi_height]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-18] [INFO] [1794208217.897281345] [lifecycle_rubi_height]: [34m[1mConfiguring map_server[0m[0m
+[map_server-9] [INFO] [1794208217.897905396] [map_server]: Configuring
+[map_server-9] [INFO] [1794208217.898009079] [map_io]: Loading yaml file: /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+[map_server-9] [INFO] [1794208217.898396451] [map_io]: resolution: 0.05
+[map_server-9] [INFO] [1794208217.898413923] [map_io]: origin[0]: -6.15
+[map_server-9] [INFO] [1794208217.898422148] [map_io]: origin[1]: -54.1
+[map_server-9] [INFO] [1794208217.898427652] [map_io]: origin[2]: 0
+[map_server-9] [INFO] [1794208217.898432900] [map_io]: free_thresh: 0.196
+[map_server-9] [INFO] [1794208217.898438276] [map_io]: occupied_thresh: 0.65
+[map_server-9] [INFO] [1794208217.898444804] [map_io]: mode: trinary
+[map_server-9] [INFO] [1794208217.898451524] [map_io]: negate: 0
+[map_server-9] [INFO] [1794208217.898710412] [map_io]: Loading image_file: /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm
+[map_server-9] [INFO] [1794208218.447185297] [map_io]: Read map /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm: 1300 X 2986 map @ 0.05 m/cell
+[lifecycle_manager-18] [INFO] [1794208218.461981134] [lifecycle_rubi_height]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-13] [INFO] [1794208218.462370137] [planner_server]: Configuring
+[planner_server-13] [INFO] [1794208218.462447292] [global_costmap.global_costmap]: Configuring
+[planner_server-13] [INFO] [1794208218.471357735] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-13] [INFO] [1794208218.478606241] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-13] [INFO] [1794208218.481951078] [global_costmap.global_costmap]: Subscribing to updates
+[planner_server-13] [INFO] [1794208218.485144614] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-13] [INFO] [1794208218.485219240] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-13] [INFO] [1794208218.488762739] [global_costmap.global_costmap]: Subscribed to Topics: livox_cloud
+[planner_server-13] [INFO] [1794208218.495844487] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-13] [INFO] [1794208218.495921610] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-13] [INFO] [1794208218.497852228] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-13] [INFO] [1794208218.515397683] [planner_server]: Created global planner plugin Height of type legged_navigation/HeightPlanner
+[planner_server-13] [INFO] [1794208218.518862747] [planner_server]: Planner Server has Height  planners available.
+[lifecycle_manager-18] [INFO] [1794208218.535913436] [lifecycle_rubi_height]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-14] [INFO] [1794208218.536393258] [controller_server]: Configuring controller interface
+[controller_server-14] [INFO] [1794208218.536701555] [controller_server]: getting goal checker plugins..
+[controller_server-14] [INFO] [1794208218.536886169] [controller_server]: Controller frequency set to 5.0000Hz
+[controller_server-14] [INFO] [1794208218.536950363] [local_costmap.local_costmap]: Configuring
+[controller_server-14] [INFO] [1794208218.552300616] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-14] [INFO] [1794208218.561535710] [local_costmap.local_costmap]: Subscribed to Topics: livox_cloud
+[controller_server-14] [INFO] [1794208218.575342237] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-14] [INFO] [1794208218.575421759] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-14] [INFO] [1794208218.577859816] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-14] [INFO] [1794208218.614207629] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-14] [INFO] [1794208218.617949309] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-14] [INFO] [1794208218.620370214] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[controller_server-14] [INFO] [1794208218.623247645] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-14] [INFO] [1794208218.628498874] [controller_server]: Setting transform_tolerance to 0.500000
+[controller_server-14] [INFO] [1794208218.664527221] [controller_server]: Using critic "RotateToGoal" (dwb_critics::RotateToGoalCritic)
+[controller_server-14] [INFO] [1794208218.667047073] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.667671508] [controller_server]: Using critic "Oscillation" (dwb_critics::OscillationCritic)
+[controller_server-14] [INFO] [1794208218.670066108] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.670601292] [controller_server]: Using critic "BaseObstacle" (dwb_critics::BaseObstacleCritic)
+[controller_server-14] [INFO] [1794208218.671622443] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.672175387] [controller_server]: Using critic "ObstacleFootprint" (dwb_critics::ObstacleFootprintCritic)
+[controller_server-14] [INFO] [1794208218.673171641] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.673715465] [controller_server]: Using critic "GoalAlign" (dwb_critics::GoalAlignCritic)
+[controller_server-14] [INFO] [1794208218.675382748] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.675935628] [controller_server]: Using critic "PathAlign" (dwb_critics::PathAlignCritic)
+[controller_server-14] [INFO] [1794208218.677530524] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.678058572] [controller_server]: Using critic "PathDist" (dwb_critics::PathDistCritic)
+[controller_server-14] [INFO] [1794208218.679168301] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.679755647] [controller_server]: Using critic "GoalDist" (dwb_critics::GoalDistCritic)
+[controller_server-14] [INFO] [1794208218.680906978] [controller_server]: Critic plugin initialized
+[controller_server-14] [INFO] [1794208218.680964227] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-18] [INFO] [1794208218.707857612] [lifecycle_rubi_height]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-15] [INFO] [1794208218.708305945] [smoother_server]: Configuring smoother server
+[smoother_server-15] [INFO] [1794208218.729645946] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-15] [INFO] [1794208218.734719059] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-18] [INFO] [1794208218.756555939] [lifecycle_rubi_height]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-16] [INFO] [1794208218.756956847] [behavior_server]: Configuring
+[behavior_server-16] [INFO] [1794208218.773653381] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors/Spin
+[behavior_server-16] [INFO] [1794208218.775904681] [behavior_server]: Configuring spin
+[behavior_server-16] [INFO] [1794208218.800360264] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors/BackUp
+[behavior_server-16] [INFO] [1794208218.802027322] [behavior_server]: Configuring backup
+[behavior_server-16] [INFO] [1794208218.818897013] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors/DriveOnHeading
+[behavior_server-16] [INFO] [1794208218.820779694] [behavior_server]: Configuring drive_on_heading
+[behavior_server-16] [INFO] [1794208218.835389957] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-16] [INFO] [1794208218.837318367] [behavior_server]: Configuring wait
+[lifecycle_manager-18] [INFO] [1794208218.853484837] [lifecycle_rubi_height]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-17] [INFO] [1794208218.853934194] [bt_navigator]: Configuring
+[lifecycle_manager-18] [INFO] [1794208219.015428616] [lifecycle_rubi_height]: [34m[1mActivating map_server[0m[0m
+[map_server-9] [INFO] [1794208219.015704560] [map_server]: Activating
+[map_server-9] [INFO] [1794208219.019016468] [map_server]: Creating bond (map_server) to lifecycle manager.
+[planner_server-13] [INFO] [1794208219.022065711] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 1300 X 2986 at 0.050000 m/pix
+[lifecycle_manager-18] [INFO] [1794208219.130253571] [lifecycle_rubi_height]: Server map_server connected with bond.
+[lifecycle_manager-18] [INFO] [1794208219.130337317] [lifecycle_rubi_height]: [34m[1mActivating planner_server[0m[0m
+[planner_server-13] [INFO] [1794208219.130807572] [planner_server]: Activating
+[planner_server-13] [INFO] [1794208219.130881590] [global_costmap.global_costmap]: Activating
+[planner_server-13] [INFO] [1794208219.130905271] [global_costmap.global_costmap]: Checking transform
+[planner_server-13] [INFO] [1794208219.130956344] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[global_localization.py-3] [INFO] [1794208219.496668744] [global_localization]: Waiting for global map...
+[planner_server-13] [INFO] [1794208219.631014862] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[global_localization.py-3] [INFO] [1794208220.033105667] [global_localization]: Global map received.
+[global_localization.py-3] [INFO] [1794208220.033745366] [global_localization]: Global map received.
+[frozen_map-10] [INFO] [1794208220.094034378] [frozen_map]: Frozen height loaded: 265219 cells; c5c491b9dc00e50659a6ce812296f001d5ae4f6af8ab126f4cff2561828ee35c
+[planner_server-13] [INFO] [1794208220.131013569] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208220.631019381] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208221.131013673] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208221.631001500] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208222.131008529] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208222.631009380] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208223.131005496] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208223.631009388] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208224.131007040] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208224.631028884] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208225.131014856] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208225.631015483] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208226.131009615] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208226.631009443] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208227.131010711] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208227.631012299] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[planner_server-13] [INFO] [1794208228.131006398] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Could not find a connection between 'map' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[costmap_sector_filter-11] [WARN] [1794208228.150924053] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[behavior_server-16] [WARN] [1794208228.150993431] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[planner_server-13] [WARN] [1794208228.151067449] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[controller_server-14] [WARN] [1794208228.151151644] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[fastlio_velocity_feedback-12] [WARN] [1794208228.151488486] [tf2_buffer]: Detected jump back in time. Clearing TF buffer.
+[global_localization.py-3] [INFO] [1794208228.153348638] [global_localization]: Waiting for initial pose...
+[fastlio_mapping-2] [WARN] [1794208228.351818603] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] [WARN] [1794208228.361879161] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] IMU Initial Done
+[fastlio_mapping-2] [WARN] [1794208228.421881573] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] [INFO] [1794208228.523051205] [laser_mapping]: Initialize the map kdtree
+[costmap_sector_filter-11] [WARN] [1794208228.603330194] [costmap_sector_filter]: Height filter dropped cloud: no timely gravity/TF, or stale input. wait_ms=255.6 age_ms=484.2 cloud_drops=1 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208228.627022874] [transform_fusion]: fusion timing: input_interval=11257.6 ms input_age=5.0 ms localization_publish=0.083 ms tf_publish=0.102 ms total=0.186 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208228.627131325] [fastlio_velocity_feedback]: velocity_feedback age_ms=5.01 work_ms=0.186 vx=0.019 vy=-0.017 wz=-0.001
+[planner_server-13] [INFO] [1794208228.631132118] [global_costmap.global_costmap]: start
+[global_localization.py-3] [INFO] [1794208228.682515870] [global_localization]: Waiting for initial pose...
+[costmap_sector_filter-11] [INFO] [1794208228.874096348] [costmap_sector_filter]: body_height_filter input=20064 kept=2845 range_drops=12405 height_drops=4814 nonfinite_drops=0 filter_ms=0.571 wait_ms=53.7 age_ms=154.2 cloud_drops=3 up_drops=0
+[planner_server-13] [INFO] [1794208229.685610595] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-18] [INFO] [1794208229.797622505] [lifecycle_rubi_height]: Server planner_server connected with bond.
+[lifecycle_manager-18] [INFO] [1794208229.797727884] [lifecycle_rubi_height]: [34m[1mActivating controller_server[0m[0m
+[controller_server-14] [INFO] [1794208229.798217499] [controller_server]: Activating
+[controller_server-14] [INFO] [1794208229.798302334] [local_costmap.local_costmap]: Activating
+[controller_server-14] [INFO] [1794208229.798331359] [local_costmap.local_costmap]: Checking transform
+[controller_server-14] [INFO] [1794208229.798501124] [local_costmap.local_costmap]: start
+[controller_server-14] [INFO] [1794208230.049867303] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-18] [INFO] [1794208230.156214979] [lifecycle_rubi_height]: Server controller_server connected with bond.
+[lifecycle_manager-18] [INFO] [1794208230.156312390] [lifecycle_rubi_height]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-15] [INFO] [1794208230.157139679] [smoother_server]: Activating
+[smoother_server-15] [INFO] [1794208230.157217985] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-18] [INFO] [1794208230.264161711] [lifecycle_rubi_height]: Server smoother_server connected with bond.
+[lifecycle_manager-18] [INFO] [1794208230.264239442] [lifecycle_rubi_height]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-16] [INFO] [1794208230.264833540] [behavior_server]: Activating
+[behavior_server-16] [INFO] [1794208230.264900614] [behavior_server]: Activating spin
+[behavior_server-16] [INFO] [1794208230.264927846] [behavior_server]: Activating backup
+[behavior_server-16] [INFO] [1794208230.264944455] [behavior_server]: Activating drive_on_heading
+[behavior_server-16] [INFO] [1794208230.264958407] [behavior_server]: Activating wait
+[behavior_server-16] [INFO] [1794208230.264977032] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-18] [INFO] [1794208230.371952215] [lifecycle_rubi_height]: Server behavior_server connected with bond.
+[lifecycle_manager-18] [INFO] [1794208230.372043770] [lifecycle_rubi_height]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-17] [INFO] [1794208230.372495527] [bt_navigator]: Activating
+[bt_navigator-17] [INFO] [1794208230.446523832] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-18] [INFO] [1794208230.554262559] [lifecycle_rubi_height]: Server bt_navigator connected with bond.
+[lifecycle_manager-18] [INFO] [1794208230.554348769] [lifecycle_rubi_height]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-18] [INFO] [1794208230.554368898] [lifecycle_rubi_height]: [34m[1mCreating bond timer...[0m[0m
+[transform_fusion_cpp-4] [INFO] [1794208230.627292434] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=4.4 ms localization_publish=0.055 ms tf_publish=0.216 ms total=0.273 ms
+[global_localization.py-3] [INFO] [1794208230.684422023] [global_localization]: Waiting for initial pose...
+[global_localization.py-3] [INFO] [1794208231.553376972] [global_localization]: Initial pose received.
+[transform_fusion_cpp-4] [INFO] [1794208232.627229407] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=4.0 ms localization_publish=0.056 ms tf_publish=0.170 ms total=0.228 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208233.627008960] [fastlio_velocity_feedback]: velocity_feedback age_ms=5.24 work_ms=0.121 vx=-0.005 vy=-0.018 wz=0.001
+[costmap_sector_filter-11] [INFO] [1794208234.027094457] [costmap_sector_filter]: body_height_filter input=19776 kept=2809 range_drops=12424 height_drops=4543 nonfinite_drops=0 filter_ms=0.353 wait_ms=7.9 age_ms=104.4 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208234.627183213] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=4.1 ms localization_publish=0.058 ms tf_publish=0.074 ms total=0.134 ms
+[transform_fusion_cpp-4] [INFO] [1794208236.626892307] [transform_fusion]: fusion timing: input_interval=99.4 ms input_age=5.3 ms localization_publish=0.071 ms tf_publish=0.070 ms total=0.143 ms
+[transform_fusion_cpp-4] [INFO] [1794208238.627239949] [transform_fusion]: fusion timing: input_interval=100.4 ms input_age=5.7 ms localization_publish=0.065 ms tf_publish=0.066 ms total=0.133 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208238.627289998] [fastlio_velocity_feedback]: velocity_feedback age_ms=5.74 work_ms=0.143 vx=-0.018 vy=-0.009 wz=0.000
+[costmap_sector_filter-11] [INFO] [1794208239.027320198] [costmap_sector_filter]: body_height_filter input=19776 kept=2845 range_drops=12121 height_drops=4810 nonfinite_drops=0 filter_ms=0.348 wait_ms=8.3 age_ms=104.5 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208240.627004021] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=5.8 ms localization_publish=0.054 ms tf_publish=0.061 ms total=0.117 ms
+[transform_fusion_cpp-4] [INFO] [1794208242.627346991] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=4.3 ms localization_publish=0.068 ms tf_publish=0.051 ms total=0.121 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208243.627229651] [fastlio_velocity_feedback]: velocity_feedback age_ms=4.36 work_ms=0.121 vx=-0.012 vy=-0.010 wz=-0.002
+[costmap_sector_filter-11] [INFO] [1794208244.027311883] [costmap_sector_filter]: body_height_filter input=19680 kept=2619 range_drops=12454 height_drops=4607 nonfinite_drops=0 filter_ms=0.351 wait_ms=8.0 age_ms=104.7 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208244.627251355] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=5.6 ms localization_publish=0.054 ms tf_publish=0.073 ms total=0.130 ms
+[transform_fusion_cpp-4] [INFO] [1794208246.627360429] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=5.6 ms localization_publish=0.052 ms tf_publish=0.109 ms total=0.163 ms
+[transform_fusion_cpp-4] [INFO] [1794208248.627550498] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=4.6 ms localization_publish=0.052 ms tf_publish=0.075 ms total=0.129 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208248.627687463] [fastlio_velocity_feedback]: velocity_feedback age_ms=4.58 work_ms=0.103 vx=-0.010 vy=-0.012 wz=-0.001
+[costmap_sector_filter-11] [INFO] [1794208249.027566041] [costmap_sector_filter]: body_height_filter input=19776 kept=2843 range_drops=12207 height_drops=4726 nonfinite_drops=0 filter_ms=0.369 wait_ms=8.9 age_ms=104.9 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208250.627533873] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=6.5 ms localization_publish=0.057 ms tf_publish=0.058 ms total=0.117 ms
+[bt_navigator-17] [INFO] [1794208251.580522420] [bt_navigator]: Begin navigating from current location (-0.03, -0.21) to (2.80, 0.17)
+[controller_server-14] [INFO] [1794208252.281827658] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-14] [WARN] [1794208252.281937069] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded goal_checker . This warning will appear once.
+[transform_fusion_cpp-4] [INFO] [1794208252.627825321] [transform_fusion]: fusion timing: input_interval=100.5 ms input_age=5.8 ms localization_publish=0.067 ms tf_publish=0.136 ms total=0.205 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208253.627502951] [fastlio_velocity_feedback]: velocity_feedback age_ms=5.75 work_ms=0.128 vx=-0.007 vy=-0.002 wz=0.000
+[costmap_sector_filter-11] [INFO] [1794208254.027729508] [costmap_sector_filter]: body_height_filter input=19776 kept=2508 range_drops=12366 height_drops=4902 nonfinite_drops=0 filter_ms=0.347 wait_ms=8.7 age_ms=105.0 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208254.082297932] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208254.627626738] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=5.6 ms localization_publish=0.046 ms tf_publish=0.056 ms total=0.103 ms
+[controller_server-14] [INFO] [1794208255.882302048] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208256.627737029] [transform_fusion]: fusion timing: input_interval=99.5 ms input_age=5.9 ms localization_publish=0.065 ms tf_publish=0.059 ms total=0.126 ms
+[controller_server-14] [INFO] [1794208257.682681376] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208258.627725812] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=5.9 ms localization_publish=0.068 ms tf_publish=0.080 ms total=0.149 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208258.627745652] [fastlio_velocity_feedback]: velocity_feedback age_ms=5.89 work_ms=0.120 vx=-0.010 vy=-0.009 wz=0.000
+[costmap_sector_filter-11] [INFO] [1794208259.027923728] [costmap_sector_filter]: body_height_filter input=19776 kept=2905 range_drops=12155 height_drops=4716 nonfinite_drops=0 filter_ms=0.361 wait_ms=9.0 age_ms=103.1 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208259.282298125] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208260.627700354] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=6.6 ms localization_publish=0.065 ms tf_publish=0.065 ms total=0.132 ms
+[controller_server-14] [INFO] [1794208261.082305602] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208262.628007003] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=5.9 ms localization_publish=0.069 ms tf_publish=0.086 ms total=0.157 ms
+[controller_server-14] [INFO] [1794208262.882304214] [controller_server]: Passing new path to controller.
+[fastlio_velocity_feedback-12] [INFO] [1794208263.628237033] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.15 work_ms=0.111 vx=0.015 vy=-0.012 wz=-0.000
+[costmap_sector_filter-11] [INFO] [1794208264.028651820] [costmap_sector_filter]: body_height_filter input=19776 kept=2482 range_drops=12589 height_drops=4705 nonfinite_drops=0 filter_ms=0.323 wait_ms=9.9 age_ms=105.3 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208264.627974953] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=5.9 ms localization_publish=0.065 ms tf_publish=0.071 ms total=0.138 ms
+[controller_server-14] [INFO] [1794208264.682398413] [controller_server]: Passing new path to controller.
+[controller_server-14] [INFO] [1794208266.282292291] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208266.627783122] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=6.3 ms localization_publish=0.050 ms tf_publish=0.072 ms total=0.124 ms
+[controller_server-14] [INFO] [1794208268.082299031] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208268.628080779] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=6.3 ms localization_publish=0.051 ms tf_publish=0.062 ms total=0.116 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208268.628266672] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.28 work_ms=0.108 vx=0.009 vy=-0.002 wz=-0.000
+[costmap_sector_filter-11] [INFO] [1794208269.028266086] [costmap_sector_filter]: body_height_filter input=19776 kept=2676 range_drops=12216 height_drops=4884 nonfinite_drops=0 filter_ms=0.356 wait_ms=9.4 age_ms=105.4 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208269.882339884] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208270.628330753] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=6.3 ms localization_publish=0.055 ms tf_publish=0.055 ms total=0.112 ms
+[controller_server-14] [INFO] [1794208271.682474724] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208272.628367986] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=6.3 ms localization_publish=0.063 ms tf_publish=0.072 ms total=0.137 ms
+[controller_server-14] [INFO] [1794208273.282316857] [controller_server]: Passing new path to controller.
+[fastlio_velocity_feedback-12] [INFO] [1794208273.628224949] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.49 work_ms=0.124 vx=-0.002 vy=-0.017 wz=-0.000
+[costmap_sector_filter-11] [INFO] [1794208274.228345578] [costmap_sector_filter]: body_height_filter input=18528 kept=1749 range_drops=11979 height_drops=4800 nonfinite_drops=0 filter_ms=0.337 wait_ms=7.9 age_ms=103.8 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208274.628277950] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=6.5 ms localization_publish=0.052 ms tf_publish=0.069 ms total=0.123 ms
+[controller_server-14] [INFO] [1794208275.082505874] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208276.629207145] [transform_fusion]: fusion timing: input_interval=100.4 ms input_age=6.4 ms localization_publish=0.069 ms tf_publish=0.648 ms total=0.719 ms
+[controller_server-14] [INFO] [1794208276.882332417] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208278.628607943] [transform_fusion]: fusion timing: input_interval=100.3 ms input_age=6.3 ms localization_publish=0.062 ms tf_publish=0.066 ms total=0.130 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208278.628631591] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.27 work_ms=0.118 vx=0.009 vy=-0.015 wz=0.002
+[controller_server-14] [INFO] [1794208278.682314389] [controller_server]: Passing new path to controller.
+[costmap_sector_filter-11] [INFO] [1794208279.228702875] [costmap_sector_filter]: body_height_filter input=19968 kept=2770 range_drops=12401 height_drops=4797 nonfinite_drops=0 filter_ms=0.357 wait_ms=9.1 age_ms=105.8 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208280.282298477] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208280.628432209] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=8.7 ms localization_publish=0.060 ms tf_publish=0.067 ms total=0.129 ms
+[controller_server-14] [INFO] [1794208282.082305858] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208282.628534723] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=6.5 ms localization_publish=0.065 ms tf_publish=0.065 ms total=0.132 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208283.629242368] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.76 work_ms=0.164 vx=0.011 vy=0.001 wz=0.000
+[controller_server-14] [INFO] [1794208283.882301014] [controller_server]: Passing new path to controller.
+[costmap_sector_filter-11] [INFO] [1794208284.229086380] [costmap_sector_filter]: body_height_filter input=19968 kept=2741 range_drops=12454 height_drops=4773 nonfinite_drops=0 filter_ms=0.366 wait_ms=10.2 age_ms=105.9 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208284.628723544] [transform_fusion]: fusion timing: input_interval=99.6 ms input_age=7.0 ms localization_publish=0.050 ms tf_publish=0.238 ms total=0.290 ms
+[controller_server-14] [INFO] [1794208285.682306250] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208286.628640869] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=6.8 ms localization_publish=0.067 ms tf_publish=0.063 ms total=0.132 ms
+[controller_server-14] [INFO] [1794208287.282293474] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208288.629026399] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=6.8 ms localization_publish=0.056 ms tf_publish=0.077 ms total=0.136 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208288.630781396] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.79 work_ms=0.133 vx=-0.005 vy=-0.005 wz=0.001
+[controller_server-14] [INFO] [1794208289.082303703] [controller_server]: Passing new path to controller.
+[costmap_sector_filter-11] [INFO] [1794208289.229596034] [costmap_sector_filter]: body_height_filter input=19968 kept=2669 range_drops=12347 height_drops=4952 nonfinite_drops=0 filter_ms=0.513 wait_ms=10.7 age_ms=105.9 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208290.630949896] [transform_fusion]: fusion timing: input_interval=100.6 ms input_age=7.9 ms localization_publish=0.073 ms tf_publish=1.541 ms total=1.616 ms
+[controller_server-14] [INFO] [1794208290.882302507] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208292.629124929] [transform_fusion]: fusion timing: input_interval=98.7 ms input_age=7.0 ms localization_publish=0.063 ms tf_publish=0.061 ms total=0.127 ms
+[controller_server-14] [INFO] [1794208292.682306111] [controller_server]: Passing new path to controller.
+[fastlio_velocity_feedback-12] [INFO] [1794208293.629694618] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.06 work_ms=0.114 vx=-0.076 vy=-0.031 wz=0.003
+[costmap_sector_filter-11] [INFO] [1794208294.229213372] [costmap_sector_filter]: body_height_filter input=19872 kept=2320 range_drops=12524 height_drops=5028 nonfinite_drops=0 filter_ms=0.327 wait_ms=10.5 age_ms=106.2 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208294.282289400] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208294.629218803] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=7.0 ms localization_publish=0.067 ms tf_publish=0.063 ms total=0.132 ms
+[controller_server-14] [INFO] [1794208296.082303468] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208296.629057981] [transform_fusion]: fusion timing: input_interval=99.6 ms input_age=7.1 ms localization_publish=0.056 ms tf_publish=0.125 ms total=0.182 ms
+[controller_server-14] [INFO] [1794208297.882302304] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208298.629059276] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=7.1 ms localization_publish=0.065 ms tf_publish=0.065 ms total=0.132 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208298.629294388] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.13 work_ms=0.331 vx=-0.063 vy=-0.011 wz=0.011
+[costmap_sector_filter-11] [INFO] [1794208299.230687663] [costmap_sector_filter]: body_height_filter input=20064 kept=2529 range_drops=12868 height_drops=4667 nonfinite_drops=0 filter_ms=1.036 wait_ms=9.6 age_ms=106.3 cloud_drops=3 up_drops=0
+[planner_server-13] [WARN] [1794208299.443779123] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208299.443946520] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208299.531155926] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-13] [WARN] [1794208300.289297144] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208300.289462429] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-14] [INFO] [1794208300.482298049] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-14] [INFO] [1794208300.482393860] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[controller_server-14] [INFO] [1794208300.482916883] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-13] [INFO] [1794208300.485783241] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[bt_navigator-17] [WARN] [1794208300.488404248] [BehaviorTreeEngine]: Behavior Tree tick rate 20.00 was exceeded!
+[behavior_server-16] [INFO] [1794208300.488778500] [behavior_server]: Running wait
+[transform_fusion_cpp-4] [INFO] [1794208300.628879862] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=7.5 ms localization_publish=0.073 ms tf_publish=0.073 ms total=0.148 ms
+[behavior_server-16] [INFO] [1794208301.489050483] [behavior_server]: wait completed successfully
+[planner_server-13] [WARN] [1794208302.208970073] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208302.209125054] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208302.302715514] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[transform_fusion_cpp-4] [INFO] [1794208302.629149870] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=6.1 ms localization_publish=0.067 ms tf_publish=0.088 ms total=0.157 ms
+[planner_server-13] [WARN] [1794208303.283016562] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208303.283169079] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-14] [INFO] [1794208303.362449509] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-13] [INFO] [1794208303.362985622] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-16] [INFO] [1794208303.364550245] [behavior_server]: Running wait
+[fastlio_velocity_feedback-12] [INFO] [1794208303.628940943] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.37 work_ms=0.113 vx=0.025 vy=0.004 wz=0.011
+[costmap_sector_filter-11] [INFO] [1794208304.229109957] [costmap_sector_filter]: body_height_filter input=19968 kept=2469 range_drops=12737 height_drops=4762 nonfinite_drops=0 filter_ms=0.369 wait_ms=10.3 age_ms=105.7 cloud_drops=3 up_drops=0
+[behavior_server-16] [INFO] [1794208304.364827285] [behavior_server]: wait completed successfully
+[transform_fusion_cpp-4] [INFO] [1794208304.628674159] [transform_fusion]: fusion timing: input_interval=99.1 ms input_age=7.4 ms localization_publish=0.055 ms tf_publish=0.058 ms total=0.115 ms
+[planner_server-13] [WARN] [1794208305.083247789] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208305.083398066] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208305.178094704] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-13] [WARN] [1794208306.279741702] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208306.279881739] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-14] [INFO] [1794208306.338572943] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-13] [INFO] [1794208306.339158368] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-16] [INFO] [1794208306.340672110] [behavior_server]: Running wait
+[transform_fusion_cpp-4] [INFO] [1794208306.628861091] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=7.3 ms localization_publish=0.055 ms tf_publish=0.053 ms total=0.110 ms
+[behavior_server-16] [INFO] [1794208307.340976799] [behavior_server]: wait completed successfully
+[planner_server-13] [WARN] [1794208308.099479980] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208308.099631568] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208308.188812265] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[transform_fusion_cpp-4] [INFO] [1794208308.628931253] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=7.6 ms localization_publish=0.053 ms tf_publish=0.049 ms total=0.104 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208308.628993815] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.63 work_ms=0.128 vx=-0.089 vy=0.006 wz=-0.007
+[costmap_sector_filter-11] [INFO] [1794208309.230255406] [costmap_sector_filter]: body_height_filter input=19968 kept=2640 range_drops=12608 height_drops=4720 nonfinite_drops=0 filter_ms=0.412 wait_ms=11.6 age_ms=106.7 cloud_drops=3 up_drops=0
+[planner_server-13] [WARN] [1794208309.296775357] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208309.296904929] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-14] [INFO] [1794208309.388806219] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-13] [INFO] [1794208309.389347452] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-16] [INFO] [1794208309.390731941] [behavior_server]: Running wait
+[behavior_server-16] [INFO] [1794208310.390952851] [behavior_server]: wait completed successfully
+[transform_fusion_cpp-4] [INFO] [1794208310.629485877] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=7.9 ms localization_publish=0.052 ms tf_publish=0.078 ms total=0.131 ms
+[planner_server-13] [WARN] [1794208311.155949636] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [WARN] [1794208311.156786141] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208311.238851776] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[planner_server-13] [WARN] [1794208312.296252484] [planner_server]: Planner loop missed its desired rate of 1.0000 Hz. Current loop rate is 0.9437 Hz
+[controller_server-14] [INFO] [1794208312.389154317] [controller_server]: Received a goal, begin computing control effort.
+[transform_fusion_cpp-4] [INFO] [1794208312.629914833] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=7.7 ms localization_publish=0.064 ms tf_publish=0.074 ms total=0.140 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208313.629960666] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.41 work_ms=0.186 vx=0.120 vy=0.009 wz=0.013
+[controller_server-14] [INFO] [1794208314.189610734] [controller_server]: Passing new path to controller.
+[costmap_sector_filter-11] [INFO] [1794208314.230234099] [costmap_sector_filter]: body_height_filter input=19968 kept=2552 range_drops=12186 height_drops=5230 nonfinite_drops=0 filter_ms=0.346 wait_ms=11.5 age_ms=106.7 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208314.629936833] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=7.3 ms localization_publish=0.059 ms tf_publish=0.052 ms total=0.113 ms
+[controller_server-14] [INFO] [1794208315.989615427] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208316.629903951] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=7.5 ms localization_publish=0.066 ms tf_publish=0.067 ms total=0.135 ms
+[controller_server-14] [INFO] [1794208317.789614327] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208318.630059011] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=7.5 ms localization_publish=0.056 ms tf_publish=0.063 ms total=0.122 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208318.630133701] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.53 work_ms=0.110 vx=0.068 vy=-0.012 wz=-0.010
+[costmap_sector_filter-11] [INFO] [1794208319.231040562] [costmap_sector_filter]: body_height_filter input=20064 kept=3109 range_drops=10800 height_drops=6155 nonfinite_drops=0 filter_ms=0.327 wait_ms=12.3 age_ms=107.0 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208319.589562633] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208320.630216471] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=7.5 ms localization_publish=0.062 ms tf_publish=0.054 ms total=0.117 ms
+[controller_server-14] [INFO] [1794208321.189605444] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208322.630464558] [transform_fusion]: fusion timing: input_interval=99.2 ms input_age=7.7 ms localization_publish=0.061 ms tf_publish=0.067 ms total=0.129 ms
+[controller_server-14] [INFO] [1794208322.989618840] [controller_server]: Passing new path to controller.
+[fastlio_velocity_feedback-12] [INFO] [1794208323.630886434] [fastlio_velocity_feedback]: velocity_feedback age_ms=7.87 work_ms=0.118 vx=0.409 vy=-0.006 wz=0.003
+[costmap_sector_filter-11] [INFO] [1794208324.231801903] [costmap_sector_filter]: body_height_filter input=19968 kept=2783 range_drops=9536 height_drops=7649 nonfinite_drops=0 filter_ms=0.364 wait_ms=13.2 age_ms=107.2 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208324.631014061] [transform_fusion]: fusion timing: input_interval=98.8 ms input_age=8.5 ms localization_publish=0.061 ms tf_publish=0.065 ms total=0.127 ms
+[controller_server-14] [INFO] [1794208324.789617164] [controller_server]: Passing new path to controller.
+[controller_server-14] [INFO] [1794208326.589607264] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208326.630407946] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=8.0 ms localization_publish=0.070 ms tf_publish=0.051 ms total=0.123 ms
+[controller_server-14] [INFO] [1794208328.189598905] [controller_server]: Passing new path to controller.
+[transform_fusion_cpp-4] [INFO] [1794208328.630191763] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=6.8 ms localization_publish=0.066 ms tf_publish=0.066 ms total=0.134 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208328.630232724] [fastlio_velocity_feedback]: velocity_feedback age_ms=6.82 work_ms=0.129 vx=0.330 vy=0.008 wz=-0.075
+[controller_server-14] [WARN] [1794208329.196544241] [controller_server]: No valid trajectories out of 264! 
+[costmap_sector_filter-11] [INFO] [1794208329.230710260] [costmap_sector_filter]: body_height_filter input=19968 kept=2251 range_drops=12469 height_drops=5248 nonfinite_drops=0 filter_ms=0.355 wait_ms=12.2 age_ms=107.2 cloud_drops=3 up_drops=0
+[controller_server-14] [INFO] [1794208329.989608173] [controller_server]: Passing new path to controller.
+[controller_server-14] [WARN] [1794208330.396148552] [controller_server]: No valid trajectories out of 264! 
+[transform_fusion_cpp-4] [INFO] [1794208330.631412455] [transform_fusion]: fusion timing: input_interval=100.8 ms input_age=8.2 ms localization_publish=0.056 ms tf_publish=0.074 ms total=0.132 ms
+[planner_server-13] [WARN] [1794208331.549142278] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid start invalid"
+[planner_server-13] [WARN] [1794208331.549298379] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208331.638834766] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[transform_fusion_cpp-4] [INFO] [1794208332.631981671] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=8.2 ms localization_publish=0.061 ms tf_publish=0.066 ms total=0.129 ms
+[planner_server-13] [WARN] [1794208333.224137709] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid goal invalid"
+[planner_server-13] [WARN] [1794208333.224275633] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[controller_server-14] [INFO] [1794208333.389601082] [controller_server]: Goal was canceled. Stopping the robot.
+[controller_server-14] [INFO] [1794208333.389696029] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[controller_server-14] [INFO] [1794208333.390133930] [local_costmap.local_costmap]: Received request to clear entirely the local_costmap
+[planner_server-13] [INFO] [1794208333.390694715] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[behavior_server-16] [INFO] [1794208333.392038467] [behavior_server]: Running wait
+[bt_navigator-17] [WARN] [1794208333.392181192] [BehaviorTreeEngine]: Behavior Tree tick rate 20.00 was exceeded!
+[fastlio_velocity_feedback-12] [INFO] [1794208333.631526721] [fastlio_velocity_feedback]: velocity_feedback age_ms=8.01 work_ms=0.133 vx=0.382 vy=-0.011 wz=0.382
+[behavior_server-16] [INFO] [1794208334.392270770] [behavior_server]: wait completed successfully
+[costmap_sector_filter-11] [INFO] [1794208334.418644106] [costmap_sector_filter]: body_height_filter input=19968 kept=2139 range_drops=10503 height_drops=7326 nonfinite_drops=0 filter_ms=0.327 wait_ms=0.0 age_ms=98.2 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208334.631547849] [transform_fusion]: fusion timing: input_interval=99.5 ms input_age=8.2 ms localization_publish=0.061 ms tf_publish=0.056 ms total=0.119 ms
+[planner_server-13] [WARN] [1794208335.059237856] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid goal invalid"
+[planner_server-13] [WARN] [1794208335.059396869] [planner_server]: [compute_path_to_pose] [ActionServer] Aborting handle.
+[planner_server-13] [INFO] [1794208335.155083489] [global_costmap.global_costmap]: Received request to clear entirely the global_costmap
+[transform_fusion_cpp-4] [INFO] [1794208336.631673244] [transform_fusion]: fusion timing: input_interval=98.3 ms input_age=8.2 ms localization_publish=0.052 ms tf_publish=0.074 ms total=0.128 ms
+[bt_navigator-17] [ERROR] [1794208337.618473463] [bt_navigator_navigate_to_pose_rclcpp_node]: Failed to get result for compute_path_to_pose in node halt!
+[bt_navigator-17] [INFO] [1794208337.618709374] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[bt_navigator-17] [INFO] [1794208337.618919045] [bt_navigator]: Goal canceled
+[transform_fusion_cpp-4] [INFO] [1794208338.632549990] [transform_fusion]: fusion timing: input_interval=99.2 ms input_age=8.4 ms localization_publish=0.052 ms tf_publish=0.048 ms total=0.102 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208338.633431457] [fastlio_velocity_feedback]: velocity_feedback age_ms=8.43 work_ms=0.142 vx=0.435 vy=0.029 wz=-0.558
+[costmap_sector_filter-11] [INFO] [1794208339.418706706] [costmap_sector_filter]: body_height_filter input=20064 kept=2022 range_drops=10129 height_drops=7913 nonfinite_drops=0 filter_ms=0.548 wait_ms=0.0 age_ms=98.7 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208340.632345743] [transform_fusion]: fusion timing: input_interval=100.7 ms input_age=8.5 ms localization_publish=0.043 ms tf_publish=0.072 ms total=0.117 ms
+[planner_server-13] [WARN] [1794208340.937865454] [planner_server]: Height plugin failed to plan calculation to (2.80, 0.17): "Height planner: grid path not found"
+[planner_server-13] [INFO] [1794208340.938016722] [planner_server]: [compute_path_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[transform_fusion_cpp-4] [INFO] [1794208342.632199802] [transform_fusion]: fusion timing: input_interval=100.6 ms input_age=8.5 ms localization_publish=0.065 ms tf_publish=0.072 ms total=0.139 ms
+[fastlio_velocity_feedback-12] [INFO] [1794208343.632582253] [fastlio_velocity_feedback]: velocity_feedback age_ms=8.49 work_ms=0.127 vx=0.404 vy=-0.028 wz=-0.000
+[costmap_sector_filter-11] [INFO] [1794208344.432919812] [costmap_sector_filter]: body_height_filter input=19968 kept=2543 range_drops=9278 height_drops=8147 nonfinite_drops=0 filter_ms=0.542 wait_ms=14.1 age_ms=107.7 cloud_drops=3 up_drops=0
+[transform_fusion_cpp-4] [INFO] [1794208344.632569524] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=8.5 ms localization_publish=0.056 ms tf_publish=0.068 ms total=0.126 ms
+[transform_fusion_cpp-4] [INFO] [1794208346.632144119] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=8.7 ms localization_publish=0.060 ms tf_publish=0.069 ms total=0.131 ms
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [lifecycle_manager-18]: sending signal 'SIGINT' to process[lifecycle_manager-18]
+[INFO] [bt_navigator-17]: sending signal 'SIGINT' to process[bt_navigator-17]
+[INFO] [behavior_server-16]: sending signal 'SIGINT' to process[behavior_server-16]
+[INFO] [smoother_server-15]: sending signal 'SIGINT' to process[smoother_server-15]
+[INFO] [controller_server-14]: sending signal 'SIGINT' to process[controller_server-14]
+[INFO] [planner_server-13]: sending signal 'SIGINT' to process[planner_server-13]
+[INFO] [fastlio_velocity_feedback-12]: sending signal 'SIGINT' to process[fastlio_velocity_feedback-12]
+[INFO] [costmap_sector_filter-11]: sending signal 'SIGINT' to process[costmap_sector_filter-11]
+[INFO] [frozen_map-10]: sending signal 'SIGINT' to process[frozen_map-10]
+[INFO] [map_server-9]: sending signal 'SIGINT' to process[map_server-9]
+[INFO] [static_transform_publisher-8]: sending signal 'SIGINT' to process[static_transform_publisher-8]
+[INFO] [static_transform_publisher-7]: sending signal 'SIGINT' to process[static_transform_publisher-7]
+[INFO] [static_transform_publisher-6]: sending signal 'SIGINT' to process[static_transform_publisher-6]
+[INFO] [pcd_to_pointcloud-5]: sending signal 'SIGINT' to process[pcd_to_pointcloud-5]
+[INFO] [transform_fusion_cpp-4]: sending signal 'SIGINT' to process[transform_fusion_cpp-4]
+[INFO] [global_localization.py-3]: sending signal 'SIGINT' to process[global_localization.py-3]
+[INFO] [fastlio_mapping-2]: sending signal 'SIGINT' to process[fastlio_mapping-2]
+[INFO] [static_transform_publisher-1]: sending signal 'SIGINT' to process[static_transform_publisher-1]
+[INFO] [fastlio_velocity_feedback-12]: process has finished cleanly [pid 170339]
+[lifecycle_manager-18] [INFO] [1794208348.612105612] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-18] [INFO] [1794208348.612261392] [lifecycle_rubi_height]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_rubi_height)
+[lifecycle_manager-18] [INFO] [1794208348.612319474] [lifecycle_rubi_height]: [34m[1mTerminating bond timer...[0m[0m
+[bt_navigator-17] [INFO] [1794208348.615379246] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[bt_navigator-17] [INFO] [1794208348.615487473] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[bt_navigator-17] [INFO] [1794208348.615584180] [bt_navigator]: Deactivating
+[bt_navigator-17] [INFO] [1794208348.615618709] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[behavior_server-16] [INFO] [1794208348.618691250] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[behavior_server-16] [INFO] [1794208348.618804693] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[behavior_server-16] [INFO] [1794208348.618895224] [behavior_server]: Deactivating
+[behavior_server-16] [INFO] [1794208348.618933689] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[smoother_server-15] [INFO] [1794208348.621953396] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[smoother_server-15] [INFO] [1794208348.622101848] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[smoother_server-15] [INFO] [1794208348.622195323] [smoother_server]: Deactivating
+[smoother_server-15] [INFO] [1794208348.622224092] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[controller_server-14] [INFO] [1794208348.625101650] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[controller_server-14] [INFO] [1794208348.625253719] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[controller_server-14] [INFO] [1794208348.625351130] [controller_server]: Deactivating
+[controller_server-14] [INFO] [1794208348.625414812] [local_costmap.local_costmap]: Deactivating
+[bt_navigator-17] [INFO] [1794208348.626001677] [bt_navigator]: Cleaning up
+[planner_server-13] [INFO] [1794208348.628313875] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-13] [INFO] [1794208348.628440407] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[planner_server-13] [INFO] [1794208348.628523705] [planner_server]: Deactivating
+[planner_server-13] [INFO] [1794208348.628570587] [global_costmap.global_costmap]: Deactivating
+[behavior_server-16] [INFO] [1794208348.631621238] [behavior_server]: Cleaning up
+[planner_server-13] [INFO] [1794208348.631671000] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [static_transform_publisher-8]: process has finished cleanly [pid 170291]
+[smoother_server-15] [INFO] [1794208348.632593427] [smoother_server]: Cleaning up
+[fastlio_velocity_feedback-12] [INFO] [1794208348.638013494] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[costmap_sector_filter-11] [INFO] [1794208348.664338862] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-13] [INFO] [1794208348.672588294] [planner_server]: Cleaning up
+[smoother_server-15] [INFO] [1794208348.687871057] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[behavior_server-16] [INFO] [1794208348.693279347] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[smoother_server-15] [INFO] [1794208348.700582127] [smoother_server]: Destroying
+[map_server-9] [INFO] [1794208348.708960107] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-9] [INFO] [1794208348.709113807] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-9] [INFO] [1794208348.709219443] [map_server]: Deactivating
+[map_server-9] [INFO] [1794208348.709246771] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[planner_server-13] [INFO] [1794208348.711829345] [global_costmap.global_costmap]: Cleaning up
+[static_transform_publisher-8] [INFO] [1794208348.718896725] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-9] [INFO] [1794208348.719612491] [map_server]: Cleaning up
+[map_server-9] [INFO] [1794208348.719987350] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[map_server-9] [INFO] [1794208348.730295980] [map_server]: Destroying
+[planner_server-13] [INFO] [1794208348.777692541] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[static_transform_publisher-7] [INFO] [1794208348.784546539] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[behavior_server-16] [INFO] [1794208348.786194972] [behavior_server]: Destroying
+[planner_server-13] [INFO] [1794208348.797619091] [global_costmap.global_costmap]: Destroying
+[controller_server-14] [INFO] [1794208348.798800439] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[static_transform_publisher-6] [INFO] [1794208348.802654987] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[pcd_to_pointcloud-5] [INFO] [1794208348.810446197] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [costmap_sector_filter-11]: process has finished cleanly [pid 170330]
+[controller_server-14] [INFO] [1794208348.810719709] [controller_server]: Cleaning up
+[controller_server-14] [INFO] [1794208348.811221132] [local_costmap.local_costmap]: Cleaning up
+[transform_fusion_cpp-4] [INFO] [1794208348.816448521] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-18] [INFO] [1794208348.817075676] [lifecycle_rubi_height]: Destroying lifecycle_rubi_height
+[planner_server-13] [INFO] [1794208348.836645704] [planner_server]: Destroying
+[fastlio_mapping-2] catch sig %d2
+[controller_server-14] [INFO] [1794208348.851068474] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[controller_server-14] [INFO] [1794208348.860926402] [local_costmap.local_costmap]: Destroying
+[static_transform_publisher-1] [INFO] [1794208348.862479441] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[controller_server-14] [INFO] [1794208348.886846861] [controller_server]: Destroying
+[bt_navigator-17] [INFO] [1794208348.889337112] [bt_navigator]: Completed Cleaning up
+[bt_navigator-17] [INFO] [1794208348.889441595] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[bt_navigator-17] [INFO] [1794208348.896271464] [bt_navigator]: Destroying
+[INFO] [smoother_server-15]: process has finished cleanly [pid 170380]
+[INFO] [map_server-9]: process has finished cleanly [pid 170293]
+[INFO] [static_transform_publisher-7]: process has finished cleanly [pid 170289]
+[INFO] [static_transform_publisher-6]: process has finished cleanly [pid 170287]
+[INFO] [transform_fusion_cpp-4]: process has finished cleanly [pid 170283]
+[INFO] [lifecycle_manager-18]: process has finished cleanly [pid 170423]
+[INFO] [pcd_to_pointcloud-5]: process has finished cleanly [pid 170285]
+[fastlio_mapping-2] Rebuild thread terminated normally
+[INFO] [behavior_server-16]: process has finished cleanly [pid 170382]
+[INFO] [static_transform_publisher-1]: process has finished cleanly [pid 170277]
+[INFO] [fastlio_mapping-2]: process has finished cleanly [pid 170279]
+[INFO] [planner_server-13]: process has finished cleanly [pid 170350]
+[INFO] [bt_navigator-17]: process has finished cleanly [pid 170393]
+[INFO] [controller_server-14]: process has finished cleanly [pid 170362]
+[INFO] [frozen_map-10]: process has finished cleanly [pid 170316]
+[INFO] [global_localization.py-3]: process has finished cleanly [pid 170281]

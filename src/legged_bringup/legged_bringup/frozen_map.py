@@ -1,5 +1,6 @@
 """CPU-only frozen elevation publisher. Acquisition stamps remain unchanged."""
 import json
+import math
 import numpy as np
 import rclpy
 from rclpy.node import Node
@@ -40,8 +41,15 @@ class FrozenMap(Node):
         info.publish(String(data=json.dumps({'kind':'frozen', 'sha256':snap.digest,
             'frame':frame,'resolution':snap.resolution,'acquisition_stamp_ns':snap.stamp_ns,
             'cells':len(xyz),'file':str(snap.source)})))
-        self.create_timer(1.0, lambda:self.publisher.publish(self.cloud))
+        # TRANSIENT_LOCAL delivers this immutable snapshot to late subscribers.
+        # Publish once; repeated plans do not require repeated map serialization.
         self.publisher.publish(self.cloud)
+        period = self.declare_parameter('republish_period_s', 0.0).value
+        if not math.isfinite(period) or period < 0:
+            raise ValueError('republish_period_s must be finite and nonnegative')
+        # Only legacy volatile consumers need periodic publication. RUBI is latched.
+        if period > 0:
+            self.timer = self.create_timer(period, lambda: self.publisher.publish(self.cloud))
         self.get_logger().info(f'Frozen height loaded: {len(xyz)} cells; {snap.digest}')
 
 

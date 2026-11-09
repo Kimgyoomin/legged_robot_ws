@@ -1,0 +1,202 @@
+{
+  "repository": "/home/rclab/ros2_ws/src/navigation_real",
+  "commit": "9678c7a80da53f3fa214395ce4af792e37fa832f",
+  "files": [
+    {
+      "source": "FAST_LIO_LOCALIZATION2/src/laserMapping.cpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/src/laserMapping.cpp",
+      "source_sha256": "1756097aa1b9fbffcc20bcd659bcb04757b16b62a2af32dcf9e401b1ab873126",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/src/IMU_Processing.hpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/src/IMU_Processing.hpp",
+      "source_sha256": "61bcb665c49cc0766156b8458f47c3b39789e35a95253880972ef5f1bdab7e7a",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/src/transformFusion.cpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/src/transformFusion.cpp",
+      "source_sha256": "c72d1bb1e33d5f5164e54e99b3eea04fb69557261cc1e72c3622de351e111c7d",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/include/velocity_output.hpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/include/velocity_output.hpp",
+      "source_sha256": "6eb80a259ce0d84ae7caa212599a339ee344887375eb63d81df9f7a3609c0bfe",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/include/pipeline_timing.hpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/include/pipeline_timing.hpp",
+      "source_sha256": "ec2c03e7f3585ff342eaaf882844198a11326d970a4bc35d0affd39c9b70aaf9",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/fast_lio_localization/global_localization.py",
+      "destination": "src/FAST_LIO_LOCALIZATION2/fast_lio_localization/global_localization.py",
+      "source_sha256": "d6dbd0c2fb7918389820fcf5306d3a4d585931aa0aff3c7773917d17e3d0ec8b",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/launch/localization.launch.py",
+      "destination": "src/FAST_LIO_LOCALIZATION2/launch/localization.launch.py",
+      "source_sha256": "557aa955b6ad599d20c355a1fd0c5b062cb137d941b5d410f58ed5ca6fd6144a",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/test/test_velocity_output.cpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/test/test_velocity_output.cpp",
+      "source_sha256": "50e49c5ebac09b852a1d06914899db1a4cc31c61d3fb501536746c14ac7b9b1a",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/test/test_pipeline_timing.cpp",
+      "destination": "src/FAST_LIO_LOCALIZATION2/test/test_pipeline_timing.cpp",
+      "source_sha256": "ddfcd5a315dd846c86f884abbe493bb11b1ac83732cd53e0c6068e3f35007ee4",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/.gitignore",
+      "destination": "src/navigation_dds/.gitignore",
+      "source_sha256": "599e8d09a18b6bac6f70ed12bf96f67e49c4d992ee2601bc173d92fbcb64b11d",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/package.xml",
+      "destination": "src/navigation_dds/package.xml",
+      "source_sha256": "37947e476a08e276a178825b8240a898398984a8848a97606904d01f44ead33b",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/CMakeLists.txt",
+      "destination": "src/navigation_dds/CMakeLists.txt",
+      "source_sha256": "22febff359fa5ee361303f45c3dc915b79d32593db3889946eabc9910021b372",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/navigation_dds/profiles.py",
+      "destination": "src/navigation_dds/navigation_dds/profiles.py",
+      "source_sha256": "e6a796456bdcf25924b793e0425b0614679cef97c6b85b46113e997dff662e51",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/navigation_dds/__init__.py",
+      "destination": "src/navigation_dds/navigation_dds/__init__.py",
+      "source_sha256": "603a0ab74a16380496d3b9917a48e1b642e5591b889a93b42dc01d071f010e65",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/scripts/with_profile",
+      "destination": "src/navigation_dds/scripts/with_profile",
+      "source_sha256": "49000c37c4371cf21847dc08a9e0519640ae810303668476edc119a3a8bb8f07",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/config/fastdds_common.xml",
+      "destination": "src/navigation_dds/config/fastdds_common.xml",
+      "source_sha256": "01e7a19858b1f4f155201dc9bd66d415f125524c04981504bf0744d0ad9098ec",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/config/fastdds_large.xml",
+      "destination": "src/navigation_dds/config/fastdds_large.xml",
+      "source_sha256": "ee26434f1dd370e7531e4ddda7155c364ff74b6f48f583843190ec13b24bc553",
+      "renamed_namespace": false
+    },
+    {
+      "source": "navigation_dds/test/test_profiles.py",
+      "destination": "src/navigation_dds/test/test_profiles.py",
+      "source_sha256": "916ff72d386076c3d11bbe7f508c6cdd527308ca0470c103699082273755ad80",
+      "renamed_namespace": false
+    },
+    {
+      "source": "pongbot_navigation/src/fastlio_velocity_feedback.cpp",
+      "destination": "src/legged_navigation/src/fastlio_velocity_feedback.cpp",
+      "source_sha256": "d432cb5fb7dee0ee9a4d03a790c79bc4e8c28cfa976d065c2c15ed766f79f5f3",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/src/costmap_sector_filter.cpp",
+      "destination": "src/legged_navigation/src/costmap_sector_filter.cpp",
+      "source_sha256": "6e598a5ec4a84568bd9529701bb65a006d602b32834c3c27e8e2979fb8d3c8d0",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/src/sector_filter.cpp",
+      "destination": "src/legged_navigation/src/sector_filter.cpp",
+      "source_sha256": "d23c26f9715291976073049ade38cad07e30d9ce5cd6076b83c11f54234c073c",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/include/pongbot_navigation/velocity_feedback.hpp",
+      "destination": "src/legged_navigation/include/legged_navigation/velocity_feedback.hpp",
+      "source_sha256": "80e30d529804b7749610f2088f71c10ddc718918c2684031450a16b399e6534f",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/include/pongbot_navigation/height_filter.hpp",
+      "destination": "src/legged_navigation/include/legged_navigation/height_filter.hpp",
+      "source_sha256": "fde25071c775e4cc682372de291580d5b47b8684d81fbc80ad7e3d8d40f1a24c",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/include/pongbot_navigation/sector_filter.hpp",
+      "destination": "src/legged_navigation/include/legged_navigation/sector_filter.hpp",
+      "source_sha256": "02c27c39ddcff3647201191267b1d7d9df805c9f930b2fee8c11e51e67dc24d5",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/test/test_velocity_feedback.cpp",
+      "destination": "src/legged_navigation/test/test_velocity_feedback.cpp",
+      "source_sha256": "fc5cf9cc91575dc8dda2589efa437d79cbc3a16b4f166fe4672581bbacaa6369",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/test/test_height_filter.cpp",
+      "destination": "src/legged_navigation/test/test_height_filter.cpp",
+      "source_sha256": "d625ecc09c4251e2feb5755226805b1ec2e27908880029bc2ad03e3fce35836c",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/test/test_sector_filter.cpp",
+      "destination": "src/legged_navigation/test/test_sector_filter.cpp",
+      "source_sha256": "2423fa55b625fa81b8f9f3e0c50df602c5b031763d730d04303e85f02dc0d496",
+      "renamed_namespace": true
+    },
+    {
+      "source": "pongbot_navigation/behavior_trees/navigate_to_pose_rubi.xml",
+      "destination": "src/legged_bringup/config/rubi/navigate.xml",
+      "source_sha256": "d54298c27a02b263fc1ca64f9fff3d03343ddbc3e1ab9a9e4b3586963d36b20a",
+      "renamed_namespace": false
+    },
+    {
+      "source": "FAST_LIO_LOCALIZATION2/config/mid360.yaml",
+      "destination": "src/FAST_LIO_LOCALIZATION2/config/rubi_custommsg.yaml",
+      "source_sha256": "bac584985d16ea68764b994a45acd633cff615f561d49e92c53512cbde9fe70f",
+      "renamed_namespace": false
+    },
+    {
+      "source": "pongbot_navigation/config/nav2_rubi_dwb.yaml",
+      "destination": "src/legged_bringup/config/rubi/nav2.yaml",
+      "source_sha256": "9599bb5ccb712b1e11ad365f801ee52c46b61b53be05d9b6cc79eeb2b3dfdfc4",
+      "adaptations": [
+        "global planner Height",
+        "BT package paths",
+        "clock and velocity overridden by launch"
+      ]
+    }
+  ],
+  "preserved_legged_files": [
+    "src/FAST_LIO_LOCALIZATION2/src/preprocess.cpp",
+    "src/FAST_LIO_LOCALIZATION2/include/livox_time.hpp"
+  ],
+  "local_adaptations": [
+    "portable PCD map path",
+    "MID360S absolute-nanosecond PointCloud2 decoder retained",
+    "null log FILE close/write guards",
+    "global localization graceful Ctrl-C",
+    "custommsg/pointcloud2 input selection",
+    "clock propagation and replay-only command remap"
+  ]
+}

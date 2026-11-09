@@ -1,0 +1,10 @@
+{
+  "src/legged_navigation/src/height_planner.cpp": "95da1862aac17c4fd7771177f780754eba2306fbdc4386349e4595f65a382392",
+  "src/legged_bringup/legged_bringup/frozen_map.py": "baa97e4f4e3631db68d430c362ca63f3e2a506d81313c557703a0be661ec8202",
+  "src/legged_bringup/launch/rubi_localization.launch.py": "ba21763ced50c529b64dfbf3127ae4fda639ca07d1835754e6e9406c78765b52",
+  "src/legged_bringup/launch/rubi_height_navigation.launch.py": "4c4db163ffaa3d766187fc8c7df9175111be2f8da39ffb994233ef9fdd6257cb",
+  "src/legged_bringup/config/rubi/planner.yaml": "0632519542dd6844c42237f1dc5e7234d61b66885439a38675cb11d6f0de88e3",
+  "src/rubi_heightmap_step_wavefront_planner/src/planning/frozen_grid_cache.cpp": "9f4a2290e519a9e131a1b3a056cf700e8b426988656970542636efb907f1bb21",
+  "src/rubi_heightmap_step_wavefront_planner/src/planning/step_grid_astar_planner.cpp": "048c3725ffd74853b6a0d181d4ddc70812fc9b8368a2095d5e1e27d9c503678b",
+  "src/rubi_heightmap_step_wavefront_planner/test/test_frozen_grid_cache.cpp": "02efd76cb5e55753b31bf31a8962fff7623478f1f987ea398b08fc59fc10e6d4"
+}

@@ -39,12 +39,17 @@
 #include <fstream>
 #include <csignal>
 #include <chrono>
+#include <cstdlib>
+#include <iomanip>
+#include <sstream>
 #include <unistd.h>
 #include <Python.h>
 #include <so3_math.h>
 #include <rclcpp/rclcpp.hpp>
 #include <Eigen/Core>
 #include "IMU_Processing.hpp"
+#include "velocity_output.hpp"
+#include "pipeline_timing.hpp"
 #include <nav_msgs/msg/odometry.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <visualization_msgs/msg/marker.hpp>
@@ -59,6 +64,7 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <geometry_msgs/msg/vector3.hpp>
+#include <geometry_msgs/msg/vector3_stamped.hpp>
 #include <livox_ros_driver2/msg/custom_msg.hpp>
 #include "preprocess.h"
 #include <ikd-Tree/ikd_Tree.h>
@@ -74,6 +80,7 @@ double T1[MAXN], s_plot[MAXN], s_plot2[MAXN], s_plot3[MAXN], s_plot4[MAXN], s_pl
 double match_time = 0, solve_time = 0, solve_const_H_time = 0;
 int kdtree_size_st = 0, kdtree_size_end = 0, add_point_size = 0, kdtree_delete_counter = 0;
 bool runtime_pos_log = false, pcd_save_en = false, time_sync_en = false;
+bool extrinsic_est_en = true;
 /**************************/
 
 float res_last[100000] = {0.0};
@@ -106,6 +113,87 @@ vector<double> extrinR(9, 0.0);
 deque<double> time_buffer;
 deque<PointCloudXYZI::Ptr> lidar_buffer;
 deque<sensor_msgs::msg::Imu::ConstSharedPtr> imu_buffer;
+
+namespace timing_diag
+{
+const bool enabled = std::getenv("FASTLIO_DIAG_TIMING") != nullptr;
+rclcpp::Clock::SharedPtr clock;  // Assigned before spinning any callbacks.
+// These sensor fields are protected by mtx_buffer.
+fastlio_timing::SensorWindow imu;
+std::uint64_t lidar_received = 0, lidar_replaced = 0;
+double last_lidar_entry = fastlio_timing::missing();
+// Only the mutually-exclusive processing callback accesses these fields.
+std::uint64_t timer_calls = 0, sync_ok = 0, empty_lidar = 0, empty_imu = 0;
+std::uint64_t short_scan = 0, imu_behind = 0;
+fastlio_timing::Metric timer_gap, timer_work, sync_lock, sync_work, ready_age, imu_shortfall;
+double last_timer_entry = fastlio_timing::missing();
+double last_report = fastlio_timing::steady_seconds();
+
+void report(const rclcpp::Logger &logger, double entry)
+{
+    if (entry - last_report < 1.0) return;
+    fastlio_timing::SensorWindow imu_snapshot;
+    std::uint64_t lidar_count, replaced_count;
+    std::size_t lidar_size, imu_size;
+    bool pinned;
+    double latest_imu, pending_end = fastlio_timing::missing(), last_lidar;
+    {
+        std::lock_guard<std::mutex> lock(mtx_buffer);
+        imu_snapshot = imu;
+        imu.reset_window();
+        lidar_count = lidar_received; lidar_received = 0;
+        replaced_count = lidar_replaced; lidar_replaced = 0;
+        lidar_size = lidar_buffer.size(); imu_size = imu_buffer.size();
+        pinned = lidar_pushed;
+        latest_imu = last_timestamp_imu < 0 ? fastlio_timing::missing() : last_timestamp_imu;
+        last_lidar = last_lidar_entry;
+        if (pinned) pending_end = lidar_end_time;
+        else if (!lidar_buffer.empty() && !time_buffer.empty() &&
+                 !lidar_buffer.front()->empty())
+            pending_end = time_buffer.front() + lidar_buffer.front()->back().curvature / 1000.0;
+    }
+    // Format and emit outside the sensor mutex. ROS time for stamp ages,
+    // monotonic time for durations; this also works with use_sim_time.
+    const double now = clock->now().seconds();
+    const double steady_now = fastlio_timing::steady_seconds();
+    std::ostringstream out;
+    out << std::fixed << std::setprecision(3)
+        << "FAST-LIO pipeline diag window_s=" << entry - last_report
+        << " timer_n=" << timer_calls << " timer_gap_max_ms=" << timer_gap.max()
+        << " timer_work_max_ms=" << timer_work.max()
+        << " sync_ok=" << sync_ok << " empty_lidar=" << empty_lidar
+        << " empty_imu=" << empty_imu << " short_scan=" << short_scan
+        << " imu_behind=" << imu_behind
+        << " imu_shortfall_max_ms=" << imu_shortfall.max()
+        << " sync_lock_max_ms=" << sync_lock.max()
+        << " sync_work_max_ms=" << sync_work.max()
+        << " ready_age_max_ms=" << ready_age.max()
+        << " lidar_n=" << lidar_count << " lidar_replaced=" << replaced_count
+        << " lidar_buffer=" << lidar_size << " imu_buffer=" << imu_size
+        << " pinned=" << pinned
+        << " pending_end_age_ms=" << (now - pending_end) * 1000.0
+        << " latest_imu_age_ms=" << (now - latest_imu) * 1000.0
+        << " imu_shortfall_ms=" << (pending_end - latest_imu) * 1000.0
+        << " since_lidar_cb_ms=" << (steady_now - last_lidar) * 1000.0;
+    RCLCPP_INFO(logger, "%s", out.str().c_str());
+    std::ostringstream imu_out;
+    imu_out << std::fixed << std::setprecision(3)
+        << "FAST-LIO imu diag window_s=" << entry - last_report
+        << " imu_n=" << imu_snapshot.count
+        << " gap_max_ms=" << imu_snapshot.gap_ms.max()
+        << " stamp_step_max_ms=" << imu_snapshot.stamp_step_ms.max()
+        << " raw_age_mean_ms=" << imu_snapshot.raw_age_ms.mean()
+        << " raw_age_max_ms=" << imu_snapshot.raw_age_ms.max()
+        << " corrected_age_max_ms=" << imu_snapshot.corrected_age_ms.max()
+        << " lock_max_ms=" << imu_snapshot.lock_ms.max()
+        << " since_imu_cb_ms=" << (steady_now - imu_snapshot.last_entry) * 1000.0;
+    RCLCPP_INFO(logger, "%s", imu_out.str().c_str());
+    timer_calls = sync_ok = empty_lidar = empty_imu = short_scan = imu_behind = 0;
+    timer_gap = {}; timer_work = {}; sync_lock = {}; sync_work = {}; ready_age = {};
+    imu_shortfall = {};
+    last_report = entry;
+}
+}  // namespace timing_diag
 
 PointCloudXYZI::Ptr featsFromMap(new PointCloudXYZI());
 PointCloudXYZI::Ptr feats_undistort(new PointCloudXYZI());
@@ -152,7 +240,6 @@ void SigHandle(int sig)
 
 inline void dump_lio_state_to_log(FILE *fp)
 {
-    if (!fp) return;
     V3D rot_ang(Log(state_point.rot.toRotationMatrix()));
     fprintf(fp, "%lf ", Measures.lidar_beg_time - first_lidar_time);
     fprintf(fp, "%lf %lf %lf ", rot_ang(0), rot_ang(1), rot_ang(2));                            // Angle
@@ -292,7 +379,13 @@ void lasermap_fov_segment()
 
 void standard_pcl_cbk(const sensor_msgs::msg::PointCloud2::UniquePtr msg)
 {
+    const double diag_entry = timing_diag::enabled ? fastlio_timing::steady_seconds() : 0.0;
     mtx_buffer.lock();
+    if (timing_diag::enabled)
+    {
+        ++timing_diag::lidar_received;
+        timing_diag::last_lidar_entry = diag_entry;
+    }
     scan_count++;
     double cur_time = get_time_sec(msg->header.stamp);
     double preprocess_start_time = omp_get_wtime();
@@ -300,7 +393,6 @@ void standard_pcl_cbk(const sensor_msgs::msg::PointCloud2::UniquePtr msg)
     {
         std::cerr << "lidar loop back, clear buffer" << std::endl;
         lidar_buffer.clear();
-        time_buffer.clear();
     }
 
     PointCloudXYZI::Ptr ptr(new PointCloudXYZI());
@@ -317,15 +409,33 @@ double timediff_lidar_wrt_imu = 0.0;
 bool timediff_set_flg = false;
 void livox_pcl_cbk(const livox_ros_driver2::msg::CustomMsg::UniquePtr msg)
 {
+    const auto callback_entry = std::chrono::steady_clock::now();
+    const double system_now_sec =
+        std::chrono::duration<double>(
+            std::chrono::system_clock::now().time_since_epoch()).count();
+    const double header_time_sec = get_time_sec(msg->header.stamp);
+    const double scan_end_time_sec = header_time_sec +
+        (msg->points.empty() ? 0.0 :
+         static_cast<double>(msg->points.back().offset_time) * 1.0e-9);
+    const double callback_start_age_ms =
+        (system_now_sec - header_time_sec) * 1.0e3;
+    const double callback_end_age_ms =
+        (system_now_sec - scan_end_time_sec) * 1.0e3;
+
     mtx_buffer.lock();
-    double cur_time = get_time_sec(msg->header.stamp);
+    if (timing_diag::enabled)
+    {
+        ++timing_diag::lidar_received;
+        timing_diag::last_lidar_entry =
+            std::chrono::duration<double>(callback_entry.time_since_epoch()).count();
+    }
+    double cur_time = header_time_sec;
     double preprocess_start_time = omp_get_wtime();
     scan_count++;
     if (cur_time < last_timestamp_lidar)
     {
         std::cerr << "lidar loop back, clear buffer" << std::endl;
         lidar_buffer.clear();
-        time_buffer.clear();
     }
     last_timestamp_lidar = cur_time;
 
@@ -343,16 +453,62 @@ void livox_pcl_cbk(const livox_ros_driver2::msg::CustomMsg::UniquePtr msg)
 
     PointCloudXYZI::Ptr ptr(new PointCloudXYZI());
     p_pre->process(msg, ptr);
+
+    // Keep localization real-time when scan processing temporarily falls
+    // behind. DDS already keeps only the newest two samples, but this internal
+    // deque was previously unbounded. Preserve a front scan that is waiting
+    // for its final IMU samples and replace only the older queued scan;
+    // otherwise discard the oldest pending scan before appending the newest.
+    constexpr std::size_t kMaxBufferedLidarFrames = 2;
+    while (lidar_buffer.size() >= kMaxBufferedLidarFrames)
+    {
+        if (timing_diag::enabled) ++timing_diag::lidar_replaced;
+        if (lidar_pushed)
+        {
+            lidar_buffer.erase(std::next(lidar_buffer.begin()));
+            time_buffer.erase(std::next(time_buffer.begin()));
+        }
+        else
+        {
+            lidar_buffer.pop_front();
+            time_buffer.pop_front();
+        }
+    }
     lidar_buffer.push_back(ptr);
     time_buffer.push_back(last_timestamp_lidar);
 
     s_plot11[scan_count] = omp_get_wtime() - preprocess_start_time;
+
+    const auto buffered_lidar_count = lidar_buffer.size();
     mtx_buffer.unlock();
     sig_buffer.notify_all();
+
+    if (timing_diag::enabled)
+    {
+        static auto last_diag_time =
+            std::chrono::steady_clock::now() - std::chrono::seconds(1);
+        const auto now = std::chrono::steady_clock::now();
+        if (now - last_diag_time >= std::chrono::seconds(1))
+        {
+            const double callback_work_ms =
+                std::chrono::duration<double, std::milli>(
+                    now - callback_entry).count();
+            std::cerr << "FAST-LIO timing callback_start_age="
+                      << callback_start_age_ms << " ms callback_end_age="
+                      << callback_end_age_ms << " ms callback_work="
+                      << callback_work_ms << " ms lidar_buffer="
+                      << buffered_lidar_count << " points=" << msg->point_num
+                      << std::endl;
+            last_diag_time = now;
+        }
+    }
+
 }
 
 void imu_cbk(const sensor_msgs::msg::Imu::UniquePtr msg_in)
 {
+    const double diag_entry = timing_diag::enabled ? fastlio_timing::steady_seconds() : 0.0;
+    const double diag_now = timing_diag::enabled ? timing_diag::clock->now().seconds() : 0.0;
     publish_count++;
     // cout<<"IMU got at: "<<msg_in->header.stamp.toSec()<<endl;
     sensor_msgs::msg::Imu::SharedPtr msg(new sensor_msgs::msg::Imu(*msg_in));
@@ -366,7 +522,11 @@ void imu_cbk(const sensor_msgs::msg::Imu::UniquePtr msg_in)
 
     double timestamp = get_time_sec(msg->header.stamp);
 
+    const double diag_lock_start = timing_diag::enabled ? fastlio_timing::steady_seconds() : 0.0;
     mtx_buffer.lock();
+    if (timing_diag::enabled)
+        timing_diag::imu.record(diag_entry, diag_now, get_time_sec(msg_in->header.stamp),
+            timestamp, (fastlio_timing::steady_seconds() - diag_lock_start) * 1000.0);
 
     if (timestamp < last_timestamp_imu)
     {
@@ -383,8 +543,22 @@ void imu_cbk(const sensor_msgs::msg::Imu::UniquePtr msg_in)
 
 bool sync_packages(MeasureGroup &meas)
 {
+    // Sensor callbacks run concurrently with the processing timer. Keep the
+    // queue snapshot/pop operation atomic, but release the lock before the
+    // expensive IMU/ICP processing begins.
+    fastlio_timing::ScopedDuration diag_work(timing_diag::enabled ? &timing_diag::sync_work : nullptr);
+    const double diag_lock_start = timing_diag::enabled ? fastlio_timing::steady_seconds() : 0.0;
+    std::lock_guard<std::mutex> lock(mtx_buffer);
+    if (timing_diag::enabled)
+        timing_diag::sync_lock.add((fastlio_timing::steady_seconds() - diag_lock_start) * 1000.0);
+
     if (lidar_buffer.empty() || imu_buffer.empty())
     {
+        if (timing_diag::enabled)
+        {
+            if (lidar_buffer.empty()) ++timing_diag::empty_lidar;
+            else ++timing_diag::empty_imu;
+        }
         return false;
     }
 
@@ -394,8 +568,8 @@ bool sync_packages(MeasureGroup &meas)
         meas.lidar = lidar_buffer.front();
         if (meas.lidar->points.size() <= 1)
         {
+            if (timing_diag::enabled) ++timing_diag::short_scan;
             lidar_buffer.pop_front();
-            time_buffer.pop_front();
             return false;
         }
         meas.lidar_beg_time = time_buffer.front();
@@ -405,6 +579,11 @@ bool sync_packages(MeasureGroup &meas)
 
     if (last_timestamp_imu < lidar_end_time)
     {
+        if (timing_diag::enabled)
+        {
+            ++timing_diag::imu_behind;
+            timing_diag::imu_shortfall.add((lidar_end_time - last_timestamp_imu) * 1000.0);
+        }
         return false;
     }
 
@@ -423,6 +602,11 @@ bool sync_packages(MeasureGroup &meas)
     lidar_buffer.pop_front();
     time_buffer.pop_front();
     lidar_pushed = false;
+    if (timing_diag::enabled)
+    {
+        ++timing_diag::sync_ok;
+        timing_diag::ready_age.add((timing_diag::clock->now().seconds() - lidar_end_time) * 1000.0);
+    }
     return true;
 }
 
@@ -579,14 +763,47 @@ void set_posestamp(T &out)
     out.pose.orientation.w = geoQuat.w;
 }
 
-void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped, std::unique_ptr<tf2_ros::TransformBroadcaster> &tf_br)
+void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped,
+                      const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity,
+                      const rclcpp::Publisher<geometry_msgs::msg::Vector3Stamped>::SharedPtr pubUp,
+                      std::unique_ptr<tf2_ros::TransformBroadcaster> &tf_br)
 {
     odomAftMapped.header.frame_id = "camera_init";
     odomAftMapped.child_frame_id = "body";
     odomAftMapped.header.stamp = get_ros_time(lidar_end_time);
     set_posestamp(odomAftMapped.pose);
     pubOdomAftMapped->publish(odomAftMapped);
+    // Export the updated estimator's gravity direction, not instantaneous IMU
+    // acceleration. camera_init +Z need not coincide with gravity at startup.
+    const Eigen::Vector3d gravity_world(
+        state_point.grav[0], state_point.grav[1], state_point.grav[2]);
+    if (gravity_world.allFinite() && gravity_world.norm() > 1e-6)
+    {
+        const Eigen::Vector3d up_body = state_point.rot.toRotationMatrix().transpose() *
+            (-gravity_world.normalized());
+        if (up_body.allFinite())
+        {
+            geometry_msgs::msg::Vector3Stamped up;
+            up.header.stamp = odomAftMapped.header.stamp;
+            up.header.frame_id = "body";  // FAST-LIO IMU frame, not robot BODY
+            up.vector.x = up_body.x();
+            up.vector.y = up_body.y();
+            up.vector.z = up_body.z();
+            pubUp->publish(up);
+        }
+    }
     auto P = kf.get_P();
+    // Diagnostic output only: preserve /Odometry and its scan-end timestamp.
+    // Velocity is at the IMU/body origin, not at an assumed robot base_link.
+    if (p_imu->has_propagation_gyro())
+    {
+        const auto velocity = fastlio_output::body_velocity(
+            state_point.rot.toRotationMatrix(), state_point.vel,
+            p_imu->last_propagation_gyro(), state_point.bg, P, p_imu->cov_gyr);
+        nav_msgs::msg::Odometry velocity_odom;
+        if (fastlio_output::copy_with_body_velocity(odomAftMapped, velocity, velocity_odom))
+            pubVelocity->publish(velocity_odom);
+    }
     for (int i = 0; i < 6; i++)
     {
         int k = i < 3 ? i + 3 : i - 3;
@@ -726,8 +943,19 @@ void h_share_model(state_ikfom &s, esekfom::dyn_share_datastruct<double> &ekfom_
         /*** calculate the Measuremnt Jacobian matrix H ***/
         V3D C(s.rot.conjugate() * norm_vec);
         V3D A(point_crossmat * C);
-        V3D B(point_be_crossmat * s.offset_R_L_I.conjugate() * C); // s.rot.conjugate()*norm_vec);
-        ekfom_data.h_x.block<1, 12>(i, 0) << norm_p.x, norm_p.y, norm_p.z, VEC_FROM_ARRAY(A), VEC_FROM_ARRAY(B), VEC_FROM_ARRAY(C);
+        if (extrinsic_est_en)
+        {
+            V3D B(point_be_crossmat * s.offset_R_L_I.conjugate() * C);
+            ekfom_data.h_x.block<1, 12>(i, 0) << norm_p.x, norm_p.y, norm_p.z,
+                VEC_FROM_ARRAY(A), VEC_FROM_ARRAY(B), VEC_FROM_ARRAY(C);
+        }
+        else
+        {
+            // Match FAST-LIO: retain pose sensitivity, but do not estimate the
+            // fixed LiDAR-in-IMU calibration from point-to-plane residuals.
+            ekfom_data.h_x.block<1, 12>(i, 0) << norm_p.x, norm_p.y, norm_p.z,
+                VEC_FROM_ARRAY(A), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0;
+        }
 
         /*** Measuremnt: distance to the closest surface/corner ***/
         ekfom_data.h(i) = -norm_p.intensity;
@@ -740,7 +968,8 @@ class LaserMappingNode : public rclcpp::Node
 public:
     LaserMappingNode(const rclcpp::NodeOptions &options = rclcpp::NodeOptions()) : Node("laser_mapping", options)
     {
-        // this->declare_parameter<bool>("publish.path_en", true);
+        timing_diag::clock = this->get_clock();
+        this->declare_parameter<bool>("publish.path_en", false);
         this->declare_parameter<bool>("publish.effect_map_en", false);
         this->declare_parameter<bool>("publish.map_en", false);
         this->declare_parameter<bool>("publish.scan_publish_en", true);
@@ -770,10 +999,11 @@ public:
         this->declare_parameter<int>("point_filter_num", 2);
         this->declare_parameter<bool>("feature_extract_enable", false);
         this->declare_parameter<bool>("runtime_pos_log_enable", false);
+        this->declare_parameter<bool>("mapping.extrinsic_est_en", true);
         this->declare_parameter<bool>("pcd_save.pcd_save_en", false);
         this->declare_parameter<vector<double>>("mapping.extrinsic_T", vector<double>());
         this->declare_parameter<vector<double>>("mapping.extrinsic_R", vector<double>());
-        // this->get_parameter_or<bool>("publish.path_en", path_en, true);
+        this->get_parameter_or<bool>("publish.path_en", path_en, false);
         this->get_parameter_or<bool>("publish.effect_map_en", effect_pub_en, false);
         this->get_parameter_or<bool>("publish.map_en", map_pub_en, false);
         this->get_parameter_or<bool>("publish.scan_publish_en", scan_pub_en, true);
@@ -804,6 +1034,7 @@ public:
         this->get_parameter_or<int>("point_filter_num", p_pre->point_filter_num, 2);
         this->get_parameter_or<bool>("feature_extract_enable", p_pre->feature_enabled, false);
         this->get_parameter_or<bool>("runtime_pos_log_enable", runtime_pos_log, 0);
+        this->get_parameter_or<bool>("mapping.extrinsic_est_en", extrinsic_est_en, true);
         this->get_parameter_or<bool>("pcd_save.pcd_save_en", pcd_save_en, false);
         this->get_parameter_or<vector<double>>("mapping.extrinsic_T", extrinT, vector<double>());
         this->get_parameter_or<vector<double>>("mapping.extrinsic_R", extrinR, vector<double>());
@@ -833,6 +1064,12 @@ public:
         Lidar_T_wrt_IMU << VEC_FROM_ARRAY(extrinT);
         Lidar_R_wrt_IMU << MAT_FROM_ARRAY(extrinR);
         p_imu->set_extrinsic(Lidar_T_wrt_IMU, Lidar_R_wrt_IMU);
+        RCLCPP_INFO(this->get_logger(),
+            "LiDAR-IMU extrinsic estimation: %s (mapping.extrinsic_est_en=%s), "
+            "initial T=[%.6f, %.6f, %.6f] m",
+            extrinsic_est_en ? "enabled" : "disabled; using fixed calibration",
+            extrinsic_est_en ? "true" : "false",
+            Lidar_T_wrt_IMU.x(), Lidar_T_wrt_IMU.y(), Lidar_T_wrt_IMU.z());
         p_imu->set_gyr_cov(V3D(gyr_cov, gyr_cov, gyr_cov));
         p_imu->set_acc_cov(V3D(acc_cov, acc_cov, acc_cov));
         p_imu->set_gyr_bias_cov(V3D(b_gyr_cov, b_gyr_cov, b_gyr_cov));
@@ -857,28 +1094,51 @@ public:
             cout << "~~~~" << ROOT_DIR << " doesn't exist" << endl;
 
         /*** ROS subscribe initialization ***/
+        sensor_callback_group_ = this->create_callback_group(
+            rclcpp::CallbackGroupType::MutuallyExclusive);
+        processing_callback_group_ = this->create_callback_group(
+            rclcpp::CallbackGroupType::MutuallyExclusive);
+        rclcpp::SubscriptionOptions sensor_options;
+        sensor_options.callback_group = sensor_callback_group_;
+
         if (p_pre->lidar_type == AVIA)
         {
-            sub_pcl_livox_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(lid_topic, 20000, livox_pcl_cbk);
+            auto lidar_qos = rclcpp::SensorDataQoS().keep_last(2);
+            sub_pcl_livox_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
+                lid_topic, lidar_qos, livox_pcl_cbk, sensor_options);
         }
         else
         {
-            sub_pcl_pc_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(lid_topic, 20000, standard_pcl_cbk);
+            sub_pcl_pc_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
+                lid_topic, 20000, standard_pcl_cbk, sensor_options);
         }
-        sub_imu_ = this->create_subscription<sensor_msgs::msg::Imu>(imu_topic, 10, imu_cbk);
+        sub_imu_ = this->create_subscription<sensor_msgs::msg::Imu>(
+            imu_topic, 10, imu_cbk, sensor_options);
         pubLaserCloudFull_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_registered", 20);
         pubLaserCloudFull_body_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_registered_body", 20);
         pubLaserCloudEffect_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_effected", 20);
         pubLaserCloudMap_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/Laser_map", 20);
         pubOdomAftMapped_ = this->create_publisher<nav_msgs::msg::Odometry>("/Odometry", 20);
+        pubVelocity_ = this->create_publisher<nav_msgs::msg::Odometry>(
+            "/fastlio/odometry_velocity", rclcpp::SensorDataQoS().keep_last(1));
+        pubUp_ = this->create_publisher<geometry_msgs::msg::Vector3Stamped>(
+            "/fastlio/up_body", rclcpp::SensorDataQoS().keep_last(5));
+        RCLCPP_INFO(this->get_logger(), "Gravity direction: /fastlio/up_body (unit up in body, scan-end stamp)");
+        RCLCPP_INFO(this->get_logger(), "Native body velocity: /fastlio/odometry_velocity (diagnostic only; Nav2 input unchanged)");
         pubPath_ = this->create_publisher<nav_msgs::msg::Path>("/path", 20);
         tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
         //------------------------------------------------------------------------------------------------------
-        auto period_ms = std::chrono::milliseconds(static_cast<int64_t>(5000.0 / 100.0));
-        timer_ = rclcpp::create_timer(this, this->get_clock(), period_ms, std::bind(&LaserMappingNode::timer_callback, this));
+        // Match FAST_LIO_ROS2: poll synchronized LiDAR/IMU packages at 100 Hz.
+        // Odometry is still published once per completed LiDAR scan (~10 Hz).
+        auto period_ms = std::chrono::milliseconds(static_cast<int64_t>(1000.0 / 100.0));
+        timer_ = this->create_wall_timer(
+            period_ms, std::bind(&LaserMappingNode::timer_callback, this),
+            processing_callback_group_);
 
         RCLCPP_INFO(this->get_logger(), "Node init finished.");
+        if (timing_diag::enabled)
+            RCLCPP_INFO(this->get_logger(), "FAST-LIO pipeline diagnostics v1 enabled (1 s windows; ages=ROS clock, durations=steady clock)");
     }
 
     ~LaserMappingNode()
@@ -891,7 +1151,17 @@ public:
 private:
     void timer_callback()
     {
-        if (sync_packages(Measures))
+        fastlio_timing::ScopedDuration diag_work(timing_diag::enabled ? &timing_diag::timer_work : nullptr);
+        const double diag_entry = timing_diag::enabled ? fastlio_timing::steady_seconds() : 0.0;
+        if (timing_diag::enabled)
+        {
+            ++timing_diag::timer_calls;
+            timing_diag::timer_gap.add((diag_entry - timing_diag::last_timer_entry) * 1000.0);
+            timing_diag::last_timer_entry = diag_entry;
+        }
+        const bool package_ready = sync_packages(Measures);
+        if (timing_diag::enabled) timing_diag::report(this->get_logger(), diag_entry);
+        if (package_ready)
         {
             if (flg_reset)
             {
@@ -998,7 +1268,9 @@ private:
             double t_update_end = omp_get_wtime();
 
             /******* Publish odometry *******/
-            publish_odometry(pubOdomAftMapped_, tf_broadcaster_);
+            const double odometry_publish_start = omp_get_wtime();
+            publish_odometry(pubOdomAftMapped_, pubVelocity_, pubUp_, tf_broadcaster_);
+            const double odometry_publish_end = omp_get_wtime();
 
             /*** add the feature points to map kdtree ***/
             t3 = omp_get_wtime();
@@ -1006,15 +1278,42 @@ private:
             t5 = omp_get_wtime();
 
             /******* Publish points *******/
-            publish_path(pubPath_);
+            const double output_publish_start = omp_get_wtime();
+            if (path_en)
+                publish_path(pubPath_);
             if (scan_pub_en || pcd_save_en)
                 publish_frame_world(pubLaserCloudFull_);
             if (scan_pub_en && scan_body_pub_en)
                 publish_frame_body(pubLaserCloudFull_body_);
+            const double output_publish_end = omp_get_wtime();
             // if (effect_pub_en)
             //     publish_effect_world(pubLaserCloudEffect_);
 
             // publish_map(pubLaserCloudMap_);
+
+            if (std::getenv("FASTLIO_DIAG_TIMING") != nullptr)
+            {
+                static double last_mapping_diag_time = 0.0;
+                const double now = omp_get_wtime();
+                if (now - last_mapping_diag_time >= 1.0)
+                {
+                    std::cerr
+                        << "FAST-LIO mapping timing imu_fov_filter="
+                        << (t1 - t0) * 1.0e3 << " ms icp="
+                        << (t_update_end - t_update_start) * 1.0e3
+                        << " ms odom_publish="
+                        << (odometry_publish_end - odometry_publish_start) * 1.0e3
+                        << " ms map_update=" << (t5 - t3) * 1.0e3
+                        << " ms cloud_publish="
+                        << (output_publish_end - output_publish_start) * 1.0e3
+                        << " ms total=" << (output_publish_end - t0) * 1.0e3
+                        << " ms points_in=" << feats_undistort->size()
+                        << " points_down=" << feats_down_size
+                        << " map_points=" << ikdtree.validnum()
+                        << std::endl;
+                    last_mapping_diag_time = now;
+                }
+            }
 
             /*** Debug variables ***/
             if (runtime_pos_log)
@@ -1043,7 +1342,7 @@ private:
                 ext_euler = SO3ToEuler(state_point.offset_R_L_I);
                 fout_out << setw(20) << Measures.lidar_beg_time - first_lidar_time << " " << euler_cur.transpose() << " " << state_point.pos.transpose() << " " << ext_euler.transpose() << " " << state_point.offset_T_L_I.transpose() << " " << state_point.vel.transpose()
                          << " " << state_point.bg.transpose() << " " << state_point.ba.transpose() << " " << state_point.grav << " " << feats_undistort->points.size() << endl;
-                dump_lio_state_to_log(fp);
+                if (fp) dump_lio_state_to_log(fp);
             }
         }
     }
@@ -1054,6 +1353,8 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudEffect_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudMap_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped_;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity_;
+    rclcpp::Publisher<geometry_msgs::msg::Vector3Stamped>::SharedPtr pubUp_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pubPath_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr sub_pcl_pc_;
@@ -1063,14 +1364,16 @@ private:
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::TimerBase::SharedPtr map_pub_timer_;
     rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr map_save_srv_;
+    rclcpp::CallbackGroup::SharedPtr sensor_callback_group_;
+    rclcpp::CallbackGroup::SharedPtr processing_callback_group_;
 
-    bool effect_pub_en = false, map_pub_en = false;
+    bool path_en = false, effect_pub_en = false, map_pub_en = false;
     int effect_feat_num = 0, frame_num = 0;
     double deltaT, deltaR, aver_time_consu = 0, aver_time_icp = 0, aver_time_match = 0, aver_time_incre = 0, aver_time_solve = 0, aver_time_const_H_time = 0;
     bool flg_EKF_converged, EKF_stop_flg = 0;
     double epsi[23] = {0.001};
 
-    FILE *fp;
+    FILE *fp{nullptr};
     ofstream fout_pre, fout_out, fout_dbg;
 };
 
@@ -1080,7 +1383,11 @@ int main(int argc, char **argv)
 
     signal(SIGINT, SigHandle);
 
-    rclcpp::spin(std::make_shared<LaserMappingNode>());
+    auto node = std::make_shared<LaserMappingNode>();
+    rclcpp::executors::MultiThreadedExecutor executor(
+        rclcpp::ExecutorOptions(), 2);
+    executor.add_node(node);
+    executor.spin();
 
     if (rclcpp::ok())
         rclcpp::shutdown();
@@ -1102,6 +1409,10 @@ int main(int argc, char **argv)
         FILE *fp2;
         string log_dir = root_dir + "/Log/fast_lio_time_log.csv";
         fp2 = fopen(log_dir.c_str(), "w");
+        if (!fp2) {
+            std::cerr << "Cannot write timing log: " << log_dir << std::endl;
+            return 0;
+        }
         fprintf(fp2, "time_stamp, total time, scan point size, incremental time, search time, delete size, delete time, tree size st, tree size end, add point size, preprocess time\n");
         for (int i = 0; i < time_log_counter; i++)
         {

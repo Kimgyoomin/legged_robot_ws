@@ -7,8 +7,9 @@
     resolution: 0.05
     origin_x: -25.0
     origin_y: -25.0
-    length_x: 50.0
-    length_y: 50.0
+    # Fixed bounds: [-25, 75) m on each axis; 4 million cells at 0.05 m.
+    length_x: 100.0
+    length_y: 100.0
     max_variance: 0.04
     invalid_cell_policy: retain
     publish_fps: 1.0

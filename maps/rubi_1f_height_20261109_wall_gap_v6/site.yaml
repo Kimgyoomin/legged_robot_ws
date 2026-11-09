@@ -1,0 +1,40 @@
+format: 1
+id: rubi-1f-height-wall-gap-v6-20261109
+frame: map
+height_resolution: 0.05
+alignment:
+  verified: true
+  scope: offline same-frame integration; not a surveyed or driving validation
+  method: Inherited V5 XY alignment. User-designated wall-adjacent free-space gap
+    filled from measured local floor with independent legacy PCD checks; all existing
+    heights preserved.
+  evidence: ../../archive/20261109/maps/processed/run_1794037249460292244_postprocess_20261107/audits/reference/reference_audit.json
+  limitations: Inherited spatial alignment, not surveyed; step heights are user-constrained.
+    Physical top widths unmeasured.
+assets:
+  pcd:
+    path: ../rubi_1f_legacy/data/1f_fast_lio_260731_segmented.pcd
+    sha256: e3d8a70c5c47813bba48a8f4fadeb9718ed8960feb86ef9c7ff1c9be6151d70d
+  occupancy:
+    path: ../rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+    sha256: 7d63dcaeee3ae2b0d7202b3c841117462aaa1a06dadfe0c5ee7149dc9b4f593d
+  image:
+    path: ../rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm
+    sha256: 38a53eb28f702394d6d4f178211b32aaee35830990bcbe0e159e1f5111a3ef3b
+  height:
+    path: map.rghm
+    sha256: c5c491b9dc00e50659a6ce812296f001d5ae4f6af8ab126f4cff2561828ee35c
+provenance:
+  height: V5 plus bounded wall-adjacent floor gap; all pre-existing heights preserved
+  original_height_sha256: 1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8
+  inferred_mask: provenance.npz
+  metrics: metrics.json
+  navigation_hardware_validated: false
+  prepared_on: '2026-11-09'
+  base_sha256: 92aadca91c74a48ab22e28482097a65f9b6c459071f87e681ca88eea0b5046ea
+  step_measurements: ../../archive/20261109/maps/rubi_1f_height_20261109_flatsteps_v3/metrics.json
+  base_map: ../../archive/20261109/maps/rubi_1f_height_20261109_targeted_floor_v5/map.rghm
+  v3_report: ../../archive/20261109/maps/rubi_1f_height_20261109_flatsteps_v3/REPORT.md
+  v4_report: ../../archive/20261109/maps/rubi_1f_height_20261109_floorcomplete_v4/REPORT.md
+  v5_report: ../../archive/20261109/maps/rubi_1f_height_20261109_targeted_floor_v5/REPORT.md
+  v6_report: REPORT.md

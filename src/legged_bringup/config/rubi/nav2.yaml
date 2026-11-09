@@ -1,0 +1,223 @@
+# RUBI baseline: navigation_real/nav2_rubi_dwb.yaml, 2026-11-09. Height plugin replaces A*.
+costmap_sector_filter:
+  ros__parameters:
+    use_sim_time: false
+    input_topic: /livox/lidar_pointcloud
+    output_topic: /livox/lidar_costmap
+    expected_frame_id: livox_frame
+    front_half_angle_deg: 60.0
+    front_min_range: 0.3
+    other_min_range: 1.0
+    up_topic: /fastlio/up_body
+    up_frame: body
+    height_origin_frame: BODY
+    min_body_height: -0.2
+    max_body_height: 1.0
+    max_up_gap_s: 0.25
+    max_wait_s: 0.25
+    max_cloud_age_s: 0.5
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    expected_planner_frequency: 1.0
+    planner_plugins:
+    - Height
+    Height:
+      plugin: legged_navigation/HeightPlanner
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    controller_frequency: 5.0
+    odom_topic: /Odometry
+    min_x_velocity_threshold: 0.01
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.05
+    failure_tolerance: 1000.0
+    controller_plugins:
+    - FollowPath
+    progress_checker_plugin: progress_checker
+    goal_checker_plugins:
+    - goal_checker
+    progress_checker:
+      plugin: nav2_controller::SimpleProgressChecker
+      required_movement_radius: 0.2
+      movement_time_allowance: 1000.0
+    goal_checker:
+      plugin: nav2_controller::SimpleGoalChecker
+      xy_goal_tolerance: 0.25
+      yaw_goal_tolerance: 0.25
+      stateful: true
+    FollowPath:
+      plugin: dwb_core::DWBLocalPlanner
+      trajectory_generator_name: dwb_plugins::StandardTrajectoryGenerator
+      debug_trajectory_details: false
+      min_vel_x: 0.0
+      max_vel_x: 0.8
+      min_vel_y: 0.0
+      max_vel_y: 0.0
+      max_vel_theta: 1.0
+      min_speed_xy: 0.0
+      max_speed_xy: 0.8
+      min_speed_theta: 0.0
+      acc_lim_x: 1.0
+      acc_lim_y: 0.0
+      acc_lim_theta: 3.0
+      decel_lim_x: -1.0
+      decel_lim_y: 0.0
+      decel_lim_theta: -3.0
+      vx_samples: 12
+      vy_samples: 0
+      vtheta_samples: 21
+      sim_time: 1.5
+      linear_granularity: 0.05
+      angular_granularity: 0.025
+      transform_tolerance: 0.5
+      xy_goal_tolerance: 0.15
+      trans_stopped_velocity: 0.25
+      stateful: true
+      critics:
+      - RotateToGoal
+      - Oscillation
+      - BaseObstacle
+      - ObstacleFootprint
+      - GoalAlign
+      - PathAlign
+      - PathDist
+      - GoalDist
+      BaseObstacle.scale: 0.02
+      ObstacleFootprint.scale: 0.02
+      PathAlign.scale: 32.0
+      PathAlign.forward_point_distance: 0.1
+      GoalAlign.scale: 24.0
+      GoalAlign.forward_point_distance: 0.1
+      PathDist.scale: 32.0
+      GoalDist.scale: 24.0
+      RotateToGoal.scale: 32.0
+      RotateToGoal.slowing_factor: 5.0
+      RotateToGoal.lookahead_time: -1.0
+      short_circuit_trajectory_evaluation: true
+      publish_evaluation: false
+      publish_trajectories: false
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      global_frame: camera_init
+      robot_base_frame: base_link
+      rolling_window: true
+      width: 6
+      height: 6
+      resolution: 0.05
+      update_frequency: 5.0
+      publish_frequency: 5.0
+      transform_tolerance: 0.3
+      track_unknown_space: false
+      footprint: '[[0.275, 0.275], [-0.275, 0.275], [-0.275, -0.275], [0.275, -0.275]]'
+      footprint_padding: 0.02
+      plugins:
+      - obstacle_layer
+      - inflation_layer
+      static_layer:
+        plugin: nav2_costmap_2d::StaticLayer
+        enabled: true
+        map_topic: /map
+        map_subscribe_transient_local: true
+        subscribe_to_updates: true
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        enabled: true
+        min_obstacle_height: -10000.0
+        max_obstacle_height: 10000.0
+        footprint_clearing_enabled: true
+        combination_method: 1
+        tf_filter_tolerance: 0.3
+        observation_sources: livox_cloud
+        livox_cloud:
+          topic: /livox/lidar_costmap
+          data_type: PointCloud2
+          marking: true
+          clearing: true
+          obstacle_min_range: 0.3
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 4.0
+          min_obstacle_height: -10000.0
+          max_obstacle_height: 10000.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        enabled: true
+        inflation_radius: 0.5
+        cost_scaling_factor: 3.0
+      always_send_full_costmap: true
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      global_frame: map
+      robot_base_frame: base_link
+      update_frequency: 1.0
+      publish_frequency: 1.0
+      transform_tolerance: 1.0
+      resolution: 0.05
+      track_unknown_space: true
+      rolling_window: false
+      footprint: '[[0.275, 0.275], [-0.275, 0.275], [-0.275, -0.275], [0.275, -0.275]]'
+      footprint_padding: 0.01
+      plugins:
+      - static_layer
+      - obstacle_layer
+      - inflation_layer
+      static_layer:
+        plugin: nav2_costmap_2d::StaticLayer
+        enabled: true
+        map_topic: /map
+        map_subscribe_transient_local: true
+        subscribe_to_updates: true
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        enabled: true
+        min_obstacle_height: -10000.0
+        max_obstacle_height: 10000.0
+        footprint_clearing_enabled: true
+        combination_method: 1
+        tf_filter_tolerance: 0.3
+        observation_sources: livox_cloud
+        livox_cloud:
+          topic: /livox/lidar_costmap
+          data_type: PointCloud2
+          marking: true
+          clearing: true
+          obstacle_min_range: 0.3
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 5.0
+          min_obstacle_height: -10000.0
+          max_obstacle_height: 10000.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        enabled: true
+        inflation_radius: 0.7
+        cost_scaling_factor: 1.0
+      always_send_full_costmap: true
+smoother_server:
+  ros__parameters:
+    use_sim_time: false
+behavior_server:
+  ros__parameters:
+    use_sim_time: false
+    local_frame: camera_init
+    global_frame: map
+    robot_base_frame: base_link
+    transform_tolerance: 0.3
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map
+    robot_base_frame: base_link
+    odom_topic: /Odometry
+    bt_loop_duration: 50
+    default_server_timeout: 1000

@@ -12,7 +12,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     own = get_package_share_directory('rubi_height_mapping')
     defaults = {'use_sim_time': 'false', 'rviz': 'true',
-                'input_scan': '/livox/lidar_PointCloud2', 'min_range': '0.6', 'max_range': '3.0',
+                'input_scan': '/cloud_registered_body', 'min_range': '0.6', 'max_range': '3.0',
                 'save_dir': os.path.expanduser('~/legged_robot_ws/maps/raw'),
                 'odom_topic': '', 'map_frame': 'map', 'base_frame': 'base_link',
                 'odom_max_gap': '0.2',

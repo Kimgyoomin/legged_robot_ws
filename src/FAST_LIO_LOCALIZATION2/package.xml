@@ -40,4 +40,6 @@
   <export>
     <build_type>ament_cmake</build_type>
   </export>
+  <exec_depend>navigation_dds</exec_depend>
+  <depend>tf2_ros</depend>
 </package>

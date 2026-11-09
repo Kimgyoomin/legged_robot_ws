@@ -1,0 +1,119 @@
+[INFO] [launch]: All log files can be found below /home/rclab/.ros/log/2026-11-09-17-02-50-625142-rclab-201338
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: RUBI localization DDS profile: 32 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: FAST-LIO localization DDS profile: 32 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [launch.user]: PCD map publisher DDS profile: 128 MiB SHM + UDP (per DDS participant); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+[INFO] [static_transform_publisher-1]: process started with pid [201407]
+[INFO] [fastlio_mapping-2]: process started with pid [201409]
+[INFO] [global_localization.py-3]: process started with pid [201411]
+[INFO] [transform_fusion_cpp-4]: process started with pid [201413]
+[INFO] [pcd_to_pointcloud-5]: process started with pid [201417]
+[INFO] [static_transform_publisher-6]: process started with pid [201427]
+[INFO] [static_transform_publisher-7]: process started with pid [201431]
+[INFO] [static_transform_publisher-8]: process started with pid [201434]
+[static_transform_publisher-1] [WARN] [1794211372.357138016] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-1] [INFO] [1794211372.404462217] [world_to_map]: Spinning until stopped - publishing transform
+[static_transform_publisher-1] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-1] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-1] from 'world' to 'map'
+[static_transform_publisher-6] [INFO] [1794211372.542408522] [body_to_robot_body]: Spinning until stopped - publishing transform
+[static_transform_publisher-6] translation: ('-0.110500', '0.023290', '0.093380')
+[static_transform_publisher-6] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-6] from 'body' to 'BODY'
+[transform_fusion_cpp-4] [INFO] [1794211372.602076388] [transform_fusion]: C++ transform fusion started (Odometry RELIABLE depth 1, TF depth 1)
+[static_transform_publisher-8] [INFO] [1794211372.616013157] [base_link_to_livox_frame]: Spinning until stopped - publishing transform
+[static_transform_publisher-8] translation: ('0.099500', '0.000000', '-0.137500')
+[static_transform_publisher-8] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-8] from 'base_link' to 'livox_frame'
+[static_transform_publisher-7] [INFO] [1794211372.669058137] [BODY_to_base_link]: Spinning until stopped - publishing transform
+[static_transform_publisher-7] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-7] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-7] from 'BODY' to 'base_link'
+[fastlio_mapping-2] [INFO] [1794211372.843968621] [laser_mapping]: p_pre->lidar_type 1
+[pcd_to_pointcloud-5] [INFO] [1794211372.844887272] [map_publisher]: Publishing data with 565765 points (curvature _ intensity _ normal_x normal_y normal_z _ x y z _) on topic /cloud_pcd in frame map.
+[fastlio_mapping-2] [INFO] [1794211372.845763522] [laser_mapping]: LiDAR-IMU extrinsic estimation: disabled; using fixed calibration (mapping.extrinsic_est_en=false), initial T=[-0.011000, 0.023290, -0.044120] m
+[fastlio_mapping-2] Multi thread started 
+[fastlio_mapping-2] ~~~~/home/rclab/legged_robot_ws/src/FAST_LIO_LOCALIZATION2/ doesn't exist
+[fastlio_mapping-2] [INFO] [1794211372.865501585] [laser_mapping]: Gravity direction: /fastlio/up_body (unit up in body, scan-end stamp)
+[fastlio_mapping-2] [INFO] [1794211372.866555377] [laser_mapping]: Native body velocity: /fastlio/odometry_velocity (diagnostic only; Nav2 input unchanged)
+[fastlio_mapping-2] [INFO] [1794211372.871223197] [laser_mapping]: Node init finished.
+[global_localization.py-3] [INFO] [1794211374.740654356] [global_localization]: Waiting for global map...
+[global_localization.py-3] [INFO] [1794211375.378665614] [global_localization]: Global map received.
+[global_localization.py-3] [INFO] [1794211375.379349603] [global_localization]: Global map received.
+[global_localization.py-3] [INFO] [1794211383.315762210] [global_localization]: Waiting for initial pose...
+[fastlio_mapping-2] [WARN] [1794211383.521650485] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] [WARN] [1794211383.531707458] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] IMU Initial Done
+[fastlio_mapping-2] [WARN] [1794211383.591760776] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-2] 
+[fastlio_mapping-2] [INFO] [1794211383.692700118] [laser_mapping]: Initialize the map kdtree
+[transform_fusion_cpp-4] [INFO] [1794211383.796944358] [transform_fusion]: fusion timing: input_interval=11210.7 ms input_age=3.6 ms localization_publish=0.090 ms tf_publish=0.143 ms total=0.235 ms
+[global_localization.py-3] [INFO] [1794211383.849869782] [global_localization]: Waiting for initial pose...
+[transform_fusion_cpp-4] [INFO] [1794211385.796734268] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=2.9 ms localization_publish=0.055 ms tf_publish=0.044 ms total=0.101 ms
+[global_localization.py-3] [INFO] [1794211385.849576489] [global_localization]: Waiting for initial pose...
+[global_localization.py-3] [INFO] [1794211386.832355924] [global_localization]: Initial pose received.
+[transform_fusion_cpp-4] [INFO] [1794211387.796802425] [transform_fusion]: fusion timing: input_interval=99.6 ms input_age=2.5 ms localization_publish=0.052 ms tf_publish=0.085 ms total=0.139 ms
+[transform_fusion_cpp-4] [INFO] [1794211389.797170944] [transform_fusion]: fusion timing: input_interval=99.3 ms input_age=2.7 ms localization_publish=0.063 ms tf_publish=0.078 ms total=0.144 ms
+[transform_fusion_cpp-4] [INFO] [1794211391.797029752] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=3.9 ms localization_publish=0.073 ms tf_publish=0.057 ms total=0.132 ms
+[transform_fusion_cpp-4] [INFO] [1794211393.797352797] [transform_fusion]: fusion timing: input_interval=100.5 ms input_age=4.4 ms localization_publish=0.060 ms tf_publish=0.078 ms total=0.140 ms
+[transform_fusion_cpp-4] [INFO] [1794211395.796980494] [transform_fusion]: fusion timing: input_interval=99.6 ms input_age=4.4 ms localization_publish=0.056 ms tf_publish=0.067 ms total=0.125 ms
+[transform_fusion_cpp-4] [INFO] [1794211397.797431671] [transform_fusion]: fusion timing: input_interval=100.6 ms input_age=2.9 ms localization_publish=0.054 ms tf_publish=0.077 ms total=0.133 ms
+[transform_fusion_cpp-4] [INFO] [1794211399.797196716] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=4.2 ms localization_publish=0.070 ms tf_publish=0.049 ms total=0.120 ms
+[transform_fusion_cpp-4] [INFO] [1794211401.798149188] [transform_fusion]: fusion timing: input_interval=100.8 ms input_age=4.1 ms localization_publish=0.057 ms tf_publish=0.049 ms total=0.108 ms
+[transform_fusion_cpp-4] [INFO] [1794211403.797676466] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=3.2 ms localization_publish=0.049 ms tf_publish=0.168 ms total=0.219 ms
+[transform_fusion_cpp-4] [INFO] [1794211405.799606888] [transform_fusion]: fusion timing: input_interval=102.0 ms input_age=15.2 ms localization_publish=0.061 ms tf_publish=0.049 ms total=0.112 ms
+[transform_fusion_cpp-4] [INFO] [1794211407.899578772] [transform_fusion]: fusion timing: input_interval=101.8 ms input_age=14.5 ms localization_publish=0.071 ms tf_publish=0.072 ms total=0.144 ms
+[transform_fusion_cpp-4] [INFO] [1794211409.997849933] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=4.4 ms localization_publish=0.058 ms tf_publish=0.077 ms total=0.136 ms
+[transform_fusion_cpp-4] [INFO] [1794211411.997809512] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=4.3 ms localization_publish=0.054 ms tf_publish=0.053 ms total=0.109 ms
+[transform_fusion_cpp-4] [INFO] [1794211413.997912711] [transform_fusion]: fusion timing: input_interval=95.3 ms input_age=4.7 ms localization_publish=0.057 ms tf_publish=0.075 ms total=0.133 ms
+[transform_fusion_cpp-4] [INFO] [1794211416.008333755] [transform_fusion]: fusion timing: input_interval=110.1 ms input_age=15.2 ms localization_publish=0.061 ms tf_publish=0.063 ms total=0.125 ms
+[transform_fusion_cpp-4] [INFO] [1794211418.097988722] [transform_fusion]: fusion timing: input_interval=99.0 ms input_age=4.4 ms localization_publish=0.052 ms tf_publish=0.078 ms total=0.132 ms
+[transform_fusion_cpp-4] [INFO] [1794211420.099111760] [transform_fusion]: fusion timing: input_interval=100.7 ms input_age=14.5 ms localization_publish=0.054 ms tf_publish=0.070 ms total=0.126 ms
+[transform_fusion_cpp-4] [INFO] [1794211422.197626288] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=4.6 ms localization_publish=0.062 ms tf_publish=0.081 ms total=0.145 ms
+[transform_fusion_cpp-4] [INFO] [1794211424.198296288] [transform_fusion]: fusion timing: input_interval=98.6 ms input_age=4.6 ms localization_publish=0.068 ms tf_publish=0.082 ms total=0.151 ms
+[transform_fusion_cpp-4] [INFO] [1794211426.200851176] [transform_fusion]: fusion timing: input_interval=101.6 ms input_age=17.0 ms localization_publish=0.076 ms tf_publish=0.069 ms total=0.146 ms
+[transform_fusion_cpp-4] [INFO] [1794211428.298524848] [transform_fusion]: fusion timing: input_interval=99.9 ms input_age=4.7 ms localization_publish=0.060 ms tf_publish=0.249 ms total=0.311 ms
+[transform_fusion_cpp-4] [INFO] [1794211430.300662988] [transform_fusion]: fusion timing: input_interval=102.1 ms input_age=15.0 ms localization_publish=0.063 ms tf_publish=0.077 ms total=0.142 ms
+[transform_fusion_cpp-4] [INFO] [1794211432.398321811] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=5.0 ms localization_publish=0.050 ms tf_publish=0.079 ms total=0.132 ms
+[transform_fusion_cpp-4] [INFO] [1794211434.498450308] [transform_fusion]: fusion timing: input_interval=100.2 ms input_age=5.1 ms localization_publish=0.057 ms tf_publish=0.050 ms total=0.109 ms
+[transform_fusion_cpp-4] [INFO] [1794211436.500753829] [transform_fusion]: fusion timing: input_interval=101.1 ms input_age=15.5 ms localization_publish=0.073 ms tf_publish=0.048 ms total=0.122 ms
+[transform_fusion_cpp-4] [INFO] [1794211438.598564624] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=5.3 ms localization_publish=0.063 ms tf_publish=0.054 ms total=0.119 ms
+[transform_fusion_cpp-4] [INFO] [1794211440.598819476] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=5.5 ms localization_publish=0.065 ms tf_publish=0.054 ms total=0.121 ms
+[transform_fusion_cpp-4] [INFO] [1794211442.698620571] [transform_fusion]: fusion timing: input_interval=100.0 ms input_age=5.2 ms localization_publish=0.066 ms tf_publish=0.041 ms total=0.109 ms
+[transform_fusion_cpp-4] [INFO] [1794211444.699463440] [transform_fusion]: fusion timing: input_interval=100.3 ms input_age=5.8 ms localization_publish=0.062 ms tf_publish=0.049 ms total=0.113 ms
+[transform_fusion_cpp-4] [INFO] [1794211446.699066720] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=6.1 ms localization_publish=0.054 ms tf_publish=0.060 ms total=0.116 ms
+[transform_fusion_cpp-4] [INFO] [1794211448.699129502] [transform_fusion]: fusion timing: input_interval=98.9 ms input_age=5.6 ms localization_publish=0.056 ms tf_publish=0.055 ms total=0.113 ms
+[transform_fusion_cpp-4] [INFO] [1794211450.699023254] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=5.7 ms localization_publish=0.056 ms tf_publish=0.073 ms total=0.130 ms
+[transform_fusion_cpp-4] [INFO] [1794211452.699183415] [transform_fusion]: fusion timing: input_interval=99.6 ms input_age=4.5 ms localization_publish=0.069 ms tf_publish=0.066 ms total=0.137 ms
+[transform_fusion_cpp-4] [INFO] [1794211454.698601985] [transform_fusion]: fusion timing: input_interval=99.7 ms input_age=7.7 ms localization_publish=0.057 ms tf_publish=0.052 ms total=0.110 ms
+[transform_fusion_cpp-4] [INFO] [1794211456.699131373] [transform_fusion]: fusion timing: input_interval=100.1 ms input_age=6.0 ms localization_publish=0.062 ms tf_publish=0.069 ms total=0.133 ms
+[transform_fusion_cpp-4] [INFO] [1794211458.698999973] [transform_fusion]: fusion timing: input_interval=100.4 ms input_age=5.6 ms localization_publish=0.048 ms tf_publish=0.040 ms total=0.091 ms
+[transform_fusion_cpp-4] [INFO] [1794211460.699283593] [transform_fusion]: fusion timing: input_interval=99.8 ms input_age=5.8 ms localization_publish=0.064 ms tf_publish=0.061 ms total=0.127 ms
+[transform_fusion_cpp-4] [INFO] [1794211462.699699377] [transform_fusion]: fusion timing: input_interval=98.4 ms input_age=6.0 ms localization_publish=0.059 ms tf_publish=0.063 ms total=0.124 ms
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [static_transform_publisher-8]: sending signal 'SIGINT' to process[static_transform_publisher-8]
+[INFO] [static_transform_publisher-7]: sending signal 'SIGINT' to process[static_transform_publisher-7]
+[INFO] [static_transform_publisher-6]: sending signal 'SIGINT' to process[static_transform_publisher-6]
+[INFO] [pcd_to_pointcloud-5]: sending signal 'SIGINT' to process[pcd_to_pointcloud-5]
+[INFO] [transform_fusion_cpp-4]: sending signal 'SIGINT' to process[transform_fusion_cpp-4]
+[INFO] [global_localization.py-3]: sending signal 'SIGINT' to process[global_localization.py-3]
+[INFO] [fastlio_mapping-2]: sending signal 'SIGINT' to process[fastlio_mapping-2]
+[INFO] [static_transform_publisher-1]: sending signal 'SIGINT' to process[static_transform_publisher-1]
+[static_transform_publisher-8] [INFO] [1794211465.872474767] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[static_transform_publisher-7] [INFO] [1794211465.874987034] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[static_transform_publisher-6] [INFO] [1794211465.883242897] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[pcd_to_pointcloud-5] [INFO] [1794211465.891382309] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[transform_fusion_cpp-4] [INFO] [1794211465.896178837] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[fastlio_mapping-2] catch sig %d2
+[static_transform_publisher-1] [INFO] [1794211465.901353103] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [static_transform_publisher-8]: process has finished cleanly [pid 201434]
+[INFO] [static_transform_publisher-7]: process has finished cleanly [pid 201431]
+[INFO] [static_transform_publisher-6]: process has finished cleanly [pid 201427]
+[INFO] [static_transform_publisher-1]: process has finished cleanly [pid 201407]
+[INFO] [transform_fusion_cpp-4]: process has finished cleanly [pid 201413]
+[fastlio_mapping-2] Rebuild thread terminated normally
+[INFO] [pcd_to_pointcloud-5]: process has finished cleanly [pid 201417]
+[INFO] [fastlio_mapping-2]: process has finished cleanly [pid 201409]
+[INFO] [global_localization.py-3]: process has finished cleanly [pid 201411]

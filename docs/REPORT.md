@@ -255,7 +255,7 @@ GPU로 옮긴 것은 높이 kernel입니다. ROS 수신·TF/odometry·pointcloud
 
 Orin 검증에는 `tegrastats`로 RAM·GPU·CPU·thermal throttling과 scan queue 대기, drop 수, pose 지연, navigation 지연을 함께 기록합니다. 이 PC의 통과 결과로 25 W 조건의 처리율이나 FastDEM 대비 우열을 확정하지 않습니다. JetPack/CUDA를 확인한 뒤 실제 센서 replay와 보행 로그로 acceptance 범위를 정합니다.
 
-## 10. 검증과 납품 판단
+## 10. 검증 결과와 적용 범위
 
 검증 결과는 [VALIDATION.md](VALIDATION.md)에 정리했습니다. 실제 ROS launch에서 frozen stamp 보존, 두 모드의 경로 생성, 장애물 우회, nonzero command, 근접 정지와 stale sensor 정지를 확인했습니다. GPU 추정·직접 odometry·장착 변환 시험도 수행했습니다.
 

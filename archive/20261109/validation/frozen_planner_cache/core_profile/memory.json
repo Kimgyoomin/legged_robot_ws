@@ -1,0 +1,15 @@
+{
+  "returncode": 0,
+  "wall_seconds": 10.414010643999063,
+  "max_rss_kib": 319268,
+  "user_seconds": 9.439616000000001,
+  "system_seconds": 0.18040299999999998,
+  "command": [
+    "taskset",
+    "-c",
+    "6,7",
+    "/tmp/rubi_planner_profile/cached",
+    "/tmp/rubi_planner_profile/height.xyz64",
+    "/home/rclab/legged_robot_ws/archive/20261109/validation/rubi_replay_20261109/full_route/costmap.u8"
+  ]
+}

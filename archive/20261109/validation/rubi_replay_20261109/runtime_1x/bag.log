@@ -1,0 +1,12 @@
+Only raw sensors are replayed; /clock is generated. Recorded TF/Odometry/cmd_vel are excluded.
+ros2 run navigation_dds with_profile common ros2 bag play '/home/rclab/rosbag_record/[26.11.06]Height_map_data' --clock 100 --rate 1.0 --read-ahead-queue-size 3000 --topics /livox/lidar /livox/imu /livox/lidar_pointcloud
+DDS profile: 32 MiB SHM + UDP (child command); DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)
+stdin is not a terminal device. Keyboard handling disabled.[INFO] [1794208228.118271231] [rosbag2_storage]: Opened database '/home/rclab/rosbag_record/[26.11.06]Height_map_data/height_raw_20261106_233804_0.db3' for READ_ONLY.
+[INFO] [1794208228.118401987] [rosbag2_player]: Set rate to 1
+[INFO] [1794208228.142674045] [rosbag2_player]: Adding keyboard callbacks.
+[INFO] [1794208228.142796256] [rosbag2_player]: Press SPACE for Pause/Resume
+[INFO] [1794208228.142820609] [rosbag2_player]: Press CURSOR_RIGHT for Play Next Message
+[INFO] [1794208228.142837090] [rosbag2_player]: Press CURSOR_UP for Increase Rate 10%
+[INFO] [1794208228.142849634] [rosbag2_player]: Press CURSOR_DOWN for Decrease Rate 10%
+[INFO] [1794208228.145033412] [rosbag2_storage]: Opened database '/home/rclab/rosbag_record/[26.11.06]Height_map_data/height_raw_20261106_233804_0.db3' for READ_ONLY.
+[INFO] [1794208348.593656961] [rclcpp]: signal_handler(SIGINT/SIGTERM)

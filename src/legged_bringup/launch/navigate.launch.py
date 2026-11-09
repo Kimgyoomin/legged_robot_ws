@@ -84,7 +84,7 @@ def start(context):
       Node(package='nav2_map_server',executable='map_server',name='map_server',output='screen',
         parameters=[{'use_sim_time':sim,'yaml_filename':assets['occupancy'],'frame_id':'map'}]),
       Node(package='legged_bringup',executable='frozen_map',name='frozen_map',output='screen',
-        parameters=[{'use_sim_time':sim,'file':assets['height'],'frame':'map'}]),
+        parameters=[{'use_sim_time':sim,'file':assets['height'],'frame':'map','republish_period_s':1.0 if mode=='pursuit' else 0.0}]),
       Node(package='legged_navigation',executable='obstacle_cloud',name='obstacle_cloud',
         parameters=[share+'/config/obstacle.yaml',{'use_sim_time':sim}],
         remappings=[('/livox/lidar',get('cloud_topic'))]),

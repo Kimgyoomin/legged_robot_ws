@@ -620,6 +620,6 @@ costmap의 높이 필터는 map Z 기준이므로 현장의 바닥 기준 높이
 프레임을 확인했습니다(x 약 -0.70 m, y 약 +0.42 m). 전진 중에도 이 고정 사각형
 어디에든 점이 있으면 전체 명령을 멈춥니다. 이후 RPP 자체의 예상 궤적 충돌로도
 목표가 중단됐습니다. 따라서 RPP 추가만으로 해당 구간 통과가 해결됐다고 볼 수 없습니다.
-[측정한 충돌 범위](../validation/navigation_recovery/rpp_stop_cloud.png)를 참고하세요.
+[측정한 충돌 범위](../archive/20261109/validation/navigation_recovery/rpp_stop_cloud.png)를 참고하세요.
 주행 방향·속도를 반영한 충돌 여유와 실제 footprint를 통일하고, 경로 주변에서
 직접 우회 궤적을 찾아야 한다면 MPPI 같은 local controller를 별도로 검증해야 합니다.

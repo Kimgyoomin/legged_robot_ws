@@ -54,7 +54,7 @@ double StepGridAStarPlanner::octileDistance(const int dx, const int dy) noexcept
 
 PlanResult StepGridAStarPlanner::plan(
   const StepEvaluator & evaluator, const Point2D start, const Point2D goal,
-  const LocalReliefHazardSnapshot * terrain_hazards) const
+  const LocalReliefHazardSnapshot * terrain_hazards, FrozenGridCache * frozen) const
 {
   const auto started = Clock::now();
   PlanResult result;
@@ -63,6 +63,11 @@ PlanResult StepGridAStarPlanner::plan(
     result.message = "grid planner requires hybrid evaluator";
     return result;
   }
+  if(frozen && !frozen->matches(evaluator)) {
+    result.message="frozen grid context mismatch";return result;
+  }
+  if(frozen) terrain_hazards=frozen->hazards();
+  const auto evaluate_node=[&](GridCell c) {return frozen ? frozen->node(c,*costmap) : evaluator.evaluateNode(costmap->cellCenter(c));};
   const bool clearance_enabled = evaluator.parameters().grid_terrain_clearance_enabled;
   if (clearance_enabled &&
     (!terrain_hazards || !terrain_hazards->matches(evaluator)))
@@ -86,9 +91,9 @@ PlanResult StepGridAStarPlanner::plan(
     return result;
   }
   ++result.statistics.node_evaluation_calls;
-  const NodeEvaluation start_evaluation = evaluator.evaluateNode(costmap->cellCenter(*start_cell));
+  const NodeEvaluation start_evaluation = evaluate_node(*start_cell);
   ++result.statistics.node_evaluation_calls;
-  const NodeEvaluation goal_evaluation = evaluator.evaluateNode(costmap->cellCenter(*goal_cell));
+  const NodeEvaluation goal_evaluation = evaluate_node(*goal_cell);
   if (!start_evaluation.valid || !goal_evaluation.valid) {
     result.message = !start_evaluation.valid ? "grid start invalid" : "grid goal invalid";
     result.rejected.push_back({RejectionKind::kNode,
@@ -108,14 +113,14 @@ PlanResult StepGridAStarPlanner::plan(
         if (!query.evidence_valid) {
           ++result.statistics.grid_terrain_clearance_evidence_rejects;
           result.message = "grid endpoint terrain clearance evidence missing";
-          result.rejected.push_back({RejectionKind::kNode,
+          if(!frozen) result.rejected.push_back({RejectionKind::kNode,
             StepInvalidReason::kTerrainClearanceEvidenceMissing, point, point});
           return true;
         }
         if (query.violation) {
           ++result.statistics.grid_terrain_clearance_rejects;
           result.message = "grid endpoint violates terrain clearance";
-          result.rejected.push_back({RejectionKind::kNode,
+          if(!frozen) result.rejected.push_back({RejectionKind::kNode,
             StepInvalidReason::kTerrainClearanceViolation, point, point});
           return true;
         }
@@ -146,23 +151,27 @@ PlanResult StepGridAStarPlanner::plan(
   std::vector<double> g(count, infinity);
   std::vector<std::size_t> parent(count, count);
   std::vector<bool> closed(count, false);
-  std::vector<std::optional<NodeEvaluation>> node_evaluations(count);
+  std::vector<std::optional<NodeEvaluation>> node_evaluations(frozen ? 0 : count);
   std::vector<NodeId> graph_node_id(count, count);
-  node_evaluations[start_index] = start_evaluation;
-  node_evaluations[goal_index] = goal_evaluation;
+  if(!frozen){node_evaluations[start_index]=start_evaluation;node_evaluations[goal_index]=goal_evaluation;}
+  const auto get_node=[&](std::size_t i) -> NodeEvaluation {
+    if(frozen)return evaluate_node(toCell(i));
+    if(!node_evaluations[i]){++result.statistics.node_evaluation_calls;node_evaluations[i]=evaluate_node(toCell(i));}
+    return *node_evaluations[i];
+  };
   const auto materialize_expanded_cell = [&](const std::size_t index) {
       if (graph_node_id[index] != count) {
         return;
       }
       const Point2D point = costmap->cellCenter(toCell(index));
-      if (!node_evaluations[index]) {return;}
+
       graph_node_id[index] = result.nodes.size();
       result.nodes.push_back({
-        graph_node_id[index], point, node_evaluations[index]->elevation_m});
+        graph_node_id[index], point, get_node(index).elevation_m});
       if (parent[index] < count && graph_node_id[parent[index]] != count) {
         const EdgeEvaluation edge = evaluator.evaluateGridTransition(
           toCell(parent[index]), toCell(index),
-          *node_evaluations[parent[index]], *node_evaluations[index]);
+          get_node(parent[index]), get_node(index));
         result.edges.push_back({graph_node_id[parent[index]], graph_node_id[index], edge});
       }
     };
@@ -190,7 +199,7 @@ PlanResult StepGridAStarPlanner::plan(
     open.pop();
     if (closed[current.index] || std::abs(current.g - g[current.index]) > kTolerance) {continue;}
     closed[current.index] = true;
-    materialize_expanded_cell(current.index);
+    if(!frozen) materialize_expanded_cell(current.index);
     ++result.expansions;
     if (result.expansions > parameters_.max_expanded_states) {
       result.termination = PlanTermination::kMaxExpansions;
@@ -211,27 +220,22 @@ PlanResult StepGridAStarPlanner::plan(
       }
       const Point2D neighbor_point = costmap->cellCenter(neighbor);
       const std::size_t neighbor_index = toIndex(neighbor);
-      if (!node_evaluations[neighbor_index]) {
-        ++result.statistics.node_evaluation_calls;
-        node_evaluations[neighbor_index] = evaluator.evaluateNode(neighbor_point);
-      }
-      const NodeEvaluation & node = *node_evaluations[neighbor_index];
+      const NodeEvaluation node=get_node(neighbor_index);
       if (!node.valid) {
-        result.rejected.push_back({RejectionKind::kNode, node.reason,
+        if(!frozen) result.rejected.push_back({RejectionKind::kNode, node.reason,
           costmap->cellCenter(current_cell), neighbor_point});
         continue;
       }
       ++result.statistics.edge_evaluation_calls;
-      const EdgeEvaluation edge = evaluator.evaluateGridTransition(
-        current_cell, neighbor, *node_evaluations[current.index], node);
+      const EdgeEvaluation edge = frozen ? frozen->edge(current_cell,neighbor,get_node(current.index),node) : evaluator.evaluateGridTransition(current_cell,neighbor,get_node(current.index),node);
       if (!edge.valid) {
         recordStepRejection(
           edge, evaluator.parameters().max_crossable_height_jump_m, result.statistics);
-        result.rejected.push_back({RejectionKind::kEdge, edge.reason,
+        if(!frozen) result.rejected.push_back({RejectionKind::kEdge, edge.reason,
           costmap->cellCenter(current_cell), neighbor_point});
         continue;
       }
-      if (clearance_enabled) {
+      if (clearance_enabled && !frozen) {
         const TerrainClearanceQuery clearance = terrain_hazards->querySegment(
           costmap->cellCenter(current_cell), neighbor_point,
           evaluator.parameters().grid_terrain_clearance_distance_m);
@@ -243,7 +247,7 @@ PlanResult StepGridAStarPlanner::plan(
             clearance.violation ? 1U : 0U;
           result.statistics.grid_terrain_clearance_evidence_rejects +=
             clearance.evidence_valid ? 0U : 1U;
-          result.rejected.push_back({RejectionKind::kEdge, reason,
+          if(!frozen) result.rejected.push_back({RejectionKind::kEdge, reason,
             costmap->cellCenter(current_cell), neighbor_point});
           continue;
         }
@@ -314,7 +318,7 @@ PlanResult StepGridAStarPlanner::plan(
     const std::size_t previous_index = path_cells[path_index - 1U];
     const EdgeEvaluation edge = evaluator.evaluateGridTransition(
       toCell(previous_index), toCell(cell_index),
-      *node_evaluations[previous_index], *node_evaluations[cell_index]);
+      get_node(previous_index), get_node(cell_index));
     result.path_metrics.length_xy_m += edge.length_xy_m;
     result.path_metrics.height_event_count += edge.height_jump_event_count;
     result.path_metrics.max_height_jump_m = std::max(

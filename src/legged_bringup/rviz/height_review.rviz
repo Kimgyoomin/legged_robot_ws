@@ -1,0 +1,72 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+- Class: rviz_common/Views
+  Name: Views
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: map
+  Displays:
+  - Class: rviz_default_plugins/Map
+    Name: Occupancy
+    Enabled: false
+    Topic:
+      Value: /map
+      Durability Policy: Transient Local
+    Alpha: 0.8
+    Draw Behind: true
+  - Class: rviz_default_plugins/PointCloud2
+    Name: Frozen height
+    Enabled: true
+    Topic:
+      Value: /legged/height
+      Durability Policy: Transient Local
+    Size (m): 0.025
+    Color Transformer: AxisColor
+    Style: Squares
+    Alpha: 1.0
+  - Class: rviz_default_plugins/Path
+    Name: Nav2 route
+    Enabled: true
+    Topic:
+      Value: /legged/review_path
+    Color: 255; 255; 0
+  - Class: rviz_default_plugins/Map
+    Name: Global costmap
+    Enabled: false
+    Topic:
+      Value: /global_costmap/costmap
+      Durability Policy: Transient Local
+    Color Scheme: costmap
+    Alpha: 0.5
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  - Class: rviz_default_plugins/FocusCamera
+  - Class: rviz_default_plugins/SetInitialPose
+    Topic: /initialpose
+  - Class: rviz_default_plugins/SetGoal
+    Topic: /goal_pose
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Name: Current View
+      Target Frame: map
+      Distance: 65.0
+      Focal Point:
+        X: 22.0
+        Y: 25.0
+        Z: -0.35
+      Pitch: 1.0
+      Yaw: 0.0
+      Near Clip Distance: 0.01
+      Invert Z Axis: false
+      Value: Orbit (rviz_default_plugins)
+    Saved:
+    - Class: rviz_default_plugins/TopDownOrtho
+      Name: 2D plan view
+      Target Frame: map
+      Scale: 12.0
+      X: 22.0
+      Y: 25.0

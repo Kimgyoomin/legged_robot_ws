@@ -1,0 +1,101 @@
+[INFO] [launch]: All log files can be found below /home/rclab/.ros/log/2026-11-09-16-12-56-745381-rclab-172168
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Height navigation DDS: 32 MiB SHM + UDP per participant; TX/RX request 4 MiB.
+[INFO] [launch.user]: Height site: rubi-1f-height-wall-gap-v6-20261109 | /home/rclab/legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/map.rghm | mode=review
+[INFO] [launch.user]: Height review only: cost=geometry; jump_limit=0.110 m; relief_limit=0.110 m. Production planner.yaml unchanged.
+[INFO] [map_server-1]: process started with pid [172203]
+[INFO] [frozen_map-2]: process started with pid [172205]
+[INFO] [planner_server-3]: process started with pid [172207]
+[INFO] [height_review-4]: process started with pid [172209]
+[INFO] [lifecycle_manager-5]: process started with pid [172211]
+[map_server-1] [INFO] [1794208378.598728766] [map_server]: 
+[map_server-1] 	map_server lifecycle node launched. 
+[map_server-1] 	Waiting on external lifecycle transitions to activate
+[map_server-1] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-1] [INFO] [1794208378.598941796] [map_server]: Creating
+[lifecycle_manager-5] [INFO] [1794208378.615622490] [lifecycle_height_review]: Creating
+[planner_server-3] [INFO] [1794208378.624316607] [planner_server]: 
+[planner_server-3] 	planner_server lifecycle node launched. 
+[planner_server-3] 	Waiting on external lifecycle transitions to activate
+[planner_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-3] [INFO] [1794208378.627254839] [planner_server]: Creating
+[lifecycle_manager-5] [INFO] [1794208378.631702973] [lifecycle_height_review]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-5] [INFO] [1794208378.645577182] [lifecycle_height_review]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-5] [INFO] [1794208378.645656353] [lifecycle_height_review]: [34m[1mConfiguring map_server[0m[0m
+[map_server-1] [INFO] [1794208378.646085613] [map_server]: Configuring
+[map_server-1] [INFO] [1794208378.646188369] [map_io]: Loading yaml file: /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+[map_server-1] [INFO] [1794208378.646565692] [map_io]: resolution: 0.05
+[map_server-1] [INFO] [1794208378.646584540] [map_io]: origin[0]: -6.15
+[map_server-1] [INFO] [1794208378.646593341] [map_io]: origin[1]: -54.1
+[map_server-1] [INFO] [1794208378.646598781] [map_io]: origin[2]: 0
+[map_server-1] [INFO] [1794208378.646604189] [map_io]: free_thresh: 0.196
+[map_server-1] [INFO] [1794208378.646609501] [map_io]: occupied_thresh: 0.65
+[map_server-1] [INFO] [1794208378.646615741] [map_io]: mode: trinary
+[map_server-1] [INFO] [1794208378.646622750] [map_io]: negate: 0
+[map_server-1] [INFO] [1794208378.646861061] [map_io]: Loading image_file: /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm
+[planner_server-3] [INFO] [1794208378.655987863] [global_costmap.global_costmap]: 
+[planner_server-3] 	global_costmap lifecycle node launched. 
+[planner_server-3] 	Waiting on external lifecycle transitions to activate
+[planner_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-3] [INFO] [1794208378.657127641] [global_costmap.global_costmap]: Creating Costmap
+[map_server-1] [INFO] [1794208379.184596807] [map_io]: Read map /home/rclab/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm: 1300 X 2986 map @ 0.05 m/cell
+[lifecycle_manager-5] [INFO] [1794208379.198883156] [lifecycle_height_review]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-3] [INFO] [1794208379.199245471] [planner_server]: Configuring
+[planner_server-3] [INFO] [1794208379.199331042] [global_costmap.global_costmap]: Configuring
+[planner_server-3] [INFO] [1794208379.207306097] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-3] [INFO] [1794208379.212031391] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[planner_server-3] [INFO] [1794208379.214315716] [global_costmap.global_costmap]: Subscribing to updates
+[planner_server-3] [INFO] [1794208379.216595496] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-3] [INFO] [1794208379.216645130] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-3] [INFO] [1794208379.217217627] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-3] [INFO] [1794208379.232756622] [planner_server]: Created global planner plugin Height of type legged_navigation/HeightPlanner
+[planner_server-3] [INFO] [1794208379.236080978] [planner_server]: Planner Server has Height  planners available.
+[lifecycle_manager-5] [INFO] [1794208379.249753965] [lifecycle_height_review]: [34m[1mActivating map_server[0m[0m
+[map_server-1] [INFO] [1794208379.249976628] [map_server]: Activating
+[map_server-1] [INFO] [1794208379.253224981] [map_server]: Creating bond (map_server) to lifecycle manager.
+[planner_server-3] [INFO] [1794208379.257138123] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 1300 X 2986 at 0.050000 m/pix
+[height_review-4] [INFO] [1794208379.262498476] [height_review]: Review: 2D Pose Estimate selects START, then 2D Goal Pose plans a path. No controller or cmd_vel publisher.
+[lifecycle_manager-5] [INFO] [1794208379.362051004] [lifecycle_height_review]: Server map_server connected with bond.
+[lifecycle_manager-5] [INFO] [1794208379.362129087] [lifecycle_height_review]: [34m[1mActivating planner_server[0m[0m
+[planner_server-3] [INFO] [1794208379.362428136] [planner_server]: Activating
+[planner_server-3] [INFO] [1794208379.362499946] [global_costmap.global_costmap]: Activating
+[planner_server-3] [INFO] [1794208379.362524618] [global_costmap.global_costmap]: Checking transform
+[planner_server-3] [INFO] [1794208379.362659118] [global_costmap.global_costmap]: start
+[planner_server-3] [INFO] [1794208379.414830127] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-5] [INFO] [1794208379.519922725] [lifecycle_height_review]: Server planner_server connected with bond.
+[lifecycle_manager-5] [INFO] [1794208379.520021256] [lifecycle_height_review]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-5] [INFO] [1794208379.520042089] [lifecycle_height_review]: [34m[1mCreating bond timer...[0m[0m
+[frozen_map-2] [INFO] [1794208380.973868024] [frozen_map]: Frozen height loaded: 265219 cells; c5c491b9dc00e50659a6ce812296f001d5ae4f6af8ab126f4cff2561828ee35c
+[planner_server-3] [WARN] [1794208390.238561616] [planner_server]: Planner loop missed its desired rate of 1.0000 Hz. Current loop rate is 0.3626 Hz
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [lifecycle_manager-5]: sending signal 'SIGINT' to process[lifecycle_manager-5]
+[INFO] [height_review-4]: sending signal 'SIGINT' to process[height_review-4]
+[INFO] [planner_server-3]: sending signal 'SIGINT' to process[planner_server-3]
+[INFO] [frozen_map-2]: sending signal 'SIGINT' to process[frozen_map-2]
+[INFO] [map_server-1]: sending signal 'SIGINT' to process[map_server-1]
+[lifecycle_manager-5] [INFO] [1794208390.405885493] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-5] [INFO] [1794208390.406032922] [lifecycle_height_review]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_height_review)
+[lifecycle_manager-5] [INFO] [1794208390.406107036] [lifecycle_height_review]: [34m[1mTerminating bond timer...[0m[0m
+[planner_server-3] [INFO] [1794208390.408037174] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-3] [INFO] [1794208390.408121785] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[planner_server-3] [INFO] [1794208390.408200923] [planner_server]: Deactivating
+[planner_server-3] [INFO] [1794208390.408252573] [global_costmap.global_costmap]: Deactivating
+[map_server-1] [INFO] [1794208390.409891502] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-1] [INFO] [1794208390.410008593] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-1] [INFO] [1794208390.410088532] [map_server]: Deactivating
+[map_server-1] [INFO] [1794208390.410111956] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[map_server-1] [INFO] [1794208390.420443691] [map_server]: Cleaning up
+[map_server-1] [INFO] [1794208390.420780629] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[map_server-1] [INFO] [1794208390.423973045] [map_server]: Destroying
+[lifecycle_manager-5] [INFO] [1794208390.430845412] [lifecycle_height_review]: Destroying lifecycle_height_review
+[INFO] [map_server-1]: process has finished cleanly [pid 172203]
+[INFO] [lifecycle_manager-5]: process has finished cleanly [pid 172211]
+[INFO] [frozen_map-2]: process has finished cleanly [pid 172205]
+[INFO] [height_review-4]: process has finished cleanly [pid 172209]
+[planner_server-3] [INFO] [1794208391.362930994] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-3] [INFO] [1794208391.373285513] [planner_server]: Cleaning up
+[planner_server-3] [INFO] [1794208391.378088442] [global_costmap.global_costmap]: Cleaning up
+[planner_server-3] [INFO] [1794208391.384984585] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-3] [INFO] [1794208391.387513749] [global_costmap.global_costmap]: Destroying
+[planner_server-3] [INFO] [1794208391.391918489] [planner_server]: Destroying
+[INFO] [planner_server-3]: process has finished cleanly [pid 172207]
