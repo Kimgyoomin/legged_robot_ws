@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="875" viewBox="0 0 1600 875" role="img" aria-labelledby="title desc">
+<title id="title">Height Mapping 모듈 상세 구조도</title>
+<desc id="desc">보정된 PointCloud2와 map 좌표 Odometry를 입력받아, rubi_height_mapping에서 시각 정합과 거리/좌표 변환, CuPy CUDA Elevation 및 Variance 추정을 거쳐 Local GridMap으로 변환하고, rubi_global_heightmap_wrapper에서 전역 누적 및 PCD/RGHM 저장하는 ROS2 모듈 구조. 모든 요소는 편집 가능한 SVG 벡터와 텍스트.</desc>
+<defs><marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M 1 1 L 11 6 L 1 11 z" fill="#1E3B5A"/></marker></defs>
+<g font-family="Noto Sans KR, Noto Sans CJK KR, Apple SD Gothic Neo, Malgun Gothic, sans-serif">
+<rect x="0" y="0" width="1600" height="875" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0" />
+<text x="42" y="71" font-size="46" font-weight="700" fill="#102A4A" text-anchor="start">Height Mapping 모듈 상세 구조도</text>
+<text x="43" y="116" font-size="23" font-weight="400" fill="#52677D" text-anchor="start">보정 점군 + Pose → 입력·시각 처리 → CUDA 지역 Elevation 추정 → C++ 전역 누적 → 지도 저장</text>
+<path d="M 42 144 H 1558" stroke="#D9E3EE" stroke-width="3"/>
+<rect x="42" y="184" width="322" height="560" rx="18" fill="#FAFCFE" stroke="#9AA8B9" stroke-width="3" stroke-dasharray="13 10"/>
+<rect x="391" y="184" width="731" height="560" rx="18" fill="#FBFAFF" stroke="#8E80D0" stroke-width="3" stroke-dasharray="13 10"/>
+<rect x="1150" y="184" width="408" height="560" rx="18" fill="#F8FCFA" stroke="#7EBA9A" stroke-width="3" stroke-dasharray="13 10"/>
+<text x="203" y="230" font-size="29" font-weight="700" fill="#3D5368" text-anchor="middle">01  입력 데이터</text>
+<text x="757" y="230" font-size="29" font-weight="700" fill="#5445A0" text-anchor="middle">02  지역 Height Map 생성</text>
+<text x="1354" y="230" font-size="28" font-weight="700" fill="#246E52" text-anchor="middle">03  전역 누적·저장</text>
+<text x="203" y="264" font-size="19" font-weight="500" fill="#718195" text-anchor="middle">오프라인 재생 / 실시간 입력 공통</text>
+<text x="757" y="264" font-size="23" font-weight="600" fill="#7061B3" text-anchor="middle">rubi_height_mapping</text>
+<text x="1354" y="264" font-size="18" font-weight="600" fill="#398468" text-anchor="middle">rubi_global_heightmap_wrapper</text>
+<path d="M 340 382 H 377 V 448 M 340 522 H 377 V 448" stroke="#718295" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 377 448 H 414" fill="none" stroke="#1E3B5A" stroke-width="4.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 605 417 H 629" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 822 417 H 847" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 963 488 V 560" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1087 610 H 1138 V 588 H 1174" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1354 536 V 442" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<path d="M 1354 638 V 667" fill="none" stroke="#1E3B5A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)" />
+<rect x="67" y="333" width="273" height="96" rx="14" fill="#F0F4F8" stroke="#BBC8D4" stroke-width="2.5" />
+<rect x="67" y="475" width="273" height="96" rx="14" fill="#F0F4F8" stroke="#BBC8D4" stroke-width="2.5" />
+<text x="203" y="366" font-size="25" font-weight="700" fill="#253B54" text-anchor="middle">보정 PointCloud2</text>
+<text x="203" y="401" font-size="19" font-weight="500" fill="#60738A" text-anchor="middle">/cloud_registered_body</text>
+<text x="203" y="509" font-size="24" font-weight="700" fill="#253B54" text-anchor="middle">전역 Pose / Odometry</text>
+<text x="203" y="543" font-size="21" font-weight="500" fill="#60738A" text-anchor="middle">/localization</text>
+<text x="203" y="663" font-size="18" font-weight="500" fill="#718195" text-anchor="middle">LIO / Localization은 지원 기능</text>
+<text x="203" y="696" font-size="17" font-weight="500" fill="#718195" text-anchor="middle">Scan stamp + TF 장착관계 필요</text>
+<rect x="414" y="340" width="191" height="148" rx="15" fill="#F0EDFC" stroke="#A497DE" stroke-width="2.3" />
+<rect x="629" y="340" width="193" height="148" rx="15" fill="#F0EDFC" stroke="#A497DE" stroke-width="2.3" />
+<rect x="847" y="340" width="246" height="148" rx="15" fill="#EAE6FC" stroke="#9B8AD7" stroke-width="2.3" />
+<text x="510" y="382" font-size="23" font-weight="700" fill="#4E3C94" text-anchor="middle">입력·시각 정합</text>
+<text x="510" y="418" font-size="18" font-weight="500" fill="#6A5B98" text-anchor="middle">PointCloud2 검사</text>
+<text x="510" y="451" font-size="19" font-weight="500" fill="#6A5B98" text-anchor="middle">Pose 보간 · TF</text>
+<text x="725" y="382" font-size="23" font-weight="700" fill="#4E3C94" text-anchor="middle">거리·좌표 처리</text>
+<text x="725" y="418" font-size="18" font-weight="500" fill="#6A5B98" text-anchor="middle">유효 XYZ / 0.6–3.0 m</text>
+<text x="725" y="451" font-size="19" font-weight="500" fill="#6A5B98" text-anchor="middle">map 좌표 변환</text>
+<text x="970" y="378" font-size="26" font-weight="700" fill="#4E3C94" text-anchor="middle">CuPy / CUDA</text>
+<text x="970" y="415" font-size="21" font-weight="500" fill="#67569E" text-anchor="middle">셀별 고도·분산 추정</text>
+<text x="970" y="451" font-size="20" font-weight="500" fill="#67569E" text-anchor="middle">Elevation + Variance</text>
+<rect x="802" y="560" width="285" height="97" rx="14" fill="#E9E7FB" stroke="#AA9DDD" stroke-width="2.4" />
+<text x="944" y="600" font-size="26" font-weight="700" fill="#5443A0" text-anchor="middle">Local GridMap</text>
+<text x="944" y="632" font-size="20" font-weight="500" fill="#67569E" text-anchor="middle">8 × 8 m  ·  0.05 m</text>
+<text x="615" y="690" font-size="20" font-weight="500" fill="#756DA0" text-anchor="middle">/rubi/local_elevation/grid_map</text>
+<text x="615" y="717" font-size="18" font-weight="500" fill="#8A81B0" text-anchor="middle">grid_map_msgs/msg/GridMap</text>
+<rect x="1174" y="338" width="362" height="103" rx="14" fill="#EBF7EF" stroke="#9ECBB0" stroke-width="2.3" />
+<rect x="1174" y="536" width="362" height="102" rx="14" fill="#DFF3E8" stroke="#80BC9B" stroke-width="2.7" />
+<rect x="1174" y="667" width="362" height="70" rx="14" fill="#E8F6EE" stroke="#9ECBB0" stroke-width="2.3" />
+<text x="1355" y="376" font-size="23" font-weight="700" fill="#25674B" text-anchor="middle">Global PointCloud2</text>
+<text x="1355" y="409" font-size="17" font-weight="500" fill="#56866D" text-anchor="middle">/rubi/global_elevation/cloud</text>
+<text x="1355" y="578" font-size="24" font-weight="700" fill="#25674B" text-anchor="middle">전역 GridMap 누적·갱신</text>
+<text x="1355" y="609" font-size="20" font-weight="500" fill="#53836A" text-anchor="middle">50 × 50 m  ·  0.05 m</text>
+<text x="1355" y="694" font-size="23" font-weight="700" fill="#25674B" text-anchor="middle">save_map 서비스</text>
+<text x="1355" y="724" font-size="19" font-weight="500" fill="#53836A" text-anchor="middle">map.rghm + surface.pcd</text>
+<rect x="42" y="775" width="1516" height="67" rx="13" fill="#F7F9FC" stroke="#DCE5EE" stroke-width="1.7" />
+<text x="67" y="815" font-size="22" font-weight="700" fill="#395571" text-anchor="start">선택적 후처리:</text>
+<text x="270" y="815" font-size="20" font-weight="500" fill="#556C83" text-anchor="start">rubi_heightmap_postprocess  ·  경계 보존·내부 잔노이즈 완화·정합 QC  (저장 이후 오프라인)</text>
+</g></svg>
