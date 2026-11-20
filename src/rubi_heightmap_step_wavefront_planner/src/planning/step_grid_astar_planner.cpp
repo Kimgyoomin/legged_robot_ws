@@ -212,6 +212,11 @@ PlanResult StepGridAStarPlanner::plan(
       ++result.statistics.neighbor_candidates;
       const GridCell neighbor{current_cell.x + kDx[direction], current_cell.y + kDy[direction]};
       if (!costmap->inBounds(neighbor)) {continue;}
+      const std::size_t neighbor_index = toIndex(neighbor);
+      // Octile distance is consistent: each edge costs at least its weighted
+      // grid distance, with nonnegative terrain and inflation penalties.
+      // Closed neighbors cannot improve; skip their node/edge evaluation.
+      if (closed[neighbor_index]) {continue;}
       if (direction >= 4 && (hardBlocked(
           *costmap, {current_cell.x + kDx[direction], current_cell.y}) ||
         hardBlocked(*costmap, {current_cell.x, current_cell.y + kDy[direction]})))
@@ -219,7 +224,6 @@ PlanResult StepGridAStarPlanner::plan(
         continue;
       }
       const Point2D neighbor_point = costmap->cellCenter(neighbor);
-      const std::size_t neighbor_index = toIndex(neighbor);
       const NodeEvaluation node=get_node(neighbor_index);
       if (!node.valid) {
         if(!frozen) result.rejected.push_back({RejectionKind::kNode, node.reason,
