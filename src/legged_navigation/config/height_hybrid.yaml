@@ -1,0 +1,119 @@
+# Height + 2D static/live obstacle/inflation global planning.
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 1.0
+    planner_plugins:
+    - Height
+    Height:
+      input_heightmap_topic: /legged/height
+      max_heightmap_age_s: 2.5
+      map_resolution_m: 0.05
+      lattice_tolerance_m: 0.01
+      costmap_clearance_m: 0.3
+      evaluation.edge_check_spacing_m: 0.025
+      evaluation.max_crossable_height_jump_m: 0.11
+      evaluation.height_noise_floor_m: 0.01
+      evaluation.height_cost_exponent: 2.0
+      evaluation.distance_weight: 1.0
+      evaluation.height_cost_weight: 1.0
+      evaluation.inflation_cost_weight: 5.0
+      evaluation.inflation_cost_exponent: 1.0
+      evaluation.sobel_hard_reject_enabled: true
+      evaluation.sobel_equivalent_step_height_m: 0.1
+      evaluation.sobel_cost_weight: 0.0
+      evaluation.sobel_cost_exponent: 2.0
+      evaluation.local_relief_hard_reject_enabled: true
+      evaluation.local_relief_threshold_m: 0.11
+      evaluation.local_relief_first_window_radius_m: 0.1
+      evaluation.local_relief_second_window_radius_m: 0.1
+      evaluation.local_relief_lower_quantile: 0.1
+      evaluation.local_relief_upper_quantile: 0.9
+      evaluation.local_relief_min_observed_ratio: 0.7
+      evaluation.local_relief_critical_cell_count: 3
+      node_evidence_radius_m: 0.1
+      node_min_observed_cells: 3
+      node_max_nearest_evidence_distance_m: 0.075
+      node_height_outlier_threshold_m: 0.08
+      node_max_height_outlier_ratio: 0.3
+      edge_height_query_radius_m: 0.075
+      edge_max_height_evidence_gap_m: 0.1
+      grid_allow_diagonal: true
+      grid_max_expanded_states: 500000
+      grid_max_planning_time_ms: 800
+      evaluation.grid_sobel_hard_reject_enabled: false
+      evaluation.grid_sobel_kernel_size: 5
+      evaluation.grid_sobel_gradient_cost_weight: 0.0
+      evaluation.grid_terrain_clearance_enabled: true
+      evaluation.grid_terrain_clearance_distance_m: 0.2
+      static_heightmap: true
+      evaluation.grid_cot_height_cost_enabled: false
+      evaluation.grid_cot_step_heights_m:
+      - 0.0
+      - 0.05
+      - 0.07
+      - 0.09
+      - 0.11
+      - 0.13
+      - 0.15
+      evaluation.grid_cot_equivalent_penalties_m:
+      - 0.0
+      - 0.361
+      - 0.716
+      - 1.083
+      - 1.272
+      - 1.604
+      - 1.634
+      cache_frozen_terrain: true
+      plugin: legged_navigation/HeightPlanner
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      global_frame: map
+      robot_base_frame: base_link
+      update_frequency: 1.0
+      publish_frequency: 1.0
+      transform_tolerance: 1.0
+      resolution: 0.05
+      track_unknown_space: true
+      rolling_window: false
+      footprint: '[[0.275, 0.275], [-0.275, 0.275], [-0.275, -0.275], [0.275, -0.275]]'
+      footprint_padding: 0.01
+      plugins:
+      - static_layer
+      - obstacle_layer
+      - inflation_layer
+      static_layer:
+        plugin: nav2_costmap_2d::StaticLayer
+        enabled: true
+        map_topic: /map
+        map_subscribe_transient_local: true
+        subscribe_to_updates: true
+      obstacle_layer:
+        plugin: nav2_costmap_2d::ObstacleLayer
+        enabled: true
+        min_obstacle_height: -10000.0
+        max_obstacle_height: 10000.0
+        footprint_clearing_enabled: true
+        combination_method: 1
+        tf_filter_tolerance: 0.3
+        observation_sources: livox_cloud
+        livox_cloud:
+          topic: /livox/lidar_costmap
+          data_type: PointCloud2
+          marking: true
+          clearing: true
+          obstacle_min_range: 0.3
+          obstacle_max_range: 4.0
+          raytrace_min_range: 0.0
+          raytrace_max_range: 5.0
+          min_obstacle_height: -10000.0
+          max_obstacle_height: 10000.0
+          observation_persistence: 0.0
+          expected_update_rate: 0.5
+      inflation_layer:
+        plugin: nav2_costmap_2d::InflationLayer
+        enabled: true
+        inflation_radius: 0.7
+        cost_scaling_factor: 1.0
+      always_send_full_costmap: true

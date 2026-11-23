@@ -35,6 +35,7 @@ add_library(${PROJECT_NAME}_core
   src/planning/grid_path_evaluator.cpp
   src/planning/frozen_grid_cache.cpp
   src/planning/step_grid_astar_planner.cpp
+  src/planning/height_only_grid_planner.cpp
   src/planning/tracking_path_refiner.cpp
   src/path_revalidation.cpp
   src/plan_lifecycle.cpp
@@ -119,6 +120,7 @@ if(BUILD_TESTING)
   add_test(NAME core_smoke COMMAND core_smoke)
 
   foreach(test_name
+      test_height_only_grid_planner
       test_frozen_grid_cache
       test_heightmap_snapshot
       test_step_evaluator

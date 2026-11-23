@@ -1,5 +1,6 @@
 // Apache-2.0. Adapter around the existing RUBI planner; no duplicate search algorithm.
 #include <mutex>
+#include "legged_navigation/planner_parameters.hpp"
 #include <atomic>
 #include <thread>
 #include <chrono>
@@ -84,41 +85,9 @@ class HeightPlanner : public nav2_core::GlobalPlanner {
     grid_.max_planning_time_ms=parameter<int64_t>("grid_max_planning_time_ms",500);
     grid_.max_expanded_states=parameter<int64_t>("grid_max_expanded_states",500000);
     grid_.allow_diagonal=parameter("grid_allow_diagonal",true);
-    evaluation_.edge_check_spacing_m=parameter("evaluation.edge_check_spacing_m",0.025);
-    evaluation_.max_crossable_height_jump_m=parameter("evaluation.max_crossable_height_jump_m",0.08);
-    evaluation_.height_noise_floor_m=parameter("evaluation.height_noise_floor_m",0.01);
-    evaluation_.height_cost_exponent=parameter("evaluation.height_cost_exponent",2.0);
-    evaluation_.distance_weight=parameter("evaluation.distance_weight",1.0);
-    evaluation_.height_cost_weight=parameter("evaluation.height_cost_weight",5.0);
+    evaluation_=readHeightEvaluation(PlannerParameters(node_,name_));
     evaluation_.inflation_cost_weight=parameter("evaluation.inflation_cost_weight",5.0);
     evaluation_.inflation_cost_exponent=parameter("evaluation.inflation_cost_exponent",1.0);
-    evaluation_.node_evidence_radius_m=parameter("node_evidence_radius_m",0.10);
-    evaluation_.node_min_observed_cells=parameter<int64_t>("node_min_observed_cells",3);
-    evaluation_.node_max_nearest_evidence_distance_m=parameter("node_max_nearest_evidence_distance_m",0.075);
-    evaluation_.node_height_outlier_threshold_m=parameter("node_height_outlier_threshold_m",0.08);
-    evaluation_.node_max_height_outlier_ratio=parameter("node_max_height_outlier_ratio",0.30);
-    evaluation_.edge_height_query_radius_m=parameter("edge_height_query_radius_m",0.075);
-    evaluation_.edge_max_height_evidence_gap_m=parameter("edge_max_height_evidence_gap_m",0.10);
-    evaluation_.sobel_hard_reject_enabled=parameter("evaluation.sobel_hard_reject_enabled",false);
-    evaluation_.sobel_equivalent_step_height_m=parameter("evaluation.sobel_equivalent_step_height_m",0.10);
-    evaluation_.sobel_cost_weight=parameter("evaluation.sobel_cost_weight",0.0);
-    evaluation_.sobel_cost_exponent=parameter("evaluation.sobel_cost_exponent",2.0);
-    evaluation_.grid_sobel_hard_reject_enabled=parameter("evaluation.grid_sobel_hard_reject_enabled",false);
-    evaluation_.grid_sobel_kernel_size=parameter<int64_t>("evaluation.grid_sobel_kernel_size",3);
-    evaluation_.grid_sobel_gradient_cost_weight=parameter("evaluation.grid_sobel_gradient_cost_weight",0.0);
-    evaluation_.grid_terrain_clearance_enabled=parameter("evaluation.grid_terrain_clearance_enabled",false);
-    evaluation_.grid_terrain_clearance_distance_m=parameter("evaluation.grid_terrain_clearance_distance_m",0.20);
-    evaluation_.local_relief_hard_reject_enabled=parameter("evaluation.local_relief_hard_reject_enabled",false);
-    evaluation_.local_relief_threshold_m=parameter("evaluation.local_relief_threshold_m",0.10);
-    evaluation_.local_relief_first_window_radius_m=parameter("evaluation.local_relief_first_window_radius_m",0.10);
-    evaluation_.local_relief_second_window_radius_m=parameter("evaluation.local_relief_second_window_radius_m",0.10);
-    evaluation_.local_relief_lower_quantile=parameter("evaluation.local_relief_lower_quantile",0.10);
-    evaluation_.local_relief_upper_quantile=parameter("evaluation.local_relief_upper_quantile",0.90);
-    evaluation_.local_relief_min_observed_ratio=parameter("evaluation.local_relief_min_observed_ratio",0.70);
-    evaluation_.local_relief_critical_cell_count=parameter<int64_t>("evaluation.local_relief_critical_cell_count",3);
-    evaluation_.grid_cot_height_cost_enabled=parameter("evaluation.grid_cot_height_cost_enabled",true);
-    evaluation_.grid_cot_step_heights_m=parameter<std::vector<double>>("evaluation.grid_cot_step_heights_m",{});
-    evaluation_.grid_cot_equivalent_penalties_m=parameter<std::vector<double>>("evaluation.grid_cot_equivalent_penalties_m",{});
     const auto topic=parameter<std::string>("input_heightmap_topic","/legged/height");
     subscription_=node_->create_subscription<sensor_msgs::msg::PointCloud2>(topic,static_height_ ? rclcpp::QoS(1).transient_local() : rclcpp::QoS(1),
       [this](sensor_msgs::msg::PointCloud2::ConstSharedPtr cloud) {

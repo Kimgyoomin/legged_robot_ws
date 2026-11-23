@@ -59,9 +59,13 @@ def test_nested_large_profile_does_not_leak_to_later_nodes_or_parent():
 
 
 @pytest.mark.parametrize('relative,overrides,expected_count,has_pcd', [
+    ('FAST_LIO_ROS2/launch/mapping.launch.py', {}, 2, False),
+    ('rubi_height_mapping/launch/mapping.launch.py', {}, 3, False),
+    ('legged_navigation/launch/height_only_navigation.launch.py', {}, 9, False),
+    ('legged_navigation/launch/height_hybrid_navigation.launch.py', {}, 10, False),
     ('FAST_LIO_LOCALIZATION2/launch/localization_nav_rubi.launch.py', {}, 9, True),
-    ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'nav2'}, 11, False),
-    ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'replay'}, 19, True),
+    ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'nav2','rviz':'true'}, 11, False),
+    ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'replay','launch_localization':'true','rviz':'true'}, 19, True),
 ])
 @pytest.mark.parametrize('mode', ['navigation', 'default'])
 def test_actual_launches_choose_correct_profiles_without_running_nodes(
@@ -72,6 +76,10 @@ def test_actual_launches_choose_correct_profiles_without_running_nodes(
     pcd = tmp_path/'map.pcd'
     pcd.write_text('fixture: only path validation, no pointcloud node runs')
     context.launch_configurations['pcd_map'] = str(pcd)
+    for name, filename in [('height_map','map.rghm'),('map_yaml','map.yaml')]:
+        fixture=tmp_path/filename
+        fixture.write_text('fixture: only path validation; no node runs')
+        context.launch_configurations[name]=str(fixture)
     context.environment['ROS_LOCALHOST_ONLY'] = '0'
     context.environment['RMW_IMPLEMENTATION'] = 'rmw_fastrtps_cpp'
     for key in PROFILE_ENV_KEYS:

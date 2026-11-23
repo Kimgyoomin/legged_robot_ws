@@ -1,3 +1,5 @@
+> 납품의 직접 실행 순서·DDS·저장 위치는 [OPERATIONS.md](../../docs/OPERATIONS.md)를 사용합니다. 기본 출력 위치는 이 패키지의 `maps/`이며 `save_dir`로 명시할 수 있습니다.
+
 # RUBI Height Mapping 0.3.1 — 납품 검토용 소스
 
 ROS 2 Humble에서 Livox XYZ + odometry 토픽 또는 localization TF로 GPU 지역 높이·분산을 계산하고,
