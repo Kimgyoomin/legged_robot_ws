@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include "rubi_heightmap_step_wavefront_planner/planning/frozen_grid_cache.hpp"
 
 #include "rubi_heightmap_step_wavefront_planner/planning/plan_result.hpp"
 #include "rubi_heightmap_step_wavefront_planner/terrain/local_relief_hazard_snapshot.hpp"
@@ -21,7 +22,8 @@ public:
   explicit StepGridAStarPlanner(GridAStarParameters parameters);
   PlanResult plan(
     const StepEvaluator & evaluator, Point2D start, Point2D goal,
-    const LocalReliefHazardSnapshot * terrain_hazards = nullptr) const;
+    const LocalReliefHazardSnapshot * terrain_hazards = nullptr,
+    FrozenGridCache * frozen = nullptr) const;
 
   static double octileDistance(int dx, int dy) noexcept;
 

@@ -21,6 +21,7 @@ Visualization Manager:
     Enabled: true
     Topic:
       Value: /legged/height
+      Durability Policy: Transient Local
     Size (m): 0.025
     Color Transformer: AxisColor
     Style: Squares

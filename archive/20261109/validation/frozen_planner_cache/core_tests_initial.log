@@ -1,0 +1,110 @@
+Internal ctest changing into directory: /home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+Test project /home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner
+      Start  1: core_smoke
+ 1/32 Test  #1: core_smoke ...................................   Passed    0.01 sec
+      Start  2: test_frozen_grid_cache
+ 2/32 Test  #2: test_frozen_grid_cache .......................***Failed    0.14 sec
+-- run_test.py: invoking following command in '/home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner':
+ - /home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_frozen_grid_cache --gtest_output=xml:/home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_frozen_grid_cache.gtest.xml
+Running main() from /opt/ros/humble/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from FrozenGridCache
+[ RUN      ] FrozenGridCache.DynamicObstaclesInflationAndReopeningUseCurrentCostmap
+[       OK ] FrozenGridCache.DynamicObstaclesInflationAndReopeningUseCurrentCostmap (8 ms)
+[ RUN      ] FrozenGridCache.StepsUnknownAndTerrainClearanceMatchUncached
+unknown file: Failure
+C++ exception with description "invalid StepEvaluator parameters" thrown in the test body.
+[  FAILED  ] FrozenGridCache.StepsUnknownAndTerrainClearanceMatchUncached (0 ms)
+[ RUN      ] FrozenGridCache.DirectedCotAscentAndGeometryCostsMatch
+[       OK ] FrozenGridCache.DirectedCotAscentAndGeometryCostsMatch (7 ms)
+[ RUN      ] FrozenGridCache.HeightGeometryAndParametersInvalidate
+[       OK ] FrozenGridCache.HeightGeometryAndParametersInvalidate (0 ms)
+[ RUN      ] FrozenGridCache.WarmCanBeCancelled
+[       OK ] FrozenGridCache.WarmCanBeCancelled (0 ms)
+[----------] 5 tests from FrozenGridCache (15 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (15 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FrozenGridCache.StepsUnknownAndTerrainClearanceMatchUncached
+
+ 1 FAILED TEST
+-- run_test.py: return code 1
+-- run_test.py: inject classname prefix into gtest result file '/home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_frozen_grid_cache.gtest.xml'
+-- run_test.py: verify result file '/home/rclab/legged_robot_ws/build/rubi_heightmap_step_wavefront_planner/test_results/rubi_heightmap_step_wavefront_planner/test_frozen_grid_cache.gtest.xml'
+
+      Start  3: test_heightmap_snapshot
+ 3/32 Test  #3: test_heightmap_snapshot ......................   Passed    0.14 sec
+      Start  4: test_step_evaluator
+ 4/32 Test  #4: test_step_evaluator ..........................   Passed    0.18 sec
+      Start  5: test_spatial_index_2d
+ 5/32 Test  #5: test_spatial_index_2d ........................   Passed    0.12 sec
+      Start  6: test_astar_search
+ 6/32 Test  #6: test_astar_search ............................   Passed    0.15 sec
+      Start  7: test_clearance_sweep
+ 7/32 Test  #7: test_clearance_sweep .........................   Passed    1.76 sec
+      Start  8: test_step_wavefront_planner
+ 8/32 Test  #8: test_step_wavefront_planner ..................   Passed    0.17 sec
+      Start  9: test_planning_query_resolver
+ 9/32 Test  #9: test_planning_query_resolver .................   Passed    0.14 sec
+      Start 10: test_costmap_snapshot
+10/32 Test #10: test_costmap_snapshot ........................   Passed    0.13 sec
+      Start 11: test_height_evidence
+11/32 Test #11: test_height_evidence .........................   Passed    0.13 sec
+      Start 12: test_hybrid_step_evaluator
+12/32 Test #12: test_hybrid_step_evaluator ...................   Passed    0.13 sec
+      Start 13: test_step_grid_astar_planner
+13/32 Test #13: test_step_grid_astar_planner .................   Passed    0.13 sec
+      Start 14: test_trg_sampling_policy
+14/32 Test #14: test_trg_sampling_policy .....................   Passed    0.19 sec
+      Start 15: test_original_trg_construction
+15/32 Test #15: test_original_trg_construction ...............   Passed    0.14 sec
+      Start 16: test_grid_sampling_contract
+16/32 Test #16: test_grid_sampling_contract ..................   Passed    0.13 sec
+      Start 17: test_path_cost_evaluator
+17/32 Test #17: test_path_cost_evaluator .....................   Passed    0.12 sec
+      Start 18: test_path_revalidation
+18/32 Test #18: test_path_revalidation .......................   Passed    0.12 sec
+      Start 19: test_plan_lifecycle
+19/32 Test #19: test_plan_lifecycle ..........................   Passed    0.12 sec
+      Start 20: test_tracking_path_refiner
+20/32 Test #20: test_tracking_path_refiner ...................   Passed    0.13 sec
+      Start 21: test_local_relief_hazard_snapshot
+21/32 Test #21: test_local_relief_hazard_snapshot ............   Passed    0.14 sec
+      Start 22: test_planning_fsm
+22/32 Test #22: test_planning_fsm ............................   Passed    0.12 sec
+      Start 23: test_pointcloud2_heightmap_adapter
+23/32 Test #23: test_pointcloud2_heightmap_adapter ...........   Passed    0.12 sec
+      Start 24: test_nav2_costmap_adapter
+24/32 Test #24: test_nav2_costmap_adapter ....................   Passed    0.13 sec
+      Start 25: test_planner_visualization
+25/32 Test #25: test_planner_visualization ...................   Passed    0.12 sec
+      Start 26: test_config_contract
+26/32 Test #26: test_config_contract .........................   Passed    2.39 sec
+      Start 27: test_hybrid_map_install
+27/32 Test #27: test_hybrid_map_install ......................   Passed    1.45 sec
+      Start 28: test_hybrid_costmap_config
+28/32 Test #28: test_hybrid_costmap_config ...................   Passed    1.52 sec
+      Start 29: test_test_runtime_profile_launch.py
+29/32 Test #29: test_test_runtime_profile_launch.py ..........   Passed    1.44 sec
+      Start 30: test_test_planner_node_launch.py
+30/32 Test #30: test_test_planner_node_launch.py .............   Passed    5.12 sec
+      Start 31: test_test_hybrid_comparison_launch.py
+31/32 Test #31: test_test_hybrid_comparison_launch.py ........   Passed   10.02 sec
+      Start 32: test_test_hybrid_costmap_bringup_launch.py
+32/32 Test #32: test_test_hybrid_costmap_bringup_launch.py ...   Passed    5.56 sec
+
+97% tests passed, 1 tests failed out of 32
+
+Label Time Summary:
+gtest          =   4.91 sec*proc (24 tests)
+launch_test    =  22.15 sec*proc (4 tests)
+pytest         =   5.37 sec*proc (3 tests)
+
+Total Test time (real) =  32.46 sec
+
+The following tests FAILED:
+	  2 - test_frozen_grid_cache (Failed)
+Errors while running CTest

@@ -1,0 +1,5 @@
+<library path="height_only_planner">
+  <class name="legged_navigation/HeightContextLayer" type="legged_navigation::HeightContextLayer" base_class_type="nav2_costmap_2d::Layer">
+    <description>No-input lifecycle context for height-only Nav2 planning; never marks or inflates costs.</description>
+  </class>
+</library>

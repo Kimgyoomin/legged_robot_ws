@@ -1,0 +1,48 @@
+# Localization bootstrap using the existing RUBI 1F map pair.
+# Local copies live in data/ (excluded from Git); originals stay in navigation_real.
+# Restore copies with tools/import_legacy_rubi_maps.py before using this site.
+# After the new workspace is built and the existing map alignment is confirmed:
+# From the legged_robot_ws root:
+# ros2 launch legged_bringup localize.launch.py \
+#   site:="$PWD/maps/rubi_1f_legacy/site.yaml" \
+#   method:=fastlio use_sim_time:=false
+# No height asset is supplied: this is NOT a navigation-ready site.
+format: 1
+id: rubi-1f-legacy-v1
+frame: map
+height_resolution: 0.05
+
+alignment:
+  # The loader rejects this site until the operator confirms map-to-map alignment.
+  # File hashes and prior use together do not establish geometric alignment.
+  verified: false
+  method: >-
+    Reuse the PCD and occupancy map selected by the legacy RUBI localization
+    and navigation launch defaults, without changing their coordinates.
+    Geometric alignment confirmation is pending; no registration or quantitative
+    alignment measurement was performed while preparing this manifest.
+  site_id: rubi-1f-legacy-v1
+
+assets:
+  pcd:
+    path: data/1f_fast_lio_260731_segmented.pcd
+    sha256: e3d8a70c5c47813bba48a8f4fadeb9718ed8960feb86ef9c7ff1c9be6151d70d
+  occupancy:
+    path: data/RUBI_1F_occupancy_map.yaml
+    sha256: 7d63dcaeee3ae2b0d7202b3c841117462aaa1a06dadfe0c5ee7149dc9b4f593d
+  image:
+    path: data/RUBI_1F_occupancy_map.pgm
+    sha256: 38a53eb28f702394d6d4f178211b32aaee35830990bcbe0e159e1f5111a3ef3b
+
+# The importer uses source_assets; provenance does not replace alignment checks.
+provenance:
+  prepared_on: "2026-10-21"
+  source_repository: https://github.com/Kimgyoomin/navigation_real
+  source_assets:
+    pcd: FAST_LIO_LOCALIZATION2/PCD/1f_fast_lio_260731_segmented.pcd
+    occupancy: FAST_LIO_LOCALIZATION2/maps/RUBI_1F_occupancy_map.yaml
+    image: FAST_LIO_LOCALIZATION2/maps/RUBI_1F_occupancy_map.pgm
+  source_git_head: 2b118b42abe3f0f3660207787f24a855494d318e
+  localization_launch: FAST_LIO_LOCALIZATION2/launch/localization_nav_rubi.launch.py
+  navigation_launch: pongbot_navigation/launch/rubi_navigation_dwb.launch.py
+  mid360s_hardware_validation: pending

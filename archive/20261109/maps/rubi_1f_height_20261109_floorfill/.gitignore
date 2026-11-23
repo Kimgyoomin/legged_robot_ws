@@ -1,0 +1,7 @@
+# Generated real-map data and validation artifacts remain local.
+*.rghm
+*.pcd
+*.npz
+*.png
+metrics.json
+audit/

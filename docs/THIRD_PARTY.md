@@ -22,8 +22,8 @@
 - [Global wrapper MIT notice](../src/rubi_global_heightmap_wrapper/LICENSE)
 - [Offline postprocess MIT notice](../src/rubi_heightmap_postprocess/LICENSE)
 - [Livox driver MIT](../src/livox_ros_driver2/LICENSE.txt), SDK의 [원본 라이선스](../third_party/Livox-SDK2/LICENSE.txt)
-- [GenZ 원본 라이선스](../src/genz-icp/LICENSE)
-- [FAST-LIO localization LICENSE](../src/FAST_LIO_LOCALIZATION2/LICENSE), [FAST-LIO mapping LICENSE](../src/FAST_LIO_ROS2/LICENSE)
+- [GenZ 원본 라이선스](../archive/20261109/optional_src/genz-icp/LICENSE)
+- [FAST-LIO localization LICENSE](../src/FAST_LIO_LOCALIZATION2/LICENSE), [FAST-LIO mapping LICENSE](../archive/20261109/optional_src/FAST_LIO_ROS2/LICENSE)
 - Planner/Pure Pursuit는 원 package.xml의 Apache-2.0 표기와 source 출처를 유지합니다. 신규 adapter package에는 [Apache-2.0 전문](../src/legged_navigation/LICENSE)을 동봉했습니다.
 
 FAST-LIO 두 폴더는 `package.xml`에 BSD라고 적혀 있으나 동봉된 LICENSE는 GPL v2입니다. 이 불일치를 숨기거나 임의로 단일 permissive 라이선스로 바꾸지 않았습니다. 실제 소스·바이너리 배포 범위를 정할 때 해당 구성요소의 원 upstream notice를 기준으로 정리해야 합니다.

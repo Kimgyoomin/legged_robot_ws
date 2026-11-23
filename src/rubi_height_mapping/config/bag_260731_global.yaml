@@ -1,0 +1,19 @@
+# Draft map in re-estimated local odometry frame, NOT an aligned navigation site.
+/rubi_global_heightmap_wrapper:
+  ros__parameters:
+    input_topic: /rubi/local_elevation/grid_map
+    input_convention: grid_map
+    output_topic: /rubi/global_elevation/cloud
+    map_frame: camera_init
+    resolution: 0.05
+    # Covers the legacy PCD bounds with margin, below the 5M-cell safety limit.
+    # Coverage must still be checked for the newly estimated odometry trajectory.
+    origin_x: -10.0
+    origin_y: -60.0
+    length_x: 75.0
+    length_y: 165.0
+    max_variance: 0.04
+    invalid_cell_policy: retain
+    publish_fps: 0.5
+    output_directory: /tmp/rubi_mapping_results
+    load_path: ''

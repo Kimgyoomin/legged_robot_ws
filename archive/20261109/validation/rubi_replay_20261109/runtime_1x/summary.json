@@ -1,0 +1,125 @@
+{
+  "planner_server": "active",
+  "controller_server": "active",
+  "bt_navigator": "active",
+  "goal_accepted": true,
+  "command_topics": [
+    "/legged/replay/cmd_vel"
+  ],
+  "controller_parameters": [
+    "rcl_interfaces.msg.ParameterValue(type=1, bool_value=True, integer_value=0, double_value=0.0, string_value='', byte_array_value=[], bool_array_value=[], integer_array_value=[], double_array_value=[], string_array_value=[])",
+    "rcl_interfaces.msg.ParameterValue(type=4, bool_value=False, integer_value=0, double_value=0.0, string_value='/fastlio/odometry_base', byte_array_value=[], bool_array_value=[], integer_array_value=[], double_array_value=[], string_array_value=[])",
+    "rcl_interfaces.msg.ParameterValue(type=3, bool_value=False, integer_value=0, double_value=5.0, string_value='', byte_array_value=[], bool_array_value=[], integer_array_value=[], double_array_value=[], string_array_value=[])",
+    "rcl_interfaces.msg.ParameterValue(type=4, bool_value=False, integer_value=0, double_value=0.0, string_value='dwb_plugins::LimitedAccelGenerator', byte_array_value=[], bool_array_value=[], integer_array_value=[], double_array_value=[], string_array_value=[])",
+    "rcl_interfaces.msg.ParameterValue(type=3, bool_value=False, integer_value=0, double_value=0.2, string_value='', byte_array_value=[], bool_array_value=[], integer_array_value=[], double_array_value=[], string_array_value=[])"
+  ],
+  "process_exit_codes": [
+    0,
+    -15
+  ],
+  "/cloud_registered": {
+    "count": 1080,
+    "wall_mean_hz": 9.999566067742718,
+    "wall_gap_max": 0.11964878000071621,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006909370422363281,
+    "age_max": 0.02784419059753418
+  },
+  "/Odometry": {
+    "count": 1080,
+    "wall_mean_hz": 9.999546822299497,
+    "wall_gap_max": 0.11565320400040946,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006875395774841309,
+    "age_max": 0.02784419059753418
+  },
+  "/localization": {
+    "count": 1080,
+    "wall_mean_hz": 9.999359751668145,
+    "wall_gap_max": 0.12235884600158897,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006879448890686035,
+    "age_max": 0.03588294982910156
+  },
+  "/fastlio/odometry_velocity": {
+    "count": 1080,
+    "wall_mean_hz": 9.999530074001223,
+    "wall_gap_max": 0.11871252800119692,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006875395774841309,
+    "age_max": 0.02784419059753418
+  },
+  "/fastlio/odometry_base": {
+    "count": 1080,
+    "wall_mean_hz": 9.999515606987917,
+    "wall_gap_max": 0.11888389299929258,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006878852844238281,
+    "age_max": 0.02784419059753418
+  },
+  "/fastlio/up_body": {
+    "count": 1080,
+    "wall_mean_hz": 9.999521078170961,
+    "wall_gap_max": 0.12081393499829574,
+    "stamp_hz": 10.002632834112372,
+    "age_median": 0.006875395774841309,
+    "age_max": 0.02784419059753418
+  },
+  "/livox/lidar_costmap": {
+    "count": 539,
+    "wall_mean_hz": 4.9997383667512185,
+    "wall_gap_max": 0.22244505399794434,
+    "stamp_hz": 4.999384955731116,
+    "age_median": 0.10542798042297363,
+    "age_max": 0.1345982551574707
+  },
+  "/global_costmap/costmap": {
+    "count": 92,
+    "wall_mean_hz": 0.8628001374480674,
+    "wall_gap_max": 2.037913058000413,
+    "stamp_hz": 0.9999676953261574,
+    "age_median": 0.010005712509155273,
+    "age_max": 0.02003622055053711
+  },
+  "/local_costmap/costmap": {
+    "count": 389,
+    "wall_mean_hz": 3.6382564682271528,
+    "wall_gap_max": 0.4042918949999148,
+    "stamp_hz": 4.999510097825478,
+    "age_median": 0.0,
+    "age_max": 0.010013103485107422
+  },
+  "/map_to_odom": {
+    "count": 53,
+    "wall_mean_hz": 0.49997066988550354,
+    "wall_gap_max": 2.01507742800095,
+    "stamp_hz": 0.49998432446988395,
+    "age_median": 0.11001479625701904,
+    "age_max": 0.13001322746276855
+  },
+  "/plan": {
+    "count": 38,
+    "wall_mean_hz": 0.4765876666397234,
+    "wall_gap_max": 14.597641909000231,
+    "stamp_hz": 0.5714056063169938,
+    "age_median": 0.03999924659729004,
+    "age_max": 0.040070295333862305
+  },
+  "/local_plan": {
+    "count": 346,
+    "wall_mean_hz": 4.263960869861715,
+    "wall_gap_max": 12.104041809998307,
+    "stamp_hz": 4.999474342302094,
+    "age_median": 0.0668478012084961,
+    "age_max": 0.08002877235412598
+  },
+  "/legged/replay/cmd_vel": {
+    "count": 348,
+    "wall_mean_hz": 4.27882121036732,
+    "wall_gap_max": 11.916362537998793,
+    "stamp_hz": 4.999855760920746,
+    "age_median": 0.0,
+    "age_max": 0.0
+  },
+  "nonzero_commands": 344
+}

@@ -4,6 +4,7 @@ from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
+from navigation_dds.profiles import dds_argument, dds_group
 
 import os
 
@@ -71,26 +72,19 @@ def generate_launch_description():
         output="screen",
     )
 
-    # Avoid BLAS/OpenMP worker oversubscription beside Gazebo and FAST-LIO.
-    # These Python nodes process small transforms and modest ICP clouds.
-    localization_env = {
-        "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1",
-        "MKL_NUM_THREADS": "1", "NUMEXPR_NUM_THREADS": "1",
-    }
-
     # Global localization node
     global_localization_node = Node(
         package="fast_lio_localization",
         executable="global_localization.py",
         name="global_localization",
+        additional_env={"OPENBLAS_NUM_THREADS":"1", "OMP_NUM_THREADS":"1", "MKL_NUM_THREADS":"1"},
         output="screen",
-        additional_env=localization_env,
         parameters=[{
             "use_sim_time": use_sim_time,
             "map_voxel_size": 0.2,
             "scan_voxel_size": 0.08,
-            # "freq_localization": 0.5,
-            "freq_localization": 1.0,
+            "freq_localization": 0.5,
+            # "freq_localization": 1.0,
             "freq_global_map": 0.25,
             "localization_threshold": 0.8,
             "fov": 6.28319,
@@ -103,11 +97,10 @@ def generate_launch_description():
     # Transform fusion node
     transform_fusion_node = Node(
         package="fast_lio_localization",
-        executable="transform_fusion.py",
+        executable="transform_fusion_cpp",
         name="transform_fusion",
-        output="screen",
-        additional_env=localization_env,
         parameters=[{"use_sim_time": use_sim_time}],
+        output="screen",
     )
 
     # PCD to PointCloud2 publisher
@@ -121,7 +114,7 @@ def generate_launch_description():
             "file_name": pcd_map_path,
             "tf_frame": "map",
             "cloud_topic": pcd_map_topic,
-            "period_ms_": 500
+            "period_ms_": 5000
         }],
         remappings=[
             ("cloud_pcd", pcd_map_topic),
@@ -132,6 +125,7 @@ def generate_launch_description():
         package="rviz2",
         executable="rviz2",
         arguments=["-d", rviz_cfg],
+        parameters=[{"use_sim_time": use_sim_time}],
         condition=IfCondition(rviz_use)
     )
 
@@ -171,6 +165,7 @@ def generate_launch_description():
         executable="static_transform_publisher",
         name="world_to_map",
         arguments=["0", "0", "0", "0", "0", "0", "world", "map"],
+        parameters=[{"use_sim_time": use_sim_time}],
         output="screen",
     )
 
@@ -178,7 +173,7 @@ def generate_launch_description():
 
     ld = LaunchDescription()
     # 
-    ld.add_action(world_to_map_tf)
+    ld.add_action(dds_argument())
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_config_path_cmd)
     ld.add_action(declare_config_file_cmd)
@@ -191,16 +186,15 @@ def generate_launch_description():
     ld.add_action(declare_map_yaml)
     ld.add_action(declare_publish_2d_map)
 
-    # nodes
-    ld.add_action(fast_lio_node)
-    ld.add_action(global_localization_node)
-    ld.add_action(transform_fusion_node)
-    ld.add_action(pcd_publisher_node)
-
-    # ✅ 2D map publisher
-    ld.add_action(map_server_node)
-    ld.add_action(lifecycle_manager_node)
-
-    ld.add_action(rviz_node)
+    ld.add_action(dds_group([
+        world_to_map_tf,
+        fast_lio_node,
+        global_localization_node,
+        transform_fusion_node,
+        dds_group([pcd_publisher_node], 'PCD map publisher', profile='large'),
+        map_server_node,
+        lifecycle_manager_node,
+        rviz_node,
+    ], 'FAST-LIO localization'))
 
     return ld

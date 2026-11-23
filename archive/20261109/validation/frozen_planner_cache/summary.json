@@ -1,0 +1,36 @@
+{
+  "old_action_seconds": 2.8453360149978835,
+  "cached_action_seconds": [
+    0.34256625399939367,
+    0.3819919140005368,
+    0.4674038470002415,
+    0.46364303099835524,
+    0.3640004000008048,
+    0.32225982299860334,
+    0.41873026200119057,
+    0.5504989740002202,
+    0.35286646700114943,
+    0.3803782019967912
+  ],
+  "cached_action_median_seconds": 0.381185057998664,
+  "cached_planner_total_ms": [
+    243.5,
+    238.6,
+    324.8,
+    342.7,
+    246.4,
+    221.4,
+    280.0,
+    340.2,
+    247.2,
+    232.2
+  ],
+  "identical_costmap_bytes": true,
+  "all_paths_exactly_equal_to_old": true,
+  "route_poses": 1652,
+  "terrain_cached_nodes": 308570,
+  "cache_index_bytes": 115682840,
+  "standalone_max_rss_kib": 319268,
+  "review_cold_cache_ms": 11141.1,
+  "context": "Same Jetson, separate trials, existing user processes left running; no exclusive-load or hard-real-time guarantee."
+}

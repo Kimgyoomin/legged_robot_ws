@@ -1,0 +1,35 @@
+format: 1
+id: rubi-1f-height-floor-candidate-20261109
+frame: map
+height_resolution: 0.05
+alignment:
+  verified: true
+  scope: offline same-frame integration; not a surveyed or driving validation
+  method: Same original map coordinates; no rigid alignment change. Separate candidate
+    adds inferred floor and repairs one user-confirmed artifact; see metrics.json
+    and provenance.npz.
+  evidence: ../processed/run_1794037249460292244_postprocess_20261107/audits/reference/reference_audit.json
+  limitations: Local partial-structure nearest-neighbor median is about 0.025 m; diagnostic
+    local shifts vary. Large holes and temporary steps remain. Review spatial registration
+    and routes before hardware use.
+assets:
+  pcd:
+    path: ../../../../maps/rubi_1f_legacy/data/1f_fast_lio_260731_segmented.pcd
+    sha256: e3d8a70c5c47813bba48a8f4fadeb9718ed8960feb86ef9c7ff1c9be6151d70d
+  occupancy:
+    path: ../../../../maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+    sha256: 7d63dcaeee3ae2b0d7202b3c841117462aaa1a06dadfe0c5ee7149dc9b4f593d
+  image:
+    path: ../../../../maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.pgm
+    sha256: 38a53eb28f702394d6d4f178211b32aaee35830990bcbe0e159e1f5111a3ef3b
+  height:
+    path: map.rghm
+    sha256: d9ab00ef2510797cd4fa79f6e36a5d67a08297f262ff560dde0dd2ac86a10686
+provenance:
+  height: Original cells + evidence-constrained inferred floor + one user-confirmed
+    moving-person artifact repaired
+  original_height_sha256: 1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8
+  inferred_mask: provenance.npz
+  metrics: metrics.json
+  navigation_hardware_validated: false
+  prepared_on: '2026-11-09'

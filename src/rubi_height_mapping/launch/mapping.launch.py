@@ -1,5 +1,7 @@
-"""RUBI height mapper + global accumulator + optional RViz. No environment overrides."""
+"""RUBI height mapper + global accumulator + optional RViz. Scoped DDS configuration."""
 import os
+from pathlib import Path
+from navigation_dds.profiles import dds_argument, dds_group
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
@@ -12,8 +14,8 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     own = get_package_share_directory('rubi_height_mapping')
     defaults = {'use_sim_time': 'false', 'rviz': 'true',
-                'input_scan': '/livox/lidar_PointCloud2', 'min_range': '0.6', 'max_range': '3.0',
-                'save_dir': os.path.expanduser('~/legged_robot_ws/maps/raw'),
+                'input_scan': '/cloud_registered_body', 'min_range': '0.6', 'max_range': '3.0',
+                'save_dir': str(Path(own).resolve() / 'maps'),
                 'odom_topic': '', 'map_frame': 'map', 'base_frame': 'base_link',
                 'odom_max_gap': '0.2',
                 'tf_wait_timeout': '1.5',
@@ -22,7 +24,7 @@ def generate_launch_description():
                 'wrapper_config': os.path.join(own, 'config', 'global_heightmap.yaml'),
                 'rviz_config': os.path.join(own, 'config', 'rubi_mapping.rviz')}
     clock = ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)
-    return LaunchDescription([DeclareLaunchArgument(k, default_value=v) for k,v in defaults.items()] + [
+    return LaunchDescription([dds_argument()] + [DeclareLaunchArgument(k, default_value=v) for k,v in defaults.items()] + [dds_group([
         Node(package='rubi_height_mapping', executable='height_mapping_node', name='rubi_height_mapping',
              parameters=[LaunchConfiguration('config'), {'use_sim_time': clock,
                 'input_topic': LaunchConfiguration('input_scan'),
@@ -43,4 +45,4 @@ def generate_launch_description():
         Node(package='rviz2', executable='rviz2', name='rviz2_rubi_height_mapping',
              arguments=['-d', LaunchConfiguration('rviz_config'), '-f', LaunchConfiguration('map_frame')],
              parameters=[{'use_sim_time': clock}],condition=IfCondition(LaunchConfiguration('rviz')),output='screen'),
-    ])
+    ], 'RUBI height mapping')])

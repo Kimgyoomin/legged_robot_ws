@@ -1,0 +1,80 @@
+# Height-only: no static, obstacle, or inflation global layer.
+# height_context supplies lifecycle plumbing only; see height_context_layer.cpp.
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 1.0
+    planner_plugins:
+    - HeightOnly
+    HeightOnly:
+      input_heightmap_topic: /legged/height
+      map_resolution_m: 0.05
+      lattice_tolerance_m: 0.01
+      evaluation.edge_check_spacing_m: 0.025
+      evaluation.max_crossable_height_jump_m: 0.11
+      evaluation.height_noise_floor_m: 0.01
+      evaluation.height_cost_exponent: 2.0
+      evaluation.distance_weight: 1.0
+      evaluation.height_cost_weight: 1.0
+      evaluation.sobel_hard_reject_enabled: true
+      evaluation.sobel_equivalent_step_height_m: 0.1
+      evaluation.sobel_cost_weight: 0.0
+      evaluation.sobel_cost_exponent: 2.0
+      evaluation.local_relief_hard_reject_enabled: true
+      evaluation.local_relief_threshold_m: 0.11
+      evaluation.local_relief_first_window_radius_m: 0.1
+      evaluation.local_relief_second_window_radius_m: 0.1
+      evaluation.local_relief_lower_quantile: 0.1
+      evaluation.local_relief_upper_quantile: 0.9
+      evaluation.local_relief_min_observed_ratio: 0.7
+      evaluation.local_relief_critical_cell_count: 3
+      node_evidence_radius_m: 0.1
+      node_min_observed_cells: 3
+      node_max_nearest_evidence_distance_m: 0.075
+      node_height_outlier_threshold_m: 0.08
+      node_max_height_outlier_ratio: 0.3
+      edge_height_query_radius_m: 0.075
+      edge_max_height_evidence_gap_m: 0.1
+      grid_allow_diagonal: true
+      grid_max_expanded_states: 500000
+      grid_max_planning_time_ms: 800
+      evaluation.grid_sobel_hard_reject_enabled: false
+      evaluation.grid_sobel_kernel_size: 5
+      evaluation.grid_sobel_gradient_cost_weight: 0.0
+      evaluation.grid_terrain_clearance_enabled: true
+      evaluation.grid_terrain_clearance_distance_m: 0.2
+      evaluation.grid_cot_height_cost_enabled: false
+      evaluation.grid_cot_step_heights_m:
+      - 0.0
+      - 0.05
+      - 0.07
+      - 0.09
+      - 0.11
+      - 0.13
+      - 0.15
+      evaluation.grid_cot_equivalent_penalties_m:
+      - 0.0
+      - 0.361
+      - 0.716
+      - 1.083
+      - 1.272
+      - 1.604
+      - 1.634
+      max_grid_cells: 5000000
+      plugin: legged_navigation/HeightOnlyPlanner
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      global_frame: map
+      robot_base_frame: base_link
+      update_frequency: 1.0
+      publish_frequency: 1.0
+      transform_tolerance: 1.0
+      resolution: 0.05
+      rolling_window: true
+      width: 10
+      height: 10
+      track_unknown_space: false
+      plugins:
+      - height_context
+      height_context:
+        plugin: legged_navigation/HeightContextLayer

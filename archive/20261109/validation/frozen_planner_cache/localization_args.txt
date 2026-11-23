@@ -1,0 +1,21 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'site':
+        no description given
+        (default: '/home/rclab/legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml')
+
+    'input_format':
+        no description given
+        (default: 'custommsg')
+
+    'use_sim_time':
+        no description given
+        (default: 'true')
+
+    'use_rviz':
+        no description given
+        (default: 'false')
+
+    'dds_profile':
+        no description given
+        (default: 'navigation')

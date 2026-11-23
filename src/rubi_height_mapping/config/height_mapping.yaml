@@ -41,7 +41,8 @@
     odom_topic: ''
     odom_cache_seconds: 10.0
     odom_max_gap: 0.2
-    input_topic: /livox/lidar_PointCloud2
+    # FAST-LIO deskewed scan in body frame; raw input remains a launch override.
+    input_topic: /cloud_registered_body
     output_topic: /rubi/local_elevation/grid_map
     min_range: 0.6
     max_range: 3.0

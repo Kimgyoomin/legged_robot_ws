@@ -1,5 +1,12 @@
+<class_libraries>
 <library path="height_planner">
   <class name="legged_navigation/HeightPlanner" type="legged_navigation::HeightPlanner" base_class_type="nav2_core::GlobalPlanner">
     <description>Shared RUBI StepGridAStarPlanner using frozen or live elevation and the Nav2 global costmap.</description>
   </class>
 </library>
+<library path="height_only_planner">
+  <class name="legged_navigation/HeightOnlyPlanner" type="legged_navigation::HeightOnlyPlanner" base_class_type="nav2_core::GlobalPlanner">
+    <description>Frozen height evidence and height cost only; no 2D obstacle or inflation input.</description>
+  </class>
+</library>
+</class_libraries>

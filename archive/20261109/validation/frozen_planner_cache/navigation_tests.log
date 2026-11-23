@@ -1,0 +1,17 @@
+Internal ctest changing into directory: /home/rclab/legged_robot_ws/build/legged_navigation
+Test project /home/rclab/legged_robot_ws/build/legged_navigation
+    Start 1: test_sector_filter
+1/4 Test #1: test_sector_filter ...............   Passed    0.17 sec
+    Start 2: test_height_filter
+2/4 Test #2: test_height_filter ...............   Passed    0.13 sec
+    Start 3: test_velocity_feedback
+3/4 Test #3: test_velocity_feedback ...........   Passed    0.12 sec
+    Start 4: test_pure_pursuit_core
+4/4 Test #4: test_pure_pursuit_core ...........   Passed    0.12 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Label Time Summary:
+gtest    =   0.53 sec*proc (4 tests)
+
+Total Test time (real) =   0.54 sec

@@ -29,7 +29,7 @@ def test_modes_use_the_same_height_core_and_guarded_commands():
 
 def test_map_hash_and_alignment_are_checked(tmp_path):
     import shutil
-    shutil.copytree(ROOT/'maps/demo',tmp_path/'site')
+    shutil.copytree(ROOT/'archive/20261109/maps/demo',tmp_path/'site')
     f=tmp_path/'site/site.yaml'
     site, assets=load_site(f)
     assert site['frame']=='map'
@@ -37,16 +37,22 @@ def test_map_hash_and_alignment_are_checked(tmp_path):
     with pytest.raises(ValueError,match='hash mismatch'): load_site(f)
 
 
-def test_sensor_rotation_has_no_translation():
-    p=json.loads((ROOT/'src/legged_bringup/config/sensor.json').read_text())
-    extrinsic=p['lidar_configs'][0]['extrinsic_parameter']
-    assert extrinsic['roll']==180
-    assert all(extrinsic[k]==0 for k in ['x','y','z'])
+@pytest.mark.parametrize('config_path', [
+    'src/legged_bringup/config/sensor.json',
+    'src/livox_ros_driver2/config/MID360s_config.json',
+])
+def test_sensor_rotation_has_no_translation(config_path):
+    # Both the bringup and standalone RViz launch must publish upright axes.
+    p=json.loads((ROOT/config_path).read_text())
+    for lidar in p['lidar_configs']:
+        extrinsic=lidar['extrinsic_parameter']
+        assert extrinsic['roll']==180
+        assert all(extrinsic[k]==0 for k in ['pitch','yaw','x','y','z'])
 
 
 def test_frozen_map_keeps_acquisition_epoch():
     from legged_bringup.map_io import read_snapshot
-    snap=read_snapshot(ROOT/'maps/demo/height.rghm')
+    snap=read_snapshot(ROOT/'archive/20261109/maps/demo/height.rghm')
     assert snap.stamp_ns==1_000_000_000
     assert snap.frame=='map'
 
@@ -57,7 +63,7 @@ def test_alignment_applies_transform_before_regridding():
     from legged_bringup.map_io import read_snapshot
     spec=importlib.util.spec_from_file_location('align_height', ROOT/'tools/align_height.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-    snap=read_snapshot(ROOT/'maps/demo/height.rghm')
+    snap=read_snapshot(ROOT/'archive/20261109/maps/demo/height.rghm')
     transform=np.array([[0,-1,0,8],[1,0,0,2],[0,0,1,.1],[0,0,0,1]],float)
     origin,size,records,dropped=module.regrid(snap,transform)
     np.testing.assert_allclose(origin,[2.,2.])

@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-09",
+  "site": "maps/rubi_1f_height_20261107/site.yaml",
+  "raw_sha256": "1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8",
+  "review_requests": [
+    {
+      "label": "hall",
+      "start": [
+        18.975,
+        42.975
+      ],
+      "goal": [
+        22.975,
+        42.975
+      ],
+      "status": 4,
+      "wall_seconds": 0.6628835699999627,
+      "path_poses": 82
+    },
+    {
+      "label": "hall_repeat",
+      "start": [
+        18.975,
+        42.975
+      ],
+      "goal": [
+        22.975,
+        42.975
+      ],
+      "status": 4,
+      "wall_seconds": 0.6432212350000555,
+      "path_poses": 82
+    },
+    {
+      "label": "near_steps",
+      "start": [
+        27.975,
+        43.975
+      ],
+      "goal": [
+        37.975,
+        44.025
+      ],
+      "status": 4,
+      "wall_seconds": 0.791086279999945,
+      "path_poses": 201
+    },
+    {
+      "label": "unknown",
+      "start": [
+        18.975,
+        42.975
+      ],
+      "goal": [
+        -20.0,
+        -20.0
+      ],
+      "status": 6,
+      "wall_seconds": 0.5434583139999631,
+      "path_poses": 0
+    }
+  ],
+  "nav2_synthetic_inputs_test": {
+    "mode": "nav2",
+    "controller": "dwb",
+    "first_path_points": 82,
+    "rerouted_points": 82,
+    "obstacle_changed_path": true,
+    "detour_max_y_m": 0.9000014599412651,
+    "frozen_acquisition_stamp_preserved": true,
+    "shared_stop_length_m": 1.0,
+    "shared_stop_width_m": 0.9,
+    "planner_obstacle_clearance_m": 0.45,
+    "max_forward_command_mps": 0.27272727272727276,
+    "controller_produced_motion": true,
+    "near_obstacle_stop": true,
+    "stale_sensor_stop": true,
+    "domain": 174
+  },
+  "unit_tests": 33,
+  "hardware_driving_validated": false,
+  "nav2_entry_tested": "rubi_height_navigation.launch.py mode:=nav2"
+}

@@ -1,0 +1,8 @@
+height_snapshot_ms=45.887 observed=265219 cells=1535215
+cold=0 cost_snapshot_ms=7.846 clearance_ms=74.048 evaluator_ms=0.004 terrain_ms=603.248 plan_ms=3424.267 total_ms=4109.414 success=1 poses=1652 expanded=82226 nodes=88252 edges=648435 astar_ms=3385.298 finalize_ms=5.739 validate_ms=0.000 cost=102.689
+cold=1 cost_snapshot_ms=8.817 clearance_ms=26.810 evaluator_ms=0.004 terrain_ms=673.319 plan_ms=3356.588 total_ms=4065.538 success=1 poses=1652 expanded=82226 nodes=88252 edges=648435 astar_ms=3347.275 finalize_ms=6.016 validate_ms=0.000 cost=102.689
+cold=2 cost_snapshot_ms=14.351 clearance_ms=36.237 evaluator_ms=0.005 terrain_ms=837.148 plan_ms=3371.177 total_ms=4258.918 success=1 poses=1652 expanded=82226 nodes=88252 edges=648435 astar_ms=3357.452 finalize_ms=5.527 validate_ms=0.000 cost=102.689
+reused_hazard_only_ms=4708.596 success=1 poses=1652 cost=102.689
+unchanged_inputs_reuse=0 plan_ms=3556.883 success=1 poses=1652 cost=102.689
+unchanged_inputs_reuse=1 plan_ms=3896.237 success=1 poses=1652 cost=102.689
+unchanged_inputs_reuse=2 plan_ms=3198.551 success=1 poses=1652 cost=102.689

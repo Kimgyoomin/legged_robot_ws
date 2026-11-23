@@ -1,0 +1,7 @@
+height_snapshot_ms=19.121 observed=265219 cells=1535215
+warm_ms=9343.524 nodes=308570 cache_bytes=115682840
+cached=0 ms=189.056 success=1 poses=1652 expanded=82226 cost=102.689
+cached=1 ms=178.095 success=1 poses=1652 expanded=82226 cost=102.689
+cached=2 ms=174.380 success=1 poses=1652 expanded=82226 cost=102.689
+cached=3 ms=175.773 success=1 poses=1652 expanded=82226 cost=102.689
+cached=4 ms=176.612 success=1 poses=1652 expanded=82226 cost=102.689

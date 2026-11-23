@@ -1,0 +1,8 @@
+Starting >>> rubi_heightmap_step_wavefront_planner
+Finished <<< rubi_heightmap_step_wavefront_planner [7.03s]
+Starting >>> legged_navigation
+Finished <<< legged_navigation [29.4s]
+Starting >>> legged_bringup
+Finished <<< legged_bringup [6.65s]
+
+Summary: 3 packages finished [43.8s]

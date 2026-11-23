@@ -1,22 +1,15 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.16)
 project(fast_lio)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
- ADD_COMPILE_OPTIONS(-std=c++17) 
- ADD_COMPILE_OPTIONS(-std=c++17) 
- set(CMAKE_CXX_FLAGS "-std=c++17 -O3") 
-  
- add_definitions(-DROOT_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/\") 
-  
- set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fexceptions") 
- set(CMAKE_CXX_STANDARD 17) 
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -std=c++0x -std=c++14 -fexceptions")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+add_definitions(-DROOT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/")
 
 message("Current CPU archtecture: ${CMAKE_SYSTEM_PROCESSOR}")
 
@@ -51,6 +44,8 @@ find_path(MATPLOTLIB_CPP_INCLUDE_DIRS "matplotlibcpp.h")
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
@@ -65,6 +60,8 @@ find_package(rosidl_default_generators REQUIRED)
 set(dependencies
   rclcpp
   rclcpp_components
+  tf2_ros
+  tf2_geometry_msgs
   geometry_msgs
   nav_msgs
   sensor_msgs
@@ -124,5 +121,16 @@ install(
   DIRECTORY config launch rviz
   DESTINATION share/${PROJECT_NAME}
 )
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_map_save test/test_map_save.cpp)
+  target_include_directories(test_map_save PRIVATE include ${PCL_INCLUDE_DIRS})
+  target_link_libraries(test_map_save ${PCL_LIBRARIES})
+  ament_add_gtest(test_velocity_output test/test_velocity_output.cpp)
+  ament_target_dependencies(test_velocity_output nav_msgs)
+  target_include_directories(test_velocity_output PRIVATE include)
+  target_link_libraries(test_velocity_output Eigen3::Eigen)
+endif()
 
 ament_package()

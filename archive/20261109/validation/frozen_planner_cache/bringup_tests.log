@@ -1,0 +1,17 @@
+Internal ctest changing into directory: /home/rclab/legged_robot_ws/build/legged_bringup
+Test project /home/rclab/legged_robot_ws/build/legged_bringup
+    Start 1: rubi_profile
+1/4 Test #1: rubi_profile .....................   Passed    1.02 sec
+    Start 2: delivery_contract
+2/4 Test #2: delivery_contract ................   Passed    1.84 sec
+    Start 3: height_integration
+3/4 Test #3: height_integration ...............   Passed    5.52 sec
+    Start 4: costmap_guard
+4/4 Test #4: costmap_guard ....................   Passed    1.09 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Label Time Summary:
+pytest    =   9.46 sec*proc (4 tests)
+
+Total Test time (real) =   9.47 sec

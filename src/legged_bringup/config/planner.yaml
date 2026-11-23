@@ -18,7 +18,7 @@ costmap_unknown_is_blocked: true
 # Planner-only center clearance from lethal/unknown cells (cell margin added).
 # 0 disables this extra mask, not Nav2 inflation or the final collision guard.
 # This is not a guarantee of space for the stop rectangle at every heading.
-costmap_clearance_m: 0.45
+costmap_clearance_m: 0.30
 evaluation.edge_check_spacing_m: 0.025
 evaluation.max_crossable_height_jump_m: 0.1
 evaluation.height_noise_floor_m: 0.01

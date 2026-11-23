@@ -96,10 +96,10 @@ def write_snapshot(snapshot, grid, destination):
         out.write('\n'.join(lines) + '\n')
 
 
-def write_pcd(snapshot, grid, destination):
+def write_pcd(snapshot, grid, destination, provenance='metrics.json'):
     x, y = snapshot.xy(); valid = np.isfinite(grid)
     xyz = np.column_stack([x[valid], y[valid], grid[valid]]).astype('<f4')
-    header = ('# Offline RUBI preview; provenance in metrics.json\nVERSION .7\n'
+    header = (f'# Offline RUBI preview; provenance in {provenance}\nVERSION .7\n'
               'FIELDS x y z\nSIZE 4 4 4\nTYPE F F F\nCOUNT 1 1 1\n'
               f'WIDTH {len(xyz)}\nHEIGHT 1\nVIEWPOINT 0 0 0 1 0 0 0\n'
               f'POINTS {len(xyz)}\nDATA binary\n')

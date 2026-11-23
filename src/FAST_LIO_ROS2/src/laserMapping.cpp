@@ -1,3 +1,4 @@
+#include "map_save.hpp"
 // This is an advanced implementation of the algorithm described in the
 // following paper:
 //   J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time.
@@ -46,6 +47,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <Eigen/Core>
 #include "IMU_Processing.hpp"
+#include "velocity_output.hpp"
 #include <nav_msgs/msg/odometry.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <visualization_msgs/msg/marker.hpp>
@@ -87,6 +89,7 @@ condition_variable sig_buffer;
 
 string root_dir = ROOT_DIR;
 string map_file_path, lid_topic, imu_topic;
+bool pcd_overwrite = false;
 
 double res_mean_last = 0.05, total_residual = 0.0;
 double last_timestamp_lidar = 0, last_timestamp_imu = -1.0;
@@ -291,7 +294,6 @@ void standard_pcl_cbk(const sensor_msgs::msg::PointCloud2::UniquePtr msg)
     {
         std::cerr << "lidar loop back, clear buffer" << std::endl;
         lidar_buffer.clear();
-        time_buffer.clear();
     }
     if (is_first_lidar)
     {
@@ -320,7 +322,6 @@ void livox_pcl_cbk(const livox_ros_driver2::msg::CustomMsg::UniquePtr msg)
     {
         std::cerr << "lidar loop back, clear buffer" << std::endl;
         lidar_buffer.clear();
-        time_buffer.clear();
     }
     if(is_first_lidar)
     {
@@ -361,7 +362,7 @@ void imu_cbk(const sensor_msgs::msg::Imu::UniquePtr msg_in)
     if (abs(timediff_lidar_wrt_imu) > 0.1 && time_sync_en)
     {
         msg->header.stamp = \
-        get_ros_time(timediff_lidar_wrt_imu + get_time_sec(msg_in->header.stamp));
+        rclcpp::Time(timediff_lidar_wrt_imu + get_time_sec(msg_in->header.stamp));
     }
 
     double timestamp = get_time_sec(msg->header.stamp);
@@ -611,27 +612,7 @@ void publish_map(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub
 
 void save_to_pcd()
 {
-    pcl::PCDWriter pcd_writer;
-    pcd_writer.writeBinary(map_file_path, *pcl_wait_pub);
-}
-
-void save_to_pcd(const string &output_path)
-{
-    pcl::PCDWriter pcd_writer;
-    pcd_writer.writeBinary(output_path, *pcl_wait_pub);
-}
-
-string make_timestamped_pcd_path()
-{
-    std::time_t now = std::time(nullptr);
-    std::tm local_tm {};
-    localtime_r(&now, &local_tm);
-
-    char file_name[32];
-    std::strftime(file_name, sizeof(file_name), "%Y_%m_%d_%H_%M_%S.pcd", &local_tm);
-    const auto slash = map_file_path.find_last_of('/');
-    const string directory = slash == string::npos ? "./" : map_file_path.substr(0, slash+1);
-    return directory + file_name;
+    fast_lio::saveMap(map_file_path, *pcl_wait_pub, pcd_overwrite);
 }
 
 template<typename T>
@@ -647,7 +628,9 @@ void set_posestamp(T & out)
     
 }
 
-void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped, std::unique_ptr<tf2_ros::TransformBroadcaster> & tf_br)
+void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped,
+                      const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity,
+                      std::unique_ptr<tf2_ros::TransformBroadcaster> & tf_br)
 {
     odomAftMapped.header.frame_id = "camera_init";
     odomAftMapped.child_frame_id = "body";
@@ -655,6 +638,17 @@ void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPt
     set_posestamp(odomAftMapped.pose);
     pubOdomAftMapped->publish(odomAftMapped);
     auto P = kf.get_P();
+    // Diagnostic output only: preserve /Odometry and its scan-end timestamp.
+    // Velocity is at the IMU/body origin, not at an assumed robot base_link.
+    if (p_imu->has_propagation_gyro())
+    {
+        const auto velocity = fastlio_output::body_velocity(
+            state_point.rot.toRotationMatrix(), state_point.vel,
+            p_imu->last_propagation_gyro(), state_point.bg, P, p_imu->cov_gyr);
+        nav_msgs::msg::Odometry velocity_odom;
+        if (fastlio_output::copy_with_body_velocity(odomAftMapped, velocity, velocity_odom))
+            pubVelocity->publish(velocity_odom);
+    }
     for (int i = 0; i < 6; i ++)
     {
         int k = i < 3 ? i + 3 : i - 3;
@@ -828,6 +822,7 @@ public:
         this->declare_parameter<bool>("publish.scan_bodyframe_pub_en", true);
         this->declare_parameter<int>("max_iteration", 4);
         this->declare_parameter<string>("map_file_path", "");
+        pcd_overwrite = this->declare_parameter<bool>("pcd_overwrite", false);
         this->declare_parameter<string>("common.lid_topic", "/livox/lidar");
         this->declare_parameter<string>("common.imu_topic", "/livox/imu");
         this->declare_parameter<bool>("common.time_sync_en", false);
@@ -928,7 +923,9 @@ public:
         /*** debug record ***/
         // FILE *fp;
         string pos_log_dir = root_dir + "/Log/pos_log.txt";
+        std::filesystem::create_directories(std::filesystem::path(pos_log_dir).parent_path());
         fp = fopen(pos_log_dir.c_str(),"w");
+        if (!fp) throw std::runtime_error("Cannot open SLAM position log: " + pos_log_dir);
 
         // ofstream fout_pre, fout_out, fout_dbg;
         fout_pre.open(DEBUG_FILE_DIR("mat_pre.txt"),ios::out);
@@ -954,6 +951,10 @@ public:
         pubLaserCloudEffect_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/cloud_effected", 20);
         pubLaserCloudMap_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/Laser_map", 20);
         pubOdomAftMapped_ = this->create_publisher<nav_msgs::msg::Odometry>("/Odometry", 20);
+        // Fresh diagnostic samples only; do not accumulate a reliable-reader backlog.
+        pubVelocity_ = this->create_publisher<nav_msgs::msg::Odometry>(
+            "/fastlio/odometry_velocity", rclcpp::SensorDataQoS().keep_last(1));
+        RCLCPP_INFO(this->get_logger(), "Native body velocity: /fastlio/odometry_velocity (diagnostic only; Nav2 input unchanged)");
         pubPath_ = this->create_publisher<nav_msgs::msg::Path>("/path", 20);
         tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -1083,7 +1084,7 @@ private:
             double t_update_end = omp_get_wtime();
 
             /******* Publish odometry *******/
-            publish_odometry(pubOdomAftMapped_, tf_broadcaster_);
+            publish_odometry(pubOdomAftMapped_, pubVelocity_, tf_broadcaster_);
 
             /*** add the feature points to map kdtree ***/
             t3 = omp_get_wtime();
@@ -1137,16 +1138,18 @@ private:
     void map_save_callback(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
     {
         RCLCPP_INFO(this->get_logger(), "Saving map to %s...", map_file_path.c_str());
-        if (pcd_save_en)
+        try
         {
+            if (!pcd_save_en) throw std::runtime_error("Map save disabled.");
             save_to_pcd();
             res->success = true;
-            res->message = "Map saved.";
+            res->message = "Map saved: " + map_file_path;
         }
-        else
+        catch (const std::exception &e)
         {
             res->success = false;
-            res->message = "Map save disabled.";
+            res->message = e.what();
+            RCLCPP_ERROR(this->get_logger(), "Map save failed: %s", e.what());
         }
     }
 
@@ -1156,6 +1159,7 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudEffect_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pubLaserCloudMap_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubOdomAftMapped_;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pubVelocity_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pubPath_;
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr sub_pcl_pc_;
@@ -1191,10 +1195,12 @@ int main(int argc, char** argv)
     /* 2. pcd save will largely influence the real-time performences **/
     if (pcl_wait_pub->size() > 0 && pcd_save_en)
     {
-        const string output_path = make_timestamped_pcd_path();
-        cout << "Saving map on shutdown to " << output_path << endl;
-        save_to_pcd(output_path);
-        cout << "Map saved on shutdown." << endl;
+        try {
+            save_to_pcd();
+            cout << "Map saved on shutdown: " << map_file_path << endl;
+        } catch (const std::exception &e) {
+            cerr << "Shutdown map save skipped/failed: " << e.what() << endl;
+        }
     }
 
     if (runtime_pos_log)
