@@ -15,7 +15,7 @@ planner_server:
       evaluation.height_noise_floor_m: 0.01
       evaluation.height_cost_exponent: 2.0
       evaluation.distance_weight: 1.0
-      evaluation.height_cost_weight: 1.0
+      evaluation.height_cost_weight: 5.0
       evaluation.inflation_cost_weight: 5.0
       evaluation.inflation_cost_exponent: 1.0
       evaluation.sobel_hard_reject_enabled: true
@@ -46,23 +46,8 @@ planner_server:
       evaluation.grid_terrain_clearance_enabled: true
       evaluation.grid_terrain_clearance_distance_m: 0.2
       static_heightmap: true
-      evaluation.grid_cot_height_cost_enabled: false
-      evaluation.grid_cot_step_heights_m:
-      - 0.0
-      - 0.05
-      - 0.07
-      - 0.09
-      - 0.11
-      - 0.13
-      - 0.15
-      evaluation.grid_cot_equivalent_penalties_m:
-      - 0.0
-      - 0.361
-      - 0.716
-      - 1.083
-      - 1.272
-      - 1.604
-      - 1.634
+      evaluation.grid_cot_height_cost_enabled: true
+      height_cost_calibration_file: cot_cubic.yaml
       cache_frozen_terrain: true
       plugin: legged_navigation/HeightPlanner
 global_costmap:

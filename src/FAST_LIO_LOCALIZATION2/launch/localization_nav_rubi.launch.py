@@ -8,14 +8,15 @@ from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
+from launch.actions import IncludeLaunchDescription, OpaqueFunction
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-from launch_ros.actions import Node
+from launch_ros.actions import Node, SetRemap
 from launch_ros.parameter_descriptions import ParameterValue
 import yaml
-from navigation_dds.profiles import dds_argument, dds_group
+from navigation_dds.operation import operation_arguments
+from navigation_dds.profiles import dds_group
 
 
 def default_pcd_map(share):
@@ -56,6 +57,14 @@ def start(context):
             'publish_2d_map': LaunchConfiguration('publish_2d_map'), 'rviz': 'false',
         }.items())
 
+    # Respect alternate topic names already present in a sensor parameter file.
+    inputs = [(params['common']['lid_topic'], get('lidar_topic')),
+              (params['common']['imu_topic'], get('imu_topic')),
+              ('/cloud_registered_body', get('registered_body_topic')),
+              ('/cloud_registered', get('registered_topic')),
+              ('/Odometry', get('odom_output_topic')), ('/localization', get('localization_topic'))]
+    remaps = [SetRemap(src=src, dst=dst) for src, dst in inputs if dst and dst != src]
+
     def mount(name, parent, child, prefix):
         return Node(package='tf2_ros', executable='static_transform_publisher',
                     name=name, output='screen',
@@ -67,13 +76,13 @@ def start(context):
                                '--roll', '0', '--pitch', '0', '--yaw', '0',
                                '--frame-id', parent, '--child-frame-id', child])
 
-    return [dds_group([localization,
+    return [dds_group([*remaps, localization,
             mount('body_to_robot_body', 'body', 'BODY', 'imu_to_base'),
             Node(package='tf2_ros', executable='static_transform_publisher',
                  name='BODY_to_base_link', condition=IfCondition(LaunchConfiguration('publish_mount')),
                  parameters=[{'use_sim_time': ParameterValue(sim, value_type=bool)}],
-                 arguments=['--frame-id','BODY','--child-frame-id','base_link']),
-            mount('base_link_to_livox_frame', 'base_link', 'livox_frame', 'base_to_lidar'),
+                 arguments=['--frame-id','BODY','--child-frame-id',get('base_frame')]),
+            mount('base_link_to_livox_frame', get('base_frame'), get('lidar_frame'), 'base_to_lidar'),
             Node(package='rviz2', executable='rviz2', name='rviz2_fastlio_localization',
                  output='screen', arguments=['-d', LaunchConfiguration('rviz_config')],
                  parameters=[{'use_sim_time': ParameterValue(sim, value_type=bool)}],
@@ -84,6 +93,9 @@ def generate_launch_description():
     share = Path(get_package_share_directory('fast_lio_localization'))
     defaults = {
         'pcd_map': default_pcd_map(share),
+        'lidar_topic': '', 'imu_topic': '', 'registered_body_topic': '',
+        'base_frame': 'base_link', 'lidar_frame': 'livox_frame',
+        'registered_topic': '', 'odom_output_topic': '', 'localization_topic': '',
         'input_format': 'pointcloud2', 'config': '',
         'pcd_map_topic': '/cloud_pcd', 'map_yaml': '', 'publish_2d_map': 'false',
         'use_sim_time': 'false', 'use_rviz': 'true',
@@ -92,7 +104,6 @@ def generate_launch_description():
         'imu_to_base_x': '-0.1105', 'imu_to_base_y': '0.02329', 'imu_to_base_z': '0.09338',
         'base_to_lidar_x': '0.0995', 'base_to_lidar_y': '0.0', 'base_to_lidar_z': '-0.1375',
     }
-    return LaunchDescription([dds_argument(),
-        *[DeclareLaunchArgument(name, default_value=value) for name, value in defaults.items()],
+    return LaunchDescription([*operation_arguments(defaults, 'localization'),
         OpaqueFunction(function=start),
     ])

@@ -11,14 +11,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 from legged_bringup.site import load_site
-
-
-def default_site(share):
-    for parent in Path(share).resolve().parents:
-        candidate = parent / 'maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml'
-        if candidate.is_file():
-            return str(candidate)
-    return str(Path.home() / 'legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml')
+from navigation_dds.operation import default_site_manifest
 
 
 def start(context):
@@ -111,8 +104,7 @@ def start(context):
 
 
 def generate_launch_description():
-    share = get_package_share_directory('legged_bringup')
-    defaults = {'site':default_site(share),'mode':'review','controller':'dwb','use_sim_time':'false',
+    defaults = {'site':default_site_manifest(),'mode':'review','controller':'dwb','use_sim_time':'false',
                 'review_planning_time_ms':'800','review_height_cost':'configured',
                 'review_height_limit_m':'','planning_time_ms':'800', 'height_limit_m':'0.11',
                 'height_cost':'geometry', 'launch_localization':'false', 'use_fastlio_velocity':'true', 'navigation_prefix':'',

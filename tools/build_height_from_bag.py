@@ -124,7 +124,7 @@ def main():
             '--params-file', str(root / 'src/FAST_LIO_LOCALIZATION2/config/mid360s_nav.yaml'),
             '-p', 'use_sim_time:=true', '-p', 'publish.path_en:=false'])
         mapper = start('height', ['ros2', 'launch', 'rubi_height_mapping', 'mapping.launch.py',
-            'use_sim_time:=true', 'rviz:=false', 'input_scan:=/cloud_registered_body',
+            'dds_profile:=default', 'use_sim_time:=true', 'rviz:=false', 'input_scan:=/cloud_registered_body',
             'odom_topic:=/Odometry', 'map_frame:=camera_init', 'base_frame:=body',
             'min_range:=0.6', 'max_range:=3.0', 'tf_wait_timeout:=5.0',
             f'save_dir:={args.output.resolve()}',

@@ -1,0 +1,2 @@
+# ros2-numpy also pins numpy==1.24.2. Open3D is installed separately via apt.
+ros2-numpy==0.0.5

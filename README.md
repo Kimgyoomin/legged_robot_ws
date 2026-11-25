@@ -1,272 +1,151 @@
-# RUBI Height Navigation
+# legged_robot_ws 인수인계
 
-ROS 2 Humble 기반의 LiDAR localization과 높이 지도 기반 navigation workspace입니다. **FAST-LIO Localization**으로 PCD 지도에서 위치를 추정하고, 고정 높이 지도와 실시간 costmap을 함께 사용하는 global planner 및 Nav2 DWB controller를 연결합니다.
+RUBI의 Livox MID-360S와 IMU로 위치를 추정하고, 높이 지도를 만들어 Nav2로 주행하는 ROS 2 Humble 워크스페이스입니다. **새 장비는 설치부터, 이미 설치된 장비는 [터미널 환경](#터미널-환경)부터** 시작하세요.
 
-- **Localization**: Livox LiDAR/IMU 입력, PCD 정합, RViz 초기 위치 지정.
-- **Global planning**: 고정 지형의 높이·통과 가능성·비용을 캐시하고, 최신 global costmap의 장애물을 반영하여 재계획.
-- **Local planning**: BODY 원점·중력 방향 높이 필터와 방향별 거리 필터, DWB, FAST-LIO 속도 feedback.
-- **Height mapping**: CuPy 기반 높이 지도 생성, 저장, 오프라인 후처리.
+## 설치
 
-```mermaid
-flowchart LR
-    S[Livox 또는 rosbag] --> L[FAST-LIO Localization]
-    P[PCD 지도] --> L
-    S --> F[BODY 높이·거리 필터]
-    L --> F
-    F --> C[Local / Global costmap]
-    O[2D Occupancy 지도] --> C
-    H[고정 Height 지도] --> G[Height global planner]
-    C --> G
-    G --> D[Nav2 DWB]
-    C --> D
-    L -->|위치·속도| D
-    D --> V[속도 명령]
-```
+기준 장비는 Jetson Orin NX, Ubuntu 22.04, ROS 2 Humble, Python 3.10입니다. 새 높이 지도를 만들 때는 CUDA 12.6과 CuPy를 사용합니다. 저장된 지도로 주행하는 단계는 CPU에서 실행됩니다. ROS가 없는 장비는 Ubuntu용 Humble Desktop을 먼저 설치하세요. [ROS 공식 설치 안내](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) · [JetPack 버전과 설치 상세](docs/INSTALL.md)
 
-[Dependencies](#dependencies) · [Installation](#installation) · [Map assets](#map-assets) · [Live Livox](#live-livox) · [Rosbag replay](#rosbag-replay) · [Configuration](#configuration)
-
-## Dependencies
-
-기준 환경은 **Ubuntu 22.04 / ROS 2 Humble / Python 3.10**입니다. Jetson Orin NX에서 사용하는 실행 구성을 포함합니다.
-
-| 구분 | 필요한 항목 |
-|---|---|
-| 빌드 | Git, CMake, C++17 지원 컴파일러, colcon, rosdep |
-| ROS | Humble, Nav2, RViz2, TF2, PCL ROS 변환, `grid_map_msgs` |
-| C++ 라이브러리 | Eigen3, PCL, yaml-cpp |
-| Python | NumPy 1.x, SciPy, PyYAML, Matplotlib, Open3D, `tf_transformations`, `ros2-numpy==0.0.5` |
-| 센서 | 저장소에 포함된 수정 Livox ROS Driver2 및 Livox SDK2 |
-| 높이 지도 **생성 시 추가** | NVIDIA CUDA, CuPy. CUDA 12.x 구성은 CuPy 13.6.0 사용 |
-
-**저장된 높이 지도로 localization/navigation만 실행할 때는 CuPy가 필요 없습니다.** Python 전역 정합에는 Open3D와 `ros2_numpy`가 필요합니다. ROS 의존성 설치, `grid_map_msgs` 소스 빌드 대안, 선택적인 CuPy 환경은 [설치 안내](docs/INSTALL.md)에 정리했습니다.
-
-## Installation
-
-ROS 2 Humble이 설치된 환경에서 시작합니다. 기존 checkout이 있으면 clone을 생략합니다.
+**1. 소스와 의존성.** 새 장비의 Bash 터미널에서 실행합니다. 워크스페이스 폴더를 이미 전달받았다면 `git clone` 줄은 건너뜁니다.
 
 ```bash
-git clone https://github.com/Kimgyoomin/legged_robot_ws.git
-cd legged_robot_ws
 source /opt/ros/humble/setup.bash
-```
-
-1. [설치 안내의 기본 의존성](docs/INSTALL.md#base-dependencies)을 설치합니다.
-2. 포함된 Livox SDK2를 workspace 내부 `.sdk`에 빌드합니다.
-
-```bash
-cmake -S third_party/Livox-SDK2 -B build/sdk \
-  -DCMAKE_BUILD_TYPE=Release \
-  -DBUILD_SAMPLES=OFF \
-  -DCMAKE_INSTALL_PREFIX="$PWD/.sdk"
-cmake --build build/sdk -j2
-cmake --install build/sdk
-```
-
-3. ROS 패키지를 빌드합니다. `grid_map_msgs`를 로컬 소스로 설치했다면 해당 underlay도 먼저 불러옵니다.
-
-```bash
-if [ -f .deps_install/local_setup.bash ]; then
-  source .deps_install/local_setup.bash
+sudo apt update
+sudo apt install -y build-essential cmake git pkg-config liblcm-dev liblcm-bin \
+  python3-dev python3-pip python3-venv python3-colcon-common-extensions python3-rosdep \
+  ros-humble-navigation2 ros-humble-rmw-fastrtps-cpp
+git clone --branch jetson/real https://github.com/Kimgyoomin/legged_robot_ws.git ~/legged_robot_ws
+cd ~/legged_robot_ws
+if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then
+  sudo rosdep init
 fi
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro humble -y
+python3 -m pip install --user -r requirements-localization.txt
+```
 
+**2. Livox SDK2와 ROS 패키지 빌드.** 같은 터미널에서 실행합니다. 드라이버는 워크스페이스의 `.sdk`에서 SDK를 찾습니다. `grid_map_msgs`를 apt로 받을 수 없는 장비는 [소스 설치 절차](docs/INSTALL.md#grid_map_msgs를-소스로-설치할-때)를 적용한 뒤 빌드하세요.
+
+```bash
+cmake -S third_party/Livox-SDK2 -B build/sdk -DCMAKE_BUILD_TYPE=Release \
+  -DBUILD_SAMPLES=OFF -DCMAKE_INSTALL_PREFIX="$PWD/.sdk"
+cmake --build build/sdk -j2 && cmake --install build/sdk
 CMAKE_BUILD_PARALLEL_LEVEL=2 MAKEFLAGS=-j2 \
   colcon build --base-paths src --symlink-install --executor sequential \
   --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
-
-source tools/navigation_env.sh
-ros2 pkg prefix fast_lio_localization
-ros2 pkg prefix legged_bringup
+source install/setup.bash
+ros2 pkg prefix legged_navigation
+python3 -c 'import open3d, ros2_numpy, tf_transformations'
 ```
 
-SDK는 시스템 `/usr/local` 대신 `.sdk`를 사용합니다. `archive/`는 기본 빌드에서 제외됩니다. 패키지 역할은 [src/README.md](src/README.md)를 참고하세요.
+`ros2 pkg prefix`가 이 워크스페이스의 `install/legged_navigation`을 출력하고 Python import가 성공하면 됩니다.
 
-## Map assets
-
-Localization과 navigation은 같은 `site.yaml`을 사용합니다. 지도 세트에는 다음 파일이 필요합니다.
-
-| 데이터 | 용도 |
-|---|---|
-| `.pcd` | FAST-LIO 전역 정합 |
-| Occupancy `.yaml` + `.pgm` | 2D static costmap |
-| `.rghm` | 고정 높이 지도 |
-| `site.yaml` | 경로, 좌표계, 해상도, 정합 정보, SHA-256 |
-
-현재 기본 site는 `maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml`입니다. 실제 PCD·PGM·RGHM 및 rosbag은 Git에서 제외되어 있으므로 **clone 후 별도로 준비해야 합니다.** 기본 데이터 배치와 원본/후처리 결과는 [maps/README.md](maps/README.md)에 설명되어 있습니다.
-
-다른 지도를 사용하려면 아래 Localization과 Navigation 명령 **양쪽에** `site:=/absolute/path/site.yaml`을 추가합니다. 지도들이 같은 `map` 좌표계에 정합되어 있어야 하며 시작 시 파일과 해시를 검사합니다. 파일명이나 frame 이름만 바꾸는 것으로 정합을 대신할 수 없습니다.
-
-## Environment
-
-**각 실행 터미널에서** 다음을 실행합니다. 아래 예시는 workspace가 `~/legged_robot_ws`에 있는 경우입니다.
+**3. 높이 지도를 생성할 장비.** 같은 폴더에서 실행하고 마지막 출력의 `gpu_compile_and_inference`가 `PASS`인지 확인합니다.
 
 ```bash
-cd ~/legged_robot_ws
-source tools/navigation_env.sh
-
-export ROS_DOMAIN_ID=13
-export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-export ROS_LOCALHOST_ONLY=0
+python3 -m venv --system-site-packages .venv-height
+.venv-height/bin/python -m pip install --only-binary=:all: -r requirements-height.txt
+source tools/height_env.sh
+ros2 run rubi_height_mapping check_environment
 ```
 
-`navigation_env.sh`는 Humble, 로컬 의존성, 이 workspace의 install 및 Fast DDS 프로필을 불러옵니다. 같은 터미널에 기존 `~/ros2_ws` overlay를 함께 source하지 않습니다.
+## 터미널 환경
 
-- 공통 DDS 프로필: participant당 **32 MiB SHM + UDP**. Localization의 큰 PCD publisher는 별도 **128 MiB** 프로필을 사용합니다.
-- `dds_profile:=navigation`은 아래 localization/navigation launch의 인자입니다. Livox driver와 bag에는 `navigation_dds with_profile common` wrapper를 사용합니다.
-- `taskset` 예시는 8코어 Jetson 기준입니다. 다른 장치에서는 코어 번호를 조정하거나 `taskset -c ...`를 생략합니다. CPU를 독점하는 설정은 아닙니다.
-- 센서와 같은 domain에서 bag을 동시에 재생하지 않습니다. 병행해야 하면 **재생용 모든 터미널**을 다른 domain으로 통일합니다.
-
-## Live Livox
-
-**실행 순서: Livox → Localization → 초기 위치·정합 확인 → Navigation → Goal.**
-
-### 1. Livox Driver — 터미널 1
-
-[센서 설정](src/livox_ros_driver2/config/MID360s_config.json)의 IP와 장착 방향을 먼저 확인합니다. 현재 설정은 센서 `192.168.1.145`, 호스트 `192.168.1.5`, X축 기준 180° 회전 장착입니다. 다른 설치에는 해당 값을 맞춰야 합니다.
+**새 Bash 터미널마다** 아래 명령을 실행합니다. 지도 저장용 터미널에도 같은 설정을 적용합니다. `OPS`는 각 패키지가 읽을 센서·지도·토픽 설정 파일입니다. 다른 위치에 설치했다면 `install/setup.bash` 경로와 `LEGGED_WS`를 함께 바꿉니다.
 
 ```bash
-ros2 run navigation_dds with_profile common \
-  taskset -c 0,1 \
-  ros2 launch livox_ros_driver2 rviz_MID360s_launch.py
+source /opt/ros/humble/setup.bash
+source ~/legged_robot_ws/install/setup.bash
+export LEGGED_WS="$HOME/legged_robot_ws"
+export OPS="$LEGGED_WS/src/navigation_dds/config/operation_rubi.yaml"
+export ROS_DOMAIN_ID=13 ROS_LOCALHOST_ONLY=0 RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 ```
 
-파일명은 **`MID360s`**입니다. 이 launch는 driver와 센서 확인용 RViz를 실행하고, `/livox/lidar`에 **PointCloud2**, `/livox/imu`에 **Imu**를 발행합니다. 이 driver launch에는 `dds_profile` 인자가 없습니다. 센서 확인용 RViz와 아래 localization/navigation용 RViz는 별도 창입니다.
+## 기존 지도로 주행
 
-다른 터미널에서 입력을 확인합니다.
+RUBI 1층에서는 별도 전달받은 **`maps/rubi_1f/` 폴더 전체**를 복원하고 A → B → C → D를 각기 다른 터미널에서 실행합니다. 위치 추정은 `data/*.pcd`, 경로 계획은 `map.rghm`, Hybrid는 추가로 `data/`의 2D YAML과 그 YAML이 가리키는 PGM을 읽습니다. 세 지도는 같은 장소의 `map` 좌표계를 사용해야 합니다. [파일명과 지도 명세](maps/README.md) · [새 지도를 만들 때](#새-지도를-만들-때)
+
+**A · LiDAR.** 센서에 연결된 PC의 유선 IP는 기본 `192.168.1.5`, MID-360S는 `192.168.1.145`입니다. 드라이버가 FAST-LIO용 `/livox/lidar`, Nav2용 `/livox/lidar_pointcloud`, 공통 `/livox/imu`를 발행합니다.
 
 ```bash
-ros2 topic type /livox/lidar
-ros2 topic hz /livox/lidar --window 30
-ros2 topic hz /livox/imu --window 100
+LIVOX_DIAG_TIMING=1 ros2 launch livox_ros_driver2 msg_MID360s_launch.py operation:=live operation_file:="$OPS"
 ```
 
-현재 설정의 기준 입력률은 LiDAR 약 10 Hz, IMU 약 200 Hz입니다. 장착 회전이 적용된 입력에 별도 axis-flip을 중복 적용하지 않습니다. 방향별 거리·BODY 높이 필터는 이후 navigation에서 적용하므로 이 단계의 센서 토픽은 해당 costmap 필터를 거치지 않습니다.
-
-### 2. FAST-LIO Localization — 터미널 2
+**B · 위치 추정.** 실행 후 RViz의 **2D Pose Estimate**로 로봇의 현재 위치와 방향을 지정합니다. 실시간 점군이 PCD의 벽과 겹치는지 보고, 별도 터미널에서 `ros2 topic hz /map_to_odom`으로 정합 결과가 갱신되는지 확인합니다.
 
 ```bash
-FASTLIO_DIAG_TIMING=1 taskset -c 2,3,4,5 \
-  ros2 launch legged_bringup rubi_localization.launch.py \
-  input_format:=pointcloud2 \
-  dds_profile:=navigation \
-  use_sim_time:=false \
-  use_rviz:=true
+FASTLIO_DIAG_TIMING=1 ros2 launch fast_lio_localization localization_nav_rubi.launch.py operation:=live operation_file:="$OPS"
 ```
 
-이 wrapper는 **`fast_lio_localization/localization_nav_rubi.launch.py`**를 실행하고 site의 PCD를 전달합니다.
-
-1. 센서를 정지한 상태로 초기 IMU 데이터가 들어오도록 기다립니다.
-2. Localization RViz의 **2D Pose Estimate**로 PCD 지도 위 실제 위치와 방향을 지정합니다.
-3. 현재 점군이 PCD와 맞는지, `/localization`이 들어오는지 확인한 뒤 Navigation을 시작합니다.
-
-Navigation 실행 전에는 같은 RViz의 height/costmap 항목에 `No messages`가 나타날 수 있습니다.
-
-### 3. Height Navigation — 터미널 3
+**C · 내비게이션.** 저장된 높이 지도로 주행할 때 아래 두 명령 중 하나를 선택합니다. 두 모드 모두 가까운 장애물은 실시간 LiDAR와 DWB로 피합니다. 새 높이 지도를 수집할 때는 C에서 먼저 mapper를 실행합니다. [높이 지도 생성과 저장](#새-지도를-만들-때)
 
 ```bash
-taskset -c 6,7 \
-  ros2 launch legged_bringup rubi_height_navigation.launch.py \
-  mode:=nav2 \
-  dds_profile:=navigation \
-  use_sim_time:=false \
-  use_fastlio_velocity:=true \
-  cloud_topic:=/livox/lidar \
-  rviz:=false
+# Hybrid — 전역 경로에 높이 지도, 2D 점유 지도, 실시간 장애물을 반영
+ros2 launch legged_navigation height_hybrid_navigation.launch.py operation:=live operation_file:="$OPS"
 ```
-
-PointCloud2를 발행하는 실물 구성에서는 **`cloud_topic:=/livox/lidar`**를 지정합니다. Navigation은 localization을 중복 실행하지 않고 고정 height, map server, costmap, global planner, DWB를 실행합니다.
-
-Nav2 활성화와 **`Frozen terrain READY`**를 확인한 뒤, 이미 열린 Localization RViz의 **Nav2 Goal**로 목표를 지정합니다. 최초 terrain cache 준비에는 시간이 걸리며 이후 요청에서 재사용합니다. 동적 장애물은 local/global costmap으로 계속 갱신합니다.
-
-이 모드의 명령 출력은 `/cmd_vel`입니다. 실제 구동에는 로봇에 맞는 별도 통신 브리지가 필요합니다. 현재 workspace에 `pongbot_lcm`은 포함되지 않으며, `run_lcm_start.sh`는 네트워크 경로 설정 스크립트입니다.
-
-## Rosbag replay
-
-**실행 순서: Localization → 센서 bag + `/clock` → 초기 위치·정합 확인 → Navigation → Goal.** 실물 Livox driver는 실행하지 않습니다.
-
-먼저 형식을 확인합니다. 아래 재생 예시는 기존 `[26.11.06]Height_map_data` bag 기준입니다. 경로는 사용할 bag으로 바꿉니다.
 
 ```bash
-ros2 bag info "$HOME/rosbag_record/[26.11.06]Height_map_data"
+# Height-only — 전역 경로를 저장된 높이 지도만으로 계산
+ros2 launch legged_navigation height_only_navigation.launch.py operation:=live operation_file:="$OPS"
 ```
 
-| 입력 | 기존 CustomMsg bag | 위 실물 driver에서 녹화한 bag |
+**D · RUBI 실물 구동.** 메인 제어기와 로봇 LAN을 연결한 뒤 `"$LEGGED_WS/run_lcm_start.sh"`를 한 번 실행합니다. 기본 인터페이스는 `enP7p1s0`입니다. 다른 포트를 쓰면 먼저 `LCM_IF`를 해당 이름으로 export합니다. 스크립트에서 `multicast route ready`를 확인한 뒤 브리지를 실행하면 Nav2의 `/cmd_vel`이 로봇의 LCM `CMD_VEL`로 전달됩니다.
+
+```bash
+ros2 launch pongbot_lcm joy_lcm.launch.py operation:=live operation_file:="$OPS"
+```
+
+C 로그에 **terrain READY**가 나오고 `ros2 lifecycle get /controller_server`가 `active`이면 B의 RViz에서 **Nav2 Goal**을 지정합니다. 종료할 때는 goal을 취소하고 속도 0과 실제 정지를 확인한 뒤 D → C → B → A 순서로 Ctrl+C를 누릅니다. RUBI 브리지는 마지막으로 수신한 속도를 반복 송신합니다.
+
+## 새 지도를 만들 때
+
+새 장소에서는 `operation_rubi.yaml`을 복사해 `site`를 새 지도 폴더로, 모든 터미널의 `OPS`를 그 사본 경로로 설정합니다. A의 LiDAR를 먼저 켭니다. 기존 PCD가 있으면 `common.localization.pcd_map`에 그 경로를 지정하고 2번부터 시작합니다.
+
+1. **3D PCD 생성.** 프로필의 `common.slam.pcd_map`과 `common.localization.pcd_map`에 `${SITE}/data/localization.pcd`처럼 같은 새 PCD 경로를 지정합니다. B에서 SLAM을 실행하고 잠시 정지해 IMU를 초기화한 뒤 구역을 이동합니다.
+
+   ```bash
+   ros2 launch fast_lio mapping.launch.py operation:=live operation_file:="$OPS"
+   ```
+
+   별도 터미널에서 저장하고 `success: true`를 확인한 뒤 B의 SLAM을 종료합니다.
+
+   ```bash
+   ros2 run navigation_dds with_profile common \
+     ros2 service call /map_save std_srvs/srv/Trigger '{}'
+   ```
+
+2. **C · 높이 지도 생성.** A의 LiDAR를 유지하고 B에서 위의 위치 추정을 실행합니다. B의 RViz에서 점군이 PCD에 정합됐는지 확인한 뒤, C에서 GPU 환경을 설정하고 mapper를 실행합니다. 로봇을 이동하며 바닥과 단차를 관측합니다.
+
+   ```bash
+   source "$LEGGED_WS/tools/height_env.sh"
+   ros2 launch rubi_height_mapping mapping.launch.py operation:=live operation_file:="$OPS"
+   ```
+
+3. **E · 높이 지도 저장.** C의 mapper를 켜 둔 채 별도 터미널 E를 엽니다. E에서 [터미널 환경](#터미널-환경)을 적용하고 저장 서비스를 호출합니다.
+
+   ```bash
+   ros2 run navigation_dds with_profile common \
+     ros2 service call /rubi/global_elevation/save_map std_srvs/srv/Trigger '{}'
+   ```
+
+   응답의 `success`가 `true`이면 `message`에 나온 `run_<번호>` 폴더를 기록합니다. 그 안의 **`map.rghm`**이 Nav2 입력이고 `surface.pcd`는 높이 표면 시각화용입니다. 상위 저장 경로는 `common.height_mapping.save_dir`입니다.
+
+4. **C · 저장된 지도로 주행.** A와 B는 계속 실행합니다. 저장 성공 후 C에서 Ctrl+C로 mapper를 종료하고, `$OPS`의 `common.navigation.height_map`에 방금 저장한 `map.rghm` 경로를 지정합니다. Hybrid를 쓸 때는 `common.hybrid.map_yaml`도 같은 좌표계의 2D YAML/PGM에 맞춥니다. C에서 선택한 Nav2를 실행하고 D의 브리지로 실물 주행을 시작합니다. [Nav2 실행 명령](#기존-지도로-주행) · [2D 지도 생성](docs/OPERATIONS.md#5-hybrid를-사용할-때-같은-좌표계의-2d-occupancy-준비)
+
+## 센서·로봇을 바꿀 때
+
+아래의 **운용 프로필**은 `$OPS`입니다. 실행 시 명시한 `키:=값`이 프로필보다 우선하며, 프로필에서는 `live` 또는 `replay`의 값이 `common`을 덮어씁니다. 수정 후 해당 패키지를 다시 실행하세요. [RUBI 운용 프로필](src/navigation_dds/config/operation_rubi.yaml)
+
+| 바뀐 대상 | 수정할 값 | 파일 |
 |---|---|---|
-| `/livox/lidar` | `livox_ros_driver2/msg/CustomMsg` | `sensor_msgs/msg/PointCloud2` |
-| `/livox/imu` | `sensor_msgs/msg/Imu` | `sensor_msgs/msg/Imu` |
-| Costmap 입력 | `/livox/lidar_pointcloud` — PointCloud2 | `/livox/lidar` — PointCloud2 |
-| Localization `input_format` | `custommsg` | `pointcloud2` |
+| LiDAR IP·설치 방향 | `Mid360s.host_net_info[0].host_ip`, `lidar_configs[0].ip`, `extrinsic_parameter.roll/pitch/yaw`(도). RUBI의 거꾸로 장착한 센서는 roll 180°입니다. 드라이버가 점군과 IMU에 적용한 회전을 장착 TF에 중복 적용하지 않도록 합니다. | [MID360s_config.json](src/livox_ros_driver2/config/MID360s_config.json) |
+| 로봇에 센서를 붙인 위치 | `common.localization.imu_to_base_{x,y,z}`(`body → BODY`)와 `base_to_lidar_{x,y,z}`(`base_link → livox_frame`)에 각 부모 좌표계에서 실측한 거리(m)를 넣습니다. | [운용 프로필](src/navigation_dds/config/operation_rubi.yaml) |
+| 다른 LiDAR·IMU | 운용 프로필의 `common.slam`·`common.localization`에서 `lidar_topic`, `imu_topic`과 localization의 `input_format`을 맞춥니다. Nav2의 PointCloud2 입력은 `common.navigation.cloud_topic`입니다. 센서 YAML에서 `preprocess.lidar_type`, `preprocess.scan_line`, LiDAR→IMU 내부 보정 `mapping.extrinsic_T/R`을 확인합니다. RUBI localization의 PointCloud2 입력에는 Livox 점별 시각과 필드가 필요합니다. | [SLAM 설정](src/FAST_LIO_ROS2/config/mid360.yaml) · [CustomMsg 설정](src/FAST_LIO_LOCALIZATION2/config/rubi_custommsg.yaml) · [PointCloud2 설정](src/FAST_LIO_LOCALIZATION2/config/mid360s_nav.yaml) |
+| 높이 지도의 관측 거리·범위 | 운용 프로필의 `common.height_mapping.min_range/max_range`(m), 로컬 YAML의 `map_length`, 전역 YAML의 `origin_x/y`, `length_x/y`를 바꿉니다. 격자 크기를 바꾸면 두 YAML의 `resolution`과 선택한 planner의 `map_resolution_m`을 맞춰 지도를 새로 생성합니다. | [로컬 높이 지도](src/rubi_height_mapping/config/height_mapping.yaml) · [전역 높이 지도](src/rubi_height_mapping/config/global_heightmap.yaml) |
+| 차체 크기·속도·장애물 | 실측 외곽을 `local_costmap`의 `footprint`에 m 단위 꼭짓점으로 입력하고 Hybrid의 `global_costmap`에도 반영합니다. `FollowPath.max_vel_x/max_speed_xy`(m/s), `max_vel_theta`(rad/s), `acc_lim_*`·`decel_lim_*`을 로봇에 맞춥니다. 센서 높이가 바뀌면 `costmap_sector_filter.min_body_height/max_body_height`도 확인합니다. | [Nav2 공통 설정](src/legged_navigation/config/nav2_common.yaml) · [Hybrid 설정](src/legged_navigation/config/height_hybrid.yaml) |
+| 넘을 수 있는 단차·여유 거리 | 선택한 planner의 `evaluation.max_crossable_height_jump_m`, `evaluation.local_relief_threshold_m`, `evaluation.grid_terrain_clearance_distance_m`을 로봇의 보행 성능에 맞춥니다. RUBI 값은 각각 0.11, 0.11, 0.20 m입니다. | [Hybrid](src/legged_navigation/config/height_hybrid.yaml) · [Height-only](src/legged_navigation/config/height_only.yaml) · [로봇별 단차 비용](docs/STEP_COST_TUNING.md) |
+| 주행 제어기·컴퓨터 | 다른 구동기는 `live.navigation.cmd_vel_topic`의 `geometry_msgs/msg/Twist`를 연결합니다. RUBI LCM은 `live.lcm.cmd_vel_topic/lcm_channel/lcm_url`을 맞춥니다. CPU 코어 수가 다르면 프로필의 각 `cpu_affinity`를 사용 가능한 코어 번호 또는 빈 문자열로 설정합니다. | [운용 프로필](src/navigation_dds/config/operation_rubi.yaml) · [LCM 브리지](src/pongbot_lcm/README.md) |
 
-### 1. FAST-LIO Localization — 터미널 1
+토픽·TF 확인 명령, 다른 센서의 입력 형식, 파라미터별 단위는 [튜닝 상세](docs/TUNING.md)에 있습니다. 저장된 rosbag은 별도 ROS domain에서 `operation:=replay`로 실행하며 속도 출력은 `/legged/replay/cmd_vel`입니다. [rosbag 재생](docs/HEIGHT_REPLAY.md)
 
-```bash
-FASTLIO_DIAG_TIMING=1 taskset -c 2,3,4,5 \
-  ros2 launch legged_bringup rubi_localization.launch.py \
-  input_format:=custommsg \
-  dds_profile:=navigation \
-  use_sim_time:=true \
-  use_rviz:=true
-```
-
-### 2. 센서 bag 재생 — 터미널 2
-
-```bash
-ros2 run navigation_dds with_profile common \
-  ros2 bag play "$HOME/rosbag_record/[26.11.06]Height_map_data" \
-  --clock 100 \
-  --rate 1.0 \
-  --read-ahead-queue-size 3000 \
-  --start-paused \
-  --topics /livox/lidar /livox/imu /livox/lidar_pointcloud
-```
-
-1. player 터미널에서 **Space**로 재생하고 초기 5~10초 센서 데이터를 공급합니다.
-2. 잠시 일시정지하여 RViz의 **2D Pose Estimate**로 녹화 시작 위치·방향을 지정합니다.
-3. 재생을 재개하고 PCD와 점군 정합, `/localization`을 확인합니다.
-
-**`use_sim_time:=true`와 player의 `--clock`은 함께 사용해야 합니다.** 재생 전에는 ROS Time이 0일 수 있고, 일시정지 중에는 센서 입력과 센서에 따른 costmap 갱신이 멈춥니다. 새 localization/navigation을 계산하므로 녹화된 TF, Odometry, costmap, 경로, `/cmd_vel`은 재생하지 않습니다.
-
-### 3. Height Navigation — 터미널 3
-
-```bash
-taskset -c 6,7 \
-  ros2 launch legged_bringup rubi_height_navigation.launch.py \
-  mode:=replay \
-  dds_profile:=navigation \
-  use_sim_time:=true \
-  use_fastlio_velocity:=true \
-  cloud_topic:=/livox/lidar_pointcloud \
-  rviz:=false
-```
-
-`Frozen terrain READY`와 Nav2 활성화 후 같은 RViz에서 **Nav2 Goal**을 지정합니다. `/legged/height`, `/plan`, `/local_plan`, local/global costmap이 함께 표시됩니다. 재생 모드의 명령은 **`/legged/replay/cmd_vel`**로 분리됩니다.
-
-**PointCloud2 bag이라면** 위 Localization의 `input_format:=pointcloud2`, Navigation의 `cloud_topic:=/livox/lidar`로 바꾸고 player에는 `--topics /livox/lidar /livox/imu`를 사용합니다. 두 경우 모두 `/clock`을 생성합니다.
-
-bag의 센서 궤적은 새 속도 명령에 반응하지 않습니다. 이 절차는 녹화 센서에 대한 localization·planning 연동 확인이며 새 경로를 실제로 따라간 결과는 아닙니다. 되감기 전에 localization/navigation도 재시작하여 누적 상태를 초기화합니다. 재생 오류와 확인 명령은 [재생 안내](docs/HEIGHT_REPLAY.md)를 참고하세요.
-
-## Configuration
-
-| 설정 | 위치 |
-|---|---|
-| LiDAR IP·장착 회전 | [MID360s_config.json](src/livox_ros_driver2/config/MID360s_config.json) |
-| PointCloud2 / CustomMsg 전처리 | [mid360s_nav.yaml](src/FAST_LIO_LOCALIZATION2/config/mid360s_nav.yaml) / [rubi_custommsg.yaml](src/FAST_LIO_LOCALIZATION2/config/rubi_custommsg.yaml) |
-| DWB·footprint·costmap·BODY 필터 | [nav2.yaml](src/legged_bringup/config/rubi/nav2.yaml) |
-| 높이 비용·통과 한도·캐시 | [planner.yaml](src/legged_bringup/config/rubi/planner.yaml) |
-| 재계획 주기 | [navigate.xml](src/legged_bringup/config/rubi/navigate.xml) |
-| 공통 시각화 | [rubi_height_navigation.rviz](src/legged_bringup/rviz/rubi_height_navigation.rviz) |
-
-현재 기본 구성은 global 재계획 1 Hz, DWB 5 Hz, footprint 0.55 × 0.55 m입니다. `use_fastlio_velocity:=true`는 `/fastlio/odometry_base` feedback과 `LimitedAccelGenerator`를 사용합니다. 높이 planner는 geometry 비용과 0.11 m 통과 한도를 사용합니다. 주기 설정은 실제 처리율 보장을 뜻하지 않습니다.
-
-## Documentation
-
-- [설치 및 선택 의존성](docs/INSTALL.md)
-- [Rosbag 재생·표시·문제 확인](docs/HEIGHT_REPLAY.md)
-- [지도만 검토하기·실물 전환·지도 교체](docs/HEIGHT_NAVIGATION.md)
-- [Frozen planner 캐시 구조·성능 측정](docs/FROZEN_PLANNER.md)
-- [지도 생성 및 운영](docs/OPERATIONS.md)
-- [시간과 메시지 형식](docs/TIMING.md)
-- [패키지 구조](src/README.md) · [지도 세트](maps/README.md) · [도구](tools/README.md)
-
-## License and acknowledgements
-
-FAST-LIO Localization, Livox ROS Driver2/SDK2, CuPy elevation mapping 및 Nav2를 기반으로 합니다. 구성요소별 출처와 라이선스는 [THIRD_PARTY.md](docs/THIRD_PARTY.md) 및 각 패키지의 LICENSE를 참고하세요.
+[전체 패키지와 보조 도구](src/README.md) · [DDS 설정](docs/DDS.md) · [검증 기록](docs/DELIVERY_VALIDATION.md) · [지도 도구](tools/README.md) · [구성 보고서](docs/REPORT.md)

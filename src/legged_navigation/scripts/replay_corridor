@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+"""Replay the 11/02 recorded pose, then compare Nav2 paths from the corridor in RViz."""
+import argparse
+import math
+import os
+from pathlib import Path
+import signal
+import subprocess
+import time
+
+import rclpy
+import yaml
+from action_msgs.msg import GoalStatus
+from geometry_msgs.msg import PointStamped
+from nav2_msgs.action import ComputePathToPose
+from rclpy.action import ActionClient
+from rclpy.qos import qos_profile_sensor_data
+from rosbag2_interfaces.srv import Pause, Resume
+from rosgraph_msgs.msg import Clock
+
+from navigation_dds.operation import affinity_prefix, default_operation_file
+from navigation_dds.profiles import profile_environment
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--operation-file', type=Path, default=default_operation_file())
+    args = parser.parse_args()
+    path = args.operation_file.expanduser().resolve()
+    cfg = yaml.safe_load(path.read_text())['corridor_replay']
+    bag = path.parent / Path(cfg['bag']).expanduser()
+    meta = yaml.safe_load((bag / 'metadata.yaml').read_text())['rosbag2_bagfile_information']
+    pause_at = float(cfg['pause_at_s'])
+    rate = float(cfg['rate'])
+    goal = cfg['goal_xy_m']
+    topics = cfg['topics']
+    if not 0 < pause_at < meta['duration']['nanoseconds'] * 1e-9:
+        parser.error('pause_at_s must be inside the recorded bag duration')
+    if not math.isfinite(rate) or rate <= 0 or len(goal) != 2 or not all(map(math.isfinite, goal)):
+        parser.error('expected a positive playback rate and finite goal_xy_m coordinates')
+    if not isinstance(topics, list) or not topics or not all(isinstance(t, str) and t.startswith('/') for t in topics):
+        parser.error('topics must be a list of absolute ROS topic names')
+    clock_hz, queue_size = int(cfg['clock_hz']), int(cfg['read_ahead_queue_size'])
+    if min(clock_hz, queue_size) <= 0:
+        parser.error('clock_hz and read_ahead_queue_size must be positive')
+    prefix = affinity_prefix(cfg['cpu_affinity']).split()
+    if cfg['dds_profile'] != 'default':
+        os.environ.update(profile_environment(cfg['dds_profile'], os.environ))
+    origin_ns = meta['starting_time']['nanoseconds_since_epoch']
+    rclpy.init()
+    node = rclpy.create_node('rubi_inspect_goals')
+    pause = node.create_client(Pause, '/rosbag2_player/pause')
+    resume = node.create_client(Resume, '/rosbag2_player/resume')
+    planner = ActionClient(node, ComputePathToPose, '/compute_path_to_pose')
+    elapsed = 0.
+    selected_goal = None
+    player = None
+
+    def clock(msg):
+        nonlocal elapsed
+        elapsed = (msg.clock.sec * 10**9 + msg.clock.nanosec - origin_ns) * 1e-9
+
+    def select(msg):
+        nonlocal selected_goal
+        if msg.header.frame_id == cfg['frame']:
+            selected_goal = (msg.point.x, msg.point.y)
+
+    def wait(predicate, timeout):
+        end = time.monotonic() + timeout
+        while rclpy.ok() and not predicate() and time.monotonic() < end:
+            if player is not None and player.poll() is not None:
+                raise RuntimeError('bag player가 종료됐습니다.')
+            rclpy.spin_once(node, timeout_sec=.03)
+        return predicate()
+
+    def reply(future, timeout):
+        if not wait(future.done, timeout):
+            raise RuntimeError('ROS 응답 시간을 초과했습니다.')
+        return future.result()
+
+    def path_to(x, y):
+        req = ComputePathToPose.Goal()
+        req.planner_id = cfg['planner_id']
+        req.use_start = False
+        req.goal.header.frame_id = cfg['frame']
+        req.goal.pose.position.x, req.goal.pose.position.y = x, y
+        req.goal.pose.orientation.w = 1.
+        handle = reply(planner.send_goal_async(req), 5)
+        if not handle.accepted:
+            print(f'goal ({x:.2f}, {y:.2f}) 요청이 거절됐습니다.', flush=True)
+            return
+        result = handle.get_result_async()
+        if not wait(result.done, 12):
+            handle.cancel_goal_async()
+            print(f'goal ({x:.2f}, {y:.2f}) 경로 계산 시간 초과', flush=True)
+            return
+        response = result.result()
+        poses = [p.pose.position for p in response.result.path.poses]
+        if response.status == GoalStatus.STATUS_SUCCEEDED and poses:
+            length = sum(math.hypot(b.x-a.x, b.y-a.y) for a, b in zip(poses, poses[1:]))
+            print(f'출발 ({poses[0].x:.2f}, {poses[0].y:.2f}) → goal ({x:.2f}, {y:.2f})'
+                  f'  |  {length:.2f} m  |  {len(poses)}개 경로점', flush=True)
+        else:
+            print(f'goal ({x:.2f}, {y:.2f}) 경로 생성 실패 (action status {response.status})', flush=True)
+
+    try:
+        node.create_subscription(Clock, '/clock', clock, qos_profile_sensor_data)
+        if resume.wait_for_service(timeout_sec=1.):
+            raise RuntimeError('이 domain에 이미 bag player가 있습니다. 별도 재생 domain을 사용하세요.')
+        print('터미널 A의 navigation을 기다립니다.', flush=True)
+        if not wait(lambda: node.count_subscribers('/tf_static') > 0, 45):
+            raise RuntimeError('navigation의 TF 구독을 찾지 못했습니다.')
+        player = subprocess.Popen([*prefix, 'ros2', 'bag', 'play', str(bag), '--rate', str(rate), '--clock', str(clock_hz),
+                                   '--start-paused', '--disable-keyboard-controls',
+                                   '--read-ahead-queue-size', str(queue_size), '--topics', *topics],
+                                  stdin=subprocess.DEVNULL, start_new_session=True)
+        if not resume.wait_for_service(timeout_sec=20.) or not pause.wait_for_service(timeout_sec=5.):
+            raise RuntimeError('bag player 서비스를 찾지 못했습니다.')
+        reply(resume.call_async(Resume.Request()), 5)
+        print(f'원본 bag 재생 중. {pause_at}초에서 자동 정지합니다.', flush=True)
+        if not wait(lambda: elapsed >= pause_at, pause_at / rate + 70):
+            raise RuntimeError('bag이 복도 시점에 도달하지 못했습니다.')
+        reply(pause.call_async(Pause.Request()), 5)
+        wait(lambda: False, 1.5)
+        if not planner.wait_for_server(timeout_sec=7.):
+            raise RuntimeError('Nav2 planner action을 찾지 못했습니다.')
+        print(f'정지 시각 {elapsed:.3f}초. 원래 goal을 계산합니다.', flush=True)
+        path_to(*goal)
+        node.create_subscription(PointStamped, '/clicked_point', select, 5)
+        print('RViz의 Publish Point로 새 goal을 찍으세요. 종료는 Ctrl+C입니다.', flush=True)
+        while rclpy.ok():
+            rclpy.spin_once(node, timeout_sec=.2)
+            if selected_goal is not None:
+                xy, selected_goal = selected_goal, None
+                path_to(*xy)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        if player is not None and player.poll() is None:
+            player.send_signal(signal.SIGINT)
+            try:
+                player.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                player.terminate()
+                player.wait()
+        node.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()

@@ -1,6 +1,8 @@
 #include "rubi_heightmap_step_wavefront_planner/planning/step_grid_astar_planner.hpp"
 
 #include <algorithm>
+#include <array>
+#include <memory>
 #include <chrono>
 #include <cmath>
 #include <limits>
@@ -15,6 +17,34 @@ namespace
 {
 using Clock = std::chrono::steady_clock;
 constexpr double kTolerance = 1.0e-12;
+
+// Search touches a fraction of a large global costmap. Initialize state in
+// contiguous blocks on first use, and keep the blocks local to this request.
+struct SearchCell
+{
+  double g{std::numeric_limits<double>::infinity()};
+  std::size_t parent{std::numeric_limits<std::size_t>::max()};
+  bool closed{false};
+};
+
+class SearchCells
+{
+public:
+  explicit SearchCells(const std::size_t count)
+  : blocks_(1U + (count - 1U) / kBlockSize) {}
+
+  SearchCell & operator[](const std::size_t index)
+  {
+    auto & block = blocks_[index / kBlockSize];
+    if (!block) {block = std::make_unique<Block>();}
+    return (*block)[index % kBlockSize];
+  }
+
+private:
+  static constexpr std::size_t kBlockSize = 128U;
+  using Block = std::array<SearchCell, kBlockSize>;
+  std::vector<std::unique_ptr<Block>> blocks_;
+};
 
 bool hardBlocked(const CostmapSnapshot & costmap, const GridCell cell)
 {
@@ -147,12 +177,9 @@ PlanResult StepGridAStarPlanner::plan(
   struct Greater {bool operator()(const Entry & left, const Entry & right) const noexcept {
     return std::tie(left.f, left.g, left.index) > std::tie(right.f, right.g, right.index);
   }};
-  const double infinity = std::numeric_limits<double>::infinity();
-  std::vector<double> g(count, infinity);
-  std::vector<std::size_t> parent(count, count);
-  std::vector<bool> closed(count, false);
+  SearchCells state(count);
   std::vector<std::optional<NodeEvaluation>> node_evaluations(frozen ? 0 : count);
-  std::vector<NodeId> graph_node_id(count, count);
+  std::vector<NodeId> graph_node_id(frozen ? 0U : count, count);
   if(!frozen){node_evaluations[start_index]=start_evaluation;node_evaluations[goal_index]=goal_evaluation;}
   const auto get_node=[&](std::size_t i) -> NodeEvaluation {
     if(frozen)return evaluate_node(toCell(i));
@@ -168,23 +195,29 @@ PlanResult StepGridAStarPlanner::plan(
       graph_node_id[index] = result.nodes.size();
       result.nodes.push_back({
         graph_node_id[index], point, get_node(index).elevation_m});
-      if (parent[index] < count && graph_node_id[parent[index]] != count) {
+      const std::size_t parent = state[index].parent;
+      if (parent < count && graph_node_id[parent] != count) {
         const EdgeEvaluation edge = evaluator.evaluateGridTransition(
-          toCell(parent[index]), toCell(index),
-          get_node(parent[index]), get_node(index));
-        result.edges.push_back({graph_node_id[parent[index]], graph_node_id[index], edge});
+          toCell(parent), toCell(index),
+          get_node(parent), get_node(index));
+        result.edges.push_back({graph_node_id[parent], graph_node_id[index], edge});
       }
     };
   std::priority_queue<Entry, std::vector<Entry>, Greater> open;
-  const auto heuristic = [&](const GridCell cell) {
-      return evaluator.parameters().distance_weight * costmap->resolution() *
-             octileDistance(cell.x - goal_cell->x, cell.y - goal_cell->y);
+  const double weighted_resolution =
+    evaluator.parameters().distance_weight * costmap->resolution();
+  const auto priority = [&](const GridCell cell, const double path_cost) {
+      return std::fma(weighted_resolution,
+        octileDistance(cell.x - goal_cell->x, cell.y - goal_cell->y), path_cost);
     };
-  g[start_index] = 0.0;
-  open.push({heuristic(*start_cell), 0.0, start_index});
+  state[start_index].g = 0.0;
+  open.push({priority(*start_cell, 0.0), 0.0, start_index});
   ++result.statistics.astar_open_pushes;
   constexpr int kDx[8] = {1, -1, 0, 0, 1, 1, -1, -1};
   constexpr int kDy[8] = {0, 0, 1, -1, 1, -1, 1, -1};
+  const double resolution = costmap->resolution();
+  const double minimum_step[] = {evaluator.parameters().distance_weight * resolution,
+    evaluator.parameters().distance_weight * (resolution * std::hypot(1, 1))};
   bool found = false;
   while (!open.empty()) {
     if (parameters_.max_planning_time_ms > 0U &&
@@ -197,8 +230,9 @@ PlanResult StepGridAStarPlanner::plan(
     }
     const Entry current = open.top();
     open.pop();
-    if (closed[current.index] || std::abs(current.g - g[current.index]) > kTolerance) {continue;}
-    closed[current.index] = true;
+    auto & current_state = state[current.index];
+    if (current_state.closed || std::abs(current.g - current_state.g) > kTolerance) {continue;}
+    current_state.closed = true;
     if(!frozen) materialize_expanded_cell(current.index);
     ++result.expansions;
     if (result.expansions > parameters_.max_expanded_states) {
@@ -208,6 +242,7 @@ PlanResult StepGridAStarPlanner::plan(
     }
     if (current.index == goal_index) {found = true; break;}
     const GridCell current_cell = toCell(current.index);
+    const auto current_node = get_node(current.index);
     for (int direction = 0; direction < (parameters_.allow_diagonal ? 8 : 4); ++direction) {
       ++result.statistics.neighbor_candidates;
       const GridCell neighbor{current_cell.x + kDx[direction], current_cell.y + kDy[direction]};
@@ -216,7 +251,12 @@ PlanResult StepGridAStarPlanner::plan(
       // Octile distance is consistent: each edge costs at least its weighted
       // grid distance, with nonnegative terrain and inflation penalties.
       // Closed neighbors cannot improve; skip their node/edge evaluation.
-      if (closed[neighbor_index]) {continue;}
+      auto & neighbor_state = state[neighbor_index];
+      if (neighbor_state.closed) {continue;}
+      // Every terrain and inflation penalty is nonnegative. Even a free
+      // edge cannot improve this neighbor, including the parent tie-break.
+      if (frozen && current_state.g + minimum_step[direction >= 4] >
+        neighbor_state.g + kTolerance) {continue;}
       if (direction >= 4 && (hardBlocked(
           *costmap, {current_cell.x + kDx[direction], current_cell.y}) ||
         hardBlocked(*costmap, {current_cell.x, current_cell.y + kDy[direction]})))
@@ -231,7 +271,9 @@ PlanResult StepGridAStarPlanner::plan(
         continue;
       }
       ++result.statistics.edge_evaluation_calls;
-      const EdgeEvaluation edge = frozen ? frozen->edge(current_cell,neighbor,get_node(current.index),node) : evaluator.evaluateGridTransition(current_cell,neighbor,get_node(current.index),node);
+      const EdgeEvaluation edge = frozen ?
+        frozen->edge(current_cell, neighbor, current_node, node) :
+        evaluator.evaluateGridTransition(current_cell, neighbor, current_node, node);
       if (!edge.valid) {
         recordStepRejection(
           edge, evaluator.parameters().max_crossable_height_jump_m, result.statistics);
@@ -256,14 +298,14 @@ PlanResult StepGridAStarPlanner::plan(
           continue;
         }
       }
-      const double tentative = g[current.index] + edge.cost;
-      if (tentative + kTolerance < g[neighbor_index] ||
-        (std::abs(tentative - g[neighbor_index]) <= kTolerance &&
-        current.index < parent[neighbor_index]))
+      const double tentative = current_state.g + edge.cost;
+      if (tentative + kTolerance < neighbor_state.g ||
+        (std::abs(tentative - neighbor_state.g) <= kTolerance &&
+        current.index < neighbor_state.parent))
       {
-        g[neighbor_index] = tentative;
-        parent[neighbor_index] = current.index;
-        open.push({tentative + heuristic(neighbor), tentative, neighbor_index});
+        neighbor_state.g = tentative;
+        neighbor_state.parent = current.index;
+        open.push({priority(neighbor, tentative), tentative, neighbor_index});
         ++result.statistics.astar_open_pushes;
       }
     }
@@ -303,10 +345,10 @@ PlanResult StepGridAStarPlanner::plan(
     return result;
   }
   std::vector<std::size_t> path_cells;
-  for (std::size_t trace = goal_index; ; trace = parent[trace]) {
+  for (std::size_t trace = goal_index; ; trace = state[trace].parent) {
     path_cells.push_back(trace);
     if (trace == start_index) {break;}
-    if (parent[trace] >= count || path_cells.size() > count) {
+    if (state[trace].parent >= count || path_cells.size() > count) {
       path_cells.clear();
       break;
     }
@@ -314,15 +356,26 @@ PlanResult StepGridAStarPlanner::plan(
   std::reverse(path_cells.begin(), path_cells.end());
   if (path_cells.empty()) {return result;}
   const auto finalize_started = Clock::now();
+  result.path_node_ids.reserve(path_cells.size());
+  if (frozen) {
+    result.nodes.reserve(path_cells.size());
+    result.edges.reserve(path_cells.size() - 1U);
+  }
   for (std::size_t path_index = 0U; path_index < path_cells.size(); ++path_index) {
     const std::size_t cell_index = path_cells[path_index];
-    materialize_expanded_cell(cell_index);
-    result.path_node_ids.push_back(graph_node_id[cell_index]);
+    if (frozen) {
+      const GridCell cell = toCell(cell_index);
+      result.nodes.push_back({path_index, costmap->cellCenter(cell), get_node(cell_index).elevation_m});
+      result.path_node_ids.push_back(path_index);
+    } else {
+      result.path_node_ids.push_back(graph_node_id[cell_index]);
+    }
     if (path_index == 0U) {continue;}
     const std::size_t previous_index = path_cells[path_index - 1U];
     const EdgeEvaluation edge = evaluator.evaluateGridTransition(
       toCell(previous_index), toCell(cell_index),
       get_node(previous_index), get_node(cell_index));
+    if (frozen) {result.edges.push_back({path_index - 1U, path_index, edge});}
     result.path_metrics.length_xy_m += edge.length_xy_m;
     result.path_metrics.height_event_count += edge.height_jump_event_count;
     result.path_metrics.max_height_jump_m = std::max(
@@ -363,8 +416,8 @@ PlanResult StepGridAStarPlanner::plan(
     result.path_metrics.inflation_score_m;
   result.path_metrics.sobel_cost = evaluator.parameters().grid_sobel_gradient_cost_weight *
     result.path_metrics.sobel_gradient_exposure_m;
-  result.path_metrics.total_cost = g[goal_index];
-  result.path_metrics.grid_search_cost = g[goal_index];
+  result.path_metrics.total_cost = state[goal_index].g;
+  result.path_metrics.grid_search_cost = state[goal_index].g;
   result.path_metrics.grid_validation_cost =
     evaluator.parameters().distance_weight * result.path_metrics.length_xy_m +
     result.path_metrics.height_cost + result.path_metrics.inflation_cost +

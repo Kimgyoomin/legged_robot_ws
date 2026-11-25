@@ -81,3 +81,13 @@ metadata.yaml
 !/archive/20261109/validation/postprocess/candidate/map.rghm
 !/archive/20261109/validation/postprocess/baseline/surface.pcd
 !/archive/20261109/validation/postprocess/baseline/map.rghm
+
+/src/FAST_LIO_ROS2/Log/
+/src/rubi_height_mapping/maps/run_*/
+
+# Site point cloud and occupancy are distributed together with the measured height map.
+/maps/rubi_1f/data/
+# Retain local experiment data and avoid publishing the generated archives.
+/archive/20261124/maps/*
+!/archive/20261124/maps/rubi_1f_height_20261109_wall_gap_v6/
+!/archive/20261124/maps/rubi_1f_legacy

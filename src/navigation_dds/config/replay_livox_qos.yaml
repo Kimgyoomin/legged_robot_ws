@@ -1,0 +1,12 @@
+# ros2 bag play --qos-profile-overrides-path: FAST-LIO PointCloud2 / IMU subscribers request reliable.
+# Used by the two-topic sensor replay only.
+/livox/lidar_pointcloud:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+/livox/imu:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 50

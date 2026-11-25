@@ -497,6 +497,37 @@ TEST(HybridStepEvaluator, GridCotUsesExactCalibrationAndLinearInterpolation)
   EXPECT_NEAR(ten_edge.height_jump_score_m, 1.1775, 1.0e-12);
 }
 
+TEST(HybridStepEvaluator, CubicCalibrationUsesMeasuredAscentAndGeometricDescent)
+{
+  const auto costs = planner::CostmapSnapshot::fromData(
+    9U, 5U, 0.1, 0.0, 0.0, std::vector<std::uint8_t>(45U, 0U));
+  auto p = hybridParameters();
+  p.max_crossable_height_jump_m = 0.11;
+  p.grid_cot_height_cost_enabled = true;
+  p.grid_cot_flat_baseline = 0.2397005087210085;
+  p.grid_cot_polynomial_coefficients_cm =
+    {-0.00027219790684918907, 0.004037674812204141, 0.008922036892203038, 0.0};
+  for (const double jump : {0.06, 0.10}) {
+    const auto heights = planner::HeightmapSnapshot::fromPoints(
+      hybridHeights(jump), 0.1, 0.001, 100U);
+    const planner::StepEvaluator evaluator(heights, costs, p);
+    const auto low = evaluator.evaluateNode({0.35, 0.25});
+    const auto high = evaluator.evaluateNode({0.45, 0.25});
+    const auto up = evaluator.evaluateGridTransition({3, 2}, {4, 2}, low, high);
+    const auto down = evaluator.evaluateGridTransition({4, 2}, {3, 2}, high, low);
+    ASSERT_TRUE(up.valid);
+    ASSERT_TRUE(down.valid);
+    const double cm = 100.0 * jump;
+    const double excess = -0.00027219790684918907 * cm * cm * cm +
+      0.004037674812204141 * cm * cm + 0.008922036892203038 * cm;
+    EXPECT_NEAR(up.height_jump_score_m, excess / p.grid_cot_flat_baseline, 1e-9);
+    const double normalized = (jump - p.height_noise_floor_m) /
+      (p.max_crossable_height_jump_m - p.height_noise_floor_m);
+    EXPECT_NEAR(down.height_jump_score_m, p.max_crossable_height_jump_m *
+      std::pow(normalized, p.height_cost_exponent), 1e-9);
+  }
+}
+
 TEST(HybridStepEvaluator, GridCotAppliesOnlyToAscent)
 {
   const auto heights = planner::HeightmapSnapshot::fromPoints(

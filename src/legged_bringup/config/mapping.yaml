@@ -1,5 +1,5 @@
 # 기본: RUBI 시뮬레이션 + FAST-LIO localization.
-# 실행: ros2 launch legged_bringup mapping.launch.py
+# 호환용 설정. 현재 직접 실행과 설정 파일은 docs/OPERATIONS.md 및 docs/TUNING.md 참조.
 # 실물에서는 use_sim_time: false. 센서와 localization은 별도로 실행합니다.
 use_sim_time: true
 rviz: true

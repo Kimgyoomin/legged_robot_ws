@@ -68,7 +68,7 @@ def future(f,seconds=45):
  assert spin_until(f.done,seconds),'future timeout';return f.result()
 def pose(x):
  p=PoseStamped();p.header.frame_id='map';p.header.stamp=node.get_clock().now().to_msg();p.pose.position.x=x;p.pose.orientation.w=1.;return p
-cmd=['ros2','launch','legged_navigation',f'height_{mode}_navigation.launch.py','dds_profile:=default','rviz:=false',
+cmd=['ros2','launch','legged_navigation',f'height_{mode}_navigation.launch.py','operation:=replay','use_sim_time:=false','dds_profile:=default','rviz:=false',
      'use_fastlio_velocity:=true',f'height_map:={height}','cmd_vel_topic:=/delivery_test/cmd_vel']
 if mode=='hybrid':cmd.append(f'map_yaml:={out}/map.yaml')
 log=(out/'launch.log').open('w');process=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
@@ -83,6 +83,17 @@ try:
    spin_until(lambda:False,.3)
   else:raise AssertionError(name+' did not activate')
  print(mode,'all lifecycle nodes active',flush=True)
+ params_client=node.create_client(GetParameters,'planner_server/get_parameters')
+ assert spin_until(params_client.service_is_ready,10)
+ plugin='HeightOnly' if mode=='only' else 'Height'
+ request=GetParameters.Request()
+ request.names=[plugin+'.evaluation.'+key for key in (
+     'grid_cot_height_cost_enabled','height_cost_weight','grid_cot_polynomial_coefficients_cm')]
+ enabled,weight,coefficients=future(params_client.call_async(request)).values
+ assert enabled.bool_value and weight.double_value==5.
+ assert list(coefficients.double_array_value)==[
+     -0.00027219790684918907,0.004037674812204141,0.008922036892203038,0.]
+ print(mode,'cubic calibration active',flush=True)
  assert spin_until(lambda:'terrain READY' in (out/'launch.log').read_text(),60),'cache not ready'
  assert spin_until(lambda:bool(filtered),10),'No filtered live obstacle cloud'
  actions=ActionClient(node,ComputePathToPose,'compute_path_to_pose')

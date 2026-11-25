@@ -49,6 +49,12 @@ struct StepEvaluatorParameters
   double distance_weight{1.0};
   double height_cost_weight{5.0};
   bool grid_cot_height_cost_enabled{false};
+  // Opt-in operational preference table in both directions. Legacy CoT is ascent-only.
+  bool grid_cot_apply_to_descents{false};
+  std::vector<double> grid_cot_polynomial_coefficients_cm;
+  double grid_cot_flat_baseline{0.0};
+  double grid_cot_calibration_distance_m{1.0};
+  double grid_cot_max_height_m{0.11};
   std::vector<double> grid_cot_step_heights_m;
   std::vector<double> grid_cot_equivalent_penalties_m;
   double preferred_clearance_radius_m{0.20};
@@ -114,7 +120,7 @@ struct EdgeEvaluation
   double observed_support_ratio{0.0};
   std::size_t height_jump_event_count{0U};
   // Legacy mode: transformed adjacent height score [m]. Grid CoT mode:
-  // distributed equivalent-flat-distance ascent score [m].
+  // distributed equivalent-flat-distance score [m] (ascent-only unless opted in).
   double height_jump_score_m{0.0};
   double max_sobel_gradient{0.0};
   double max_sobel_equivalent_step_height_m{0.0};

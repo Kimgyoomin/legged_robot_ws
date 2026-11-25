@@ -4,6 +4,7 @@
     input_convention: grid_map
     output_topic: /rubi/global_elevation/cloud
     map_frame: map
+    # 해상도 체크
     resolution: 0.05
     origin_x: -25.0
     origin_y: -25.0

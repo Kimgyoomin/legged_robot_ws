@@ -1,0 +1,12 @@
+# Static transforms from several broadcasters can arrive as separate messages.
+/tf_static:
+  history: keep_last
+  depth: 100
+  reliability: reliable
+  durability: transient_local
+/map: &map_qos
+  history: keep_last
+  depth: 1
+  reliability: reliable
+  durability: transient_local
+/legged/height: *map_qos

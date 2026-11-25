@@ -1,0 +1,6 @@
+# navigation_real 6d78b406, cot_fit_240trials_20261019.json, degree 3.
+# Descending powers, input in cm, output in excess absolute CoT.
+evaluation.grid_cot_polynomial_coefficients_cm: [-0.00027219790684918907, 0.004037674812204141, 0.008922036892203038, 0.0]
+evaluation.grid_cot_flat_baseline: 0.2397005087210085
+evaluation.grid_cot_calibration_distance_m: 1.0
+evaluation.grid_cot_max_height_m: 0.11

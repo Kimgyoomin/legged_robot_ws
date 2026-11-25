@@ -1,0 +1,111 @@
+# 각 패키지에서 operation_file:=.../operation_rubi.yaml 로 선택합니다.
+# 새 장소에서는 site에 PCD, Occupancy YAML/PGM, map.rghm을 함께 둡니다.
+site: ${LEGGED_WS}/maps/rubi_1f
+common:
+  all:
+    dds_profile: navigation
+  livox:
+    dds_profile: livox
+    cpu_affinity: "0,1"
+    config_file: MID360s_config.json
+    lidar_frame: &lidar_frame livox_frame
+    publish_freq: 10.0
+  slam:
+    cpu_affinity: &lio_cpus "2,3,4,5"
+    config_file: mid360.yaml
+    lidar_topic: &custom /livox/lidar
+    imu_topic: &imu /livox/imu
+    registered_body_topic: &body_scan /cloud_registered_body
+    registered_topic: &registered /cloud_registered
+    odom_output_topic: &odom /Odometry
+    pcd_map: ${LEGGED_WS}/src/FAST_LIO_LOCALIZATION2/maps/site_a.pcd
+    pcd_overwrite: false
+    rviz: true
+  localization:
+    cpu_affinity: *lio_cpus
+    input_format: custommsg
+    lidar_topic: *custom
+    imu_topic: *imu
+    registered_body_topic: *body_scan
+    registered_topic: *registered
+    odom_output_topic: *odom
+    localization_topic: /localization
+    pcd_map_topic: /cloud_pcd
+    pcd_map: ${SITE}/data/1f_fast_lio_260731_segmented.pcd
+    publish_2d_map: false
+    use_rviz: true
+    base_frame: &base base_link
+    lidar_frame: *lidar_frame
+    # 'body' (IMU) → 'BODY', 'base_link' → 'livox_frame' 평행이동 [m].
+    imu_to_base_x: -0.1105
+    imu_to_base_y: 0.02329
+    imu_to_base_z: 0.09338
+    base_to_lidar_x: 0.0995
+    base_to_lidar_y: 0.0
+    base_to_lidar_z: -0.1375
+  height_mapping:
+    cpu_affinity: &nav_cpus "6,7"
+    input_scan: *body_scan
+    map_frame: &map map
+    base_frame: *base
+    odom_topic: ''
+    local_grid_topic: /rubi/local_elevation/grid_map
+    global_cloud_topic: /rubi/global_elevation/cloud
+    min_range: 0.6
+    max_range: 3.0
+    config: ${LEGGED_WS}/src/rubi_height_mapping/config/height_mapping.yaml
+    wrapper_config: ${LEGGED_WS}/src/rubi_height_mapping/config/global_heightmap.yaml
+    save_dir: ${LEGGED_WS}/src/rubi_height_mapping/maps
+    rviz: false
+  navigation:
+    cpu_affinity: *nav_cpus
+    height_map: ${SITE}/map.rghm
+    common_params_file: ${LEGGED_WS}/src/legged_navigation/config/nav2_common.yaml
+    use_fastlio_velocity: true
+    cloud_topic: &pc2 /livox/lidar_pointcloud
+    filtered_cloud_topic: &filtered /livox/lidar_costmap
+    local_cloud_topic: *filtered
+    lidar_frame: *lidar_frame
+    map_frame: *map
+    local_frame: camera_init
+    base_frame: *base
+    rviz: false
+  hybrid:
+    map_yaml: ${SITE}/data/RUBI_1F_occupancy_map.yaml
+    global_cloud_topic: *filtered
+    params_file: ${LEGGED_WS}/src/legged_navigation/config/height_hybrid.yaml
+  only:
+    params_file: ${LEGGED_WS}/src/legged_navigation/config/height_only.yaml
+live:
+  all:
+    use_sim_time: false
+  navigation:
+    cmd_vel_topic: &robot_cmd /cmd_vel
+  lcm:
+    cmd_vel_topic: *robot_cmd
+    joy_topic: /joy_wireless
+    lcm_channel: CMD_VEL
+    lcm_url: "udpm://239.255.76.67:7667?ttl=1"
+replay:
+  all:
+    use_sim_time: true
+  localization:
+    input_format: pointcloud2
+    lidar_topic: *pc2
+  height_mapping:
+    save_dir: ${LEGGED_WS}/src/rubi_height_mapping/maps/replay
+  navigation:
+    cmd_vel_topic: /legged/replay/cmd_vel
+# 녹화 위치로 planner만 비교할 때 replay_corridor가 읽는 설정
+corridor_replay:
+  bag: "~/rosbag_record/[26.11.02]RUBI_nav_second_success"
+  pause_at_s: 79.9
+  goal_xy_m: [48.09, 41.66]
+  frame: *map
+  planner_id: Height
+  cpu_affinity: "0,1"
+  dds_profile: large
+  rate: 1.0
+  clock_hz: 50
+  read_ahead_queue_size: 100
+  topics: [/tf, /tf_static, /localization, /Odometry, /livox/lidar_pointcloud, /fastlio/up_body, /fastlio/odometry_velocity, /cur_scan_in_map, /submap, /cloud_pcd]

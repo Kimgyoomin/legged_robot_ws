@@ -31,9 +31,9 @@ def test_replacement_rejects_frame_or_geometry_changes(tmp_path):
         assert not output.exists()
 
 def test_actual_site_points_to_untouched_saved_raw():
-    if not (WS/'maps/raw/run_1794037249460292244/map.rghm').exists():
+    if not (WS/'archive/20261124/maps/raw/run_1794037249460292244/map.rghm').exists():
         pytest.skip('Local real-world map is not distributed with source')
-    s,a=load_site(WS/'maps/raw/run_1794037249460292244/site.yaml')
+    s,a=load_site(WS/'archive/20261124/maps/raw/run_1794037249460292244/site.yaml')
     h=read_snapshot(a['height'])
     assert h.digest=='1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8'
     assert h.frame=='map' and h.resolution==.05

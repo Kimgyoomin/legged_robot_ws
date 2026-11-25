@@ -43,22 +43,19 @@ localhost 전용 domain 187에서 geometry cost, 높이 허용 0.11m의 planner-
 
 [현재 높이·2D 지도·PCD 대조](reference_inspection.png)
 
-## 실행
+## 현재 직접 실행
 
-기존 review를 종료한 뒤 아래로 연다. 지도만 추가했으므로 빌드는 필요 없다.
+이 지도 파일은 `maps/rubi_1f_height_20261109_wall_gap_v6/map.rghm`입니다.
+[직접 rosbag 재생 안내](../../docs/HEIGHT_REPLAY.md)의 localization과 player를 먼저 실행한 뒤,
+아래처럼 hybrid navigation에 지정합니다. 과거 정적 review 결과와 실시간 obstacle costmap을 포함한 경로는 구분합니다.
 
 ```bash
-cd ~/legged_robot_ws
-source tools/navigation_env.sh
-export ROS_DOMAIN_ID=186
-export ROS_LOCALHOST_ONLY=1
-
-ros2 launch legged_bringup rubi_height_navigation.launch.py \
-  mode:=review \
-  site:="$PWD/maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml" \
-  review_planning_time_ms:=5000 \
-  review_height_limit_m:=0.11 \
-  review_height_cost:=geometry
+taskset -c 6,7 \
+  ros2 launch legged_navigation height_hybrid_navigation.launch.py \
+  dds_profile:=navigation use_sim_time:=true use_fastlio_velocity:=true \
+  height_map:="$HOME/legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/map.rghm" \
+  map_yaml:="$HOME/legged_robot_ws/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml" \
+  cmd_vel_topic:=/legged/replay/cmd_vel rviz:=true
 ```
 
 ## 보존과 재현

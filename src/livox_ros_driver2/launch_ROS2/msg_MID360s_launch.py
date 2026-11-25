@@ -4,34 +4,9 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, LogInfo, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from navigation_dds.operation import operation_arguments
 
-################### user configure parameters for ros2 start ###################
-xfer_format   = 1    # 1: CustomMsg + /livox/lidar_pointcloud (PointCloud2)
-multi_topic   = 0    # 0-All LiDARs share the same topic, 1-One LiDAR one topic
-data_src      = 0    # 0-lidar, others-Invalid data src
-publish_freq  = 10.0 # freqency of publish, 5.0, 10.0, 20.0, 50.0, etc.
-output_type   = 0
-frame_id      = 'livox_frame'
-lvx_file_path = '/home/livox/livox_test.lvx'
-cmdline_bd_code = 'livox0000000001'
-
-cur_path = os.path.split(os.path.realpath(__file__))[0] + '/'
-cur_config_path = cur_path + '../config'
-# Match navigation_real: MID-360S CustomMsg at 10 Hz and PointCloud2 at 5 Hz.
-user_config_path = os.path.join(cur_config_path, 'MID360s_config.json')
-################### user configure parameters for ros2 end #####################
-
-livox_ros2_params = [
-    {"xfer_format": xfer_format},
-    {"multi_topic": multi_topic},
-    {"data_src": data_src},
-    {"publish_freq": publish_freq},
-    {"output_data_type": output_type},
-    {"frame_id": frame_id},
-    {"lvx_file_path": lvx_file_path},
-    {"user_config_path": user_config_path},
-    {"cmdline_input_bd_code": cmdline_bd_code}
-]
+cur_config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../config')
 
 
 def _launch_driver(context):
@@ -53,12 +28,22 @@ def _launch_driver(context):
         profile_description = (
             '32 MiB SHM + UDP (driver process only); '
             'DDS UDP buffer requests: TX/RX 4 MiB each (kernel caps apply)')
+    config_file = os.path.expanduser(LaunchConfiguration('config_file').perform(context))
+    params = {
+        'xfer_format': 1,  # CustomMsg and PointCloud2
+        'multi_topic': 0, 'data_src': 0, 'output_data_type': 0,
+        'lvx_file_path': '/home/livox/livox_test.lvx', 'cmdline_input_bd_code': 'livox0000000001',
+        'user_config_path': os.path.join(cur_config_path, config_file),
+        'publish_freq': float(LaunchConfiguration('publish_freq').perform(context)),
+        'frame_id': LaunchConfiguration('lidar_frame').perform(context),
+        'use_sim_time': LaunchConfiguration('use_sim_time'),
+    }
     livox_driver = Node(
         package='livox_ros_driver2',
         executable='livox_ros_driver2_node',
         name='livox_lidar_publisher',
         output='screen',
-        parameters=livox_ros2_params,
+        parameters=[params],
         additional_env=environment
         )
 
@@ -69,10 +54,11 @@ def _launch_driver(context):
 
 
 def generate_launch_description():
+    defaults = {'config_file': 'MID360s_config.json', 'lidar_frame': 'livox_frame',
+                'publish_freq': '10.0', 'use_sim_time': 'false'}
+    dds = DeclareLaunchArgument('dds_profile', default_value='livox', choices=['livox', 'default'],
+                                description='Livox SHM + UDP transport, or inherited DDS settings')
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'dds_profile', default_value='livox', choices=['livox', 'default'],
-            description='livox: 32 MiB SHM + DDS UDP TX/RX buffer requests 4 MiB each; '
-                        'default: inherited DDS settings'),
+        *operation_arguments(defaults, 'livox', dds=dds, modes=('package', 'live')),
         OpaqueFunction(function=_launch_driver),
     ])

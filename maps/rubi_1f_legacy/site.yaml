@@ -3,9 +3,9 @@
 # Restore copies with tools/import_legacy_rubi_maps.py before using this site.
 # After the new workspace is built and the existing map alignment is confirmed:
 # From the legged_robot_ws root:
-# ros2 launch legged_bringup localize.launch.py \
-#   site:="$PWD/maps/rubi_1f_legacy/site.yaml" \
-#   method:=fastlio use_sim_time:=false
+# ros2 launch fast_lio_localization localization_nav_rubi.launch.py \
+#   pcd_map:="$PWD/maps/rubi_1f_legacy/data/1f_fast_lio_260731_segmented.pcd" \
+#   input_format:=custommsg dds_profile:=navigation use_sim_time:=false
 # No height asset is supplied: this is NOT a navigation-ready site.
 format: 1
 id: rubi-1f-legacy-v1

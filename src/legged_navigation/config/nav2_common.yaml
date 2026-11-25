@@ -44,12 +44,14 @@ controller_server:
       trajectory_generator_name: dwb_plugins::StandardTrajectoryGenerator
       debug_trajectory_details: false
       min_vel_x: 0.0
-      max_vel_x: 0.8
+      max_vel_x: 0.7
+      # 사이드 스텝은 일단 생각하지 않고 있음
       min_vel_y: 0.0
       max_vel_y: 0.0
-      max_vel_theta: 1.0
+      max_vel_theta: 0.5
+      # max_speed_xy = root (max_vel_x^2 + max_vel_y^2) 이렇게 해야함!
       min_speed_xy: 0.0
-      max_speed_xy: 0.8
+      max_speed_xy: 0.7
       min_speed_theta: 0.0
       acc_lim_x: 1.0
       acc_lim_y: 0.0
@@ -104,7 +106,9 @@ local_costmap:
       publish_frequency: 5.0
       transform_tolerance: 0.3
       track_unknown_space: false
+      # robot 크기에 맞게!
       footprint: '[[0.275, 0.275], [-0.275, 0.275], [-0.275, -0.275], [0.275, -0.275]]'
+      # robot 크기 주변의 여유분 [m]
       footprint_padding: 0.02
       plugins:
       - obstacle_layer

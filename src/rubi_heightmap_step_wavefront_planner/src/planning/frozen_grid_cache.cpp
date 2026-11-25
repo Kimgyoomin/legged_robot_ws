@@ -15,6 +15,11 @@ bool sameParameters(const StepEvaluatorParameters &a, const StepEvaluatorParamet
     a.distance_weight == b.distance_weight &&
     a.height_cost_weight == b.height_cost_weight &&
     a.grid_cot_height_cost_enabled == b.grid_cot_height_cost_enabled &&
+    a.grid_cot_apply_to_descents == b.grid_cot_apply_to_descents &&
+    a.grid_cot_polynomial_coefficients_cm == b.grid_cot_polynomial_coefficients_cm &&
+    a.grid_cot_flat_baseline == b.grid_cot_flat_baseline &&
+    a.grid_cot_calibration_distance_m == b.grid_cot_calibration_distance_m &&
+    a.grid_cot_max_height_m == b.grid_cot_max_height_m &&
     a.grid_cot_step_heights_m == b.grid_cot_step_heights_m &&
     a.grid_cot_equivalent_penalties_m == b.grid_cot_equivalent_penalties_m &&
     a.preferred_clearance_radius_m == b.preferred_clearance_radius_m &&
@@ -86,9 +91,10 @@ EdgeEvaluation FrozenGridCache::edge(GridCell a,GridCell b,const NodeEvaluation 
   if(!na.valid || !nb.valid){out.reason=!na.valid?na.reason:nb.reason;return out;}
   int d=0;for(;d<8;++d) if(b.x-a.x==dx[d] && b.y-a.y==dy[d])break;
   if(d==8)return out;
-  const auto ia=slot(a),ib=slot(b);
+  const auto ia=slot(a);
   auto &t=transitions_[ia][d];
   if(!t.ready) {
+    const auto ib=slot(b);
     auto e=evaluator_.evaluateGridTransition(a,b,nodes_[ia],nodes_[ib]);
     t.length=e.length_xy_m;
     t.height_cost=evaluator_.parameters().height_cost_weight*e.height_jump_score_m;

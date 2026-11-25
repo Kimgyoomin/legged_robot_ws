@@ -96,8 +96,10 @@ Nav2 planner/controller/BT는 active였고 goal을 받아 새 경로와 명령�
 
 활성 `src`는9개 package로 정리했다. FAST-LIO Localization은 활성이고, 별도의 FAST-LIO mapping과 GenZ는 `archive/20261109/optional_src/`로 옮겼다. archive에는 `COLCON_IGNORE`가 있어 build 대상에서 제외된다. 중간 높이 지도·검증 결과·개발 도구·변경 전 백업은 동일 archive로 모았다.
 
-활성 지도는 원본 `maps/raw/run_1794037249460292244/`, 최종 `maps/rubi_1f_height_20261109_wall_gap_v6/`, 필요한 PCD/2D `maps/rubi_1f_legacy/data/`다. 높이 원본258,096셀과 최종265,219셀의 SHA256은 이동 전후 동일하다. 실제 데이터는 삭제하지 않았고, 이동685개 파일의 hash/경로 및38개 경로 참조 변경을 manifest로 기록했다. 기존에 Git 추적하던 테스트 자료는 이동 후에도 추가 가능하도록 ignore 예외를 유지했다. 현재 `git status`의 옛 경로 D는 archive로 이동된 파일들이며 커밋은 하지 않았다. 실제 지도 데이터는 계속 gitignore 대상이므로 지도 세트를 공유할 때 별도로 포함해야 한다.
+2026-11-09 당시 지도는 원본 `maps/raw/run_1794037249460292244/`, 최종 `maps/rubi_1f_height_20261109_wall_gap_v6/`, 필요한 PCD/2D `maps/rubi_1f_legacy/data/`다. 높이 원본258,096셀과 최종265,219셀의 SHA256은 이동 전후 동일하다. 실제 데이터는 삭제하지 않았고, 이동685개 파일의 hash/경로 및38개 경로 참조 변경을 manifest로 기록했다. 기존에 Git 추적하던 테스트 자료는 이동 후에도 추가 가능하도록 ignore 예외를 유지했다. 현재 `git status`의 옛 경로 D는 archive로 이동된 파일들이며 커밋은 하지 않았다. 실제 지도 데이터는 계속 gitignore 대상이므로 지도 세트를 공유할 때 별도로 포함해야 한다.
 
 실행 방법: [bag + 모듈별 실행](HEIGHT_REPLAY.md), [review/실물 실행·지도 교체](HEIGHT_NAVIGATION.md).
 구조: [src 안내](../src/README.md), [지도 안내](../maps/README.md).
 근거: [시험 자료](../archive/20261109/validation/frozen_planner_cache/README.md), [이동 manifest](../archive/20261109/move_manifest.json).
+
+현재 운용 지도와 보관 위치는 [지도 목록](../maps/README.md)에 있습니다.

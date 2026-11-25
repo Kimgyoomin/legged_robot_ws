@@ -1,13 +1,14 @@
-# 현재 지도 세트
+# RUBI 1층 운용 지도
 
-- **원본**: `raw/run_1794037249460292244/map.rghm` — 관측258,096셀.
-  SHA256 `1ae7382f5ffcb09e6f418738dcfedaa7815a5198973929ab235987251f853cf8`.
-- **최종**: `rubi_1f_height_20261109_wall_gap_v6/map.rghm` — 265,219셀, 해상도0.05m, frame map.
-  SHA256 `c5c491b9dc00e50659a6ce812296f001d5ae4f6af8ab126f4cff2561828ee35c`.
-- **기준 PCD/2D**: `rubi_1f_legacy/data/`. Localization과 static costmap에 필요합니다.
+실물과 rosbag의 hybrid 및 height-only navigation은 `rubi_1f/map.rghm`을 읽습니다. 5cm 격자, `map` frame, 265,219셀입니다. 홀 입구 6cm 판의 기준점은 **(9.075, 40.925)m**이고 윗면 외접 크기는 X 25cm × Y 45cm입니다. 복도 (8.43, 20.05)m 주변은 보정된 바닥을 사용합니다.
 
-이번 최적화/정리에서 위 데이터는 수정하지 않았습니다. 각 `site.yaml`의 데이터 해시와 참조 경로를 확인했습니다. 최종 지도에는 기존 후처리의 보간·단차 수동 제약이 들어 있고 `provenance.npz`, `metrics.json`, 보고서를 함께 유지합니다. 측량이나 실차 통과 검증과 동일하지 않습니다.
+| 용도 | 현장 폴더 안의 경로 |
+|---|---|
+| Height Map | `map.rghm` |
+| FAST-LIO localization PCD | `data/1f_fast_lio_260731_segmented.pcd` |
+| 2D Occupancy | `data/RUBI_1F_occupancy_map.yaml` 및 같은 폴더의 PGM |
+| 파일 해시와 좌표계 | [site.yaml](rubi_1f/site.yaml) |
 
-중간 V1~V5·이전 세션·합성 자료는 [보관함](../archive/20261109/maps)으로 이동했습니다. 최종 site의 provenance/evidence 상대경로도 갱신했습니다. 추적 근거를 유지하려면 보관함의 관련 reports/evidence를 함께 전달합니다. `.pcd`, `.rghm` 등 실제 대용량 지도는 `.gitignore`에 의해 기본 제외되므로 Git clone만으로 실물 데이터가 전달되지 않습니다.
+장비에 배포할 때는 **`maps/rubi_1f/` 폴더 전체**를 같은 위치에 복사합니다. 실측 지도는 Git 소스와 별도 전달합니다. 장소 폴더는 [운용 YAML](../src/navigation_dds/config/operation_rubi.yaml)의 `site`에서, 파일명은 `common.navigation.height_map`, `common.localization.pcd_map`, `common.hybrid.map_yaml`에서 변경합니다. `${SITE}`는 YAML의 `site`를 가리킵니다.
 
-새 지도는 새 site를 만들고 launch의 `site:=...`로 선택합니다. 최종 지도의 경로를 바꾸면 [교체 도구](../tools/replace_site_height.py)를 사용하고, 원본을 덮어쓰지 않습니다.
+이전 원본·후처리 지도와 10cm 대조군은 [실험 보관함](../archive/20261124/maps)에 있습니다. 원래 goal에서 11월 2일 bag의 global planner 중심선은 확정 지도의 6cm 윗면을 CoT 7셀, vanilla 6셀 지났습니다. 같은 자리에 10cm를 놓은 대조에서는 CoT 0셀, vanilla 7셀이었습니다.

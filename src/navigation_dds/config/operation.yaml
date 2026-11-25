@@ -1,0 +1,69 @@
+# Run each package directly with operation:=live or operation:=replay.
+# Launch arguments on the command line override these values.
+# ${LEGGED_WS} resolves to the workspace root (or the exported LEGGED_WS).
+common:
+  all:
+    dds_profile: navigation
+  slam:
+    config_file: mid360.yaml
+    lidar_topic: &livox /livox/lidar
+    imu_topic: &imu /livox/imu
+    registered_body_topic: &scan /cloud_registered_body
+    registered_topic: &registered /cloud_registered
+    odom_output_topic: &odom /Odometry
+    pcd_map: ${LEGGED_WS}/src/FAST_LIO_LOCALIZATION2/maps/site_a.pcd
+    pcd_overwrite: false
+    rviz: true
+  localization:
+    input_format: custommsg
+    lidar_topic: *livox
+    imu_topic: *imu
+    registered_body_topic: *scan
+    registered_topic: *registered
+    odom_output_topic: *odom
+    localization_topic: /localization
+    pcd_map_topic: /cloud_pcd
+    pcd_map: ${LEGGED_WS}/maps/rubi_1f_legacy/data/1f_fast_lio_260731_segmented.pcd
+    use_rviz: true
+    publish_2d_map: false
+    base_frame: &base base_link
+    lidar_frame: &lidar livox_frame
+  height_mapping:
+    rviz: false
+    input_scan: *scan
+    map_frame: &map map
+    base_frame: *base
+    odom_topic: ''   # Empty uses timestamped TF.
+    local_grid_topic: /rubi/local_elevation/grid_map  # Mapper output AND accumulator input
+    global_cloud_topic: /rubi/global_elevation/cloud
+    min_range: 0.6
+    max_range: 3.0
+    save_dir: ${LEGGED_WS}/src/rubi_height_mapping/maps
+  navigation:
+    rviz: false
+    use_fastlio_velocity: true
+    cloud_topic: /livox/lidar_pointcloud          # Sector filter input
+    lidar_frame: *lidar
+    filtered_cloud_topic: &filtered /livox/lidar_costmap
+    local_cloud_topic: *filtered                  # Local obstacle layer
+    map_frame: *map
+    local_frame: camera_init
+    base_frame: *base
+    height_map: ${LEGGED_WS}/maps/rubi_1f/map.rghm
+  hybrid:
+    global_cloud_topic: *filtered                 # Global obstacle layer, hybrid only
+    map_yaml: ${LEGGED_WS}/maps/rubi_1f_legacy/data/RUBI_1F_occupancy_map.yaml
+live:
+  all:
+    use_sim_time: false
+  navigation:
+    cmd_vel_topic: /cmd_vel
+replay:
+  all:
+    use_sim_time: true
+  height_mapping:
+    save_dir: ${LEGGED_WS}/src/rubi_height_mapping/maps/replay_261119
+  navigation:
+    # cmd_vel_topic: /legged/replay/cmd_vel
+    cmd_vel_topic: /cmd_vel
+    height_map: ${LEGGED_WS}/maps/rubi_1f/map.rghm

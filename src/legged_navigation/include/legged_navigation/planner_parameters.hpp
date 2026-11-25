@@ -49,8 +49,13 @@ readHeightEvaluation(const PlannerParameters &reader) {
     p.local_relief_min_observed_ratio=reader.get("evaluation.local_relief_min_observed_ratio",0.70);
     p.local_relief_critical_cell_count=reader.get<int64_t>("evaluation.local_relief_critical_cell_count",3);
     p.grid_cot_height_cost_enabled=reader.get("evaluation.grid_cot_height_cost_enabled",true);
+    p.grid_cot_apply_to_descents=reader.get("evaluation.grid_cot_apply_to_descents",false);
     p.grid_cot_step_heights_m=reader.get<std::vector<double>>("evaluation.grid_cot_step_heights_m",{});
     p.grid_cot_equivalent_penalties_m=reader.get<std::vector<double>>("evaluation.grid_cot_equivalent_penalties_m",{});
+    p.grid_cot_polynomial_coefficients_cm=reader.get<std::vector<double>>("evaluation.grid_cot_polynomial_coefficients_cm",{});
+    p.grid_cot_flat_baseline=reader.get<double>("evaluation.grid_cot_flat_baseline",0.0);
+    p.grid_cot_calibration_distance_m=reader.get<double>("evaluation.grid_cot_calibration_distance_m",1.0);
+    p.grid_cot_max_height_m=reader.get<double>("evaluation.grid_cot_max_height_m",0.11);
   return p;
 }
 }  // namespace legged_navigation

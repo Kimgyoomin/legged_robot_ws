@@ -61,8 +61,10 @@ def test_nested_large_profile_does_not_leak_to_later_nodes_or_parent():
 @pytest.mark.parametrize('relative,overrides,expected_count,has_pcd', [
     ('FAST_LIO_ROS2/launch/mapping.launch.py', {}, 2, False),
     ('rubi_height_mapping/launch/mapping.launch.py', {}, 3, False),
-    ('legged_navigation/launch/height_only_navigation.launch.py', {}, 9, False),
-    ('legged_navigation/launch/height_hybrid_navigation.launch.py', {}, 10, False),
+    ('legged_navigation/launch/height_only_navigation.launch.py', {}, 8, False),
+    ('legged_navigation/launch/height_only_navigation.launch.py', {'rviz':'true'}, 9, False),
+    ('legged_navigation/launch/height_hybrid_navigation.launch.py', {}, 9, False),
+    ('legged_navigation/launch/height_hybrid_navigation.launch.py', {'rviz':'true'}, 10, False),
     ('FAST_LIO_LOCALIZATION2/launch/localization_nav_rubi.launch.py', {}, 9, True),
     ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'nav2','rviz':'true'}, 11, False),
     ('legged_bringup/launch/rubi_height_navigation.launch.py', {'mode':'replay','launch_localization':'true','rviz':'true'}, 19, True),
@@ -104,6 +106,8 @@ def test_actual_launches_choose_correct_profiles_without_running_nodes(
             'pcd':str(pcd), 'height':str(tmp_path/'map.rghm'), 'occupancy':str(tmp_path/'map.yaml')}))
     visit_all_entities_and_collect_futures(module.generate_launch_description(), context)
     assert len(seen) == expected_count
+    if relative.startswith('legged_navigation/'):
+        assert sum(executable == 'rviz2' for executable, _ in seen) == int(overrides.get('rviz') == 'true')
     assert sum(executable == 'pcd_to_pointcloud' for executable, _ in seen) == int(has_pcd)
     for executable, environment in seen:
         expected = ('inherited.xml' if mode == 'default' else
@@ -111,3 +115,70 @@ def test_actual_launches_choose_correct_profiles_without_running_nodes(
                     'fastdds_common.xml')
         assert all(Path(value).name == expected for value in environment.values())
     assert all(context.environment[key] == '/inherited.xml' for key in PROFILE_ENV_KEYS)
+
+
+def test_operation_replay_resolves_paths_and_preserves_explicit_arguments(tmp_path, monkeypatch):
+    from navigation_dds.operation import operation_arguments
+
+    monkeypatch.setenv('LEGGED_WS', str(tmp_path))
+    context = LaunchContext()
+    context.launch_configurations.update(operation='replay', rviz='true')
+    keys = ('rviz use_fastlio_velocity cloud_topic lidar_frame filtered_cloud_topic '
+            'local_cloud_topic map_frame local_frame base_frame height_map cmd_vel_topic '
+            'use_sim_time global_cloud_topic map_yaml').split()
+    for action in operation_arguments(dict.fromkeys(keys, ''), 'navigation', 'hybrid'):
+        visit_all_entities_and_collect_futures(action, context)
+    result = context.launch_configurations
+    assert result['rviz'] == 'true'
+    assert result['use_sim_time'] == 'true'
+    assert result['cmd_vel_topic'] == '/legged/replay/cmd_vel'
+    assert result['local_cloud_topic'] == result['global_cloud_topic'] == result['filtered_cloud_topic']
+    assert Path(result['height_map']) == tmp_path / 'maps/rubi_1f/map.rghm'
+    assert result['launch-prefix'] == 'taskset -c 6,7'
+
+
+def test_custom_operation_file_resolves_relative_site_and_cli_overrides(tmp_path):
+    from navigation_dds.operation import operation_arguments
+
+    file = tmp_path / 'settings.yaml'
+    file.write_text("site: './two sites/A'\ncommon:\n  navigation:\n"
+                    "    height_map: ${SITE}/map.rghm\n    cpu_affinity: '4,5'\n"
+                    "    cmd_vel_topic: /from_file\nlive: {}\nreplay: {}\n")
+    context = LaunchContext()
+    context.launch_configurations.update(operation='live', operation_file=str(file),
+                                         cmd_vel_topic='/explicit', cpu_affinity='')
+    for action in operation_arguments({'height_map': '', 'cmd_vel_topic': ''}, 'navigation'):
+        visit_all_entities_and_collect_futures(action, context)
+    cfg = context.launch_configurations
+    assert Path(cfg['height_map']) == tmp_path / 'two sites/A/map.rghm'
+    assert cfg['cmd_vel_topic'] == '/explicit'
+    assert not cfg.get('launch-prefix')
+
+
+@pytest.mark.parametrize('relative,section,profile,affinity', [
+    ('livox_ros_driver2/launch_ROS2/msg_MID360s_launch.py', 'livox', 'livox', 'taskset -c 0,1'),
+    ('pongbot_lcm/launch/joy_lcm.launch.py', 'lcm', 'navigation', ''),
+])
+def test_live_hardware_launch_wiring_without_starting_nodes(monkeypatch, relative, section, profile, affinity):
+    context = LaunchContext()
+    context.launch_configurations['operation'] = 'live'
+    context.environment.update(ROS_LOCALHOST_ONLY='0', RMW_IMPLEMENTATION='rmw_fastrtps_cpp')
+    seen = []
+
+    def capture(node, ctx):
+        cfg = ctx.launch_configurations
+        assert cfg['dds_profile'] == profile and cfg['use_sim_time'] == 'false'
+        assert cfg.get('launch-prefix', '') == affinity
+        if section == 'livox':
+            assert cfg['config_file'] == 'MID360s_config.json' and cfg['lidar_frame'] == 'livox_frame'
+        else:
+            assert cfg['cmd_vel_topic'] == '/cmd_vel' and cfg['lcm_channel'] == 'CMD_VEL'
+            assert cfg['joy_topic'] == '/joy_wireless' and cfg['lcm_url'].endswith('?ttl=1')
+        seen.append(node)
+
+    monkeypatch.setattr(Node, 'execute', capture)
+    spec = importlib.util.spec_from_file_location('hardware_launch', ROOT / relative)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    visit_all_entities_and_collect_futures(module.generate_launch_description(), context)
+    assert len(seen) == 1

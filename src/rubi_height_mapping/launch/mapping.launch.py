@@ -1,10 +1,11 @@
 """RUBI height mapper + global accumulator + optional RViz. Scoped DDS configuration."""
 import os
 from pathlib import Path
-from navigation_dds.profiles import dds_argument, dds_group
+from navigation_dds.operation import operation_arguments
+from navigation_dds.profiles import dds_group
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import OpaqueFunction
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -16,6 +17,7 @@ def generate_launch_description():
     defaults = {'use_sim_time': 'false', 'rviz': 'true',
                 'input_scan': '/cloud_registered_body', 'min_range': '0.6', 'max_range': '3.0',
                 'save_dir': str(Path(own).resolve() / 'maps'),
+                'local_grid_topic': '', 'global_cloud_topic': '',
                 'odom_topic': '', 'map_frame': 'map', 'base_frame': 'base_link',
                 'odom_max_gap': '0.2',
                 'tf_wait_timeout': '1.5',
@@ -23,10 +25,21 @@ def generate_launch_description():
                 'config': os.path.join(own, 'config', 'height_mapping.yaml'),
                 'wrapper_config': os.path.join(own, 'config', 'global_heightmap.yaml'),
                 'rviz_config': os.path.join(own, 'config', 'rubi_mapping.rviz')}
+    return LaunchDescription([*operation_arguments(defaults, 'height_mapping'),
+                              OpaqueFunction(function=start)])
+
+
+def start(context):
+    local_grid = LaunchConfiguration('local_grid_topic').perform(context)
+    global_cloud = LaunchConfiguration('global_cloud_topic').perform(context)
+    mapper_topics = {'output_topic': local_grid} if local_grid else {}
+    wrapper_topics = {'input_topic': local_grid} if local_grid else {}
+    if global_cloud:
+        wrapper_topics['output_topic'] = global_cloud
     clock = ParameterValue(LaunchConfiguration('use_sim_time'), value_type=bool)
-    return LaunchDescription([dds_argument()] + [DeclareLaunchArgument(k, default_value=v) for k,v in defaults.items()] + [dds_group([
+    return [dds_group([
         Node(package='rubi_height_mapping', executable='height_mapping_node', name='rubi_height_mapping',
-             parameters=[LaunchConfiguration('config'), {'use_sim_time': clock,
+             parameters=[LaunchConfiguration('config'), {**mapper_topics, 'use_sim_time': clock,
                 'input_topic': LaunchConfiguration('input_scan'),
                 'ray_mode': ParameterValue(LaunchConfiguration('ray_mode'), value_type=str),
                 'ray_voxel_size': ParameterValue(LaunchConfiguration('ray_voxel_size'), value_type=float),
@@ -39,10 +52,10 @@ def generate_launch_description():
                 'tf_wait_timeout': ParameterValue(LaunchConfiguration('tf_wait_timeout'), value_type=float)}], output='screen'),
         Node(package='rubi_global_heightmap_wrapper', executable='global_heightmap_node',
              name='rubi_global_heightmap_wrapper',
-             parameters=[LaunchConfiguration('wrapper_config'), {'use_sim_time': clock,
+             parameters=[LaunchConfiguration('wrapper_config'), {**wrapper_topics, 'use_sim_time': clock,
                  'map_frame': LaunchConfiguration('map_frame'),
                  'output_directory': LaunchConfiguration('save_dir')}], output='screen'),
         Node(package='rviz2', executable='rviz2', name='rviz2_rubi_height_mapping',
              arguments=['-d', LaunchConfiguration('rviz_config'), '-f', LaunchConfiguration('map_frame')],
              parameters=[{'use_sim_time': clock}],condition=IfCondition(LaunchConfiguration('rviz')),output='screen'),
-    ], 'RUBI height mapping')])
+    ], 'RUBI height mapping')]

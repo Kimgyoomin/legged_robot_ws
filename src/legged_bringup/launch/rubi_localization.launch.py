@@ -6,6 +6,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, Opaq
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from legged_bringup.site import load_site
+from navigation_dds.operation import default_site_manifest
 
 def start(context):
     get=lambda k:LaunchConfiguration(k).perform(context)
@@ -19,10 +20,7 @@ def start(context):
 
 def generate_launch_description():
     share=Path(get_package_share_directory('legged_bringup')).resolve()
-    site=next((p/'maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml' for p in share.parents
-               if (p/'maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml').is_file()),
-              Path.home()/'legged_robot_ws/maps/rubi_1f_height_20261109_wall_gap_v6/site.yaml')
-    defaults={'site':str(site),
+    defaults={'site':default_site_manifest(),
               'input_format':'custommsg','use_sim_time':'true','use_rviz':'true','dds_profile':'navigation',
               'rviz_config':str(share/'rviz/rubi_height_navigation.rviz')}
     return LaunchDescription([DeclareLaunchArgument(k,default_value=v) for k,v in defaults.items()]+[OpaqueFunction(function=start)])

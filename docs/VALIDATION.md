@@ -1,3 +1,5 @@
+> 이 파일은 과거 구성의 검증 기록입니다. 현재 직접 패키지 실행 및 재생 검증은 [DELIVERY_VALIDATION.md](DELIVERY_VALIDATION.md), 실행 명령은 [HEIGHT_REPLAY.md](HEIGHT_REPLAY.md)를 사용합니다.
+
 # 검증 결과
 
 ## 2026-10-16 목표 수신 후 경로 생성 실패: 강제 외접원 철회

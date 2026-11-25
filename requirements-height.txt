@@ -1,0 +1,5 @@
+# Verified mapping environment, Python 3.10 / CUDA 12.x
+# Install into .venv-height; see docs/INSTALL.md.
+cupy-cuda12x==13.6.0
+numpy==1.24.2
+fastrlock==0.8.4

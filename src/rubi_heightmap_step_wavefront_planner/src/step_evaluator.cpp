@@ -101,7 +101,34 @@ StepEvaluator::StepEvaluator(
   {
     throw std::invalid_argument("invalid StepEvaluator parameters");
   }
-  if (parameters_.grid_cot_height_cost_enabled) {
+  if (parameters_.grid_cot_height_cost_enabled &&
+    !parameters_.grid_cot_polynomial_coefficients_cm.empty())
+  {
+    const auto & c = parameters_.grid_cot_polynomial_coefficients_cm;
+    if (c.size() < 2U || c.size() > 4U ||
+      !std::all_of(c.begin(), c.end(), [](double v) {return std::isfinite(v);}) ||
+      c.back() != 0.0 || !std::isfinite(parameters_.grid_cot_flat_baseline) ||
+      parameters_.grid_cot_flat_baseline <= 0.0 ||
+      !std::isfinite(parameters_.grid_cot_calibration_distance_m) ||
+      parameters_.grid_cot_calibration_distance_m <= 0.0 ||
+      !std::isfinite(parameters_.grid_cot_max_height_m) ||
+      parameters_.grid_cot_max_height_m < parameters_.max_crossable_height_jump_m)
+    {
+      throw std::invalid_argument("invalid Grid CoT polynomial calibration");
+    }
+    // f(h)/h has degree at most two: endpoints and its vertex prove
+    // non-negative edge costs over the full domain, preserving A*'s bound.
+    const double a = c.size() == 4U ? c[0] : 0.0;
+    const double b = c.size() >= 3U ? c[c.size() - 3U] : 0.0;
+    const double d = c[c.size() - 2U];
+    const double xmax = 100.0 * parameters_.grid_cot_max_height_m;
+    auto q = [a, b, d](double x) {return (a * x + b) * x + d;};
+    double minimum = std::min(q(0.0), q(xmax));
+    if (a > 0.0) {minimum = std::min(minimum, q(std::clamp(-b / (2.0*a), 0.0, xmax)));}
+    if (minimum < 0.0) {
+      throw std::invalid_argument("Grid CoT polynomial must be non-negative on its domain");
+    }
+  } else if (parameters_.grid_cot_height_cost_enabled) {
     const auto & heights = parameters_.grid_cot_step_heights_m;
     const auto & penalties = parameters_.grid_cot_equivalent_penalties_m;
     if (heights.size() != penalties.size() || heights.size() < 2U ||
@@ -246,6 +273,17 @@ std::optional<double> StepEvaluator::gridSobelGradientMagnitude(const GridCell c
 
 double StepEvaluator::gridCotEquivalentPenalty(const double step_height_m) const
 {
+  if (!parameters_.grid_cot_polynomial_coefficients_cm.empty()) {
+    if (step_height_m > parameters_.grid_cot_max_height_m + 1.0e-12) {
+      return std::numeric_limits<double>::quiet_NaN();  // Never extrapolate.
+    }
+    double excess_cot = 0.0;
+    for (const double coefficient : parameters_.grid_cot_polynomial_coefficients_cm) {
+      excess_cot = excess_cot * (100.0 * step_height_m) + coefficient;
+    }
+    return excess_cot * parameters_.grid_cot_calibration_distance_m /
+           parameters_.grid_cot_flat_baseline;
+  }
   const auto & heights = parameters_.grid_cot_step_heights_m;
   const auto & penalties = parameters_.grid_cot_equivalent_penalties_m;
   if (step_height_m <= heights.front()) {return penalties.front();}
@@ -637,6 +675,13 @@ EdgeEvaluation StepEvaluator::evaluateGridTransition(
 
   const double signed_jump = to_evaluation.elevation_m - from_evaluation.elevation_m;
   const double jump = std::abs(signed_jump);
+  if (parameters_.grid_cot_height_cost_enabled &&
+    !parameters_.grid_cot_polynomial_coefficients_cm.empty() && signed_jump > 0.0 &&
+    std::max(jump, result.max_local_relief_m) > parameters_.grid_cot_max_height_m + 1.0e-12)
+  {
+    result.reason = StepInvalidReason::kStepLimit;
+    return result;
+  }
   result.max_height_jump_m = jump;
   if (jump > parameters_.max_crossable_height_jump_m) {
     result.reason = StepInvalidReason::kStepLimit;
@@ -644,14 +689,21 @@ EdgeEvaluation StepEvaluator::evaluateGridTransition(
   }
   if (parameters_.grid_cot_height_cost_enabled) {
     const double event_height_m = std::max(jump, result.max_local_relief_m);
-    if (event_height_m > parameters_.height_noise_floor_m && signed_jump > 0.0) {
+    if (event_height_m > parameters_.height_noise_floor_m &&
+      (signed_jump > 0.0 || (parameters_.grid_cot_polynomial_coefficients_cm.empty() &&
+        parameters_.grid_cot_apply_to_descents && signed_jump < 0.0))) {
       ++result.height_jump_event_count;
       const double progress_fraction = std::clamp(
-        signed_jump / event_height_m, 0.0, 1.0);
+        jump / event_height_m, 0.0, 1.0);
       result.height_jump_score_m =
         gridCotEquivalentPenalty(event_height_m) * progress_fraction;
     }
-  } else if (jump > parameters_.height_noise_floor_m) {
+  }
+  // The fitted model covers ascents. Descents retain the geometric penalty.
+  if ((!parameters_.grid_cot_height_cost_enabled ||
+    (!parameters_.grid_cot_polynomial_coefficients_cm.empty() && signed_jump < 0.0)) &&
+    jump > parameters_.height_noise_floor_m)
+  {
     result.height_jump_event_count = 1U;
     const double normalized = std::clamp(
       (jump - parameters_.height_noise_floor_m) /

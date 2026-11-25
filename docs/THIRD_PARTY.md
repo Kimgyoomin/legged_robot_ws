@@ -23,12 +23,14 @@
 - [Offline postprocess MIT notice](../src/rubi_heightmap_postprocess/LICENSE)
 - [Livox driver MIT](../src/livox_ros_driver2/LICENSE.txt), SDK의 [원본 라이선스](../third_party/Livox-SDK2/LICENSE.txt)
 - [GenZ 원본 라이선스](../archive/20261109/optional_src/genz-icp/LICENSE)
-- [FAST-LIO localization LICENSE](../src/FAST_LIO_LOCALIZATION2/LICENSE), [FAST-LIO mapping LICENSE](../archive/20261109/optional_src/FAST_LIO_ROS2/LICENSE)
+- [FAST-LIO localization LICENSE](../src/FAST_LIO_LOCALIZATION2/LICENSE), [FAST-LIO mapping LICENSE](../src/FAST_LIO_ROS2/LICENSE)
 - Planner/Pure Pursuit는 원 package.xml의 Apache-2.0 표기와 source 출처를 유지합니다. 신규 adapter package에는 [Apache-2.0 전문](../src/legged_navigation/LICENSE)을 동봉했습니다.
 
 FAST-LIO 두 폴더는 `package.xml`에 BSD라고 적혀 있으나 동봉된 LICENSE는 GPL v2입니다. 이 불일치를 숨기거나 임의로 단일 permissive 라이선스로 바꾸지 않았습니다. 실제 소스·바이너리 배포 범위를 정할 때 해당 구성요소의 원 upstream notice를 기준으로 정리해야 합니다.
 
-## 변경 요약
+## 초기 이식 당시 변경 기록
+
+아래 항목은 초기 이식 시점의 기록입니다. 현재 실행은 [운용 안내](OPERATIONS.md), 2026-11-23 SLAM 이식 출처는 [DELIVERY.md](../src/FAST_LIO_ROS2/DELIVERY.md)를 기준으로 합니다.
 
 1. PointCloud2 점별 절대 ns를 읽는 FAST-LIO parser와 regression test 추가.
 2. 빈 scan/clock 역행 시 scan·time queue 일관성, 선택적 time-sync 단위 오류 수정.
@@ -38,9 +40,9 @@ FAST-LIO 두 폴더는 `package.xml`에 BSD라고 적혀 있으나 동봉된 LIC
 6. 동일 Grid A* core의 Nav2 adapter, `static_heightmap` 계약과 standalone core export 정리.
 7. 장애물 costmap·재계획·Collision Monitor·freshness watchdog을 두 모드에 연결.
 8. CPU frozen server, 지도 정렬·재격자화 및 version bundle 도구 추가.
-9. Config는 `legged_bringup/config`에서 짧은 이름으로 제공. 내부 upstream 이름은 비교 가능하도록 보존.
+9. 현재 config는 각 패키지에 둡니다. Navigation은 `legged_navigation/config/height_hybrid.yaml`, `height_only.yaml`, `nav2_common.yaml`을 사용합니다.
 
-원본 reference profile의 controller 값과 CoT weight가 동봉된 regression contract와 달랐던 부분은 **복사본에서만** reference 값으로 맞췄습니다. 실제 공개 실행은 별도의 `pursuit.yaml`(최대 0.3 m/s)과 `planner.yaml`을 사용합니다.
+원본 reference profile의 controller 값과 CoT weight가 동봉된 regression contract와 달랐던 부분은 **복사본에서만** reference 값으로 맞췄습니다. 현재 직접 실행의 controller/planner 설정은 [TUNING.md](TUNING.md)에 명시된 파일을 사용합니다.
 
 미디어와 실험 산출물은 runtime 소스로 취급하지 않습니다. 큰 upstream 예시 영상·이미지는 [omitted_media.txt](omitted_media.txt)에 기록하고 생략했습니다. `.git`, 기존 `build/install/log`, 개인 실험 PCD도 복사 배포 대상에서 제외했습니다. 사용한 모델 weights와 필요한 라이선스는 포함했습니다.
 
